@@ -1,0 +1,19 @@
+# Python for Young Creators
+
+A step-by-step Python course for ages 11+, built lesson by lesson.
+
+## Courses
+
+1. **Python Basics & Command Line** — variables, logic, functions, collections, Turtle
+2. **Web Applications with Flask** — pages, templates, forms
+3. **Game Development with Pygame** — sprites, controls, collisions, capstone game
+
+See [CURRICULUM.md](CURRICULUM.md) for the full expanded plan.
+
+## For contributors & AI agents
+
+Read [AGENTS.md](AGENTS.md) before authoring or editing lesson content.
+
+## Status
+
+🚧 Under active development — lessons are added incrementally starting with Course 1.

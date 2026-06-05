@@ -10,6 +10,8 @@ A step-by-step Python course for ages 11+, built lesson by lesson.
 
 See [CURRICULUM.md](CURRICULUM.md) for the full expanded plan.
 
+Planning notes (ideas, plans, issues): [documents/](documents/)
+
 ## For contributors & AI agents
 
 Read [AGENTS.md](AGENTS.md) before authoring or editing lesson content.

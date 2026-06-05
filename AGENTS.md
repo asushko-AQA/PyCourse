@@ -25,8 +25,21 @@ PyCourse/
 ├── course-2-web-apps/        # Course 2 content
 ├── course-3-game-dev/        # Course 3 content
 ├── shared/                   # Reusable assets (templates, images, CSS)
+├── documents/                # Ideas, plans, issues (not student-facing)
 └── .cursor/skills/           # Project skills for lesson authoring
 ```
+
+### documents/ folder
+
+Use [documents/](documents/) to collect planning notes before they become curriculum or lessons:
+
+| Subfolder | Use for |
+|-----------|---------|
+| `documents/ideas/` | Raw ideas, project hooks, feedback |
+| `documents/plans/` | Milestones, lesson drafts, block outlines |
+| `documents/issues/` | Bugs, gaps, typos, open questions |
+
+Copy `_template.md` from the relevant subfolder when adding a new note. Approved outcomes go into `CURRICULUM.md` or lesson READMEs — not left only in `documents/`.
 
 ### Lesson folder convention
 

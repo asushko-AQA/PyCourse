@@ -49,7 +49,9 @@ Each lesson lives in its own directory:
 course-1-python-basics/
   block-1-meeting-your-computer/
     lesson-1-1-installing-python/
-      README.md          # Student-facing lesson (required)
+      README.md          # Language chooser (required)
+      en.md              # Lesson in English (required)
+      ru.md              # Lesson in Russian (required)
       starter/           # Optional starter code
       solution/          # Optional reference solution
       exercises/         # Optional extra challenges
@@ -80,6 +82,7 @@ No build step. No test suite yet — validate by running lesson scripts manually
 3. Apply skill **write-lesson** for file structure and README template.
 4. One concept per lesson; end with a runnable mini-result.
 5. Keep programs **15–50 lines** (Course 1), **30–80 lines** (Courses 2–3).
+6. After every new or substantially updated lesson, apply **verify-lesson-in-block**: delegate to a readonly subagent, then file improvements in [documents/ideas/](documents/ideas/) and gaps in [documents/issues/](documents/issues/).
 
 ## Content Rules
 
@@ -132,15 +135,55 @@ def greet(name: str) -> None:
 |-------|----------|
 | `youth-python-pedagogy` | Writing or reviewing any student-facing content |
 | `write-lesson` | Creating a new lesson directory and README |
-| `review-lesson` | Checking a lesson for completeness and age fit |
+| `verify-lesson-in-block` | **After every lesson create/update** — subagent verification + file to `documents/` |
+| `review-lesson` | Lesson QA checklist (used by verification subagent; manual review) |
 
 Skills live in `.cursor/skills/<name>/SKILL.md`.
 
+### Lesson create → verify workflow
+
+```
+write-lesson  →  verify-lesson-in-block (Task subagent, readonly)
+                      ↓
+              documents/ideas/   (suggestions, improvements)
+              documents/issues/  (gaps, critical findings)
+```
+
+Fix critical gaps in the lesson when practical, then re-run verification.
+
 ## Development Order
 
-Build **Course 1** completely before Course 2. Course 2 requires functions, lists, and dicts. Course 3 requires loops, conditionals, and functions.
+Build **Course 1** block by block. Course 2 requires Block 1 complete (especially functions, lists, dicts from later blocks). Course 3 requires loops, conditionals, and functions.
 
-Suggested first milestone: **Course 1, Block 1, Lesson 1.1** (Installing Python & VS Code).
+**Course 1, Block 1** (five lessons + capstone):
+
+| Lesson | Topic |
+|--------|-------|
+| 1.1 | Installing Python & VS Code |
+| 1.2 | Terminal / CLI + `treasure.py` |
+| 1.3 | Launch workflow + `starter/launch.py` |
+| 1.4 | Error messages (SyntaxError + CLI) |
+| 1.5 | **Capstone:** `my_mission/badge.py` |
+
+Block index: [block-1-meeting-your-computer/README.md](course-1-python-basics/block-1-meeting-your-computer/README.md)  
+Student folder map: [STUDENT-MAP.md](course-1-python-basics/block-1-meeting-your-computer/STUDENT-MAP.md)
+
+**Course 1, Block 2** (five lessons + capstone):
+
+| Lesson | Topic |
+|--------|-------|
+| 2.1 | Variables, strings, integers — `character_sheet.py` |
+| 2.2 | f-strings and `input()` — `greeting.py` |
+| 2.3 | Math operators + `int()` — `calculator.py` |
+| 2.4 | String methods — `madlibs.py` |
+| 2.5 | **Capstone:** `my_data/creator_pack.py` |
+
+Block index: [block-2-talking-to-python/README.md](course-1-python-basics/block-2-talking-to-python/README.md)  
+Student folder map: [STUDENT-MAP.md](course-1-python-basics/block-2-talking-to-python/STUDENT-MAP.md)
+
+**Development order (Block 2):** 2.1 → 2.2 → 2.3 → 2.4 → 2.5 → Block 3 placeholder.
+
+Suggested milestone when starting fresh: **Lesson 1.1**.
 
 ## Key References
 

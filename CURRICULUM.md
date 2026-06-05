@@ -29,18 +29,20 @@ Expanded plan based on project-based learning research, age-appropriate pacing (
 | Lesson | Topic | Mini-project / outcome |
 |--------|-------|------------------------|
 | 1.1 | Installing Python & VS Code | `python --version` works; VS Code opens a `.py` file |
-| 1.2 | Using the Terminal/CLI | Navigate folders with `cd`, list files with `dir`/`ls` |
-| 1.3 | Running Your First Script | `hello.py` prints from the command line |
-| **1.4** *(new)* | **Reading Error Messages** | Fix 3 intentional bugs; learn SyntaxError vs NameError |
+| 1.2 | Using the Terminal/CLI | Navigate folders with `cd`, list files with `dir`/`ls`; run `treasure.py` |
+| 1.3 | Running Your First Script | Reliable create → save → `cd` → `python file.py` workflow |
+| 1.4 | Reading Error Messages | Fix 3 intentional bugs; learn SyntaxError vs CLI file errors |
+| 1.5 | Block 1 Capstone: Mission Control Badge | Create `my_mission/badge.py`; navigate, run, fix one bug |
 
 ### Block 2: Talking to Python (Variables & Data)
 
 | Lesson | Topic | Mini-project / outcome |
 |--------|-------|------------------------|
-| 2.1 | Variables, Strings, Integers | Store name, age, favorite game in variables |
+| 2.1 | Variables, Strings, Integers | `character_sheet.py` — store name, age, favorite game in variables |
 | 2.2 | f-strings and `input()` | Interactive greeting program |
 | 2.3 | Math Operators | Simple calculator in the terminal |
-| **2.4** *(new)* | **Strings in Action** | Mad-libs style word game (`.upper()`, `.lower()`, slicing basics) |
+| 2.4 | Strings in Action | Mad-libs style word game (`.upper()`, `.lower()`, slicing basics) |
+| 2.5 | Block 2 Capstone: Creator Data Pack | Create `my_data/creator_pack.py`; variables, input, f-strings, math, strings |
 
 ### Block 3: Making Choices & Repeating Actions
 

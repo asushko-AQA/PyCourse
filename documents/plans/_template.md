@@ -1,8 +1,20 @@
 # Plan: [Title]
 
-**Status:** draft  
+**Status:** draft | in_review | approved | implemented  
 **Date:** YYYY-MM-DD  
-**Target:** (e.g. Course 1, Block 2, Lesson 2.3)
+**Target:** (e.g. Course 1, Block 2, Lesson 2.3)  
+**Supersedes:** (optional prior plan path)
+
+### Status meanings
+
+| Status | Meaning |
+|--------|---------|
+| `draft` | Written, not yet peer-reviewed |
+| `in_review` | Review agent has run; amendments pending |
+| `approved` | Review complete; ready to implement |
+| `implemented` | All done criteria met |
+
+See [documents/plans/README.md](README.md) for the full plan registry.
 
 ## Goal
 

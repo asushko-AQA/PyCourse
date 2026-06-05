@@ -22,13 +22,29 @@ description: >-
 course-{N}-{slug}/
   block-{B}-{slug}/
     lesson-{B}-{L}-{slug}/
-      README.md       # required
+      README.md       # required — language chooser (links to en.md / ru.md)
+      en.md           # required — full lesson in English
+      ru.md           # required — full lesson in Russian
       starter/        # optional — code student starts from
       solution/       # optional — reference answer
       exercises/      # optional — extra challenge scripts
 ```
 
 **Slug rules:** lowercase, hyphenated, no lesson numbers in folder name.
+
+## Bilingual layout
+
+Student-facing lessons are split by language:
+
+| File | Purpose |
+|------|---------|
+| `README.md` | Landing page — pick English or Russian via links |
+| `en.md` | Complete lesson in English |
+| `ru.md` | Complete lesson in Russian |
+
+Each language file links back to `README.md` and to the other language. Link "What's next" to the **next lesson's `README.md`** (chooser), not directly to `en.md`/`ru.md`.
+
+**Section headings:** English files use English headings (`## Title`, `## Quick Drills`); Russian files use Russian headings (`## Заголовок`, `## Быстрые упражнения`). Keep the same section order in both languages.
 
 Example: `course-1-python-basics/block-1-meeting-your-computer/lesson-1-1-installing-python/`
 
@@ -119,3 +135,4 @@ output here
 1. Run the starter and solution scripts locally.
 2. Verify README steps match actual file names and output.
 3. Link "What's next" to the following lesson (create placeholder README if needed).
+4. **Mandatory:** Delegate verification — apply skill **verify-lesson-in-block** (launch a readonly subagent, file improvements to `documents/ideas/`, gaps to `documents/issues/`). Do not consider the lesson done until verification completes and documents are filed.

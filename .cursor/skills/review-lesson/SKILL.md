@@ -2,11 +2,19 @@
 name: review-lesson
 description: >-
   Reviews a PyCourse lesson for completeness, age-appropriateness, runnable
-  code, and convention compliance. Use when the user asks to review, QA, or
-  check a lesson before publishing or merging.
+  code, convention compliance, and block fit. Use when the user asks to review,
+  QA, or check a lesson before publishing or merging. After creating a lesson,
+  prefer verify-lesson-in-block (subagent + document filing) instead of
+  reviewing in the same agent turn.
 ---
 
 # Review Lesson
+
+Used by the verification subagent (**verify-lesson-in-block**) and for manual QA. When reviewing a **newly created** lesson, the parent agent should delegate to a subagent per **verify-lesson-in-block** rather than self-review.
+
+## Block context
+
+Read the block README and one prior lesson before judging fit. Full block checks: [verify-lesson-in-block/block-checklist.md](../verify-lesson-in-block/block-checklist.md).
 
 ## Quick Checklist
 
@@ -59,12 +67,29 @@ Provide feedback as:
 ## Summary
 [Pass / Needs work — one sentence]
 
-## Critical
+## Block fit
+[How the lesson fits its block and sequence]
+
+## Critical (→ documents/issues/)
 - [items]
 
-## Suggestions
+## Gaps (→ documents/issues/)
 - [items]
 
-## Nice to have
+## Suggestions (→ documents/ideas/)
+- [items]
+
+## Nice to have (→ documents/ideas/)
 - [items]
 ```
+
+## Document routing (verify-lesson-in-block)
+
+When verification is delegated after lesson creation, the **parent agent** files findings — not the subagent:
+
+| Finding type | Folder |
+|--------------|--------|
+| Critical, gaps, block issues | `documents/issues/` |
+| Suggestions, nice to have | `documents/ideas/` |
+
+Use templates in each subfolder. See **verify-lesson-in-block** for naming and append rules.

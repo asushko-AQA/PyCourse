@@ -1,0 +1,10 @@
+# countdown.py — reference solution
+
+print("=== COUNTDOWN ===")
+counter = 5
+
+while counter > 0:
+    print(counter)
+    counter = counter - 1
+
+print("Blastoff!")

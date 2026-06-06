@@ -44,6 +44,8 @@ cd course-1-python-basics\block-1-meeting-your-computer\lesson-1-4-reading-error
 dir starter
 ```
 
+**Mac/Linux:** используй прямые слэши — `python starter/bug_missing_quote.py`. Список файлов — `ls` вместо `dir`.
+
 **Ожидается:** `bug_missing_quote.py`, `bug_missing_paren.py`, `right_name.py`
 
 ---

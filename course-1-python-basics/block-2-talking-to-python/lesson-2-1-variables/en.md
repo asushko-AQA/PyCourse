@@ -55,7 +55,7 @@ If you put quotes around a number (`"11"`), Python treats it as text, not math. 
 
 ### Step 3: Open the character sheet
 
-Open [starter/character_sheet.py](starter/character_sheet.py). Three variables are ready — `name`, `age`, `favorite_game`.
+Open [starter/character_sheet.py](starter/character_sheet.py). Three variables are ready — fill in the **TODO `print()` lines** to show your character sheet.
 
 ---
 

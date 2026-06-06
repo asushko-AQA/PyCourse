@@ -22,7 +22,7 @@
 
 **Previous block / Предыдущий блок:** [Block 1: Meeting Your Computer's Best Friend](../block-1-meeting-your-computer/README.md)
 
-**Next block / Следующий блок:** [Block 3: Making Choices](../block-3-making-choices/lesson-3-1-booleans/README.md) *(coming soon)*
+**Next block / Следующий блок:** [Block 3: Making Choices](../block-3-making-choices/README.md)
 
 ---
 

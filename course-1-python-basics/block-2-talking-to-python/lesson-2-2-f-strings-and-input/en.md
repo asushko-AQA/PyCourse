@@ -95,7 +95,15 @@ print(f"You said you are {age} years old.")
 python starter\greeting.py
 ```
 
-Answer both prompts. See personalized output.
+**Type:** `Alex` then `11`
+
+**Expected output:**
+
+```text
+Hello, Alex! Welcome to the Data Lab.
+You said you are 11 years old.
+Type your answers when the terminal waits for you!
+```
 
 ---
 

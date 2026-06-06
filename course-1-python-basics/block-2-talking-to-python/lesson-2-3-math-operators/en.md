@@ -51,6 +51,8 @@ cd course-1-python-basics\block-2-talking-to-python\lesson-2-3-math-operators
 python starter\calculator.py
 ```
 
+**Mac/Linux:** Use forward slashes — `python starter/calculator.py`. List files with `ls` instead of `dir`.
+
 **Type:** `10` then `3`
 
 **Expected output:**

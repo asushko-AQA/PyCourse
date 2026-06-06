@@ -41,6 +41,8 @@
 | [starter/madlibs.py](starter/madlibs.py) | Story Factory skeleton |
 | [solution/madlibs.py](solution/madlibs.py) | Reference solution |
 | [exercises/slice_challenge.md](exercises/slice_challenge.md) | Bonus slicing drills |
+| [exercises/slice_practice.md](exercises/slice_practice.md) | Extra slice warm-up (EN) |
+| [exercises/slice_practice.ru.md](exercises/slice_practice.ru.md) | Доп. срезы (RU) |
 
 ## Quick drills / Быстрые упражнения
 

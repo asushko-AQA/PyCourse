@@ -1,17 +1,17 @@
 # madlibs.py
 # Data Lab — Story Factory!
 
-# TODO: Ask for story words
 hero = input("Name a hero: ")
 creature = input("Name a silly creature: ")
 place = input("Name a place: ")
 power = input("Name a superpower: ")
 
-# TODO: Build the story with .upper(), .lower(), and slicing [0:3]
+# TODO: Slice first three letters of creature — creature[0:3]
 short_creature = creature[0:3]
 
-print("=== STORY FACTORY ===")
-print(f"{hero} battled a {creature.lower()} in {place}.")
-print(f"The creature's first three letters: {short_creature}")
-print(f"{hero} used {power.upper()} to win!")
-print("The end.")
+# TODO: Print "=== STORY FACTORY ==="
+# TODO: Print battle line with creature.lower() and place
+# TODO: Print line showing short_creature
+# TODO: Print win line with power.upper()
+
+print("Complete the TODO print lines above, then run again!")

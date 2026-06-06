@@ -7,6 +7,7 @@ Index of development plans in `documents/plans/`. Each plan uses the status conv
 | [block-1-lessons-revised.md](block-1-lessons-revised.md) | implemented | 2026-06-06 | Course 1, Block 1 — Lessons 1.2–1.5 |
 | [block-2-talking-to-python-review.md](block-2-talking-to-python-review.md) | — | 2026-06-06 | Block 2 plan review (amendments A1–A6) |
 | [block-2-talking-to-python.md](block-2-talking-to-python.md) | implemented | 2026-06-06 | Course 1, Block 2 — Lessons 2.1–2.5 |
+| [course-1-complete.md](course-1-complete.md) | implemented | 2026-06-06 | Course 1, Blocks 3–5 — Lessons 3.1–5.3 |
 
 ## Status convention
 

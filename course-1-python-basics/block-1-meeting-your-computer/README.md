@@ -45,6 +45,8 @@ Tick every box before starting Block 2. Ask a parent or teacher to help if you g
 
 **Python not found:** If the terminal says `python is not recognized`, see the Debug Corner in [Lesson 1.1](lesson-1-1-installing-python/en.md) — usually **Add to PATH** was missed during install.
 
+**Wrong folder drill (5 min):** After Lesson 1.3, try [wrong_folder_scenarios](lesson-1-3-running-your-first-script/exercises/wrong_folder_scenarios.md) with a parent — fixes the #1 real-world frustration before Block 2's interactive scripts.
+
 ---
 
 *Complete all five lessons to earn your Mission Control Badge, then move on to variables in Block 2!*

@@ -51,6 +51,8 @@ cd course-1-python-basics\block-2-talking-to-python\lesson-2-3-math-operators
 python starter\calculator.py
 ```
 
+**Mac/Linux:** используй прямые слэши — `python starter/calculator.py`. Список файлов — `ls` вместо `dir`.
+
 **Вводи:** `10` затем `3`
 
 **Ожидаемый вывод:**

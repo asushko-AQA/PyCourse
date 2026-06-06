@@ -94,6 +94,8 @@ dir starter
 python starter\hello.py
 ```
 
+**Mac/Linux:** используй прямые слэши — `python starter/hello.py`. Список файлов — `ls` вместо `dir`.
+
 **Ожидаемый вывод:**
 
 ```text

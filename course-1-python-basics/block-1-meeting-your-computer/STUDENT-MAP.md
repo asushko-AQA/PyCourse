@@ -46,7 +46,7 @@ PyCourse/
 
 - [ ] 1.1 — `python --version` works
 - [ ] 1.2 — `python starter\treasure.py` → `Treasure found!`
-- [ ] 1.3 — `python starter\hello.py` and `python starter\launch.py`
+- [ ] 1.3 — `python starter\hello.py` runs; you practiced the launch sequence
 - [ ] 1.4 — fixed all three case files
 - [ ] 1.5 — `my_mission/badge.py` runs
 

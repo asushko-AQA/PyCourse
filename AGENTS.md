@@ -181,7 +181,46 @@ Student folder map: [STUDENT-MAP.md](course-1-python-basics/block-1-meeting-your
 Block index: [block-2-talking-to-python/README.md](course-1-python-basics/block-2-talking-to-python/README.md)  
 Student folder map: [STUDENT-MAP.md](course-1-python-basics/block-2-talking-to-python/STUDENT-MAP.md)
 
-**Development order (Block 2):** 2.1 → 2.2 → 2.3 → 2.4 → 2.5 → Block 3 placeholder.
+**Development order (Block 2):** 2.1 → 2.2 → 2.3 → 2.4 → 2.5 → Block 3.
+
+**Course 1, Block 3** (four lessons — no capstone folder):
+
+| Lesson | Topic |
+|--------|-------|
+| 3.1 | Booleans and comparisons — `true_false_quiz.py` |
+| 3.2 | `if`, `elif`, `else` — `choose_path.py` |
+| 3.3 | `for` and `while` loops — `countdown.py`, `times_table.py` |
+| 3.4 | Loop patterns — `ascii_pattern.py` |
+| 3.4 capstone | **`my_quest/gate_quest.py`** — guess game (Lesson 3.4) |
+
+Block index: [block-3-making-choices/README.md](course-1-python-basics/block-3-making-choices/README.md)  
+Student folder map: [STUDENT-MAP.md](course-1-python-basics/block-3-making-choices/STUDENT-MAP.md)
+
+**Course 1, Block 4** (four lessons + capstone):
+
+| Lesson | Topic |
+|--------|-------|
+| 4.1 | Functions — `helpers.py` |
+| 4.2 | Lists — `inventory.py` |
+| 4.3 | Dictionaries — `character_stats.py` |
+| 4.4 | **Capstone:** `my_adventure/game.py` |
+
+Block index: [block-4-organizing-code/README.md](course-1-python-basics/block-4-organizing-code/README.md)  
+Student folder map: [STUDENT-MAP.md](course-1-python-basics/block-4-organizing-code/STUDENT-MAP.md)
+
+**Course 1, Block 5** (three lessons — Turtle bridge):
+
+| Lesson | Topic |
+|--------|-------|
+| 5.1 | Turtle basics — `shapes.py` |
+| 5.2 | Loops and color — `star.py` |
+| 5.3 | Functions + Turtle — `snowflake.py` |
+| 5.3 capstone | **`my_gallery/gallery.py`** — star + snowflake show |
+
+Block index: [block-5-creative-turtle/README.md](course-1-python-basics/block-5-creative-turtle/README.md)  
+Student folder map: [STUDENT-MAP.md](course-1-python-basics/block-5-creative-turtle/STUDENT-MAP.md)
+
+**Development order (Course 1):** Block 1 → 2 → 3 → 4 → 5 → [Course 2](../course-2-web-apps/README.md).
 
 Suggested milestone when starting fresh: **Lesson 1.1**.
 

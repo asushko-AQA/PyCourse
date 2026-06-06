@@ -169,15 +169,16 @@ CLI hello.py → interactive terminal apps → Turtle art → Flask web page →
 
 ## Lesson README Template (every lesson)
 
-Each lesson `README.md` should include:
+Each lesson folder uses a **bilingual chooser** plus split language files:
 
-1. **What you'll build** — one sentence + screenshot or ASCII preview
-2. **What you'll learn** — 3–5 bullet concepts
-3. **Before you start** — prerequisites and setup checks
-4. **Step-by-step** — numbered steps with code blocks
-5. **Try it yourself** — 1–2 challenges with hints
-6. **Debug corner** — one common error and fix
-7. **What's next** — link to following lesson
+| File | Purpose |
+|------|---------|
+| `README.md` | Language chooser — What you'll build/learn, Before you start, Quick drills |
+| `en.md` / `ru.md` | Full lesson (Title, Explanation, Code Example, Code Execution, Quick drills, Practice, Debug corner, What's next) |
+| `starter/` / `solution/` | Runnable Python (same filenames) |
+| `exercises/` | Optional EN + RU micro-challenges |
+
+Link **What's next** to the following lesson's `README.md`, not directly to `en.md`.
 
 ---
 

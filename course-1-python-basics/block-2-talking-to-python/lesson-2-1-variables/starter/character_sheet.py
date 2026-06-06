@@ -10,10 +10,7 @@ age = 11
 # TODO: Create a variable for your favorite game
 favorite_game = "Minecraft"
 
-# Print each variable with a label
-print("=== CHARACTER SHEET ===")
-print("Name:", name)
-print("Age:", age)
-print("Favorite game:", favorite_game)
+# TODO: Print "=== CHARACTER SHEET ==="
+# TODO: Print name, age, and favorite_game each with a label (see en.md)
 
-print("Edit the variables above, then run again!")
+print("Fill in the TODO print lines above, then run again!")

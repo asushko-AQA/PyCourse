@@ -108,6 +108,8 @@ dir
 python badge.py
 ```
 
+**Mac/Linux:** Use forward slashes in paths. List files with `ls` instead of `dir`.
+
 **Expected:** 5–8 lines of your custom output appear. **Mission Control Badge earned!**
 
 ---

@@ -1,0 +1,28 @@
+# Карта папок — Курс 1 (все блоки)
+
+> **Курс:** Python Basics · **21 урок**  
+> [English →](STUDENT-MAP.md)
+
+**Темп:** ~8–10 недель по 1–2 урока в неделю.
+
+---
+
+## Папки итоговых проектов (в корне проекта)
+
+| Папка | Блок | Скрипт |
+|-------|------|--------|
+| `my_mission/` | 1 | `badge.py` |
+| `my_data/` | 2 | `creator_pack.py` |
+| `my_quest/` | 3 | `gate_quest.py` |
+| `my_adventure/` | 4 | `game.py` |
+| `my_gallery/` | 5 | `gallery.py` |
+
+---
+
+## Список прогресса
+
+См. полный чеклист в [STUDENT-MAP.md](STUDENT-MAP.md) — отметь все 21 урок, затем переходи к [Курсу 2](../course-2-web-apps/README.md).
+
+---
+
+[← Индекс курса 1](README.md)

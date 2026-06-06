@@ -53,4 +53,4 @@
 
 **Previous / Предыдущий урок:** [Lesson 2.4](../lesson-2-4-strings-in-action/README.md)
 
-**Next block / Следующий блок:** [Lesson 3.1 — Booleans](../../block-3-making-choices/lesson-3-1-booleans/README.md) *(coming soon)*
+**Next block / Следующий блок:** [Block 3: Making Choices](../../block-3-making-choices/README.md)

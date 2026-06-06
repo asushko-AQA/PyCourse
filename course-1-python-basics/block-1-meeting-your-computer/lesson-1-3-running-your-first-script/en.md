@@ -104,6 +104,8 @@ Both `hello.py` and your new `launch.py` (practice quest) live in **`starter/`**
 python starter\hello.py
 ```
 
+**Mac/Linux:** Use forward slashes — `python starter/hello.py`. List files with `ls` instead of `dir`.
+
 **Expected output:**
 
 ```text

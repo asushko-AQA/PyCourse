@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greet — GET</title>
+</head>
+<body>
+    <h1>Say Hello (GET)</h1>
+    <form method="get" action="/greet">
+        <label>
+            Your name:
+            <input type="text" name="name" value="{{ name }}">
+        </label>
+        <button type="submit">Send (GET)</button>
+    </form>
+    <p><a href="/">Back home</a></p>
+    {% if message %}
+    <p><strong>{{ message }}</strong></p>
+    {% endif %}
+</body>
+</html>

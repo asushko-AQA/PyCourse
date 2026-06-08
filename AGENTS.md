@@ -222,7 +222,41 @@ Student folder map: [STUDENT-MAP.md](course-1-python-basics/block-5-creative-tur
 
 **Development order (Course 1):** Block 1 → 2 → 3 → 4 → 5 → [Course 2](../course-2-web-apps/README.md).
 
-Suggested milestone when starting fresh: **Lesson 1.1**.
+**Course 2, Block 0** (two lessons — environment):
+
+| Lesson | Topic |
+|--------|-------|
+| 0.1 | Virtual environments & pip |
+| 0.2 | How the web works |
+
+Block index: [block-0-environment-setup/README.md](course-2-web-apps/block-0-environment-setup/README.md)
+
+**Course 2, Block 1** (four lessons — Flask routes):
+
+| Lesson | Topic |
+|--------|-------|
+| 1.1 | Installing Flask (venv verify) |
+| 1.2 | First web page |
+| 1.3 | Dynamic routes |
+| 1.4 | Multiple routes + URL calculator |
+
+Block index: [block-1-web-basics-flask/README.md](course-2-web-apps/block-1-web-basics-flask/README.md)
+
+**Course 2, Block 2** (five lessons — templates, forms, capstones):
+
+| Lesson | Topic |
+|--------|-------|
+| 2.1 | HTML templates |
+| 2.2 | HTML forms (GET/POST) |
+| 2.3 | **Capstone:** `my_web_madlibs/` |
+| 2.4 | Static files & CSS |
+| 2.5 | Flash & validation + `my_web_calc/` |
+
+Block index: [block-2-making-it-beautiful-interactive/README.md](course-2-web-apps/block-2-making-it-beautiful-interactive/README.md)
+
+**Development order (Course 2):** Block 0 → 1 → 2 → [Course 3](../course-3-game-dev/README.md).
+
+Suggested milestone when starting fresh: **Lesson 1.1** (Course 1) or **Lesson 0.1** (Course 2).
 
 ## Key References
 

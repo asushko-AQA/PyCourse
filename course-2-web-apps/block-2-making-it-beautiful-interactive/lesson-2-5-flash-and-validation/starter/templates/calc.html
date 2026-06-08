@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Calculator</title>
+</head>
+<body>
+    <h1>Form Calculator</h1>
+    <p>Add two whole numbers — with friendly error messages.</p>
+
+    <!-- TODO: Loop over get_flashed_messages() and show each in a <p class="error"> -->
+
+    <form method="post">
+        <p>
+            <label>First number: <input type="text" name="a"></label>
+        </p>
+        <p>
+            <label>Second number: <input type="text" name="b"></label>
+        </p>
+        <button type="submit">Add</button>
+    </form>
+
+    {% if total is not none %}
+    <h2>Result</h2>
+    <p><strong>{{ total }}</strong></p>
+    {% endif %}
+</body>
+</html>

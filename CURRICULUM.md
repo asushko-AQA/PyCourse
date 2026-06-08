@@ -96,7 +96,7 @@ Bridge between basics and game/web courses. Uses stdlib `turtle` — no pip inst
 | 1.1 | Installing Flask | `pip install flask` inside venv |
 | 1.2 | First Web Page | "Hello, Web World!" at `localhost:5000` |
 | 1.3 | Dynamic Routes | `/hello/YourName` personalized greeting |
-| **1.4** *(new)* | **Multiple Routes** | Mini-site: Home, About, Jokes page |
+| **1.4** *(new)* | **Multiple Routes** | Mini-site: Home, About, Jokes + URL calculator (`/add/<a>/<b>`) |
 
 ### Block 2: Making It Beautiful & Interactive
 
@@ -104,9 +104,9 @@ Bridge between basics and game/web courses. Uses stdlib `turtle` — no pip inst
 |--------|-------|------------------------|
 | 2.1 | HTML Templates (`render_template`) | Jinja2 base layout + child pages |
 | 2.2 | HTML Forms (GET/POST) | Form that echoes user input on a results page |
-| 2.3 | Calculator or Mad-Libs Web App | Capstone: form-driven app |
+| 2.3 | Mad-Libs Web App | Capstone: `my_web_madlibs/` form-driven story |
 | **2.4** *(new)* | **Static Files & CSS** | Link stylesheet; simple responsive styling |
-| **2.5** *(new)* | **Flash Messages & Validation** | Friendly error when form is empty |
+| **2.5** *(new)* | **Flash Messages & Validation** | Flash errors + POST calculator in `my_web_calc/` |
 
 **Course 2 exit skills:** Flask routes, templates, forms, GET/POST, static files, venv, local dev server.
 

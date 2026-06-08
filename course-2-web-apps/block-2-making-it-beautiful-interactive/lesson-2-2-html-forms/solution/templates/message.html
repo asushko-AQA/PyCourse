@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message — POST</title>
+</head>
+<body>
+    <h1>Send a Message (POST)</h1>
+    <form method="post">
+        <label>
+            Your message:
+            <input type="text" name="text" value="{{ text }}">
+        </label>
+        <button type="submit">Send (POST)</button>
+    </form>
+    <p><a href="/">Back home</a></p>
+    {% if message %}
+    <p><strong>{{ message }}</strong></p>
+    {% endif %}
+</body>
+</html>

@@ -156,6 +156,54 @@ No keyboard input — output appears immediately.
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. How is a dictionary different from a list?
+   - **a)** A dictionary uses **name tags (keys)** instead of only number slots
+   - **b)** A dictionary cannot store text
+   - **c)** A dictionary has no values
+   - **d)** A dictionary always has exactly three items
+
+2. How do you read the hero's HP from `character = {"hp": 42}`?
+   - **a)** `character(42)`
+   - **b)** `character["hp"]`
+   - **c)** `character.hp`
+   - **d)** `hp[character]`
+
+3. What does `character.get("magic", 0)` do if `"magic"` is **not** in the dict?
+   - **a)** Crashes with KeyError
+   - **b)** Returns `0` without crashing
+   - **c)** Deletes the dictionary
+   - **d)** Adds `"magic"` automatically
+
+4. You write `character["magc"]` but the key is `"magic"`. What error appears?
+   - **a)** SyntaxError
+   - **b)** KeyError
+   - **c)** IndexError
+   - **d)** No error — Python guesses the key
+
+5. When should you prefer `.get()` over square brackets `[]`?
+   - **a)** When the key might be missing and you want a safe default
+   - **b)** When you never want to read values
+   - **c)** Only for lists, not dicts
+   - **d)** When you want Python to ignore typos
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **a)** Dicts pair **keys** (labels like `"hp"`) with values — lists use numbered indexes.
+2. **b)** Square brackets with the exact key name: `character["hp"]`.
+3. **b)** `.get()` returns the default (`0`) when the key is missing — no crash.
+4. **b)** Keys must match **exactly**; a typo triggers `KeyError`.
+5. **a)** Use `.get(key, default)` when a key might not exist yet on the stat sheet.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 4.4: Text Adventure Capstone](../lesson-4-4-text-adventure-capstone/README.md) — combine functions, lists, and dicts in one game.

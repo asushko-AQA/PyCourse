@@ -160,6 +160,54 @@ Type `yes` or `no` when the terminal waits. Press Enter after each answer.
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. What keyword do you use to **define** a function in Python?
+   - **a)** `function`
+   - **b)** `def`
+   - **c)** `recipe`
+   - **d)** `call`
+
+2. You wrote `def draw_banner(text):` but never called it. What happens when you run the file?
+   - **a)** Python runs the function automatically
+   - **b)** Nothing prints — defining a function only stores the recipe
+   - **c)** A SyntaxError appears
+   - **d)** VS Code crashes
+
+3. In `helpers.py`, what does `ask_yes_no(question)` **return**?
+   - **a)** Nothing — it only prints
+   - **b)** The string `"yes"` or `"no"`
+   - **c)** A list of answers
+   - **d)** The number 1 or 0
+
+4. Why must `main()` appear as the **last line** of the file with **no indent**?
+   - **a)** Python always runs the last function name it sees
+   - **b)** So you can call `main()` to start the program after all functions are defined
+   - **c)** Indented lines are comments
+   - **d)** `main()` only works at the top of the file
+
+5. What does `draw_banner("Adventure Workshop")` pass into the function?
+   - **a)** A loop counter
+   - **b)** One piece of text — the `text` parameter
+   - **c)** The whole `main()` function
+   - **d)** A dictionary of room names
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** `def` starts a function definition — your reusable recipe.
+2. **b)** Defining stores the recipe; Python runs it only when you **call** it by name.
+3. **b)** `ask_yes_no` returns `"yes"` or `"no"` so the caller can store the answer in a variable.
+4. **b)** Top-level `main()` kicks off the script after helper functions are ready.
+5. **b)** `"Adventure Workshop"` is the value for the `text` parameter inside `draw_banner`.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 4.2: Lists](../lesson-4-2-lists/README.md) — pack game items into a numbered inventory.

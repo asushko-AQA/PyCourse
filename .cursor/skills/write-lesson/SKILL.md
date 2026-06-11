@@ -44,7 +44,9 @@ Student-facing lessons are split by language:
 
 Each language file links back to `README.md` and to the other language. Link "What's next" to the **next lesson's `README.md`** (chooser), not directly to `en.md`/`ru.md`.
 
-**Section headings:** English files use English headings (`## Title`, `## Quick Drills`); Russian files use Russian headings (`## Заголовок`, `## Быстрые упражнения`). Keep the same section order in both languages.
+**Section headings:** English files use English headings (`## Title`, `## Quick Drills`, `## Quick Check`); Russian files use Russian headings (`## Заголовок`, `## Быстрые упражнения`, `## Проверь себя`). Keep the same section order in both languages.
+
+**Quick Check (required):** Place after Debug corner, before What's next. Include 3–5 multiple-choice questions (a–d) with collapsible answers. Quiz data for bulk updates lives in `tools/quizzes/*.json`; run `python tools/apply_lesson_quizzes.py` after editing JSON.
 
 Example: `course-1-python-basics/block-1-meeting-your-computer/lesson-1-1-installing-python/`
 
@@ -109,6 +111,29 @@ output here
 **Cause:** [Why it happens]
 
 **Fix:** [How to fix]
+
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. [Question about this lesson's main concept?]
+   - **a)** [wrong]
+   - **b)** [correct]
+   - **c)** [wrong]
+   - **d)** [wrong]
+
+[3–5 questions total — test concepts from **this lesson only**]
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** [One-line explanation]
+...
+
+</details>
+
+---
 
 ## What's next
 

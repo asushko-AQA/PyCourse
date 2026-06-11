@@ -16,46 +16,149 @@ Full expanded curriculum: [CURRICULUM.md](CURRICULUM.md)
 
 ## Repository Structure
 
+Three-level hierarchy for all course content: **course → block → lesson**. Planning and tooling sit beside the courses at the repo root.
+
 ```
-PyCourse/
-├── AGENTS.md                 # This file — agent briefing
-├── CURRICULUM.md             # Master plan (expanded)
-├── README.md                 # Human-facing project intro
-├── course-1-python-basics/   # Course 1 content
-├── course-2-web-apps/        # Course 2 content
-├── course-3-game-dev/        # Course 3 content
-├── shared/                   # Reusable assets (templates, images, CSS)
-├── documents/                # Ideas, plans, issues (not student-facing)
-└── .cursor/skills/           # Project skills for lesson authoring
+PyCourse/                          # Open this folder in VS Code
+├── AGENTS.md                      # Agent briefing (this file)
+├── CURRICULUM.md                  # Master curriculum — scope, order, outcomes
+├── README.md                      # Human-facing project intro
+├── .gitignore                     # Ignores .venv, __pycache__, .env, etc.
+│
+├── course-1-python-basics/        # Course 1 — 5 blocks, 21 lessons (complete)
+├── course-2-web-apps/             # Course 2 — 3 blocks, 11 lessons (complete)
+├── course-3-game-dev/             # Course 3 — placeholder README only (planned)
+│
+├── shared/                        # Cross-course assets (templates, images, CSS) — sparse
+├── documents/                     # Planning notes — NOT student-facing
+├── tools/                         # Maintainer scripts (e.g. quiz bulk-apply)
+└── .cursor/skills/                # Agent skills for authoring and QA
 ```
 
-### documents/ folder
+Student capstone projects are **not** in the repo — learners create them at **project root** next to the course folders (see [Student project folders](#student-project-folders-at-project-root)).
 
-Use [documents/](documents/) to collect planning notes before they become curriculum or lessons:
+### Course folders (`course-N-{slug}/`)
+
+Each course is a self-contained tree with a course index and bilingual student maps.
+
+| File | Purpose |
+|------|---------|
+| `README.md` | Course overview, block table, prerequisites, exit skills |
+| `STUDENT-MAP.md` / `STUDENT-MAP.ru.md` | Whole-course folder map for students and teachers |
+
+| Course | Folder | Blocks | Status |
+|--------|--------|--------|--------|
+| Python Basics | `course-1-python-basics/` | 5 (blocks 1–5) | Content complete |
+| Web Apps (Flask) | `course-2-web-apps/` | 3 (blocks 0–2) | Content complete |
+| Game Dev (Pygame) | `course-3-game-dev/` | — | Planned |
+
+### Block folders (`block-{B}-{slug}/`)
+
+Blocks group lessons by theme. Each block has an index and optional per-block student maps.
+
+| File | Purpose |
+|------|---------|
+| `README.md` | Block overview, lesson list, prerequisites, capstone notes |
+| `STUDENT-MAP.md` / `STUDENT-MAP.ru.md` | Block-level paths, scripts, and `cd` hints (optional but common) |
+
+**Slug rules:** lowercase, hyphenated, descriptive — e.g. `block-2-talking-to-python`, `block-0-environment-setup`.
+
+### Lesson folders (`lesson-{B}-{L}-{slug}/`)
+
+One folder per lesson. Slug has no lesson number in the name (numbers live in the folder prefix).
+
+| Path | Required? | Purpose |
+|------|-----------|---------|
+| `README.md` | Yes | Language chooser — links to `en.md` and `ru.md` |
+| `en.md` | Yes | Full lesson in English |
+| `ru.md` | Yes | Full lesson in Russian (same section order as `en.md`) |
+| `starter/` | Usually | Runnable skeleton with `# TODO`; must not contain full solutions |
+| `solution/` | Usually | Reference code matching starter filenames |
+| `exercises/` | Optional | Extra challenges — `.md` prompts and/or `.py` drill scripts |
+
+**Lesson `en.md` / `ru.md` section order** (use matching headings in Russian for `ru.md`):
+
+1. Title and intro
+2. Numbered tutorial steps
+3. Quick Drills / Быстрые упражнения
+4. Practice Task / Задание для практики (or Try it yourself)
+5. Debug Corner / Уголок отладки
+6. **Quick Check** / **Проверь себя** — 3–5 multiple-choice questions, collapsible answers
+7. What's Next / Что дальше (or **Дальше** in some Block 1 RU files) — link to **next lesson's `README.md`**
+
+Link "What's next" to the **README** chooser, not directly to `en.md` or `ru.md`.
+
+### Flask lesson layout (Course 2)
+
+Beyond `starter/` and `solution/`, web lessons often include:
+
+```
+lesson-2-1-html-templates/
+  starter/
+    app.py
+    templates/           # Jinja2 HTML — base.html, child pages
+  solution/
+    app.py
+    templates/
+lesson-2-4-static-files-css/
+  starter/
+    app.py
+    templates/
+    static/
+      style.css          # CSS linked via url_for('static', ...)
+```
+
+Run from the folder containing `app.py` (usually `starter/` or the student's copied project). Course 2 assumes an activated `.venv` with Flask installed.
+
+### Student project folders (at project root)
+
+Capstones and finale apps live **beside** `course-1-python-basics/`, not inside lesson folders.
+
+| Folder | Course | Created in | Main script |
+|--------|--------|------------|-------------|
+| `my_mission/` | 1 | Block 1 capstone (1.5) | `badge.py` |
+| `my_data/` | 1 | Block 2 capstone (2.5) | `creator_pack.py` |
+| `my_quest/` | 1 | Block 3 capstone (3.4) | `gate_quest.py` |
+| `my_adventure/` | 1 | Block 4 capstone (4.4) | `game.py` |
+| `my_gallery/` | 1 | Block 5 capstone (5.3) | `gallery.py` |
+| `my_web_madlibs/` | 2 | Block 2 capstone (2.3) | Flask Mad-Libs app |
+| `my_web_calc/` | 2 | Block 2 finale (2.5) | Flask calculator with validation |
+
+### `documents/` — planning (not student-facing)
+
+Use [documents/](documents/) to collect notes before they become curriculum or lessons. See [documents/README.md](documents/README.md).
 
 | Subfolder | Use for |
 |-----------|---------|
-| `documents/ideas/` | Raw ideas, project hooks, feedback |
+| `documents/ideas/` | Raw ideas, verification improvements, feedback |
 | `documents/plans/` | Milestones, lesson drafts, block outlines |
 | `documents/issues/` | Bugs, gaps, typos, open questions |
 
-Copy `_template.md` from the relevant subfolder when adding a new note. Approved outcomes go into `CURRICULUM.md` or lesson READMEs — not left only in `documents/`.
+Copy `_template.md` from the relevant subfolder when adding a note. After **verify-lesson-in-block**, file suggestions to `ideas/` and gaps to `issues/`. Approved outcomes go into `CURRICULUM.md` or lesson READMEs — not left only in `documents/`.
 
-### Lesson folder convention
+### `tools/` — maintainer utilities
 
-Each lesson lives in its own directory:
+| Path | Purpose |
+|------|---------|
+| `tools/quizzes/*.json` | Quick Check quiz text keyed by lesson folder slug |
+| `tools/apply_lesson_quizzes.py` | Inserts quiz sections into `en.md` / `ru.md` (skips lessons that already have them) |
 
-```
-course-1-python-basics/
-  block-1-meeting-your-computer/
-    lesson-1-1-installing-python/
-      README.md          # Language chooser (required)
-      en.md              # Lesson in English (required)
-      ru.md              # Lesson in Russian (required)
-      starter/           # Optional starter code
-      solution/          # Optional reference solution
-      exercises/         # Optional extra challenges
-```
+### `.cursor/skills/` — agent authoring
+
+| Skill | File | Use when |
+|-------|------|----------|
+| `youth-python-pedagogy` | `SKILL.md` | Tone, pacing, age-appropriate examples |
+| `write-lesson` | `SKILL.md` | New lesson directory and README template |
+| `verify-lesson-in-block` | `SKILL.md` + `block-checklist.md` | After every lesson create/update |
+| `review-lesson` | `SKILL.md` | Manual QA checklist |
+
+### `shared/`
+
+Reserved for cross-course reusable assets (shared HTML snippets, images, CSS). Prefer lesson-local `starter/` / `static/` unless an asset is used in multiple courses.
+
+### Do not commit
+
+Per `.gitignore` and git workflow: `.venv/`, `venv/`, `__pycache__/`, `*.pyc`, student `.env` files, and local IDE noise. Student capstone folders (`my_mission/`, `my_data/`, etc.) are created on the learner's machine — they are not part of the repo template.
 
 ## Commands
 
@@ -128,6 +231,7 @@ def greet(name: str) -> None:
 - Branch per lesson or block: `course-1/lesson-1-1-installing-python`
 - Commit message style: `course-1: add lesson 1.1 installing Python and VS Code`
 - Do not commit `.venv/`, `__pycache__/`, or student `.env` files.
+- **Custom command:** send **`--ok`** in chat when you want the agent to commit current work (see `.cursor/rules/commit-on-ok.mdc`).
 
 ## Skills (project-local)
 

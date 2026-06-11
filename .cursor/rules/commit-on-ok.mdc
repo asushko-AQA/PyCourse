@@ -1,0 +1,25 @@
+---
+description: When the user sends --ok, commit current work to git
+alwaysApply: true
+---
+
+# Custom command: `--ok`
+
+When the user message is **`--ok`** (alone or with brief context), treat it as explicit permission to **commit the current work to git**.
+
+## What to do
+
+1. Run in parallel: `git status`, `git diff`, `git log -5 --oneline` (for message style).
+2. Stage relevant changes only — **never** `.venv/`, `node_modules/`, `.next/`, `__pycache__/`, `.env`, or secrets.
+3. Draft a concise 1–2 sentence commit message focused on **why**, matching repo style.
+4. Commit with a HEREDOC message. Run `git status` after to confirm success.
+5. Reply with the commit hash, message, and a one-line summary of what was committed.
+
+## Do not
+
+- Push unless the user also asks to push.
+- Commit if there are no changes (say so instead of making an empty commit).
+- Amend unless the user rules for amend are fully satisfied.
+- Update git config or use destructive git commands.
+
+If `--ok` appears inside a longer request, still commit **and** handle any other instructions in the same message.

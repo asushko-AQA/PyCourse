@@ -162,6 +162,54 @@ python starter\game.py
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. Where should you create `my_adventure/` for this capstone?
+   - **a)** Inside this lesson's `starter` folder
+   - **b)** At your **project root**, next to `my_data/` — not inside a lesson folder
+   - **c)** Only inside `game.py` as a comment
+   - **d)** On the Python install drive only
+
+2. In the `rooms` dict, where does `"south": "start"` live?
+   - **a)** At the top level of `rooms` as `rooms["south"]`
+   - **b)** **Inside** one room's dict — a direction key pointing to another room id
+   - **c)** Inside the `inventory` list
+   - **d)** In a `print()` statement only
+
+3. Which data structure holds picked-up items like the golden key?
+   - **a)** A list called `inventory`
+   - **b)** A single string variable only
+   - **c)** The `while True` loop itself
+   - **d)** `turtle.Turtle()`
+
+4. What is the job of `show_room(room_id)`?
+   - **a)** Add items to inventory automatically
+   - **b)** Print the room's title and description
+   - **c)** Close the game window
+   - **d)** Install Flask
+
+5. Why is `rooms[current_room]["north"]` correct but `rooms["north"]` is wrong?
+   - **a)** `rooms` is a list indexed by numbers only
+   - **b)** Directions like `"north"` are **inside** each room dict, keyed by room id first
+   - **c)** `"north"` is always index 0
+   - **d)** Python does not allow nested dicts
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** Capstone folders (`my_adventure/`) live at project root, like `my_data/` and `my_mission/`.
+2. **b)** Each room dict can have direction keys (`"south"`, `"north"`…) whose values are other room ids.
+3. **a)** The `inventory` **list** grows when you `take` items from rooms.
+4. **b)** `show_room` displays the current room's name and description to the player.
+5. **b)** First pick the room with `current_room`, then look for a direction **inside** that room's dict.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Block 5: Creative Python with Turtle](../../block-5-creative-turtle/README.md) — draw shapes and patterns on screen.

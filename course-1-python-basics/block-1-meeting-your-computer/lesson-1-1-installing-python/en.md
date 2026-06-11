@@ -255,6 +255,54 @@ python my_intro.py
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. During Python installation on Windows, which checkbox is most important?
+   - **a)** Install for all users only
+   - **b)** Add Python to PATH
+   - **c)** Disable pip
+   - **d)** Skip the terminal option
+
+2. What command checks that Python is installed correctly?
+   - **a)** `python --help`
+   - **b)** `python --version`
+   - **c)** `pip install python`
+   - **d)** `code --version`
+
+3. In this course, what is the VS Code terminal often called?
+   - **a)** The Debug Panel
+   - **b)** The Command Portal
+   - **c)** The Extensions Hub
+   - **d)** The Output Window
+
+4. What file extension should a Python script have?
+   - **a)** `.txt`
+   - **b)** `.py`
+   - **c)** `.python`
+   - **d)** `.code`
+
+5. What does a line starting with `#` do in a Python file?
+   - **a)** Deletes the next line
+   - **b)** Is a note for humans — Python ignores it
+   - **c)** Prints text to the screen
+   - **d)** Makes the program run faster
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** PATH tells Windows where Python lives so `python` works from the terminal.
+2. **b)** `python --version` shows your version when install and PATH are correct.
+3. **b)** The lesson calls the terminal your Command Portal for commands and scripts.
+4. **b)** A `.py` file is a Python script — instructions for your computer.
+5. **b)** Comments with `#` are notes for you; Python skips them when running code.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 1.2: Using the Terminal/CLI](../lesson-1-2-using-the-terminal/README.md) — learn to walk through folders like a maze master.

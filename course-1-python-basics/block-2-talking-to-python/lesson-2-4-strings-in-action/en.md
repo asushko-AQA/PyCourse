@@ -110,6 +110,54 @@ See [starter/madlibs.py](starter/madlibs.py) — four inputs, `.upper()`, `.lowe
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. What does `"minecraft".upper()` produce?
+   - **a)** `minecraft`
+   - **b)** `MINECRAFT`
+   - **c)** `Minecraft`
+   - **d)** An error
+
+2. What does `"Alex"[0:3]` produce?
+   - **a)** `Alex`
+   - **b)** `Ale`
+   - **c)** `lex`
+   - **d)** `A`
+
+3. In this lesson, `madlibs.py` is…
+   - **a)** A brand-new script (not an extension of `greeting.py`)
+   - **b)** A copy of `character_sheet.py`
+   - **c)** A file that only uses integers
+   - **d)** A web browser app
+
+4. Why might `creature[5]` cause `IndexError` on a short creature name?
+   - **a)** You asked for a letter position that does not exist
+   - **b)** You forgot the `f` in an f-string
+   - **c)** You used `==` instead of `=`
+   - **d)** You forgot a colon after `if`
+
+5. In the sample story, `power.upper()` makes the superpower…
+   - **a)** ALL CAPS for a dramatic final move
+   - **b)** all lowercase
+   - **c)** Only the first three letters
+   - **d)** Disappear from the story
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** `.upper()` makes ALL CAPS.
+2. **b)** `[0:3]` slices the first three letters: `Ale`.
+3. **a)** The lesson uses a new `madlibs.py` script.
+4. **a)** A 3-letter word only has indices 0, 1, 2; use `[0:3]` for safe slicing.
+5. **a)** `.upper()` on the superpower makes it feel epic (e.g. `LASER`).
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 2.5: Creator Data Pack](../lesson-2-5-creator-data-pack/README.md) — pack all Block 2 skills into one capstone.

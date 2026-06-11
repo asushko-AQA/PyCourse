@@ -115,6 +115,54 @@ Add `/hello/<name>/<age>` with **two** variables. Return: `Hello, Alex! You are 
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. What makes `/hello/<name>` a **dynamic** route?
+   - **a)** Part of the URL changes and Flask passes it into your function
+   - **b)** The page reloads automatically every second
+   - **c)** It only works on mobile phones
+   - **d)** It requires a CSS file
+
+2. In `@app.route("/hello/<name>")` and `def hello(name):`, what must match?
+   - **a)** The variable name in the path and the function parameter
+   - **b)** The port number and the file name
+   - **c)** The browser brand and the OS version
+   - **d)** The HTML tag and the pip version
+
+3. You visit `/hello/Alex`. What should the `name` argument be?
+   - **a)** `Alex`
+   - **b)** `/hello`
+   - **c)** `name`
+   - **d)** `5000`
+
+4. You visit `/hello/` with nothing after the slash. What often happens?
+   - **a)** Flask cannot match the route — often a 404 error
+   - **b)** The server installs Flask again
+   - **c)** The browser deletes the URL
+   - **d)** Python opens a new `.venv`
+
+5. Why use an f-string like `f"Hello, {name}!"`?
+   - **a)** To plug the URL value into the text you send back
+   - **b)** To store files in the `static/` folder
+   - **c)** To activate the virtual environment
+   - **d)** To hide the URL from the user forever
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **a)** `<name>` captures the changing part of the URL.
+2. **a)** The path variable and parameter must share the same name.
+3. **a)** Flask passes the URL segment as `name='Alex'`.
+4. **a)** An empty name usually does not match the route pattern.
+5. **a)** f-strings insert the dynamic value into your greeting.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 1.4: Multiple Routes & URL Calculator](../lesson-1-4-multiple-routes/README.md) — build a mini-site with Home, About, Jokes, and `/add/3/5`.

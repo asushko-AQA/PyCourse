@@ -140,6 +140,54 @@ Run **both** scripts from the lesson folder (Path A) or from your copy folder (P
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. When should you use a `while` loop?
+   - **a)** Repeat **until** a condition becomes False
+   - **b)** Repeat a fixed number of times using `range()` only
+   - **c)** Compare strings with `==`
+   - **d)** Store variables in labeled boxes
+
+2. When is a `for` loop with `range()` a good fit?
+   - **a)** When you need a **fixed number** of repeats (like a times table)
+   - **b)** When you never want the loop to stop
+   - **c)** When you only print True/False
+   - **d)** When you convert input with `int()`
+
+3. What numbers does `range(1, 11)` give you?
+   - **a)** `1` through `10` (11 is **not** included)
+   - **b)** `1` through `11`
+   - **c)** `0` through `10`
+   - **d)** `1` through `9`
+
+4. The terminal prints `5` forever. What is the most likely cause?
+   - **a)** Infinite loop — you forgot to update `counter` inside the `while` loop
+   - **b)** You used `for` instead of `while`
+   - **c)** You forgot quotes around a string
+   - **d)** You used `.upper()` on a number
+
+5. In `countdown.py`, what prints after the loop finishes counting down?
+   - **a)** `Blastoff!`
+   - **b)** `Table complete!`
+   - **c)** `Pattern complete!`
+   - **d)** `Block 2 complete!`
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **a)** `while` repeats while the condition stays True (countdown timer).
+2. **a)** `for` + `range()` marches through a fixed set of steps.
+3. **a)** The **stop** number in `range()` is never included.
+4. **a)** Without `counter = counter - 1`, the condition never becomes False.
+5. **a)** After `5, 4, 3, 2, 1`, countdown prints `Blastoff!`.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 3.4: Loop Patterns](../lesson-3-4-loop-patterns/README.md) — nested loops and ASCII art!

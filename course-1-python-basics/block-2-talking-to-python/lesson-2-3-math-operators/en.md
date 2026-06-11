@@ -112,6 +112,54 @@ print("Quotient:", num1 / num2)
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. What is `10 / 4` in Python?
+   - **a)** `2`
+   - **b)** `2.5`
+   - **c)** `3`
+   - **d)** `2` with no decimal
+
+2. What is `5 * 3`?
+   - **a)** `8`
+   - **b)** `15`
+   - **c)** `53`
+   - **d)** `2`
+
+3. Why wrap `input()` with `int()` before adding numbers?
+   - **a)** Because `input()` gives text, and `int()` turns digits into a real number
+   - **b)** Because `int()` makes strings uppercase
+   - **c)** Because `input()` only works with letters
+   - **d)** Because Python cannot add any numbers
+
+4. You type `hello` when the program expects a number. What error appears?
+   - **a)** `ValueError`
+   - **b)** `NameError`
+   - **c)** `IndexError`
+   - **d)** `SyntaxError`
+
+5. For inputs `10` and `3`, what is the **difference** (`num1 - num2`)?
+   - **a)** `13`
+   - **b)** `7`
+   - **c)** `30`
+   - **d)** `3.333…`
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** `/` can produce a decimal (`2.5`).
+2. **b)** `*` means multiply: `5 * 3 = 15`.
+3. **a)** `input()` returns a string; `int()` converts valid whole-number text.
+4. **a)** `int()` cannot convert non-digit text like `hello`.
+5. **b)** `10 - 3 = 7` (matches the lesson's calculator example).
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 2.4: Strings in Action](../lesson-2-4-strings-in-action/README.md) — transform text with `.upper()` and slicing.

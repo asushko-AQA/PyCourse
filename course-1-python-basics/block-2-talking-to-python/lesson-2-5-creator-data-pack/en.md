@@ -123,6 +123,54 @@ See [solution/creator_pack.py](solution/creator_pack.py) after you try your own 
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. Where should you create the `my_data/` folder for this capstone?
+   - **a)** At your **project root** (next to `my_mission/`, not inside the lesson folder)
+   - **b)** Inside the lesson-2-5 folder only
+   - **c)** In the Python installation folder
+   - **d)** Nowhere — run only from `starter/`
+
+2. Your script should calculate `days = age * 365`. What must happen to `age` first?
+   - **a)** Convert it with `int()` after `input()`
+   - **b)** Leave it as text from `input()`
+   - **c)** Wrap it in quotes
+   - **d)** Delete it before multiplying
+
+3. What does `shout = name.upper()` do?
+   - **a)** Stores the name in ALL CAPS
+   - **b)** Stores the name in all lowercase
+   - **c)** Slices the first three letters
+   - **d)** Compares the name to "ALEX"
+
+4. `TypeError: can't multiply sequence by non-int of type 'str'` often means…
+   - **a)** You used `age = input(...)` without `int()`, then tried `age * 365`
+   - **b)** You forgot a colon after `if`
+   - **c)** You misspelled a variable name
+   - **d)** You used `.upper()` on a number
+
+5. Which Block 2 skills does the Creator Data Pack combine?
+   - **a)** Variables, `input()`, f-strings, math, and string transforms
+   - **b)** Only Turtle graphics
+   - **c)** Only comparisons and `if` statements
+   - **d)** Flask routes and HTML templates
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **a)** Create `my_data/` at project root, like Block 1's `my_mission/`.
+2. **a)** Use `int(input(...))` so `age` is a number before `* 365`.
+3. **a)** `.upper()` makes the name shout in ALL CAPS.
+4. **a)** Multiplying a string by a number repeats text; you need `int()` first.
+5. **a)** The capstone packs all Block 2 data skills into one script.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 3.1: Booleans and Comparisons](../../block-3-making-choices/lesson-3-1-booleans/README.md) — predict true and false in the terminal.

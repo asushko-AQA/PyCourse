@@ -176,6 +176,54 @@ print(name, "loves", favorite_game)
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. What does the `=` sign do in `name = "Alex"`?
+   - **a)** Compares two values
+   - **b)** Puts a value inside a labeled variable
+   - **c)** Prints text to the screen
+   - **d)** Deletes a variable
+
+2. Which line stores a **whole number** correctly?
+   - **a)** `age = "11"`
+   - **b)** `age = 11`
+   - **c)** `age = True`
+   - **d)** `11 = age`
+
+3. If you put quotes around a number like `"11"`, Python treats it as…
+   - **a)** An integer for math
+   - **b)** Text (a string), not a number for math
+   - **c)** A True/False value
+   - **d)** An error that always stops the program
+
+4. You get `NameError: name 'nmae' is not defined`. What is the most likely cause?
+   - **a)** A typo in the variable name (spelling must match exactly)
+   - **b)** You forgot to use `input()`
+   - **c)** You used `==` instead of `=`
+   - **d)** The number was too big
+
+5. You change `name = "Alex"` to `name = "Sam"`. What happens to every `print()` that uses `name`?
+   - **a)** They automatically show the new value
+   - **b)** They still show "Alex" until you restart the computer
+   - **c)** Python deletes the other variables
+   - **d)** You must rename every `print()` line by hand
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** `=` stores a value in a variable (labeled box).
+2. **b)** Integers are whole numbers **without** quotes.
+3. **b)** Quotes make it text; Lesson 2.3 covers fixing that with `int()`.
+4. **a)** Variable names must match exactly; `nmae` ≠ `name`.
+5. **a)** Change the value once; every line using that variable updates.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 2.2: f-strings and input()](../lesson-2-2-f-strings-and-input/README.md) — ask the visitor questions through the mic.

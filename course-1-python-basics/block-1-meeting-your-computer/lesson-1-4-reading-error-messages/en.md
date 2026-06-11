@@ -230,6 +230,54 @@ python starter\right_name.py
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. When reading an error traceback, which line should you read first?
+   - **a)** The very top line
+   - **b)** The last line — it shows the error type and message
+   - **c)** Line 1 of every file
+   - **d)** Only the middle lines
+
+2. `SyntaxError: unterminated string literal` usually means…
+   - **a)** You spelled the filename wrong in the terminal
+   - **b)** A string is missing a closing quote `"` in your code
+   - **c)** Python is not installed
+   - **d)** You are in the wrong folder
+
+3. `python: can't open file 'wrong_name.py'` is different from SyntaxError because…
+   - **a)** Python never read your code — the file was not found
+   - **b)** It means your code grammar is perfect
+   - **c)** It only happens on Mac
+   - **d)** You need to check Add to PATH again
+
+4. In VS Code, how do you jump to line 4 after seeing `line 4` in an error?
+   - **a)** Press **Ctrl+G**, type `4`, press **Enter**
+   - **b)** Press **Ctrl+Z** four times
+   - **c)** Delete line 4
+   - **d)** Restart the computer
+
+5. `SyntaxError: '(' was never closed` suggests you should look for…
+   - **a)** A missing closing parenthesis `)` in a `print()` call
+   - **b)** A wrong filename typed in the terminal
+   - **c)** A missing Python install
+   - **d)** Too many folders in PATH
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** Scroll to the bottom and read the last line first — the detective rule.
+2. **b)** An unterminated string means a quote was never closed in your code.
+3. **a)** This is a terminal/file error — Python did not even start reading your script.
+4. **a)** **Ctrl+G** jumps your cursor to the line number from the error.
+5. **a)** A `print(` without `)` triggers this SyntaxError.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 1.5: Mission Control Badge](../lesson-1-5-mission-control-badge/README.md) — earn your Block 1 capstone badge!

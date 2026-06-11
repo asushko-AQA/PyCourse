@@ -165,6 +165,54 @@ Save and run again.
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. What does `draw_branch(length)` do inside the function?
+   - **a)** Only `forward(length)`
+   - **b)** `forward(length)` then `backward(length)` — turtle returns to the joint
+   - **c)** Changes the window title
+   - **d)** Imports turtle again
+
+2. Why call `draw_branch(100)` and then `draw_branch(70)` with a turn between?
+   - **a)** To draw two separate recipes — main stem and side branch of the snowflake
+   - **b)** Because functions can only run once per file
+   - **c)** To fix a SyntaxError
+   - **d)** To close the turtle window faster
+
+3. Lines inside `def draw_branch(length):` must be…
+   - **a)** At the left margin with no spaces
+   - **b)** **Indented** (four spaces) under the `def` line
+   - **c)** Written in ALL CAPS
+   - **d)** Placed before `import turtle`
+
+4. If `forward` and `backward` are **not** indented under `def`, what error appears?
+   - **a)** KeyError
+   - **b)** `IndentationError: expected an indented block after function definition`
+   - **c)** IndexError
+   - **d)** No error — Python guesses they belong inside
+
+5. Where should the Block 5 gallery capstone folder `my_gallery/` live?
+   - **a)** Inside `starter/` only
+   - **b)** At **project root**, with `gallery.py` copied from the lesson starter
+   - **c)** Inside the turtle window
+   - **d)** In `course-2-web-apps`
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** Forward then backward brings the turtle back to the branch point for the next turn.
+2. **a)** Same function, different lengths — reusable recipe for each arm of the Y shape.
+3. **b)** Everything under `def` must be indented so Python knows it belongs to the function.
+4. **b)** Python requires an indented block after every `def` line.
+5. **b)** `my_gallery/` goes at project root; copy `gallery.py` there to show star + snowflake together.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Course 2: Web Applications with Python](../../../../course-2-web-apps/README.md) — you finished Course 1! Next: Flask and web pages.

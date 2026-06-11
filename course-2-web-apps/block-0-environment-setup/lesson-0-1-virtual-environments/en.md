@@ -131,6 +131,54 @@ Your prompt returns to normal. Run `check_setup.py` again without the venv — s
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. What is a virtual environment (`.venv`) like in this lesson?
+   - **a)** A folder that keeps packages for just this project
+   - **b)** A special browser for testing websites
+   - **c)** A backup copy of all your Python files
+   - **d)** A command that deletes old packages
+
+2. When your venv is active, what do you often see at the start of the terminal prompt?
+   - **a)** `[Flask]`
+   - **b)** `(.venv)`
+   - **c)** `>>> `
+   - **d)** `C:\Windows\`
+
+3. What does `pip install flask` do in an **activated** venv?
+   - **a)** Installs Flask only inside that venv
+   - **b)** Deletes Flask from your computer
+   - **c)** Opens Flask in the browser automatically
+   - **d)** Copies Flask into every Python project on your PC
+
+4. Why should you activate the venv before running `python starter\check_setup.py`?
+   - **a)** So Python can find Flask that you installed in the venv
+   - **b)** Because `.py` files only run after activation
+   - **c)** To make the script run twice as fast
+   - **d)** Because VS Code refuses to open the terminal otherwise
+
+5. What does `deactivate` do?
+   - **a)** Turns off the venv and returns you to normal terminal Python
+   - **b)** Deletes the `.venv` folder forever
+   - **c)** Uninstalls Flask from the internet
+   - **d)** Closes VS Code
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **a)** A venv is a project toolbox — packages stay separate from other projects.
+2. **b)** `(.venv)` in the prompt means the virtual environment is active.
+3. **a)** `pip install` inside an active venv installs only there.
+4. **a)** Without activation, Python may not see packages you installed in `.venv`.
+5. **a)** `deactivate` exits the venv — you are back to system Python.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 0.2: How the Web Works](../lesson-0-2-how-the-web-works/README.md) — learn what happens when you open a URL.

@@ -146,6 +146,54 @@ On the home page, add another link: `<a href='/add/100/25'>/add/100/25</a>`. Ref
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. How can one Flask `app` serve Home, About, and Jokes?
+   - **a)** Several `@app.route` decorators — one function per path
+   - **b)** Only one route is allowed per file
+   - **c)** You must run a separate `python` command for each page
+   - **d)** Each page needs its own `.venv`
+
+2. In `<a href='/about'>About</a>`, what does `href` tell the browser?
+   - **a)** Which path to request when the link is clicked
+   - **b)** Which CSS color to use
+   - **c)** Which pip package to install
+   - **d)** The secret key for flash messages
+
+3. What does `<int:a>` in `/add/<int:a>/<int:b>` tell Flask?
+   - **a)** Capture a whole number from the URL and call it `a`
+   - **b)** Accept any word, including `three`
+   - **c)** Import the math module automatically
+   - **d)** Send the form with POST
+
+4. Why does `/add/three/five` fail with `<int:a>`?
+   - **a)** `three` and `five` are words, not integers
+   - **b)** Addition only works on the home page
+   - **c)** The browser cannot click links
+   - **d)** Flask does not allow more than one route
+
+5. This lesson's URL calculator puts numbers where?
+   - **a)** In the address bar as part of the URL
+   - **b)** Inside a hidden `static/` folder only
+   - **c)** In the terminal prompt after `(.venv)`
+   - **d)** In a `{% block content %}` in Jinja2
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **a)** Each path gets its own route function in the same `app`.
+2. **a)** `href` is the link destination path.
+3. **a)** `<int:a>` converts the URL piece to an integer named `a`.
+4. **a)** Integer converters reject non-numeric text.
+5. **a)** `/add/3/5` passes numbers through the URL itself.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 2.1: HTML Templates](../../block-2-making-it-beautiful-interactive/lesson-2-1-html-templates/README.md) — move HTML into template files with `render_template`.

@@ -105,6 +105,54 @@ Open `http://127.0.0.1:5000/` and click **About** and **Jokes**.
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. Why move HTML into a `templates/` folder instead of one giant string in `app.py`?
+   - **a)** Easier to read, edit, and reuse layout across pages
+   - **b)** Flask refuses to return strings after Block 1
+   - **c)** Browsers cannot show strings anymore
+   - **d)** pip installs templates automatically
+
+2. What does `render_template("home.html", headline="Welcome")` do?
+   - **a)** Fills the template with variables and sends HTML to the browser
+   - **b)** Downloads home.html from the internet
+   - **c)** Copies CSS into the terminal
+   - **d)** Activates the virtual environment
+
+3. In Jinja2, what does `{{ headline }}` mean?
+   - **a)** Show the value of the `headline` variable from Python
+   - **b)** Start a Python function
+   - **c)** Comment out HTML
+   - **d)** Link to `static/style.css`
+
+4. What is `{% block content %}` in `base.html` for?
+   - **a)** A placeholder where each child page puts its unique content
+   - **b)** A list of pip packages
+   - **c)** The Flask secret key
+   - **d)** The port number (5000)
+
+5. A child template starts with `{% extends "base.html" %}`. What does that mean?
+   - **a)** Reuse the shared frame (nav, layout) from `base.html`
+   - **b)** Delete `base.html` after saving
+   - **c)** Run the app without `app.run()`
+   - **d)** Send forms with GET only
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **a)** Templates separate page layout from Python logic.
+2. **a)** `render_template` merges data into HTML files.
+3. **a)** Double braces print a variable's value.
+4. **a)** Child templates fill in the `content` block.
+5. **a)** `extends` inherits the parent layout.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 2.2: HTML Forms](../lesson-2-2-html-forms/README.md) — send data with GET and POST.

@@ -144,6 +144,54 @@ No keyboard input — output appears immediately.
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. In `inventory = ["torch", "rope"]`, what is the index of `"torch"`?
+   - **a)** `1`
+   - **b)** `0`
+   - **c)** `-1`
+   - **d)** `"torch"`
+
+2. Which method adds a new item to the **end** of a list?
+   - **a)** `.add()`
+   - **b)** `.append()`
+   - **c)** `.insert(0)` only
+   - **d)** `.print()`
+
+3. Why does the lesson use `print(f"{i + 1}. {inventory[i]}")` instead of `i` alone?
+   - **a)** Python lists start at 1
+   - **b)** So players see `1. torch` instead of `0. torch`
+   - **c)** `i + 1` makes the list longer
+   - **d)** It fixes IndexError automatically
+
+4. How do you get the **last** item in a list without counting indexes?
+   - **a)** `inventory[0]`
+   - **b)** `inventory[-1]`
+   - **c)** `inventory[last]`
+   - **d)** `inventory.len()`
+
+5. You have 3 items in `inventory` (indexes 0, 1, 2). What happens if you run `print(inventory[3])`?
+   - **a)** It prints `3`
+   - **b)** `IndexError: list index out of range`
+   - **c)** It prints the first item again
+   - **d)** The list grows to four items
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** List indexes start at **0** — the first slot is index 0.
+2. **b)** `.append()` adds one new item to the end of the backpack.
+3. **b)** Adding 1 to `i` shows human-friendly numbering (1, 2, 3…) while indexes stay 0-based.
+4. **b)** `inventory[-1]` is the last slot — handy when you do not want to count.
+5. **b)** Index 3 does not exist in a 3-item list; valid indexes are 0, 1, and 2 only.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 4.3: Dictionaries](../lesson-4-3-dictionaries/README.md) — store character stats with labeled keys.

@@ -156,6 +156,54 @@ Look at `pip show flask` in the terminal. Find the **Location** line — that is
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. This lesson is mainly a check that Flask is ready — not a repeat of what step from Block 0?
+   - **a)** Creating and using a virtual environment
+   - **b)** Learning Turtle graphics
+   - **c)** Writing Mad-Libs in the terminal
+   - **d)** Installing Pygame
+
+2. If `pip list` shows Flask while `(.venv)` is active, where is Flask installed?
+   - **a)** Inside your project's venv
+   - **b)** Only on the Flask company website
+   - **c)** Inside your browser cache
+   - **d)** In every folder on your Desktop
+
+3. You run `python starter\check_flask.py` and get `ModuleNotFoundError: No module named 'flask'`. What is the most likely fix?
+   - **a)** Activate the venv, then `pip install flask`, then run again
+   - **b)** Delete `.venv` and never use pip again
+   - **c)** Change the port to 8080
+   - **d)** Add `@app.route` to the check script
+
+4. What should `check_flask.py` print when everything works?
+   - **a)** `Flask import OK!` and a Flask version line
+   - **b)** `Hello, Web World!` in the browser only
+   - **c)** A list of every website on the internet
+   - **d)** Nothing — silence means success
+
+5. Why do Flask lessons start by activating `.venv`?
+   - **a)** So Python uses the toolbox where Flask lives
+   - **b)** Because Flask only works on Tuesdays
+   - **c)** To turn on `debug=True` automatically
+   - **d)** Because routes cannot be created without it
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **a)** Block 0 taught venv + pip; this lesson verifies Flask is there.
+2. **a)** Active venv + `pip list` shows packages in that environment.
+3. **a)** Usually the venv is off or Flask was never installed there.
+4. **a)** The check script confirms import and prints the version.
+5. **a)** Flask must be importable from the activated project venv.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 1.2: First Web Page](../lesson-1-2-first-web-page/README.md) — serve **Hello, Web World!** in your browser.

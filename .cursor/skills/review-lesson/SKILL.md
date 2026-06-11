@@ -29,6 +29,7 @@ Lesson Review: [lesson path]
 - [ ] Starter code runs without errors
 - [ ] Solution code runs and matches README steps
 - [ ] Debug corner present with real error example
+- [ ] Quick Check / Проверь себя: 3–5 MC questions with collapsible answers
 - [ ] Try it yourself has at least one required challenge
 - [ ] "What's next" link is correct
 - [ ] Language is age 11+ appropriate (youth-python-pedagogy)

@@ -273,6 +273,54 @@ Use the tick-box checklist: [exercises/quest_paths.md](exercises/quest_paths.md)
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. What does `cd ..` do?
+   - **a)** Deletes the current folder
+   - **b)** Walks back one folder level to the parent folder
+   - **c)** Lists all files in the folder
+   - **d)** Clears the terminal screen
+
+2. On Windows, which command shows files in your current folder?
+   - **a)** `ls`
+   - **b)** `dir`
+   - **c)** `show`
+   - **d)** `list`
+
+3. What does the text before `>` in your terminal prompt show?
+   - **a)** Your Python version
+   - **b)** Your current folder path
+   - **c)** The last error message
+   - **d)** Your password
+
+4. How do you clear a messy terminal screen on Windows?
+   - **a)** `cls`
+   - **b)** `clear`
+   - **c)** `cd ..`
+   - **d)** `dir`
+
+5. Pressing **Tab** after typing part of a folder name in `cd` can…
+   - **a)** Delete the folder
+   - **b)** Autocomplete the folder name for you
+   - **c)** Run Python automatically
+   - **d)** Close VS Code
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** Two dots `..` mean "the folder above" — you move up one level.
+2. **b)** `dir` lists everything in the current folder on Windows (`ls` on Mac/Linux).
+3. **b)** The path before `>` is your current location in the folder maze.
+4. **a)** `cls` clears the screen on Windows; Mac/Linux use `clear`.
+5. **b)** Tab helps avoid typos by completing folder names as you type.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 1.3: Running Your First Script](../lesson-1-3-running-your-first-script/README.md) — master the full launch sequence: save, `cd`, run.

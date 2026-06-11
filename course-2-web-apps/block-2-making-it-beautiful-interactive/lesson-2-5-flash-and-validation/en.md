@@ -138,6 +138,54 @@ python starter\app.py
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. Why does `flash()` need `app.secret_key`?
+   - **a)** Flash uses sessions locally; the secret key makes that work
+   - **b)** To change the CSS background color
+   - **c)** To replace `request.form`
+   - **d)** Because addition only works with a secret
+
+2. When should you call `flash("Please enter both numbers.")`?
+   - **a)** When a required field is empty after POST
+   - **b)** Every time the server starts
+   - **c)** Before activating `.venv`
+   - **d)** Only when the user visits with GET
+
+3. User types `abc` in a number field. What should happen?
+   - **a)** Show a friendly flash error — not a scary crash
+   - **b)** Silently ignore the form forever
+   - **c)** Delete `calc.html`
+   - **d)** Redirect to Course 3 automatically
+
+4. How is this form calculator different from Block 1's `/add/3/5`?
+   - **a)** Users type numbers in a form instead of putting them in the URL
+   - **b)** It does not use Python
+   - **c)** It cannot show errors
+   - **d)** It only works without templates
+
+5. Where do you loop to **display** flash messages in the template?
+   - **a)** `{% for message in get_flashed_messages() %}`
+   - **b)** `{% extends "flash.html" %}` only
+   - **c)** `request.args.get("message")`
+   - **d)** Inside `static/style.css`
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **a)** Sessions need a secret key to store flash messages safely.
+2. **a)** Flash user-friendly errors when validation fails.
+3. **a)** Catch bad input with `try/except` or checks, then `flash()`.
+4. **a)** Forms hide numbers from the URL and feel more like real apps.
+5. **a)** `get_flashed_messages()` returns messages to show once.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Block 2 readiness checklist](../README.md#block-2-readiness-checklist)  

@@ -207,6 +207,56 @@ Type `browser`, `server`, and `url` when prompted (or try wrong answers to see t
 
 ---
 
+## Quick Check
+
+*Concept check — you also built the coding quiz in `web_quiz.py`. These questions test the ideas.*
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. In the browser–server story, who **sends the request** first?
+   - **a)** Browser
+   - **b)** Server
+   - **c)** URL
+   - **d)** pip
+
+2. What is a **URL**?
+   - **a)** The web address that tells the browser where to ask
+   - **b)** A Python file that runs Flask
+   - **c)** The HTML code inside a page
+   - **d)** A kind of virtual environment
+
+3. What does a **server** do in this lesson?
+   - **a)** Waits for requests and sends back responses
+   - **b)** Only draws pictures on your screen
+   - **c)** Stores all your `.venv` folders
+   - **d)** Replaces the need for a browser
+
+4. In the round trip, what is a **response**?
+   - **a)** What the server sends back (like an HTML page)
+   - **b)** What you type into `input()` in the quiz
+   - **c)** The name of the Flask install command
+   - **d)** A broken link in the address bar
+
+5. What does status **200 OK** usually mean?
+   - **a)** Success — here is the page you asked for
+   - **b)** The browser is offline
+   - **c)** The server deleted the website
+   - **d)** You must install Flask again
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **a)** The browser asks first; the server answers.
+2. **a)** URL = the address bar text that points to a resource.
+3. **a)** The server listens and replies with pages or data.
+4. **a)** A response is what travels back from server to browser.
+5. **a)** 200 OK means the request succeeded.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 1.1: Installing Flask](../../block-1-web-basics-flask/lesson-1-1-installing-flask/README.md) — verify Flask inside your venv and get ready to serve pages.

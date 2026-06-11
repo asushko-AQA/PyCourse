@@ -69,9 +69,9 @@ Example pattern:
 
 ## Assessment (lightweight)
 
-End each lesson with **Try it yourself**:
+Each lesson has two check-ins:
 
-- 1 required challenge (extends the lesson project slightly)
-- 1 optional stretch goal (for fast finishers)
+1. **Try it yourself** (coding) — 1 required challenge + 1 optional stretch.
+2. **Quick Check** / **Проверь себя** (reading) — 3–5 multiple-choice questions after Debug corner, before What's next. Use collapsible `<details>` for answers so students try first.
 
-Never grade; use encouraging language: "Bonus quest", "Level up".
+Never grade; use encouraging language: "Bonus quest", "Level up". Wrong quiz answers are fine — they are for self-check only.

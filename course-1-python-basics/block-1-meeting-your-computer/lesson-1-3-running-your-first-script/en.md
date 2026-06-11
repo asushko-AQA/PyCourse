@@ -250,6 +250,54 @@ python launch.py
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. What is the correct launch sequence from this lesson?
+   - **a)** Run first, then save, then `cd`
+   - **b)** Create `.py` file → Save → `cd` to folder → `python file.py`
+   - **c)** `cd` → delete file → `print`
+   - **d)** Save As → never `cd` → run from anywhere
+
+2. Your VS Code tab says `launch.py.txt` instead of `launch.py`. What is wrong?
+   - **a)** You need to install Flask
+   - **b)** The real extension may be hidden — the file is not a true `.py` script
+   - **c)** You must use `python3` instead of `python`
+   - **d)** VS Code is broken
+
+3. You see `can't open file ... No such file or directory`. What is a likely cause?
+   - **a)** A missing quote in `print()`
+   - **b)** Terminal is in the wrong folder or the filename is misspelled
+   - **c)** Python is not installed
+   - **d)** You need more RAM
+
+4. Why should the Explorer folder and terminal prompt match before running `python hello.py`?
+   - **a)** Python only runs on certain days
+   - **b)** Python looks for the file relative to your current terminal folder
+   - **c)** VS Code will crash if they differ
+   - **d)** It only matters for Mac users
+
+5. What does `dir starter` help you do before running a script?
+   - **a)** Delete the `starter` folder
+   - **b)** Confirm `hello.py` (or your script) is listed in that folder
+   - **c)** Install the Python extension
+   - **d)** Clear the screen
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** The launch sequence is create, save, navigate to the right folder, then run.
+2. **b)** Windows can hide extensions — `launch.py.txt` is not a real Python script name.
+3. **b)** This error usually means wrong folder, typo, or a hidden `.txt` extension.
+4. **b)** `python hello.py` looks for the file in the folder shown in your terminal prompt.
+5. **b)** Listing `starter` confirms the script exists before you run it.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 1.4: Reading Error Messages](../lesson-1-4-reading-error-messages/README.md) — become an error detective.

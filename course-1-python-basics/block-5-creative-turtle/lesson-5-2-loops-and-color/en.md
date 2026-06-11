@@ -123,6 +123,54 @@ python starter\star.py
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. How do you set the pen color to red in turtle?
+   - **a)** `t.color = red`
+   - **b)** `t.pencolor("red")`
+   - **c)** `t.pencolor(red)` without quotes
+   - **d)** `import red`
+
+2. What turn angle does `star.py` use for a five-point star?
+   - **a)** `right(72)`
+   - **b)** `right(144)`
+   - **c)** `left(90)`
+   - **d)** `right(360)`
+
+3. Why store colors in a list like `["red", "orange", ...]`?
+   - **a)** Lists cannot hold strings
+   - **b)** To pick a different color each loop step with `colors[point]`
+   - **c)** Because `pencolor()` only accepts lists
+   - **d)** To fix `turtle.done()`
+
+4. You append `"purple"` to the colors list but keep `for point in range(5):`. How many star **points** draw?
+   - **a)** 6 — one per list item
+   - **b)** Still 5 — the loop still runs 5 times
+   - **c)** 0 — the star disappears
+   - **d)** 10 — double the colors
+
+5. `turtle.TurtleGraphicsError: bad color string: purpel` means…
+   - **a)** Turtle is not installed
+   - **b)** The color name is misspelled — Python does not recognize `"purpel"`
+   - **c)** You forgot `turtle.done()`
+   - **d)** The window is behind VS Code
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** Color names go in **quotes** inside `pencolor("red")`.
+2. **b)** The lesson uses `right(144)` — the magic angle for a five-point star.
+3. **b)** Index the list each loop pass so each star segment gets its own color.
+4. **b)** The loop count (`range(5)`) controls points; extra list colors are unused unless you change the loop.
+5. **b)** Fix the spelling — e.g. `"purple"` — and run again.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 5.3: Functions and Turtle](../lesson-5-3-functions-and-turtle/README.md) — build a snowflake branch with a reusable function.

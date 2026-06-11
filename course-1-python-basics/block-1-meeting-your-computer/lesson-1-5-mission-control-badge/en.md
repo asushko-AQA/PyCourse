@@ -233,6 +233,54 @@ If any box is empty, revisit that lesson before continuing.
 
 ---
 
+## Quick Check
+
+Pick the best answer for each question. Try without scrolling down first!
+
+1. Where should you create the `my_mission` folder for this capstone?
+   - **a)** Inside a lesson's `starter` folder
+   - **b)** Next to `course-1-python-basics` at your project root — not inside a lesson
+   - **c)** Only inside `badge.py`
+   - **d)** Nowhere — use the terminal only
+
+2. How many `print()` lines should your finished `badge.py` have?
+   - **a)** Exactly 1
+   - **b)** 5 to 8 lines of your own output
+   - **c)** 50 minimum
+   - **d)** Zero — only `# TODO` comments
+
+3. What terminal command creates a new folder called `my_mission`?
+   - **a)** `mkdir my_mission`
+   - **b)** `python my_mission`
+   - **c)** `dir my_mission`
+   - **d)** `cd my_mission`
+
+4. After `cd my_mission`, what command runs your badge script?
+   - **a)** `python badge.py`
+   - **b)** `badge.py`
+   - **c)** `run badge`
+   - **d)** `cd badge.py`
+
+5. In Step 7 you break `badge.py` on purpose. What error type do you practice fixing?
+   - **a)** NameError
+   - **b)** SyntaxError (for example a missing `"` in `print()`)
+   - **c)** Database connection error
+   - **d)** A PATH installation error
+
+---
+
+<details><summary>Click to reveal answers</summary>
+
+1. **b)** `my_mission` belongs at project root, beside the course folders.
+2. **b)** The capstone asks for 5–8 personal `print()` lines in your badge.
+3. **a)** `mkdir` makes a new folder; then you `cd` into it.
+4. **a)** From inside `my_mission`, run `python badge.py` to launch your badge.
+5. **b)** Deleting a closing quote causes a SyntaxError — you read it and fix it.
+
+</details>
+
+---
+
 ## What's Next
 
 → [Lesson 2.1: Variables, Strings, Integers](../../block-2-talking-to-python/lesson-2-1-variables/README.md) — Block 2 begins!

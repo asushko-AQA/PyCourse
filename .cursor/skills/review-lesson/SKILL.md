@@ -22,16 +22,19 @@ Copy and mark each item when reviewing:
 
 ```
 Lesson Review: [lesson path]
-- [ ] README follows write-lesson template (all 7 sections)
+- [ ] Follows lesson schema v2 section order (documents/plans/lesson-schema-v2.md)
 - [ ] Matches CURRICULUM.md scope (no scope creep)
 - [ ] One primary concept; pacing fits ~30 min
-- [ ] Every code block has expected output shown
+- [ ] ## Code Example present (full runnable snippet + file ref)
+- [ ] ## Code Execution present (run command + expected output)
+- [ ] Uses canonical ## Practice Task heading (not legacy "Try it yourself")
 - [ ] Starter code runs without errors
-- [ ] Solution code runs and matches README steps
-- [ ] Debug corner present with real error example
+- [ ] Solution code runs and matches the steps
+- [ ] Debug Corner present with real error example
 - [ ] Quick Check / Проверь себя: 3–5 MC questions with collapsible answers
-- [ ] Try it yourself has at least one required challenge
-- [ ] "What's next" link is correct
+- [ ] EN/RU parity: same sections + same number of quiz questions
+- [ ] "What's Next" links to the next lesson's README
+- [ ] Optional <!-- meta --> comment valid if present (homework/checker/minutes)
 - [ ] Language is age 11+ appropriate (youth-python-pedagogy)
 - [ ] No banned topics (see AGENTS.md boundaries)
 ```

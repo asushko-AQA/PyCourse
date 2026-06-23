@@ -17,7 +17,9 @@ import type {
   Lang,
   Lesson,
   LessonContent,
+  LessonMeta,
   QuizQuestion,
+  SectionPresence,
 } from "./types";
 import { LANGS } from "./types";
 
@@ -77,6 +79,62 @@ function splitSections(md: string): { preamble: string; sections: Section[] } {
   }
   if (current) sections.push(current);
   return { preamble: preambleLines.join("\n"), sections };
+}
+
+// ---------------------------------------------------------------------------
+// Schema v2 metadata comment
+// ---------------------------------------------------------------------------
+
+/** Matches the optional `<!-- meta ... -->` block (lesson schema v2). */
+const META_RE = /<!--\s*meta\b([\s\S]*?)-->/i;
+
+/**
+ * Parse and strip the schema-v2 metadata comment. The comment is never rendered;
+ * stripping it keeps it out of the Theory tab. Unknown keys are ignored.
+ */
+function parseMeta(md: string): { meta: LessonMeta | null; stripped: string } {
+  const m = md.match(META_RE);
+  if (!m) return { meta: null, stripped: md };
+
+  const meta: LessonMeta = {};
+  for (const line of m[1].split(/\r?\n/)) {
+    const kv = line.match(/^\s*([a-zA-Z_]+)\s*:\s*(.+?)\s*$/);
+    if (!kv) continue;
+    const key = kv[1].toLowerCase();
+    const val = kv[2].trim();
+    if (key === "homework") meta.homework = val;
+    else if (key === "checker") meta.checker = val;
+    else if (key === "minutes") {
+      const n = Number(val);
+      if (!Number.isNaN(n)) meta.minutes = n;
+    }
+  }
+
+  const stripped = md.replace(META_RE, "").replace(/\n{3,}/g, "\n\n");
+  return { meta: Object.keys(meta).length > 0 ? meta : null, stripped };
+}
+
+/**
+ * Map a `## ` heading to a canonical schema-v2 section key (or "" if it is not one of
+ * the tracked sections). Used to record section presence for the validator.
+ */
+function canonicalSection(heading: string): keyof SectionPresence | "" {
+  const h = heading
+    .toLowerCase()
+    .replace(/[*_`]/g, "")
+    .trim();
+  if (/^(code example|пример кода)$/.test(h)) return "codeExample";
+  if (/^(code execution|запуск кода|выполнение кода)$/.test(h))
+    return "codeExecution";
+  if (
+    /^(practice task|задание для практики|практическое задание|try it yourself|попробуй сам)/.test(
+      h,
+    )
+  )
+    return "practiceTask";
+  if (/^(debug corner|уголок отладки|отладка|разбор ошибок)/.test(h))
+    return "debugCorner";
+  return "";
 }
 
 type SectionCategory = "title" | "theory" | "assignments" | "quiz" | "next";
@@ -210,15 +268,25 @@ function extractLevelTitle(body: string): string | null {
 }
 
 function parseLessonFile(filePath: string): LessonContent {
-  const md = fs.readFileSync(filePath, "utf-8");
-  const { preamble, sections } = splitSections(md);
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const { meta, stripped } = parseMeta(raw);
+  const { preamble, sections } = splitSections(stripped);
 
   let levelTitle: string | null = null;
   const theoryParts: string[] = [];
   const assignmentParts: string[] = [];
   let quiz: QuizQuestion[] = [];
+  const present: SectionPresence = {
+    codeExample: false,
+    codeExecution: false,
+    practiceTask: false,
+    debugCorner: false,
+  };
 
   for (const section of sections) {
+    const canonical = canonicalSection(section.heading);
+    if (canonical) present[canonical] = true;
+
     const category = categorize(section.heading);
     const chunk = `## ${section.heading}\n${section.body}`;
     switch (category) {
@@ -245,6 +313,8 @@ function parseLessonFile(filePath: string): LessonContent {
     theory: stripRelativeLinks(theoryParts.join("\n").trim()),
     assignments: stripRelativeLinks(assignmentParts.join("\n").trim()),
     quiz,
+    meta,
+    present,
   };
 }
 

@@ -13,8 +13,9 @@ description: >-
 
 1. Read [CURRICULUM.md](../../../CURRICULUM.md) for the target lesson scope.
 2. Read [AGENTS.md](../../../AGENTS.md) for structure and code style.
-3. Apply **youth-python-pedagogy** for tone and pacing.
-4. Confirm prerequisites from prior lessons are met.
+3. Read the canonical **lesson schema v2**: [documents/plans/lesson-schema-v2.md](../../../documents/plans/lesson-schema-v2.md) — new lessons MUST follow it.
+4. Apply **youth-python-pedagogy** for tone and pacing.
+5. Confirm prerequisites from prior lessons are met.
 
 ## Directory Path
 
@@ -44,7 +45,14 @@ Student-facing lessons are split by language:
 
 Each language file links back to `README.md` and to the other language. Link "What's next" to the **next lesson's `README.md`** (chooser), not directly to `en.md`/`ru.md`.
 
-**Section headings:** English files use English headings (`## Title`, `## Quick Drills`, `## Quick Check`); Russian files use Russian headings (`## Заголовок`, `## Быстрые упражнения`, `## Проверь себя`). Keep the same section order in both languages.
+**Section headings (schema v2):** use the canonical headings in this exact order —
+`## Title` → `## Explanation` + `### Step N` → `## Code Example` → `## Code Execution` →
+`## Quick Drills` → `## Practice Task` → `## Debug Corner` → `## Quick Check` →
+`## What's Next`. Russian files use the matching localized headings (`## Объяснение`,
+`## Пример кода`, `## Запуск кода`, `## Быстрые упражнения`, `## Задание для практики`,
+`## Уголок отладки`, `## Проверь себя`, `## Что дальше`). Use `## Practice Task` — **not**
+the legacy `## Try it yourself`. `## Code Example` and `## Code Execution` are **required**.
+Keep the same section set in both languages.
 
 **Quick Check (required):** Place after Debug corner, before What's next. Include 3–5 multiple-choice questions (a–d) with collapsible answers. Quiz data for bulk updates lives in `tools/quizzes/*.json`; run `python tools/apply_lesson_quizzes.py` after editing JSON.
 
@@ -57,26 +65,28 @@ Copy and fill in:
 ```markdown
 # Lesson X.Y: [Title]
 
-> **Course:** [Course name] · **Block:** [Block name] · **Time:** ~30 min
+> **Course:** [Course name] · **Block:** [Block name] · **~30 min**
+> [Choose language](README.md) · [Русский →](ru.md)
 
-## What you'll build
-
-[One sentence + expected output description or screenshot placeholder]
-
-## What you'll learn
-
-- [Concept 1]
-- [Concept 2]
-- [Concept 3]
-
-## Before you start
-
-- [ ] Prerequisite lesson completed
-- [ ] [Setup check, e.g. Python 3.12 installed]
+<!-- meta
+homework: starter/main.py
+checker: checkers/lesson-X-Y.yaml
+minutes: 30
+-->
 
 ---
 
-## Step 1: [Action title]
+## Title
+
+**Level N — [Fun level name]**
+
+---
+
+## Explanation
+
+[Intro prose — what this lesson builds and why]
+
+### Step 1: [Action title]
 
 [1–3 sentences of explanation]
 
@@ -84,33 +94,59 @@ Copy and fill in:
 # code here
 \`\`\`
 
+[Repeat Steps 2–N]
+
+---
+
+## Code Example
+
+**File: [starter/main.py](starter/main.py)**
+
+\`\`\`python
+# full runnable snippet for this lesson
+\`\`\`
+
+---
+
+## Code Execution
+
+\`\`\`text
+cd course-N-.../block-B-.../lesson-X-Y-...
+python starter\main.py
+\`\`\`
+
 **Expected output:**
 
-\`\`\`
+\`\`\`text
 output here
 \`\`\`
 
 ---
 
-[Repeat Steps 2–N]
+## Quick Drills
+
+1. [Micro-drill]
+2. [Micro-drill]
 
 ---
 
-## Try it yourself
+## Practice Task
 
-### Challenge 1 (required)
-[Description + hint]
+[Main exercise + bonus]
 
-### Challenge 2 (bonus)
-[Optional stretch]
+**Reference solution:** [solution/main.py](solution/main.py)
 
-## Debug corner
+---
+
+## Debug Corner
 
 **Problem:** [Error or bug description]
 
 **Cause:** [Why it happens]
 
 **Fix:** [How to fix]
+
+---
 
 ## Quick Check
 
@@ -135,10 +171,14 @@ Pick the best answer for each question. Try without scrolling down first!
 
 ---
 
-## What's next
+## What's Next
 
 → [Next lesson title](relative/path/to/next/README.md)
 ```
+
+The `<!-- meta -->` comment is optional and invisible; include it only when the lesson has
+a checkable homework/practice task. See
+[lesson schema v2](../../../documents/plans/lesson-schema-v2.md) for the full contract.
 
 ## Starter / Solution Rules
 

@@ -25,6 +25,30 @@ export interface QuizQuestion {
   explanation: string;
 }
 
+/**
+ * Optional machine-readable metadata declared via the `<!-- meta ... -->` comment
+ * (lesson schema v2). Not rendered; used for DB metadata, star sources, and checkers.
+ */
+export interface LessonMeta {
+  /** Relative path to the file/task a learner submits (homework star source). */
+  homework?: string;
+  /** Relative path to the checker spec (hidden tests) used by homework checking. */
+  checker?: string;
+  /** Estimated lesson length in minutes. */
+  minutes?: number;
+}
+
+/**
+ * Which canonical schema-v2 sections were found in a lesson file. Used by the content
+ * validator to warn (non-fatal) about migration gaps without special-casing prose.
+ */
+export interface SectionPresence {
+  codeExample: boolean;
+  codeExecution: boolean;
+  practiceTask: boolean;
+  debugCorner: boolean;
+}
+
 /** Language-specific content of a single lesson. */
 export interface LessonContent {
   /** Human title, e.g. "Variables, Strings, Integers" (number prefix stripped). */
@@ -37,6 +61,10 @@ export interface LessonContent {
   assignments: string;
   /** Structured quiz for the Quiz tab. */
   quiz: QuizQuestion[];
+  /** Schema-v2 metadata from the `<!-- meta -->` comment, or null if absent. */
+  meta: LessonMeta | null;
+  /** Which canonical schema-v2 sections were present in the source markdown. */
+  present: SectionPresence;
 }
 
 export interface Lesson {

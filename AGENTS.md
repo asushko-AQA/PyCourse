@@ -14,6 +14,26 @@ Python course for young creators (age 11+). Three courses: **Python Basics**, **
 
 Full expanded curriculum: [CURRICULUM.md](CURRICULUM.md)
 
+## Platform Architecture
+
+PyCourse is evolving from a markdown-only course repo into a gamified, multi-channel
+learning platform (web app + Telegram bot, shared FastAPI backend, SQLite, stars/streaks,
+external homework execution). The **canonical architecture source of truth** is
+[documents/plans/platform-architecture.md](documents/plans/platform-architecture.md).
+
+Binding decisions (do not re-litigate in individual plans):
+
+1. **Stack** — FastAPI backend (`backend/`, shared core) + Next.js frontend (`frontend/`);
+   web app and Telegram bot (`bot/`) both consume the backend over HTTP; the bot is a
+   separate process.
+2. **Lesson storage** — markdown in git is canonical; SQLite stores only metadata + user
+   data (a sync job indexes markdown → DB).
+3. **Gamification** — stars + streaks are primary; legacy XP/levels is retired.
+4. **Homework checking** — student `.py` runs on an external executor (Piston/Judge0),
+   never inside the backend process.
+
+The atomic build plans (00–17) live in `tmp/`; completed plans move to `tmp/completed/`.
+
 ## Repository Structure
 
 Three-level hierarchy for all course content: **course → block → lesson**. Planning and tooling sit beside the courses at the repo root.
@@ -76,17 +96,26 @@ One folder per lesson. Slug has no lesson number in the name (numbers live in th
 | `solution/` | Usually | Reference code matching starter filenames |
 | `exercises/` | Optional | Extra challenges — `.md` prompts and/or `.py` drill scripts |
 
-**Lesson `en.md` / `ru.md` section order** (use matching headings in Russian for `ru.md`):
+**Lesson `en.md` / `ru.md` section order** — the canonical format is **lesson schema v2**;
+the full contract (sections, metadata comment, quiz hash, parity rules) lives in
+[documents/plans/lesson-schema-v2.md](documents/plans/lesson-schema-v2.md). Use matching
+localized headings in `ru.md`.
 
-1. Title and intro
-2. Numbered tutorial steps
-3. Quick Drills / Быстрые упражнения
-4. Practice Task / Задание для практики (or Try it yourself)
-5. Debug Corner / Уголок отладки
-6. **Quick Check** / **Проверь себя** — 3–5 multiple-choice questions, collapsible answers
-7. What's Next / Что дальше (or **Дальше** in some Block 1 RU files) — link to **next lesson's `README.md`**
+1. Title and intro (optional `<!-- meta ... -->` comment for `homework`/`checker`/`minutes`)
+2. `## Title` (bold level name)
+3. `## Explanation` + numbered `### Step N` tutorial steps
+4. `## Code Example` — full runnable snippet + file ref **(required in v2)**
+5. `## Code Execution` — exact run command + **Expected output** **(required in v2)**
+6. Quick Drills / Быстрые упражнения
+7. **Practice Task** / Задание для практики (canonical heading; legacy `Try it yourself` is normalized)
+8. Debug Corner / Уголок отладки
+9. **Quick Check** / **Проверь себя** — 3–5 multiple-choice questions, collapsible answers
+10. What's Next / Что дальше (legacy **Дальше** normalized) — link to **next lesson's `README.md`**
 
-Link "What's next" to the **README** chooser, not directly to `en.md` or `ru.md`.
+Link "What's next" to the **README** chooser, not directly to `en.md` or `ru.md`. New
+lessons must use the canonical headings; the parser only normalizes legacy variants for
+already-published lessons (migration tracked in
+[documents/issues/lesson-schema-v2-gap-list.md](documents/issues/lesson-schema-v2-gap-list.md)).
 
 ### Flask lesson layout (Course 2)
 

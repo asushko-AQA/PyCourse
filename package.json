@@ -1,0 +1,12 @@
+{
+  "name": "pycourse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Root convenience scripts for the PyCourse monorepo (web frontend lives in frontend/).",
+  "scripts": {
+    "validate-content": "npm --prefix frontend run validate-content",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint"
+  }
+}

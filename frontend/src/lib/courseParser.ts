@@ -14,7 +14,6 @@ import path from "node:path";
 import type {
   Block,
   Course,
-  Lang,
   Lesson,
   LessonContent,
   LessonMeta,

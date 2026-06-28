@@ -15,7 +15,7 @@
  * Use `useHydrated()` before reading persisted values to avoid mismatches.
  */
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -78,14 +78,22 @@ export const useProgressStore = create<ProgressState>()(
   ),
 );
 
+const subscribeNoop = () => () => {};
+
 /**
  * True once the component is mounted on the client (and the persisted store
  * has therefore been rehydrated). Render default/skeleton state until then.
+ *
+ * Uses `useSyncExternalStore` so the server/first-paint snapshot is `false` and
+ * the client snapshot is `true` — the React-recommended hydration pattern, with
+ * no `setState` inside an effect.
  */
 export function useHydrated(): boolean {
-  const [hydrated, setHydrated] = useState(false);
-  useEffect(() => setHydrated(true), []);
-  return hydrated;
+  return useSyncExternalStore(
+    subscribeNoop,
+    () => true,
+    () => false,
+  );
 }
 
 /** Is a lesson unlocked given the completed-lessons list? */

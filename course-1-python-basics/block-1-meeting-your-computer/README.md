@@ -18,6 +18,7 @@
 | 1.4 | [Reading Error Messages](lesson-1-4-reading-error-messages/README.md) | Чтение сообщений об ошибках |
 | 1.5 | [Mission Control Badge (Capstone)](lesson-1-5-mission-control-badge/README.md) | Значок диспетчера миссии (итог) |
 
+**Previous block / Предыдущий блок:** [Block 0: Getting Started](../block-0-getting-started/README.md)
 **Next block / Следующий блок:** [Block 2: Talking to Python](../block-2-talking-to-python/README.md)
 
 ---

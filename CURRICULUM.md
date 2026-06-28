@@ -24,6 +24,15 @@ Expanded plan based on project-based learning research, age-appropriate pacing (
 
 **Prerequisites:** None.
 
+### Block 0: Getting Started (warm-up, no install)
+
+A pre-syntax, no-install warm-up that builds the mental model before any tooling. Read-and-think only; pen-and-paper practice.
+
+| Lesson | Topic | Mini-project / outcome |
+|--------|-------|------------------------|
+| 0.1 | What Is a Programming Language? | Understand programs as ordered, exact instructions; write a plain-English "program" |
+| 0.2 | How Code Comes Alive | Mental model: code → interpreter → result; trace `print` output by hand |
+
 ### Block 1: Meeting Your Computer's Best Friend
 
 | Lesson | Topic | Mini-project / outcome |

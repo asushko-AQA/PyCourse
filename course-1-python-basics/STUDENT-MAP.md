@@ -1,9 +1,9 @@
 # Student Map — Course 1 (All Blocks)
 
-> **Course:** Python Basics & Command Line Magic · **21 lessons**  
+> **Course:** Python Basics & Command Line Magic · **Block 0 warm-up + 21 lessons**  
 > [Русский →](STUDENT-MAP.ru.md)
 
-One-page folder guide for the full course. Each block also has its own [STUDENT-MAP](block-1-meeting-your-computer/STUDENT-MAP.md).
+One-page folder guide for the full course. Each block also has its own STUDENT-MAP — e.g. [Block 0](block-0-getting-started/STUDENT-MAP.md) and [Block 1](block-1-meeting-your-computer/STUDENT-MAP.md).
 
 **Pace:** ~8–10 weeks at 1–2 lessons per week (~30–45 min each).
 
@@ -30,6 +30,7 @@ PyCourse/
 ├── README.md
 ├── course-1-python-basics/
 │   ├── README.md
+│   ├── block-0-getting-started/           Lessons 0.1–0.2 (warm-up, no install)
 │   ├── block-1-meeting-your-computer/     Lessons 1.1–1.5
 │   ├── block-2-talking-to-python/         Lessons 2.1–2.5
 │   ├── block-3-making-choices/            Lessons 3.1–3.4
@@ -44,7 +45,11 @@ PyCourse/
 
 ---
 
-## Progress tick list (all 21 lessons)
+## Progress tick list (Block 0 warm-up + 21 lessons)
+
+**Block 0 (warm-up)**
+- [ ] 0.1 — can explain what a programming language is
+- [ ] 0.2 — can describe code → interpreter → result
 
 **Block 1**
 - [ ] 1.1 — `python --version` works

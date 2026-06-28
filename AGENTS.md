@@ -45,7 +45,7 @@ PyCourse/                          # Open this folder in VS Code
 ├── README.md                      # Human-facing project intro
 ├── .gitignore                     # Ignores .venv, __pycache__, .env, etc.
 │
-├── course-1-python-basics/        # Course 1 — 5 blocks, 21 lessons (complete)
+├── course-1-python-basics/        # Course 1 — Block 0 warm-up + 5 blocks, 23 lessons (complete)
 ├── course-2-web-apps/             # Course 2 — 3 blocks, 11 lessons (complete)
 ├── course-3-game-dev/             # Course 3 — placeholder README only (planned)
 │
@@ -288,6 +288,15 @@ Fix critical gaps in the lesson when practical, then re-run verification.
 
 Build **Course 1** block by block. Course 2 requires Block 1 complete (especially functions, lists, dicts from later blocks). Course 3 requires loops, conditionals, and functions.
 
+**Course 1, Block 0** (two warm-up lessons — pre-install, concept-only):
+
+| Lesson | Topic |
+|--------|-------|
+| 0.1 | What Is a Programming Language? (programs as ordered instructions) |
+| 0.2 | How Code Comes Alive (code → interpreter → result) |
+
+Block index: [block-0-getting-started/README.md](course-1-python-basics/block-0-getting-started/README.md)
+
 **Course 1, Block 1** (five lessons + capstone):
 
 | Lesson | Topic |
@@ -353,7 +362,7 @@ Student folder map: [STUDENT-MAP.md](course-1-python-basics/block-4-organizing-c
 Block index: [block-5-creative-turtle/README.md](course-1-python-basics/block-5-creative-turtle/README.md)  
 Student folder map: [STUDENT-MAP.md](course-1-python-basics/block-5-creative-turtle/STUDENT-MAP.md)
 
-**Development order (Course 1):** Block 1 → 2 → 3 → 4 → 5 → [Course 2](../course-2-web-apps/README.md).
+**Development order (Course 1):** Block 0 (warm-up) → 1 → 2 → 3 → 4 → 5 → [Course 2](../course-2-web-apps/README.md).
 
 **Course 2, Block 0** (two lessons — environment):
 
@@ -389,7 +398,7 @@ Block index: [block-2-making-it-beautiful-interactive/README.md](course-2-web-ap
 
 **Development order (Course 2):** Block 0 → 1 → 2 → [Course 3](../course-3-game-dev/README.md).
 
-Suggested milestone when starting fresh: **Lesson 1.1** (Course 1) or **Lesson 0.1** (Course 2).
+Suggested milestone when starting fresh: **Lesson 0.1** (Course 1 warm-up) or **Lesson 0.1** (Course 2).
 
 ## Key References
 

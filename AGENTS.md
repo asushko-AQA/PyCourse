@@ -203,9 +203,19 @@ python app.py
 
 # Course 3 — Pygame (after pip install pygame)
 python starter/game.py
+
+# Backend lesson metadata sync (from backend/)
+python -m app.sync.index_lessons
+python -m app.sync.index_lessons --check
 ```
 
-No build step. No test suite yet — validate by running lesson scripts manually.
+No build step for lesson scripts. For the web frontend, run end-to-end regression tests:
+
+```bash
+pip install -r tools/mcp/tests/requirements.txt
+playwright install chromium
+pytest tools/mcp/tests/
+```
 
 ## When Building Lessons
 

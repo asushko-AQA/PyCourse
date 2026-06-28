@@ -7,6 +7,17 @@
     "validate-content": "npm --prefix frontend run validate-content",
     "dev": "npm --prefix frontend run dev",
     "build": "npm --prefix frontend run build",
-    "lint": "npm --prefix frontend run lint"
+    "lint": "npm --prefix frontend run lint",
+    "mcp": "npm --prefix tools/mcp run start",
+    "mcp:check": "npm --prefix tools/mcp run check",
+    "mcp:smoke-test": "npm --prefix tools/mcp run smoke-test",
+    "sync": "cd backend && python -m app.sync.index_lessons",
+    "sync:check": "cd backend && python -m app.sync.index_lessons --check",
+    "test:ui": "pytest tools/mcp/tests/ui",
+    "test:api": "pytest tools/mcp/tests/api_db/test_health_api.py",
+    "test:db": "pytest tools/mcp/tests/api_db/test_migrations.py tools/mcp/tests/api_db/test_repositories.py",
+    "test:api-db": "pytest tools/mcp/tests/api_db",
+    "test:mcp": "npm run mcp:smoke-test",
+    "test:regression": "npm run test:ui && npm run test:api-db && npm run test:mcp"
   }
 }

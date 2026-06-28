@@ -38,6 +38,7 @@ export default async function HomePage({
           return (
             <CourseCard
               key={course.id}
+              courseId={course.id}
               index={i}
               href={`/${lang}/${course.id}`}
               emoji={meta.emoji}

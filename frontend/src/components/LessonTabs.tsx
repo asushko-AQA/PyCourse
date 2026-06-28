@@ -65,6 +65,7 @@ export default function LessonTabs({
         {tabs.map((t) => (
           <button
             key={t.id}
+            data-automation-id={`lesson-tab-${t.id}`}
             onClick={() => setTab(t.id)}
             className={`relative rounded-full px-4 py-2 text-sm font-extrabold transition-colors sm:px-5 ${
               tab === t.id ? "text-white" : "text-slate-500 hover:text-slate-700"
@@ -92,6 +93,7 @@ export default function LessonTabs({
           <div className="flex flex-col gap-6">
             <MarkdownView markdown={assignments} />
             <button
+              data-automation-id="lesson-mark-done"
               onClick={markAssignmentsDone}
               disabled={lessonDone}
               className={`self-start rounded-full px-6 py-2.5 font-extrabold transition-transform ${
@@ -123,6 +125,7 @@ export default function LessonTabs({
       <div className="flex items-center justify-between">
         <Link
           href={courseHref}
+          data-automation-id="lesson-back-to-map"
           className="font-bold text-sky-600 hover:underline"
         >
           {dict.lesson.backToMap}
@@ -130,6 +133,7 @@ export default function LessonTabs({
         {nextHref && lessonDone && (
           <Link
             href={nextHref}
+            data-automation-id="lesson-next"
             className="rounded-full bg-emerald-500 px-5 py-2 font-extrabold text-white shadow transition-transform hover:scale-105"
           >
             {dict.lesson.nextLesson}

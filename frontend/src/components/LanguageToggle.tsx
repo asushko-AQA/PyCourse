@@ -29,6 +29,7 @@ export default function LanguageToggle({ current }: { current: Lang }) {
       {OPTIONS.map((opt) => (
         <button
           key={opt.code}
+          data-automation-id={`lang-toggle-${opt.code}`}
           onClick={() => switchTo(opt.code)}
           className={`rounded-full px-3 py-1 text-xs font-extrabold transition-colors ${
             opt.code === current

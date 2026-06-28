@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "pycourse": {
+      "command": "npm",
+      "args": ["run", "mcp"],
+      "cwd": "${workspaceFolder}"
+    }
+  }
+}

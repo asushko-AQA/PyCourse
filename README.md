@@ -12,6 +12,17 @@ See [CURRICULUM.md](CURRICULUM.md) for the full expanded plan.
 
 Planning notes (ideas, plans, issues): [documents/](documents/)
 
+## Run locally
+
+```bash
+cd frontend && npm install
+cd .. && npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+For **MCP lesson inspection and agent observability** in Cursor, see [documents/local-dev-and-mcp.md](documents/local-dev-and-mcp.md).
+
 ## For contributors & AI agents
 
 Read [AGENTS.md](AGENTS.md) before authoring or editing lesson content.

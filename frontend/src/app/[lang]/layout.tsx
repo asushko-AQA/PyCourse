@@ -28,6 +28,7 @@ export default async function LangLayout({
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-3">
           <Link
             href={`/${lang}`}
+            data-automation-id="nav-logo-home"
             className="flex items-center gap-2 text-lg font-black text-violet-700"
           >
             <span className="text-2xl" aria-hidden>

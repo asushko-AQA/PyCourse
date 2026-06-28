@@ -136,6 +136,7 @@ export default function QuizEngine({
           {nextHref && (
             <Link
               href={nextHref}
+              data-automation-id="quiz-next-lesson"
               className="rounded-full bg-emerald-500 px-6 py-2.5 font-extrabold text-white shadow transition-transform hover:scale-105"
             >
               {dict.quiz.nextLesson}
@@ -143,11 +144,13 @@ export default function QuizEngine({
           )}
           <Link
             href={courseHref}
+            data-automation-id="quiz-back-to-map"
             className="rounded-full bg-sky-100 px-6 py-2.5 font-extrabold text-sky-700 transition-transform hover:scale-105"
           >
             {dict.quiz.backToMap}
           </Link>
           <button
+            data-automation-id="quiz-replay"
             onClick={replay}
             className="rounded-full bg-white px-6 py-2.5 font-extrabold text-slate-500 ring-1 ring-slate-200 transition-transform hover:scale-105"
           >
@@ -204,6 +207,7 @@ export default function QuizEngine({
               return (
                 <motion.button
                   key={i}
+                  data-automation-id={`quiz-option-${i}`}
                   onClick={() => choose(i)}
                   disabled={solved}
                   whileTap={solved ? undefined : { scale: 0.98 }}
@@ -258,6 +262,7 @@ export default function QuizEngine({
             <motion.button
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
+              data-automation-id="quiz-advance"
               onClick={advance}
               className="self-end rounded-full bg-violet-500 px-7 py-2.5 font-extrabold text-white shadow-lg transition-transform hover:scale-105"
             >

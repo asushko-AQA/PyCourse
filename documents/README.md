@@ -27,6 +27,9 @@ When **verify-lesson-in-block** runs (automatic after each new lesson):
 |--------|--------|------------------|
 | Improvement suggestions | `ideas/` | `block-1-meeting-your-computer-lesson-1-3-improvements.md` |
 | Gaps and issues | `issues/` | `block-1-meeting-your-computer-lesson-1-3-gaps.md` |
+| MCP tool run logs (local) | `agent-runs/` | `mcp-tools.jsonl` (gitignored) |
+
+Local dev + MCP setup: [local-dev-and-mcp.md](local-dev-and-mcp.md)
 
 Append dated sections if the same lesson is verified again. Link block-level registers (e.g. `issues/block-1-artifacts.md`) from per-lesson gap files when relevant.
 

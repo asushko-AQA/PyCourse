@@ -1,0 +1,31 @@
+from app.models.tables import (
+    Achievement,
+    Block,
+    Course,
+    EmailVerificationToken,
+    ExternalIdentity,
+    Lesson,
+    Progress,
+    SessionRow,
+    StarEvent,
+    StreakSnapshot,
+    Submission,
+    User,
+    UserAchievement,
+)
+
+__all__ = [
+    "Achievement",
+    "Block",
+    "Course",
+    "EmailVerificationToken",
+    "ExternalIdentity",
+    "Lesson",
+    "Progress",
+    "SessionRow",
+    "StarEvent",
+    "StreakSnapshot",
+    "Submission",
+    "User",
+    "UserAchievement",
+]

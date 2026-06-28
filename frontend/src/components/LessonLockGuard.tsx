@@ -64,6 +64,7 @@ export default function LessonLockGuard({
           {prerequisiteHref && (
             <Link
               href={prerequisiteHref}
+              data-automation-id="lock-go-to-prereq"
               className="rounded-full bg-violet-500 px-6 py-2.5 font-extrabold text-white shadow transition-transform hover:scale-105"
             >
               {goToPrereqLabel}
@@ -71,6 +72,7 @@ export default function LessonLockGuard({
           )}
           <Link
             href={courseHref}
+            data-automation-id="lock-back-to-map"
             className="rounded-full bg-sky-100 px-6 py-2.5 font-extrabold text-sky-700 transition-transform hover:scale-105"
           >
             {backToMapLabel}

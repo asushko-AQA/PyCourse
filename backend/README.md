@@ -8,18 +8,15 @@ directly. FastAPI is the **only** writer to SQLite.
 
 ## Status
 
-Skeleton only. No application code yet — routers, models, repositories, and the SQLite
-schema arrive in later plans:
+Plan 04 core is implemented:
 
-- **04** — SQLite schema + migrations + repository interfaces (SQLModel/SQLAlchemy)
-- **05** — markdown → DB sync job (lesson metadata is indexed, never lesson bodies)
-- **06 / 07** — email registration, sign-in/sign-out, sessions
-- **08** — progress sync APIs
-- **09** — stars + streaks
-- **10** — homework checking via external executor (Piston/Judge0)
-- **11** — generated OpenAPI contract for the frontend and bot
+- FastAPI app entrypoint and `/health` endpoint with DB connectivity checks.
+- SQLModel schema for metadata tables + user data tables (no lesson body columns).
+- Alembic migrations with initial schema (`0001_initial_schema`).
+- Thin repositories for lessons, users, sessions, and progress.
+- Core API/DB tests (migrations + repositories + health endpoint).
 
-## Planned layout
+## Layout
 
 ```
 backend/
@@ -29,11 +26,52 @@ backend/
 └── README.md
 ```
 
-## Dev run command (once implemented)
+## Setup
 
 ```bash
-# from backend/, with the virtualenv active
+# from backend/
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS/Linux
+source .venv/bin/activate
+
+pip install -e ".[dev]"
+```
+
+## Dev run command
+
+```bash
 uvicorn app.main:app --reload --port 8000
+```
+
+## Migrations
+
+```bash
+# from backend/
+alembic upgrade head
+alembic downgrade -1
+```
+
+## Markdown sync (plan 05)
+
+```bash
+# from backend/
+python -m app.sync.index_lessons
+
+# drift check only (no writes)
+python -m app.sync.index_lessons --check
+```
+
+Optional flags:
+- `--root <path>` to index a different content root.
+- `--database-url <url>` to target another database for one run.
+
+## Tests
+
+```bash
+# from repo root
+pytest tools/mcp/tests/api_db
 ```
 
 ## Key environment variables

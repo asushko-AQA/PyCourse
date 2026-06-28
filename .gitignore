@@ -22,6 +22,9 @@ Thumbs.db
 instance/
 .webassets-cache
 
+# Local agent observability logs (MCP tool calls)
+documents/agent-runs/*.jsonl
+
 # Backend / SQLite (FastAPI shared core)
 backend/data/
 *.db
@@ -29,3 +32,8 @@ backend/data/
 *.sqlite3
 *.db-wal
 *.db-shm
+
+# Test artifacts (pytest / Playwright)
+.pytest_cache/
+test-results/
+playwright-report/

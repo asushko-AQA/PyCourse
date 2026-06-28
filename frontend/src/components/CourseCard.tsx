@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { useHydrated, useProgressStore } from "@/stores/progressStore";
 
 interface CourseCardProps {
+  courseId: string;
   href: string;
   emoji: string;
   title: string;
@@ -24,6 +25,7 @@ interface CourseCardProps {
 }
 
 export default function CourseCard({
+  courseId,
   href,
   emoji,
   title,
@@ -51,6 +53,7 @@ export default function CourseCard({
     >
       <Link
         href={href}
+        data-automation-id={`course-card-${courseId}`}
         className="group flex h-full flex-col gap-3 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-violet-200"
       >
         <div className="text-5xl" aria-hidden>

@@ -145,6 +145,7 @@ export default function CourseMap({
                   {unlocked || done ? (
                     <Link
                       href={lesson.href}
+                      data-automation-id={`lesson-node-${lesson.key.replace("/", "-")}`}
                       className="group flex flex-col items-center gap-2"
                     >
                       {circle}

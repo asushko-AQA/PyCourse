@@ -73,6 +73,7 @@ export default async function LessonPage({
         <div>
           <Link
             href={courseHref}
+            data-automation-id="lesson-block-back"
             className="text-sm font-bold text-sky-600 hover:underline"
           >
             ← {blockMeta?.emoji} {blockMeta?.title}

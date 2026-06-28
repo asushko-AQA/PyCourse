@@ -1,0 +1,86 @@
+import type { Dict } from "./index";
+
+export const ru: Dict = {
+  appName: "PyQuest",
+  tagline: "Учи Python как в игре",
+  home: {
+    welcome: "С возвращением, Создатель!",
+    subtitle: "Выбери курс и продолжай приключение.",
+    lessons: "уроков",
+    completed: "пройдено",
+    start: "Начать приключение",
+    continue: "Продолжить",
+  },
+  nav: {
+    level: "Ур.",
+    xp: "XP",
+  },
+  map: {
+    backHome: "Все курсы",
+    locked: "Закрыто",
+    lockedHint: "Пройди «{lesson}», чтобы открыть",
+    yourProgress: "Твой прогресс",
+  },
+  tabs: {
+    theory: "🚀 Теория",
+    assignments: "📝 Задания",
+    quiz: "🎯 Квиз",
+  },
+  lesson: {
+    lockedTitle: "Этот уровень ещё закрыт!",
+    lockedBody: "Сначала пройди «{lesson}», чтобы открыть этот урок.",
+    backToMap: "← Назад к карте",
+    goToPrereq: "Перейти к тому уроку",
+    markDone: "✅ Задания выполнены",
+    markedDone: "🎉 Задания выполнены!",
+    nextLesson: "Следующий урок →",
+    noQuiz: "В этом уроке нет квиза — отметь задания выполненными, чтобы завершить его!",
+  },
+  quiz: {
+    questionOf: "Вопрос {current} из {total}",
+    correct: [
+      "В яблочко! 🎯",
+      "Ты в ударе! 🔥",
+      "Точно! ⭐",
+      "Гениально! 🧠",
+      "Бум! Верно! 💥",
+    ],
+    wrong: [
+      "Почти! Детективы пробуют снова 🔍",
+      "Не совсем — глянь подсказку! 💡",
+      "Хорошая попытка! Давай ещё раз 💪",
+    ],
+    hint: "Подсказка",
+    next: "Дальше →",
+    finish: "Завершить квиз 🏁",
+    resultsTitle: "Квиз пройден!",
+    resultsBody: "{score} из {total} с первой попытки",
+    xpEarned: "+{xp} XP получено!",
+    alreadyEarned: "XP за этот квиз уже собраны",
+    replay: "Пройти ещё раз",
+    backToMap: "Назад к карте",
+    nextLesson: "Следующий урок →",
+  },
+  courses: {
+    "course-1": {
+      title: "Основы Python",
+      description: "Магия командной строки, переменные, циклы и первые игры.",
+      emoji: "🐍",
+    },
+    "course-2": {
+      title: "Веб-приложения на Flask",
+      description: "Создавай настоящие веб-страницы и приложения в браузере.",
+      emoji: "🌐",
+    },
+  },
+  blocks: {
+    "course-1/block-1": { title: "Знакомство с компьютером", emoji: "🖥️" },
+    "course-1/block-2": { title: "Разговор с Python", emoji: "📦" },
+    "course-1/block-3": { title: "Принятие решений", emoji: "🔀" },
+    "course-1/block-4": { title: "Организация кода", emoji: "🧩" },
+    "course-1/block-5": { title: "Творческая черепашка", emoji: "🐢" },
+    "course-2/block-0": { title: "Настройка окружения", emoji: "🧪" },
+    "course-2/block-1": { title: "Основы веба с Flask", emoji: "🌐" },
+    "course-2/block-2": { title: "Красота и интерактив", emoji: "🎨" },
+  },
+};

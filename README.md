@@ -18,4 +18,4 @@ Read [AGENTS.md](AGENTS.md) before authoring or editing lesson content.
 
 ## Status
 
-🚧 Under active development — lessons are added incrementally starting with Course 1.
+**Course 1 complete** — all 21 lessons in Blocks 1–5. Course 2 (Flask) is next; see [course-2-web-apps/README.md](course-2-web-apps/README.md).

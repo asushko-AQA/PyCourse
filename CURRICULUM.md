@@ -24,23 +24,34 @@ Expanded plan based on project-based learning research, age-appropriate pacing (
 
 **Prerequisites:** None.
 
+### Block 0: Getting Started (warm-up, no install)
+
+A pre-syntax, no-install warm-up that builds the mental model before any tooling. Read-and-think only; pen-and-paper practice.
+
+| Lesson | Topic | Mini-project / outcome |
+|--------|-------|------------------------|
+| 0.1 | What Is a Programming Language? | Understand programs as ordered, exact instructions; write a plain-English "program" |
+| 0.2 | How Code Comes Alive | Mental model: code → interpreter → result; trace `print` output by hand |
+
 ### Block 1: Meeting Your Computer's Best Friend
 
 | Lesson | Topic | Mini-project / outcome |
 |--------|-------|------------------------|
 | 1.1 | Installing Python & VS Code | `python --version` works; VS Code opens a `.py` file |
-| 1.2 | Using the Terminal/CLI | Navigate folders with `cd`, list files with `dir`/`ls` |
-| 1.3 | Running Your First Script | `hello.py` prints from the command line |
-| **1.4** *(new)* | **Reading Error Messages** | Fix 3 intentional bugs; learn SyntaxError vs NameError |
+| 1.2 | Using the Terminal/CLI | Navigate folders with `cd`, list files with `dir`/`ls`; run `treasure.py` |
+| 1.3 | Running Your First Script | Reliable create → save → `cd` → `python file.py` workflow |
+| 1.4 | Reading Error Messages | Fix 3 intentional bugs; learn SyntaxError vs CLI file errors |
+| 1.5 | Block 1 Capstone: Mission Control Badge | Create `my_mission/badge.py`; navigate, run, fix one bug |
 
 ### Block 2: Talking to Python (Variables & Data)
 
 | Lesson | Topic | Mini-project / outcome |
 |--------|-------|------------------------|
-| 2.1 | Variables, Strings, Integers | Store name, age, favorite game in variables |
+| 2.1 | Variables, Strings, Integers | `character_sheet.py` — store name, age, favorite game in variables |
 | 2.2 | f-strings and `input()` | Interactive greeting program |
 | 2.3 | Math Operators | Simple calculator in the terminal |
-| **2.4** *(new)* | **Strings in Action** | Mad-libs style word game (`.upper()`, `.lower()`, slicing basics) |
+| 2.4 | Strings in Action | Mad-libs style word game (`.upper()`, `.lower()`, slicing basics) |
+| 2.5 | Block 2 Capstone: Creator Data Pack | Create `my_data/creator_pack.py`; variables, input, f-strings, math, strings |
 
 ### Block 3: Making Choices & Repeating Actions
 
@@ -94,7 +105,7 @@ Bridge between basics and game/web courses. Uses stdlib `turtle` — no pip inst
 | 1.1 | Installing Flask | `pip install flask` inside venv |
 | 1.2 | First Web Page | "Hello, Web World!" at `localhost:5000` |
 | 1.3 | Dynamic Routes | `/hello/YourName` personalized greeting |
-| **1.4** *(new)* | **Multiple Routes** | Mini-site: Home, About, Jokes page |
+| **1.4** *(new)* | **Multiple Routes** | Mini-site: Home, About, Jokes + URL calculator (`/add/<a>/<b>`) |
 
 ### Block 2: Making It Beautiful & Interactive
 
@@ -102,9 +113,9 @@ Bridge between basics and game/web courses. Uses stdlib `turtle` — no pip inst
 |--------|-------|------------------------|
 | 2.1 | HTML Templates (`render_template`) | Jinja2 base layout + child pages |
 | 2.2 | HTML Forms (GET/POST) | Form that echoes user input on a results page |
-| 2.3 | Calculator or Mad-Libs Web App | Capstone: form-driven app |
+| 2.3 | Mad-Libs Web App | Capstone: `my_web_madlibs/` form-driven story |
 | **2.4** *(new)* | **Static Files & CSS** | Link stylesheet; simple responsive styling |
-| **2.5** *(new)* | **Flash Messages & Validation** | Friendly error when form is empty |
+| **2.5** *(new)* | **Flash Messages & Validation** | Flash errors + POST calculator in `my_web_calc/` |
 
 **Course 2 exit skills:** Flask routes, templates, forms, GET/POST, static files, venv, local dev server.
 
@@ -167,15 +178,16 @@ CLI hello.py → interactive terminal apps → Turtle art → Flask web page →
 
 ## Lesson README Template (every lesson)
 
-Each lesson `README.md` should include:
+Each lesson folder uses a **bilingual chooser** plus split language files:
 
-1. **What you'll build** — one sentence + screenshot or ASCII preview
-2. **What you'll learn** — 3–5 bullet concepts
-3. **Before you start** — prerequisites and setup checks
-4. **Step-by-step** — numbered steps with code blocks
-5. **Try it yourself** — 1–2 challenges with hints
-6. **Debug corner** — one common error and fix
-7. **What's next** — link to following lesson
+| File | Purpose |
+|------|---------|
+| `README.md` | Language chooser — What you'll build/learn, Before you start, Quick drills |
+| `en.md` / `ru.md` | Full lesson (Title, Explanation, Code Example, Code Execution, Quick drills, Practice, Debug corner, What's next) |
+| `starter/` / `solution/` | Runnable Python (same filenames) |
+| `exercises/` | Optional EN + RU micro-challenges |
+
+Link **What's next** to the following lesson's `README.md`, not directly to `en.md`.
 
 ---
 

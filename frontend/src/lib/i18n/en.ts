@@ -1,0 +1,86 @@
+import type { Dict } from "./index";
+
+export const en: Dict = {
+  appName: "PyQuest",
+  tagline: "Learn Python like a game",
+  home: {
+    welcome: "Welcome back, Creator!",
+    subtitle: "Pick a course and keep your adventure going.",
+    lessons: "lessons",
+    completed: "completed",
+    start: "Start adventure",
+    continue: "Continue",
+  },
+  nav: {
+    level: "Lvl",
+    xp: "XP",
+  },
+  map: {
+    backHome: "All courses",
+    locked: "Locked",
+    lockedHint: "Finish “{lesson}” to unlock",
+    yourProgress: "Your progress",
+  },
+  tabs: {
+    theory: "🚀 Theory",
+    assignments: "📝 Assignments",
+    quiz: "🎯 Quiz",
+  },
+  lesson: {
+    lockedTitle: "This level is still locked!",
+    lockedBody: "Finish “{lesson}” first to open this one.",
+    backToMap: "← Back to map",
+    goToPrereq: "Go to that lesson",
+    markDone: "✅ Mark assignments done",
+    markedDone: "🎉 Assignments done!",
+    nextLesson: "Next lesson →",
+    noQuiz: "No quiz in this lesson — mark the assignments done to complete it!",
+  },
+  quiz: {
+    questionOf: "Question {current} of {total}",
+    correct: [
+      "Nailed it! 🎯",
+      "You're on fire! 🔥",
+      "Exactly right! ⭐",
+      "Genius move! 🧠",
+      "Boom! Correct! 💥",
+    ],
+    wrong: [
+      "Almost! Detectives try again 🔍",
+      "Not quite — check the hint! 💡",
+      "Good try! Have another go 💪",
+    ],
+    hint: "Hint",
+    next: "Next →",
+    finish: "Finish quiz 🏁",
+    resultsTitle: "Quiz complete!",
+    resultsBody: "{score} of {total} on the first try",
+    xpEarned: "+{xp} XP earned!",
+    alreadyEarned: "XP already collected for this quiz",
+    replay: "Play again",
+    backToMap: "Back to map",
+    nextLesson: "Next lesson →",
+  },
+  courses: {
+    "course-1": {
+      title: "Python Basics",
+      description: "Command line magic, variables, loops and your first games.",
+      emoji: "🐍",
+    },
+    "course-2": {
+      title: "Web Apps with Flask",
+      description: "Build real web pages and apps that run in your browser.",
+      emoji: "🌐",
+    },
+  },
+  blocks: {
+    "course-1/block-1": { title: "Meeting Your Computer", emoji: "🖥️" },
+    "course-1/block-2": { title: "Talking to Python", emoji: "📦" },
+    "course-1/block-3": { title: "Making Choices", emoji: "🔀" },
+    "course-1/block-4": { title: "Organizing Code", emoji: "🧩" },
+    "course-1/block-5": { title: "Creative Turtle", emoji: "🐢" },
+    "course-2/block-0": { title: "Environment Setup", emoji: "🧪" },
+    "course-2/block-1": { title: "Web Basics with Flask", emoji: "🌐" },
+    "course-2/block-2": { title: "Making It Beautiful", emoji: "🎨" },
+  },
+};

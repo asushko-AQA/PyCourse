@@ -8,13 +8,16 @@ directly. FastAPI is the **only** writer to SQLite.
 
 ## Status
 
-Plan 04 core is implemented:
+Plans 04–06 are implemented:
 
 - FastAPI app entrypoint and `/health` endpoint with DB connectivity checks.
 - SQLModel schema for metadata tables + user data tables (no lesson body columns).
-- Alembic migrations with initial schema (`0001_initial_schema`).
-- Thin repositories for lessons, users, sessions, and progress.
-- Core API/DB tests (migrations + repositories + health endpoint).
+- Alembic migrations: initial schema (`0001`) + registration/COPPA (`0002`).
+- Thin repositories for lessons, users, sessions, progress, and email tokens.
+- Markdown → DB lesson sync job (plan 05).
+- Email registration + verification: `POST /auth/register`, `GET|POST /auth/verify`
+  with Argon2id hashing, single-use expiring tokens, a pluggable email adapter
+  (console dev / SMTP stub), and a COPPA parental-consent gate (plan 06).
 
 ## Layout
 
@@ -67,11 +70,33 @@ Optional flags:
 - `--root <path>` to index a different content root.
 - `--database-url <url>` to target another database for one run.
 
+## Auth: registration & verification (plan 06)
+
+```bash
+# Register (dev: the verification link is printed to the backend log)
+curl -X POST localhost:8000/auth/register \
+  -H 'Content-Type: application/json' \
+  -d '{"email":"kid@example.com","password":"snakes123"}'
+
+# Under-13 registration requires guardian email + consent
+curl -X POST localhost:8000/auth/register \
+  -H 'Content-Type: application/json' \
+  -d '{"email":"kid@example.com","password":"snakes123","is_minor":true,
+       "guardian_email":"parent@example.com","parental_consent":true}'
+
+# Verify (token comes from the emailed link)
+curl -X POST localhost:8000/auth/verify \
+  -H 'Content-Type: application/json' -d '{"token":"<token>"}'
+```
+
+The COPPA / parental-consent decision is documented in
+[documents/plans/registration-coppa-decision.md](../documents/plans/registration-coppa-decision.md).
+
 ## Tests
 
 ```bash
-# from repo root
-pytest tools/mcp/tests/api_db
+# from backend/, with the venv active
+pytest
 ```
 
 ## Key environment variables
@@ -79,6 +104,11 @@ pytest tools/mcp/tests/api_db
 See the env-var contract in
 [documents/plans/platform-architecture.md](../documents/plans/platform-architecture.md):
 `DATABASE_URL`, `EXECUTOR_URL`, `SESSION_SECRET`, `FRONTEND_ORIGIN`.
+
+Plan 06 auth/email settings (all optional, with safe dev defaults):
+`PASSWORD_MIN_LENGTH`, `EMAIL_VERIFICATION_TTL_HOURS`, `VERIFY_URL_TEMPLATE`,
+`EMAIL_BACKEND` (`console` | `smtp`), `EMAIL_FROM`, and the `SMTP_*` settings.
+The frontend reads `NEXT_PUBLIC_BACKEND_URL` to reach these endpoints.
 
 ## Data & persistence
 

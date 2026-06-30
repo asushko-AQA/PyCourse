@@ -70,6 +70,14 @@ class User(Timestamped, table=True):
     email_verified_at: datetime | None = Field(default=None)
     password_hash: str = Field(nullable=False)
 
+    # COPPA / parental-consent (plan 06). `is_minor` is a self-declared under-13
+    # gate; when set, a guardian email and explicit consent are required before
+    # the account is usable.
+    is_minor: bool = Field(default=False, nullable=False)
+    guardian_email: str | None = Field(default=None)
+    parental_consent: bool = Field(default=False, nullable=False)
+    parental_consent_at: datetime | None = Field(default=None)
+
 
 class EmailVerificationToken(SQLModel, table=True):
     __tablename__ = "email_verification_tokens"
@@ -79,6 +87,8 @@ class EmailVerificationToken(SQLModel, table=True):
     token: str = Field(nullable=False, unique=True, index=True)
     expires_at: datetime = Field(nullable=False)
     created_at: datetime = Field(default_factory=now_utc, nullable=False)
+    # Single-use: set when the token is redeemed so it cannot be reused.
+    consumed_at: datetime | None = Field(default=None)
 
 
 class SessionRow(SQLModel, table=True):

@@ -54,6 +54,38 @@ export interface Dict {
     backToMap: string;
     nextLesson: string;
   };
+  auth: {
+    registerTitle: string;
+    registerSubtitle: string;
+    emailLabel: string;
+    passwordLabel: string;
+    passwordHint: string;
+    minorLabel: string;
+    guardianEmailLabel: string;
+    consentLabel: string;
+    submit: string;
+    submitting: string;
+    checkEmailTitle: string;
+    checkEmailBody: string; // "{email}" placeholder
+    checkEmailGuardianBody: string; // "{email}" placeholder (guardian)
+    registerAnother: string;
+    verifyTitle: string;
+    verifying: string;
+    verifiedTitle: string;
+    verifiedBody: string;
+    verifyFailedTitle: string;
+    backHome: string;
+    errors: {
+      generic: string;
+      email_already_registered: string;
+      weak_password: string;
+      parental_consent_required: string;
+      invalid_token: string;
+      token_expired: string;
+      token_used: string;
+      missing_token: string;
+    };
+  };
   courses: Record<string, { title: string; description: string; emoji: string }>;
   /** Keyed by "{courseId}/{blockId}" since block ids repeat across courses. */
   blocks: Record<string, { title: string; emoji: string }>;

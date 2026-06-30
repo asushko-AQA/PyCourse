@@ -11,6 +11,32 @@ class Settings(BaseSettings):
     frontend_origin: str = "http://localhost:3000"
     sqlite_busy_timeout_ms: int = 5000
 
+    # --- Auth / registration (plan 06) ---
+    # Minimum password length enforced at registration.
+    password_min_length: int = 8
+    # Lifetime of an email-verification token before it expires.
+    email_verification_ttl_hours: int = 24
+    # Frontend route that redeems a verification token. `{token}` is substituted
+    # with the single-use token; the page then POSTs it back to /auth/verify.
+    verify_url_template: str = "http://localhost:3000/en/auth/verify?token={token}"
+
+    # --- Email delivery (plan 06) ---
+    # "console" (dev: prints the link to logs) or "smtp" (production stub).
+    email_backend: str = "console"
+    email_from: str = "no-reply@pycourse.local"
+    # SMTP settings — only used when email_backend == "smtp".
+    smtp_host: str = "localhost"
+    smtp_port: int = 587
+    smtp_user: str | None = None
+    smtp_password: str | None = None
+    smtp_use_tls: bool = True
+
+    def build_verify_url(self, token: str) -> str:
+        if "{token}" in self.verify_url_template:
+            return self.verify_url_template.format(token=token)
+        sep = "&" if "?" in self.verify_url_template else "?"
+        return f"{self.verify_url_template}{sep}token={token}"
+
 
 @lru_cache
 def get_settings() -> Settings:

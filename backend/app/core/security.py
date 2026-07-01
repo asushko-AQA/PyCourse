@@ -8,6 +8,7 @@ No plaintext password is ever stored or logged.
 from __future__ import annotations
 
 import secrets
+import hashlib
 
 from argon2 import PasswordHasher
 from argon2.exceptions import InvalidHashError, VerifyMismatchError
@@ -39,3 +40,13 @@ def needs_rehash(password_hash: str) -> bool:
 def generate_verification_token() -> str:
     """A high-entropy, URL-safe, single-use email-verification token."""
     return secrets.token_urlsafe(32)
+
+
+def generate_session_token() -> str:
+    """A high-entropy opaque session token stored only in a cookie."""
+    return secrets.token_urlsafe(32)
+
+
+def hash_session_token(token: str) -> str:
+    """Store only a deterministic hash of the opaque session token."""
+    return hashlib.sha256(token.encode("utf-8")).hexdigest()

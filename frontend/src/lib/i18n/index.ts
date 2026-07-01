@@ -55,6 +55,14 @@ export interface Dict {
     nextLesson: string;
   };
   auth: {
+    signInTitle: string;
+    signInSubtitle: string;
+    signInSubmit: string;
+    signingIn: string;
+    signOut: string;
+    signInCta: string;
+    registerCta: string;
+    noAccountYet: string;
     registerTitle: string;
     registerSubtitle: string;
     emailLabel: string;
@@ -80,6 +88,10 @@ export interface Dict {
       email_already_registered: string;
       weak_password: string;
       parental_consent_required: string;
+      invalid_credentials: string;
+      email_not_verified: string;
+      too_many_attempts: string;
+      unauthorized: string;
       invalid_token: string;
       token_expired: string;
       token_used: string;

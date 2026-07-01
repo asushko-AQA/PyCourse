@@ -31,6 +31,12 @@ class Settings(BaseSettings):
     smtp_password: str | None = None
     smtp_use_tls: bool = True
 
+    # --- Session auth (plan 07) ---
+    session_cookie_name: str = "pycourse_session"
+    session_ttl_hours: int = 24 * 7
+    signin_rate_limit_attempts: int = 5
+    signin_rate_limit_window_seconds: int = 60
+
     def build_verify_url(self, token: str) -> str:
         if "{token}" in self.verify_url_template:
             return self.verify_url_template.format(token=token)

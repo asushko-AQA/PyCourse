@@ -2,8 +2,7 @@
  * Thin client for the FastAPI auth endpoints (plan 06).
  *
  * The typed, generated client arrives in plan 11; until then this hand-written
- * wrapper covers just register + verify. Requests use credentials so that the
- * session cookie (plan 07) will flow once sign-in exists.
+ * wrapper covers register/verify/sign-in/sign-out/session bootstrap.
  */
 
 const BACKEND_URL = (
@@ -16,6 +15,10 @@ export type AuthErrorCode =
   | "email_already_registered"
   | "weak_password"
   | "parental_consent_required"
+  | "invalid_credentials"
+  | "email_not_verified"
+  | "too_many_attempts"
+  | "unauthorized"
   | "invalid_token"
   | "token_expired"
   | "token_used"
@@ -42,6 +45,12 @@ export interface RegisterResult {
   email: string;
   verificationRequired: boolean;
   isMinor: boolean;
+}
+
+export interface SessionUser {
+  id: string;
+  email: string;
+  emailVerifiedAt: string;
 }
 
 async function parseErrorCode(res: Response): Promise<AuthErrorCode> {
@@ -93,6 +102,62 @@ export async function verifyEmail(token: string): Promise<void> {
       headers: { "Content-Type": "application/json" },
       credentials: "include",
       body: JSON.stringify({ token }),
+    });
+  } catch {
+    throw new AuthApiError("generic", "network error");
+  }
+
+  if (!res.ok) throw new AuthApiError(await parseErrorCode(res));
+}
+
+export async function signIn(email: string, password: string): Promise<SessionUser> {
+  let res: Response;
+  try {
+    res = await fetch(`${BACKEND_URL}/auth/sign-in`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ email, password }),
+    });
+  } catch {
+    throw new AuthApiError("generic", "network error");
+  }
+
+  if (!res.ok) throw new AuthApiError(await parseErrorCode(res));
+  const data = await res.json();
+  return {
+    id: data.user.id,
+    email: data.user.email,
+    emailVerifiedAt: data.user.email_verified_at,
+  };
+}
+
+export async function fetchSession(): Promise<SessionUser> {
+  let res: Response;
+  try {
+    res = await fetch(`${BACKEND_URL}/auth/session`, {
+      method: "GET",
+      credentials: "include",
+    });
+  } catch {
+    throw new AuthApiError("generic", "network error");
+  }
+
+  if (!res.ok) throw new AuthApiError(await parseErrorCode(res));
+  const data = await res.json();
+  return {
+    id: data.user.id,
+    email: data.user.email,
+    emailVerifiedAt: data.user.email_verified_at,
+  };
+}
+
+export async function signOut(): Promise<void> {
+  let res: Response;
+  try {
+    res = await fetch(`${BACKEND_URL}/auth/sign-out`, {
+      method: "POST",
+      credentials: "include",
     });
   } catch {
     throw new AuthApiError("generic", "network error");

@@ -1,4 +1,4 @@
-"""Registration + email-verification business logic (plan 06).
+"""Registration + session-auth business logic (plans 06 and 07).
 
 The service is transport-agnostic: routers translate its domain errors into HTTP
 responses. It depends only on repositories, the email-sender abstraction, and
@@ -8,15 +8,20 @@ settings — never on FastAPI or the request object.
 from __future__ import annotations
 
 import re
-from datetime import timedelta
+from datetime import datetime, timedelta
+from dataclasses import dataclass
 
 from app.core.config import Settings
 from app.core.security import (
+    generate_session_token,
     generate_verification_token,
+    hash_session_token,
     hash_password,
+    verify_password,
 )
 from app.models.tables import User, now_utc
 from app.repositories.email_verification_repo import EmailVerificationTokenRepo
+from app.repositories.session_repo import SessionRepo
 from app.repositories.user_repo import UserRepo
 from app.services.email.base import EmailSender, render_verification_email
 
@@ -49,6 +54,21 @@ class VerificationTokenExpired(AuthError):
 
 class VerificationTokenUsed(AuthError):
     code = "token_used"
+
+
+class InvalidCredentials(AuthError):
+    code = "invalid_credentials"
+
+
+class EmailNotVerified(AuthError):
+    code = "email_not_verified"
+
+
+@dataclass(frozen=True)
+class SignInResult:
+    user: User
+    session_token: str
+    expires_at: datetime
 
 
 # A small blacklist of obvious choices; the length + character rules do the
@@ -85,11 +105,13 @@ class AuthService:
         *,
         users: UserRepo,
         tokens: EmailVerificationTokenRepo,
+        sessions: SessionRepo,
         email_sender: EmailSender,
         settings: Settings,
     ) -> None:
         self._users = users
         self._tokens = tokens
+        self._sessions = sessions
         self._email = email_sender
         self._settings = settings
 
@@ -160,6 +182,28 @@ class AuthService:
         if user.email_verified_at is None:
             user = self._users.mark_email_verified(user)
         return user
+
+    def sign_in(self, *, email: str, password: str) -> SignInResult:
+        normalized_email = email.strip().lower()
+        user = self._users.get_by_email(normalized_email)
+        if user is None or not verify_password(password, user.password_hash):
+            raise InvalidCredentials("Email or password is incorrect.")
+        if user.email_verified_at is None:
+            raise EmailNotVerified("Please verify your email before signing in.")
+
+        session_token = generate_session_token()
+        expires_at = now_utc() + timedelta(hours=self._settings.session_ttl_hours)
+        self._sessions.create_session(
+            user_id=user.id,
+            session_token_hash=hash_session_token(session_token),
+            expires_at=expires_at,
+        )
+        return SignInResult(user=user, session_token=session_token, expires_at=expires_at)
+
+    def sign_out(self, *, session_token: str | None) -> None:
+        if not session_token:
+            return
+        self._sessions.delete_by_token_hash(hash_session_token(session_token))
 
 
 def _aware(value):

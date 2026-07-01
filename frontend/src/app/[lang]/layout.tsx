@@ -4,6 +4,7 @@ import { getDict } from "@/lib/i18n";
 import { isLang, LANGS } from "@/lib/types";
 import LanguageToggle from "@/components/LanguageToggle";
 import XPBadge from "@/components/XPBadge";
+import AuthNavControls from "@/components/AuthNavControls";
 
 export function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));
@@ -37,6 +38,7 @@ export default async function LangLayout({
             {dict.appName}
           </Link>
           <div className="flex items-center gap-3">
+            <AuthNavControls lang={lang} t={dict.auth} />
             <XPBadge levelLabel={dict.nav.level} xpLabel={dict.nav.xp} />
             <LanguageToggle current={lang} />
           </div>

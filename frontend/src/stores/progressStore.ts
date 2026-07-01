@@ -41,6 +41,8 @@ interface ProgressState {
   completeLesson: (key: string) => void;
   /** Mark a quiz complete (idempotent). Awards XP and completes the lesson. */
   completeQuiz: (key: string) => void;
+  /** Clear all local progress (used on sign-out before server sync exists). */
+  reset: () => void;
 }
 
 export const useProgressStore = create<ProgressState>()(
@@ -72,6 +74,13 @@ export const useProgressStore = create<ProgressState>()(
               : [...s.completedLessons, key],
             xp: s.xp + XP_PER_QUIZ + (lessonAlreadyDone ? 0 : XP_PER_LESSON),
           };
+        }),
+
+      reset: () =>
+        set({
+          xp: 0,
+          completedLessons: [],
+          completedQuizzes: [],
         }),
     }),
     { name: "pyquest-progress" },

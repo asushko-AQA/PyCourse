@@ -9,6 +9,7 @@ from app.api.deps import auth_service, db_session, email_sender
 from app.core.config import Settings, get_settings
 from app.main import app
 from app.repositories.email_verification_repo import EmailVerificationTokenRepo
+from app.repositories.session_repo import SessionRepo
 from app.repositories.user_repo import UserRepo
 from app.services.auth_service import AuthService
 from app.services.email.base import EmailMessage
@@ -79,6 +80,7 @@ def client_fixture(engine, mailer, test_settings):
             yield AuthService(
                 users=UserRepo(session),
                 tokens=EmailVerificationTokenRepo(session),
+                sessions=SessionRepo(session),
                 email_sender=mailer,
                 settings=test_settings,
             )
@@ -88,7 +90,7 @@ def client_fixture(engine, mailer, test_settings):
     app.dependency_overrides[get_settings] = override_settings
     app.dependency_overrides[auth_service] = override_auth_service
 
-    with TestClient(app) as client:
+    with TestClient(app, base_url="https://testserver") as client:
         yield client
 
     app.dependency_overrides.clear()

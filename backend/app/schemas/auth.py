@@ -33,3 +33,18 @@ class VerifyRequest(BaseModel):
 class VerifyResponse(BaseModel):
     email: EmailStr
     email_verified_at: datetime
+
+
+class SignInRequest(BaseModel):
+    email: EmailStr
+    password: str = Field(min_length=1)
+
+
+class SessionUser(BaseModel):
+    id: str
+    email: EmailStr
+    email_verified_at: datetime
+
+
+class SessionResponse(BaseModel):
+    user: SessionUser

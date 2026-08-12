@@ -87,6 +87,18 @@ class LessonRepo(BaseRepo):
         stmt = select(Lesson).where(Lesson.path == lesson_path)
         return self.session.exec(stmt).first()
 
+    def get_lesson_by_key(self, lesson_key: str) -> Lesson | None:
+        """Resolve a frontend progress key like ``course-1/lesson-2-1``."""
+        row = self.get_lesson(lesson_key)
+        if row is not None:
+            return row
+        parts = lesson_key.split("/", 1)
+        if len(parts) != 2:
+            return None
+        course_id, short_id = parts
+        stmt = select(Lesson).where(Lesson.course_id == course_id, Lesson.id == short_id)
+        return self.session.exec(stmt).first()
+
     def list_courses(self) -> list[Course]:
         stmt = select(Course).order_by(Course.order_index, Course.slug)
         return list(self.session.exec(stmt).all())

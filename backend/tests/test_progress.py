@@ -117,3 +117,101 @@ def test_progress_invalid_lesson_key(client, mailer, session):
     resp = client.post("/progress", json={"lesson_key": "course-9/lesson-9-9", "reading_done": True})
     assert resp.status_code == 404
     assert resp.json()["detail"]["code"] == "invalid_lesson_key"
+
+
+def test_progress_upsert_partial_update_preserves_existing_flags(client, mailer, session):
+    lesson_key = _seed_lesson(session)
+    _register_verify_sign_in(client, mailer, email="partial@example.com")
+
+    first = client.post("/progress", json={"lesson_key": lesson_key, "reading_done": True})
+    assert first.status_code == 200
+
+    second = client.post("/progress", json={"lesson_key": lesson_key, "quiz_perfect": True})
+    assert second.status_code == 200
+    body = second.json()["lesson"]
+    assert body["reading_done"] is True
+    assert body["quiz_perfect"] is True
+
+
+def test_progress_merge_server_wins_last_position(client, mailer, session):
+    lesson_key = _seed_lesson(session)
+    _register_verify_sign_in(client, mailer, email="server-pos@example.com")
+
+    server_pos = "course-1/block-0/lesson-0-1/read"
+    local_pos = "course-1/block-0/lesson-0-1/quiz"
+
+    seeded = client.post(
+        "/progress",
+        json={"lesson_key": lesson_key, "reading_done": True, "last_position": server_pos},
+    )
+    assert seeded.status_code == 200
+
+    merge = client.post(
+        "/progress/merge",
+        json={"lessons": [{"lesson_key": lesson_key, "reading_done": True}], "last_position": local_pos},
+    )
+    assert merge.status_code == 200
+
+    snapshot = client.get("/progress")
+    assert snapshot.status_code == 200
+    assert snapshot.json()["last_position"] == server_pos
+
+
+def test_progress_merge_applies_local_last_position_when_server_empty(client, mailer, session):
+    lesson_key = _seed_lesson(session)
+    _register_verify_sign_in(client, mailer, email="local-pos@example.com")
+
+    local_pos = "course-1/block-0/lesson-0-1/theory"
+
+    merge = client.post(
+        "/progress/merge",
+        json={
+            "lessons": [{"lesson_key": lesson_key, "reading_done": True}],
+            "last_position": local_pos,
+        },
+    )
+    assert merge.status_code == 200
+
+    snapshot = client.get("/progress")
+    assert snapshot.status_code == 200
+    assert snapshot.json()["last_position"] == local_pos
+
+
+def test_progress_merge_unions_independent_completion_flags(client, mailer, session):
+    lesson_key = _seed_lesson(session)
+    _register_verify_sign_in(client, mailer, email="union-flags@example.com")
+
+    server = client.post("/progress", json={"lesson_key": lesson_key, "reading_done": True})
+    assert server.status_code == 200
+
+    merge = client.post(
+        "/progress/merge",
+        json={"lessons": [{"lesson_key": lesson_key, "homework_done": True, "quiz_perfect": True}]},
+    )
+    assert merge.status_code == 200
+
+    lesson = merge.json()["snapshot"]["lessons"][0]
+    assert lesson["reading_done"] is True
+    assert lesson["homework_done"] is True
+    assert lesson["quiz_perfect"] is True
+
+
+def test_progress_merge_skips_invalid_lesson_keys(client, mailer, session):
+    lesson_key = _seed_lesson(session)
+    _register_verify_sign_in(client, mailer, email="skip-invalid@example.com")
+
+    merge = client.post(
+        "/progress/merge",
+        json={
+            "lessons": [
+                {"lesson_key": "course-9/lesson-9-9", "reading_done": True},
+                {"lesson_key": lesson_key, "quiz_perfect": True},
+            ],
+        },
+    )
+    assert merge.status_code == 200
+    body = merge.json()
+    assert body["merged_count"] == 1
+    assert len(body["snapshot"]["lessons"]) == 1
+    assert body["snapshot"]["lessons"][0]["lesson_key"] == lesson_key
+    assert body["snapshot"]["lessons"][0]["quiz_perfect"] is True

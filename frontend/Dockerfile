@@ -49,8 +49,10 @@ RUN addgroup --system --gid 1001 nodejs \
     && adduser --system --uid 1001 --ingroup nodejs nextjs
 
 COPY --from=builder /app/frontend/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/frontend/.next/standalone ./
+# outputFileTracingRoot=<repo> nests standalone as standalone/frontend/server.js
+COPY --from=builder --chown=nextjs:nodejs /app/frontend/.next/standalone/frontend ./
 COPY --from=builder --chown=nextjs:nodejs /app/frontend/.next/static ./.next/static
+# Course markdown lives at repo root; keep PYCOURSE_CONTENT_ROOT=/app
 COPY --from=builder --chown=nextjs:nodejs /app/course-* /app/
 
 USER nextjs

@@ -35,7 +35,11 @@ Browser ──► Frontend (Next.js, port 3000)
 3. **Settings → Volumes**
    - Mount path: `/data`
 4. **Settings → Variables** — see [Backend variables](#backend-variables) below.
-5. Deploy. Confirm `GET https://<backend-host>/health` returns `"status":"ok"`.
+5. **Start command:** leave empty so the Docker `ENTRYPOINT` runs (`docker-entrypoint.sh`).
+   Remove any custom `startCommand` override in the dashboard — it bypasses the
+   entrypoint and breaks `/data` setup. [`railway.json`](railway.json) sets
+   `"startCommand": null` when config-as-code is active.
+6. Deploy. Confirm `GET https://<backend-host>/health` returns `"status":"ok"`.
 
 On startup the container runs `alembic upgrade head`, syncs lesson metadata from
 markdown, then starts Uvicorn on Railway's `PORT`.
@@ -50,7 +54,10 @@ markdown, then starts Uvicorn on Railway's `PORT`.
 3. **Settings → Variables → build-time**
    - Set `NEXT_PUBLIC_BACKEND_URL` to the backend's **public HTTPS URL** (no trailing slash).
    - Railway exposes Dockerfile `ARG`s as build variables when named the same.
-4. Deploy. Open the frontend URL in a browser.
+4. **Watch paths:** include `course-*/**` (not `frontend/**` alone). The repo ships
+   [`railway.json`](railway.json) with shared watch patterns; config-as-code overrides
+   dashboard values on deploy.
+5. Deploy. Open the frontend URL in a browser.
 
 ### 3. Wire CORS after both URLs exist
 
@@ -158,5 +165,7 @@ SQLite data persists in the `backend-data` compose volume.
 | Browser CORS error | Backend `CORS_ORIGINS` missing frontend URL | Set `CORS_ORIGINS` to exact frontend origin (scheme + host, no path) |
 | Auth cookie never set locally | `SESSION_COOKIE_SECURE=true` over HTTP | Use `false` locally; `true` only on HTTPS |
 | Frontend API calls wrong host | Stale build | Rebuild frontend with correct `NEXT_PUBLIC_BACKEND_URL` |
+| Frontend build: no `course-*` under `/app` | `watchPatterns` only `frontend/**` (narrow archive) or root directory not repo root | Widen watch paths to include `course-*/**`; keep root `/`. Dockerfiles clone course markdown when missing from context |
 | Empty lesson index / sync errors | Build context not repo root | Ensure Railway root directory is `/`, not `backend/` |
+| Backend SQLite `unable to open database file` | Custom Railway `startCommand` bypasses entrypoint, or Alembic used ini dev path | Clear dashboard start command; set `DATABASE_URL=sqlite:////data/pycourse.db`; mount volume at `/data` |
 | DB resets on redeploy | No volume | Mount Railway volume at `/data` and set `DATABASE_URL=sqlite:////data/pycourse.db` |

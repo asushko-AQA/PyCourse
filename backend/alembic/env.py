@@ -12,8 +12,10 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-if not config.get_main_option("sqlalchemy.url"):
-    config.set_main_option("sqlalchemy.url", get_settings().database_url)
+# Always prefer runtime settings over alembic.ini. The ini file keeps a dev-only
+# relative default (sqlite:///data/pycourse.db) that must not override production
+# DATABASE_URL (sqlite:////data/pycourse.db on the Railway volume).
+config.set_main_option("sqlalchemy.url", get_settings().database_url)
 
 target_metadata = SQLModel.metadata
 

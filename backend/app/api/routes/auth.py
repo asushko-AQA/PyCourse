@@ -158,7 +158,7 @@ def sign_in(
         key=settings.session_cookie_name,
         value=result.session_token,
         httponly=True,
-        secure=True,
+        secure=settings.session_cookie_secure,
         samesite="lax",
         max_age=max_age,
         path="/",
@@ -179,7 +179,7 @@ def sign_out(
         key=settings.session_cookie_name,
         path="/",
         httponly=True,
-        secure=True,
+        secure=settings.session_cookie_secure,
         samesite="lax",
     )
     return response

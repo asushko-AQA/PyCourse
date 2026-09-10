@@ -21,6 +21,8 @@ cd .. && npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+For **production deployment** (Railway, Docker, env vars), see [DEPLOY.md](DEPLOY.md).
+
 For **MCP lesson inspection and agent observability** in Cursor, see [documents/local-dev-and-mcp.md](documents/local-dev-and-mcp.md).
 
 ## For contributors & AI agents

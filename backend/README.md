@@ -101,14 +101,21 @@ pytest
 
 ## Key environment variables
 
-See the env-var contract in
-[documents/plans/platform-architecture.md](../documents/plans/platform-architecture.md):
-`DATABASE_URL`, `EXECUTOR_URL`, `SESSION_SECRET`, `FRONTEND_ORIGIN`.
+See [DEPLOY.md](../DEPLOY.md) for production/Railway setup and the full variable
+list. Summary:
+
+| Variable | Purpose |
+|----------|---------|
+| `DATABASE_URL` | SQLite path (`sqlite:////data/pycourse.db` in production with a `/data` volume) |
+| `CORS_ORIGINS` | Comma-separated browser origins for CORS (preferred in production) |
+| `FRONTEND_ORIGIN` | Single origin fallback when `CORS_ORIGINS` is unset (default `http://localhost:3000`) |
+| `SESSION_COOKIE_SECURE` | `true` on HTTPS production; `false` for local HTTP dev |
+| `VERIFY_URL_TEMPLATE` | Verification link template for registration emails |
+| `NEXT_PUBLIC_BACKEND_URL` | Frontend env — public backend URL (build-time) |
 
 Plan 06 auth/email settings (all optional, with safe dev defaults):
 `PASSWORD_MIN_LENGTH`, `EMAIL_VERIFICATION_TTL_HOURS`, `VERIFY_URL_TEMPLATE`,
 `EMAIL_BACKEND` (`console` | `smtp`), `EMAIL_FROM`, and the `SMTP_*` settings.
-The frontend reads `NEXT_PUBLIC_BACKEND_URL` to reach these endpoints.
 
 ## Data & persistence
 

@@ -1,0 +1,43 @@
+# Local production-like stack. Build from repo root:
+#   docker compose up --build
+#
+# Frontend: http://localhost:3000
+# Backend:  http://localhost:8000
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:////data/pycourse.db
+      FRONTEND_ORIGIN: http://localhost:3000
+      SESSION_COOKIE_SECURE: "false"
+      EMAIL_BACKEND: console
+      VERIFY_URL_TEMPLATE: http://localhost:3000/en/auth/verify?token={token}
+    volumes:
+      - backend-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        NEXT_PUBLIC_BACKEND_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  backend-data:

@@ -1,6 +1,7 @@
 from functools import lru_cache
 from pathlib import Path
 
+from pydantic import computed_field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -8,7 +9,11 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
     database_url: str = "sqlite:///data/pycourse.db"
+    # Single origin (legacy) or comma-separated list, e.g.
+    # "https://app.example.com,http://localhost:3000"
     frontend_origin: str = "http://localhost:3000"
+    # Optional override; when set, replaces frontend_origin for CORS allowlist.
+    cors_origins: str | None = None
     sqlite_busy_timeout_ms: int = 5000
 
     # --- Auth / registration (plan 06) ---
@@ -36,6 +41,15 @@ class Settings(BaseSettings):
     session_ttl_hours: int = 24 * 7
     signin_rate_limit_attempts: int = 5
     signin_rate_limit_window_seconds: int = 60
+    # False for local HTTP dev; set true in production (HTTPS).
+    session_cookie_secure: bool = False
+
+    @computed_field  # type: ignore[prop-decorator]
+    @property
+    def allowed_cors_origins(self) -> list[str]:
+        raw = self.cors_origins if self.cors_origins is not None else self.frontend_origin
+        origins = [part.strip() for part in raw.split(",") if part.strip()]
+        return origins or ["http://localhost:3000"]
 
     def build_verify_url(self, token: str) -> str:
         if "{token}" in self.verify_url_template:

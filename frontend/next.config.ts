@@ -2,6 +2,8 @@ import path from "node:path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Required for the production Docker image (frontend/Dockerfile).
+  output: "standalone",
   // frontend/ lives inside the course repo; pin the workspace root so Next
   // doesn't pick up unrelated lockfiles further up the tree.
   turbopack: {

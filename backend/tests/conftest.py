@@ -55,6 +55,7 @@ def settings_fixture() -> Settings:
         verify_url_template="http://testserver/en/auth/verify?token={token}",
         email_verification_ttl_hours=24,
         password_min_length=8,
+        session_cookie_secure=True,
     )
 
 

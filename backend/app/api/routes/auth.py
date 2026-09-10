@@ -7,11 +7,15 @@ from datetime import datetime, timedelta
 from threading import Lock
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
+from sqlmodel import Session
 
-from app.api.deps import auth_service, current_user
+from app.api.deps import auth_service, current_user, db_session
 from app.core.config import Settings, get_settings
 from app.models.tables import User, now_utc
+from app.repositories.email_verification_repo import EmailVerificationTokenRepo
+from app.repositories.user_repo import UserRepo
 from app.schemas.auth import (
+    DevVerificationLinkResponse,
     RegisterRequest,
     RegisterResponse,
     SessionResponse,
@@ -188,3 +192,38 @@ def sign_out(
 @router.get("/session", response_model=SessionResponse)
 def session_bootstrap(user: User = Depends(current_user)) -> SessionResponse:
     return _session_payload(user)
+
+
+@router.get(
+    "/dev/verification-link",
+    response_model=DevVerificationLinkResponse,
+    tags=["auth", "dev"],
+    summary="DEV/console-only: fetch the latest verification link for smoke testing",
+)
+def dev_verification_link(
+    email: str,
+    settings: Settings = Depends(get_settings),
+    session: Session = Depends(db_session),
+) -> DevVerificationLinkResponse:
+    """Retrieve the latest unused verification token when ``EMAIL_BACKEND=console``.
+
+    Disabled (404) for any other email backend so production SMTP deployments
+    never expose verification links over HTTP.
+    """
+    if settings.email_backend.lower() != "console":
+        raise _error(status.HTTP_404_NOT_FOUND, "not_found", "Not found.")
+
+    normalized = email.strip().lower()
+    user = UserRepo(session).get_by_email(normalized)
+    if user is None:
+        raise _error(status.HTTP_404_NOT_FOUND, "not_found", "No pending verification for this email.")
+
+    token_row = EmailVerificationTokenRepo(session).get_latest_active_for_user(user.id)
+    if token_row is None:
+        raise _error(status.HTTP_404_NOT_FOUND, "not_found", "No pending verification for this email.")
+
+    return DevVerificationLinkResponse(
+        email=normalized,
+        verify_url=settings.build_verify_url(token_row.token),
+        token=token_row.token,
+    )

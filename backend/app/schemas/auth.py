@@ -48,3 +48,11 @@ class SessionUser(BaseModel):
 
 class SessionResponse(BaseModel):
     user: SessionUser
+
+
+class DevVerificationLinkResponse(BaseModel):
+    """DEV/console-only helper for smoke tests — not available when EMAIL_BACKEND=smtp."""
+
+    email: EmailStr
+    verify_url: str
+    token: str

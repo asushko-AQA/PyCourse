@@ -11,13 +11,19 @@ from app.services.email.base import EmailMessage
 logger = logging.getLogger("app.email")
 
 
+def _format_console_message(message: EmailMessage) -> str:
+    return (
+        "\n--- DEV EMAIL (not actually sent) ---\n"
+        f"To: {message.to}\n"
+        f"Subject: {message.subject}\n\n"
+        f"{message.text_body}"
+        "-------------------------------------"
+    )
+
+
 class ConsoleEmailSender:
     def send(self, message: EmailMessage) -> None:
-        logger.info(
-            "\n--- DEV EMAIL (not actually sent) ---\n"
-            "To: %s\nSubject: %s\n\n%s"
-            "-------------------------------------",
-            message.to,
-            message.subject,
-            message.text_body,
-        )
+        formatted = _format_console_message(message)
+        # Railway/container logs capture stdout reliably; logger output may be filtered.
+        print(formatted, flush=True)
+        logger.info("%s", formatted)

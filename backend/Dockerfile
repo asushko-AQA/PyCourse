@@ -7,6 +7,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     DATABASE_URL=sqlite:////data/pycourse.db
 
+# Mount point for Railway persistent volume (entrypoint also mkdir -p at runtime).
+RUN mkdir -p /data && chmod 1777 /data
+
 COPY backend/pyproject.toml backend/README.md ./
 COPY backend/app ./app
 COPY backend/alembic ./alembic

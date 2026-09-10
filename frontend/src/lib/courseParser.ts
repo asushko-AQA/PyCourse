@@ -26,19 +26,45 @@ import { LANGS } from "./types";
 // Content root resolution
 // ---------------------------------------------------------------------------
 
-/** Find the repo root containing `course-*` folders (frontend/.. or cwd). */
-function resolveContentRoot(): string {
-  const candidates = [path.resolve(process.cwd(), ".."), process.cwd()];
-  for (const dir of candidates) {
-    try {
-      const entries = fs.readdirSync(dir);
-      if (entries.some((e) => /^course-\d+-/.test(e))) return dir;
-    } catch {
-      // try next candidate
-    }
+const ENV_CONTENT_ROOT = "PYCOURSE_CONTENT_ROOT";
+
+function hasCourseDirs(dir: string): boolean {
+  try {
+    return fs
+      .readdirSync(dir)
+      .some((entry) => /^course-\d+-/.test(entry));
+  } catch {
+    return false;
   }
+}
+
+/**
+ * Find the repo root containing `course-*` folders.
+ *
+ * Resolution order: explicit env (Docker/production), parent of cwd (local dev
+ * from frontend/), cwd, then the fixed Docker layout at `/app`.
+ */
+function resolveContentRoot(): string {
+  const candidates: string[] = [];
+  const envRoot = process.env[ENV_CONTENT_ROOT]?.trim();
+  if (envRoot) candidates.push(path.resolve(envRoot));
+
+  candidates.push(
+    path.resolve(process.cwd(), ".."),
+    process.cwd(),
+    "/app",
+  );
+
+  const tried: string[] = [];
+  for (const dir of candidates) {
+    const resolved = path.resolve(dir);
+    if (tried.includes(resolved)) continue;
+    tried.push(resolved);
+    if (hasCourseDirs(resolved)) return resolved;
+  }
+
   throw new Error(
-    `Could not locate course content. Looked in: ${candidates.join(", ")}`,
+    `Could not locate course content. Looked in: ${tried.join(", ")}`,
   );
 }
 

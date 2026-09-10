@@ -18,7 +18,7 @@ def test_lesson_metadata_repositories_roundtrip(session) -> None:
         order_index=1,
     )
     lesson_repo.create_block(
-        block_id="block-1",
+        block_id="course-1/block-1",
         course_id="course-1",
         slug="block-1-meeting-your-computer",
         title="Meeting Your Computer",
@@ -26,9 +26,9 @@ def test_lesson_metadata_repositories_roundtrip(session) -> None:
         order_index=1,
     )
     lesson = lesson_repo.create_lesson(
-        lesson_id="lesson-1-1",
+        lesson_id="course-1/lesson-1-1",
         course_id="course-1",
-        block_id="block-1",
+        block_id="course-1/block-1",
         slug="lesson-1-1-installing-python",
         title="Installing Python",
         path="course-1-python-basics/block-1-meeting-your-computer/lesson-1-1-installing-python",
@@ -58,7 +58,7 @@ def test_user_session_and_progress_repositories(session) -> None:
         order_index=1,
     )
     lesson_repo.create_block(
-        block_id="block-1",
+        block_id="course-1/block-1",
         course_id="course-1",
         slug="block-1-meeting-your-computer",
         title="Meeting Your Computer",
@@ -66,9 +66,9 @@ def test_user_session_and_progress_repositories(session) -> None:
         order_index=1,
     )
     lesson = lesson_repo.create_lesson(
-        lesson_id="lesson-1-1",
+        lesson_id="course-1/lesson-1-1",
         course_id="course-1",
-        block_id="block-1",
+        block_id="course-1/block-1",
         slug="lesson-1-1-installing-python",
         title="Installing Python",
         path="course-1-python-basics/block-1-meeting-your-computer/lesson-1-1-installing-python",

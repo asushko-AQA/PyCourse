@@ -19,6 +19,14 @@ interface AuthState {
   signOut: () => Promise<void>;
 }
 
+function onSignedIn(userId: string) {
+  useProgressStore.getState().setSignedIn(true, userId);
+}
+
+function onSignedOut() {
+  useProgressStore.getState().setSignedIn(false);
+}
+
 export const useAuthStore = create<AuthState>((set) => ({
   user: null,
   status: "unknown",
@@ -27,24 +35,28 @@ export const useAuthStore = create<AuthState>((set) => ({
     try {
       const user = await fetchSession();
       set({ user, status: "signed_in" });
+      onSignedIn(user.id);
     } catch (err) {
       if (err instanceof AuthApiError && err.code === "unauthorized") {
         set({ user: null, status: "signed_out" });
+        onSignedOut();
         return;
       }
       set({ user: null, status: "signed_out" });
+      onSignedOut();
     }
   },
 
   signIn: async (email, password) => {
     const user = await apiSignIn(email, password);
     set({ user, status: "signed_in" });
+    onSignedIn(user.id);
     return user;
   },
 
   signOut: async () => {
     await apiSignOut();
-    useProgressStore.getState().reset();
+    onSignedOut();
     set({ user: null, status: "signed_out" });
   },
 }));

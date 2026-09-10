@@ -12,9 +12,12 @@ from app.core.security import hash_session_token
 from app.core.db import get_session
 from app.models.tables import User, now_utc
 from app.repositories.email_verification_repo import EmailVerificationTokenRepo
+from app.repositories.progress_repo import ProgressRepo
 from app.repositories.session_repo import SessionRepo
 from app.repositories.user_repo import UserRepo
+from app.repositories.lesson_repo import LessonRepo
 from app.services.auth_service import AuthService
+from app.services.progress_service import ProgressService
 from app.services.email.base import EmailSender
 from app.services.email.factory import get_email_sender
 
@@ -39,6 +42,10 @@ def auth_service(
         email_sender=sender,
         settings=settings,
     )
+
+
+def progress_service(session: Session = Depends(db_session)) -> ProgressService:
+    return ProgressService(progress=ProgressRepo(session), lessons=LessonRepo(session))
 
 
 def _as_utc(value):

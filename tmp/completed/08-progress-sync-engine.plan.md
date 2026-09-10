@@ -15,17 +15,17 @@ Move lesson/quiz progress from the frontend's localStorage (`pyquest-progress`) 
 - Consumed by: 09 (stars), 10 (homework state), 14 (last-position cursor resume).
 
 ## Deliverables / Steps
-- [ ] Define progress contract: per user/lesson state (read, quiz result, homework state) + **last-position cursor** (`course/block/lesson/tab`); idempotent update semantics.
-- [ ] `GET /progress` and `POST /progress` (upsert) endpoints; validation against synced lesson ids.
-- [ ] Refactor `frontend/src/stores/progressStore.ts` to sync with server when authenticated; keep `persist` as **offline fallback** + optimistic updates.
-- [ ] **First-login merge**: one-time reconciliation of localStorage `pyquest-progress` into server state (union of completions; server wins on conflict, document policy).
-- [ ] Preserve CourseMap/`LessonLockGuard` unlock behavior against server data.
+- [x] Define progress contract: per user/lesson state (read, quiz result, homework state) + **last-position cursor** (`course/block/lesson/tab`); idempotent update semantics.
+- [x] `GET /progress` and `POST /progress` (upsert) endpoints; validation against synced lesson ids.
+- [x] Refactor `frontend/src/stores/progressStore.ts` to sync with server when authenticated; keep `persist` as **offline fallback** + optimistic updates.
+- [x] **First-login merge**: one-time reconciliation of localStorage `pyquest-progress` into server state (union of completions; server wins on conflict, document policy).
+- [x] Preserve CourseMap/`LessonLockGuard` unlock behavior against server data.
 
 ## Verification
-- [ ] Completing a lesson while signed in persists server-side; reload on another device shows it.
-- [ ] First sign-in merges existing local progress without loss or duplication.
-- [ ] Offline: updates queue locally and sync on reconnect; no data loss.
-- [ ] Unlock logic identical to MVP behavior.
+- [x] Completing a lesson while signed in persists server-side; reload on another device shows it.
+- [x] First sign-in merges existing local progress without loss or duplication.
+- [x] Offline: updates queue locally and sync on reconnect; no data loss.
+- [x] Unlock logic identical to MVP behavior.
 
 ## Out of scope
 - Star/streak computation (09) and XP retirement.

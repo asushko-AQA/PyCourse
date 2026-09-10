@@ -142,9 +142,10 @@ def discover_catalog(root: str | Path | None = None) -> list[CourseRecord]:
         lesson_order_by_course.setdefault(course_id, 0)
 
         for block_dir in sorted(block_dirs, key=lambda p: int(BLOCK_RE.match(p.name).group(1))):  # type: ignore[union-attr]
-            block_id = _extract_id(block_dir.name, re.compile(r"^(block-\d+)"))
-            if block_id is None:
+            block_short_id = _extract_id(block_dir.name, re.compile(r"^(block-\d+)"))
+            if block_short_id is None:
                 continue
+            block_id = f"{course_id}/{block_short_id}"
             block_num = _extract_id(block_dir.name, BLOCK_RE)
             block_order = int(block_num) if block_num is not None else 0
 
@@ -155,9 +156,10 @@ def discover_catalog(root: str | Path | None = None) -> list[CourseRecord]:
             lessons: list[LessonRecord] = []
             lesson_dirs = sorted(_sorted_dirs(block_dir, re.compile(r"^lesson-\d+-\d+-")), key=lambda p: _lesson_sort_key(p.name))
             for lesson_dir in lesson_dirs:
-                lesson_id = _extract_id(lesson_dir.name, re.compile(r"^(lesson-\d+-\d+)"))
-                if lesson_id is None:
+                lesson_short_id = _extract_id(lesson_dir.name, re.compile(r"^(lesson-\d+-\d+)"))
+                if lesson_short_id is None:
                     continue
+                lesson_id = f"{course_id}/{lesson_short_id}"
                 en_path = lesson_dir / "en.md"
                 ru_path = lesson_dir / "ru.md"
                 if not en_path.exists() or not ru_path.exists():

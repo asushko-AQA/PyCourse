@@ -7,10 +7,24 @@ RUN npm ci
 
 FROM node:22-bookworm-slim AS builder
 
-# Repo layout: /app/course-*, /app/frontend/ — courses must land at /app, not
-# under frontend/, so the build-time parser and SSR can find them reliably.
+# Repo layout: /app/course-*, /app/frontend/
 WORKDIR /app
-COPY course-* ./
+
+ARG RAILWAY_GIT_BRANCH=main
+ARG RAILWAY_GIT_COMMIT_SHA=
+ARG GIT_REPO=https://github.com/asushko-AQA/PyCourse.git
+
+# Railway watchPatterns such as frontend/** can omit course-* from the build
+# archive. fetch-course-dirs.sh clones them when missing, then overlays any
+# course trees present in the build context (local docker compose).
+COPY scripts/docker/fetch-course-dirs.sh /tmp/fetch-course-dirs.sh
+COPY . /tmp/buildctx/
+RUN chmod +x /tmp/fetch-course-dirs.sh \
+  && RAILWAY_GIT_BRANCH="${RAILWAY_GIT_BRANCH}" \
+       RAILWAY_GIT_COMMIT_SHA="${RAILWAY_GIT_COMMIT_SHA}" \
+       GIT_REPO="${GIT_REPO}" \
+       /tmp/fetch-course-dirs.sh /app /tmp/buildctx \
+  && rm -rf /tmp/buildctx /tmp/fetch-course-dirs.sh
 
 WORKDIR /app/frontend
 COPY --from=deps /app/frontend/node_modules ./node_modules
@@ -20,10 +34,6 @@ ENV PYCOURSE_CONTENT_ROOT=/app
 
 ARG NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
 ENV NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
-
-# Fail fast when Railway/build context is not the monorepo root.
-RUN test -n "$(ls -d /app/course-[0-9]* 2>/dev/null | head -1)" \
-  || (echo "ERROR: no course-* directories under /app — build context must be the repo root (.)" >&2 && exit 1)
 
 RUN npm run build
 

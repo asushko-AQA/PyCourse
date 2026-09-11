@@ -14,6 +14,20 @@ export const en: Dict = {
   nav: {
     level: "Lvl",
     xp: "XP",
+    progressCta: "Want to keep your progress? Sign up",
+    progressCtaButton: "Sign up",
+  },
+  menu: {
+    open: "Open menu",
+    close: "Close menu",
+    account: "My account",
+    language: "Language",
+  },
+  account: {
+    title: "My account",
+    subtitle: "Your PyQuest profile and sign-in details.",
+    emailLabel: "Email",
+    backHome: "← Back to courses",
   },
   map: {
     backHome: "All courses",

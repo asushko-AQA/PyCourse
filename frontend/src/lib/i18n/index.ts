@@ -17,6 +17,21 @@ export interface Dict {
   nav: {
     level: string;
     xp: string;
+    /** Shown in the header when logged out instead of the XP/progress badge. */
+    progressCta: string;
+    progressCtaButton: string;
+  };
+  menu: {
+    open: string;
+    close: string;
+    account: string;
+    language: string;
+  };
+  account: {
+    title: string;
+    subtitle: string;
+    emailLabel: string;
+    backHome: string;
   };
   map: {
     backHome: string;

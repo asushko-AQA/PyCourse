@@ -14,6 +14,20 @@ export const ru: Dict = {
   nav: {
     level: "Ур.",
     xp: "XP",
+    progressCta: "Хочешь сохранить прогресс? Зарегистрируйся",
+    progressCtaButton: "Зарегистрироваться",
+  },
+  menu: {
+    open: "Открыть меню",
+    close: "Закрыть меню",
+    account: "Мой аккаунт",
+    language: "Язык",
+  },
+  account: {
+    title: "Мой аккаунт",
+    subtitle: "Твой профиль PyQuest и данные для входа.",
+    emailLabel: "Электронная почта",
+    backHome: "← Назад к курсам",
   },
   map: {
     backHome: "Все курсы",

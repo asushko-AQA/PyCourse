@@ -22,7 +22,8 @@ class Settings(BaseSettings):
     # Lifetime of an email-verification token before it expires.
     email_verification_ttl_hours: int = 24
     # Frontend route that redeems a verification token. `{token}` is substituted
-    # with the single-use token; the page then POSTs it back to /auth/verify.
+    # with the single-use token; optional `{lang}` defaults to "en" when omitted
+    # from the call site. The page then POSTs the token back to /auth/verify.
     verify_url_template: str = "http://localhost:3000/en/auth/verify?token={token}"
 
     # --- Email delivery (plan 06) ---
@@ -51,11 +52,16 @@ class Settings(BaseSettings):
         origins = [part.strip() for part in raw.split(",") if part.strip()]
         return origins or ["http://localhost:3000"]
 
-    def build_verify_url(self, token: str) -> str:
+    def build_verify_url(self, token: str, *, lang: str = "en") -> str:
         if "{token}" in self.verify_url_template:
-            return self.verify_url_template.format(token=token)
-        sep = "&" if "?" in self.verify_url_template else "?"
-        return f"{self.verify_url_template}{sep}token={token}"
+            return self.verify_url_template.format(token=token, lang=lang)
+        base = (
+            self.verify_url_template.format(lang=lang)
+            if "{lang}" in self.verify_url_template
+            else self.verify_url_template
+        )
+        sep = "&" if "?" in base else "?"
+        return f"{base}{sep}token={token}"
 
 
 @lru_cache

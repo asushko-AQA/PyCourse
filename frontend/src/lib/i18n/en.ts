@@ -132,6 +132,12 @@ export const en: Dict = {
       description: "Build real web pages and apps that run in your browser.",
       emoji: "🌐",
     },
+    "course-3": {
+      title: "Game Development with Pygame",
+      description:
+        "Build 2D games with Pygame — windows, colors, movement, and your own playable mini-game.",
+      emoji: "🎮",
+    },
   },
   blocks: {
     "course-1/block-1": { title: "Meeting Your Computer", emoji: "🖥️" },
@@ -142,5 +148,6 @@ export const en: Dict = {
     "course-2/block-0": { title: "Environment Setup", emoji: "🧪" },
     "course-2/block-1": { title: "Web Basics with Flask", emoji: "🌐" },
     "course-2/block-2": { title: "Making It Beautiful", emoji: "🎨" },
+    "course-3/block-1": { title: "Getting Started with Pygame", emoji: "🕹️" },
   },
 };

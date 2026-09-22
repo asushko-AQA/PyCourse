@@ -133,6 +133,12 @@ export const ru: Dict = {
       description: "Создавай настоящие веб-страницы и приложения в браузере.",
       emoji: "🌐",
     },
+    "course-3": {
+      title: "Игры на Python с Pygame",
+      description:
+        "Создавай 2D-игры с Pygame — окна, цвета, движение и свою мини-игру.",
+      emoji: "🎮",
+    },
   },
   blocks: {
     "course-1/block-1": { title: "Знакомство с компьютером", emoji: "🖥️" },
@@ -143,5 +149,6 @@ export const ru: Dict = {
     "course-2/block-0": { title: "Настройка окружения", emoji: "🧪" },
     "course-2/block-1": { title: "Основы веба с Flask", emoji: "🌐" },
     "course-2/block-2": { title: "Красота и интерактив", emoji: "🎨" },
+    "course-3/block-1": { title: "Знакомство с Pygame", emoji: "🕹️" },
   },
 };

@@ -22,7 +22,7 @@
 
 **Previous block / Предыдущий блок:** [Block 1: Web Basics with Flask](../block-1-web-basics-flask/README.md)
 
-**Next course / Следующий курс:** [Course 3: Game Development](../../course-3-game-dev/README.md) *(coming soon)*
+**Next course / Следующий курс:** [Course 3: Game Development](../../course-3-game-dev/README.md) *(Block 1 available)*
 
 ---
 

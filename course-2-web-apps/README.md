@@ -56,7 +56,7 @@ Finished all 11 lessons? Use the [graduation checklist in STUDENT-MAP](STUDENT-M
 2. Run both capstone apps (`my_web_madlibs/` and `my_web_calc/`)  
 3. Show a parent or teacher your styled web pages in the browser  
 
-**Next course:** [Course 3 — Game Development with Pygame](../course-3-game-dev/README.md) *(coming soon)*
+**Next course:** [Course 3 — Game Development with Pygame](../course-3-game-dev/README.md) *(Block 1 available)*
 
 ---
 

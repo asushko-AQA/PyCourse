@@ -1,10 +1,7 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDict } from "@/lib/i18n";
 import { isLang, LANGS } from "@/lib/types";
-import LanguageToggle from "@/components/LanguageToggle";
-import XPBadge from "@/components/XPBadge";
-import AuthNavControls from "@/components/AuthNavControls";
+import AppHeader from "@/components/AppHeader";
 
 export function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));
@@ -25,25 +22,7 @@ export default async function LangLayout({
 
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-b from-sky-50 via-violet-50/50 to-white">
-      <header className="sticky top-0 z-20 border-b border-white/60 bg-white/70 backdrop-blur">
-        <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-3">
-          <Link
-            href={`/${lang}`}
-            data-automation-id="nav-logo-home"
-            className="flex items-center gap-2 text-lg font-black text-violet-700"
-          >
-            <span className="text-2xl" aria-hidden>
-              🐍
-            </span>
-            {dict.appName}
-          </Link>
-          <div className="flex items-center gap-3">
-            <AuthNavControls lang={lang} t={dict.auth} />
-            <XPBadge levelLabel={dict.nav.level} xpLabel={dict.nav.xp} />
-            <LanguageToggle current={lang} />
-          </div>
-        </div>
-      </header>
+      <AppHeader lang={lang} appName={dict.appName} dict={dict} />
       <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-8">
         {children}
       </main>

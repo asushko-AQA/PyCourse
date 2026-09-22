@@ -31,4 +31,4 @@ Read [AGENTS.md](AGENTS.md) before authoring or editing lesson content.
 
 ## Status
 
-**Course 1 complete** — all 21 lessons in Blocks 1–5. Course 2 (Flask) is next; see [course-2-web-apps/README.md](course-2-web-apps/README.md).
+**Course 1 & 2 complete.** **Course 3 Block 1** (Pygame getting started, lessons 1.1–1.4) is available — see [course-3-game-dev/README.md](course-3-game-dev/README.md). Blocks 2–3 are still planned.

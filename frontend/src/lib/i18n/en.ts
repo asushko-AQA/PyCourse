@@ -149,5 +149,6 @@ export const en: Dict = {
     "course-2/block-1": { title: "Web Basics with Flask", emoji: "🌐" },
     "course-2/block-2": { title: "Making It Beautiful", emoji: "🎨" },
     "course-3/block-1": { title: "Getting Started with Pygame", emoji: "🕹️" },
+    "course-3/block-2": { title: "Player Controls & Animations", emoji: "🎛️" },
   },
 };

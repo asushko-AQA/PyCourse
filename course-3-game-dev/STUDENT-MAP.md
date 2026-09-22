@@ -21,11 +21,15 @@ PyCourse/
 │   │   ├── lesson-1-2-game-window-colors/
 │   │   ├── lesson-1-3-shapes-coordinates/
 │   │   └── lesson-1-4-delta-time-smooth-movement/
-│   └── block-2-player-controls-animations/
-│       ├── lesson-2-1-keyboard-events/
-│       ├── lesson-2-2-images-sprites/
-│       ├── lesson-2-3-score-text-rendering/
-│       └── lesson-2-4-game-states/
+│   ├── block-2-player-controls-animations/
+│   │   ├── lesson-2-1-keyboard-events/
+│   │   ├── lesson-2-2-images-sprites/
+│   │   ├── lesson-2-3-score-text-rendering/
+│   │   └── lesson-2-4-game-states/
+│   └── block-3-physics-collisions-final-project/
+│       ├── lesson-3-1-collision-detection/
+│       ├── lesson-3-2-catch-the-falling-stars/
+│       └── lesson-3-3-polish/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -35,7 +39,7 @@ PyCourse/
 
 | Lesson | Instead of long `cd`… |
 |--------|------------------------|
-| 1.1–2.4 | Copy the lesson `starter/` folder anywhere; activate a venv with Pygame; `cd` there before running |
+| 1.1–3.3 | Copy the lesson `starter/` folder anywhere; activate a venv with Pygame; `cd` there before running |
 
 ---
 
@@ -65,7 +69,9 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 2.2 — PNG sprite loads with `pygame.image.load` and `blit`
 - [ ] 2.3 — Score text renders with `font.render` + `blit`
 - [ ] 2.4 — Game has start → playing → game over; SPACE restarts
-- [ ] 3.1–3.3 — *(coming later)*
+- [ ] 3.1 — `rect.colliderect()` collects a coin and relocates it
+- [ ] 3.2 — Capstone: stars spawn, fall, get caught, score updates, restart works
+- [ ] 3.3 — Polish: high score (session), difficulty ramp, optional catch/miss sounds
 
 ---
 

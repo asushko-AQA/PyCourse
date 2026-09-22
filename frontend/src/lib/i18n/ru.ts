@@ -151,5 +151,6 @@ export const ru: Dict = {
     "course-2/block-2": { title: "Красота и интерактив", emoji: "🎨" },
     "course-3/block-1": { title: "Знакомство с Pygame", emoji: "🕹️" },
     "course-3/block-2": { title: "Управление игроком и анимации", emoji: "🎛️" },
+    "course-3/block-3": { title: "Физика и столкновения (финальный проект)", emoji: "⭐" },
   },
 };

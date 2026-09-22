@@ -21,11 +21,15 @@ PyCourse/
 │   │   ├── lesson-1-2-game-window-colors/
 │   │   ├── lesson-1-3-shapes-coordinates/
 │   │   └── lesson-1-4-delta-time-smooth-movement/
-│   └── block-2-player-controls-animations/
-│       ├── lesson-2-1-keyboard-events/
-│       ├── lesson-2-2-images-sprites/
-│       ├── lesson-2-3-score-text-rendering/
-│       └── lesson-2-4-game-states/
+│   ├── block-2-player-controls-animations/
+│   │   ├── lesson-2-1-keyboard-events/
+│   │   ├── lesson-2-2-images-sprites/
+│   │   ├── lesson-2-3-score-text-rendering/
+│   │   └── lesson-2-4-game-states/
+│   └── block-3-physics-collisions-final-project/
+│       ├── lesson-3-1-collision-detection/
+│       ├── lesson-3-2-catch-the-falling-stars/
+│       └── lesson-3-3-polish/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -35,7 +39,7 @@ PyCourse/
 
 | Урок | Вместо длинного `cd`… |
 |------|------------------------|
-| 1.1–2.4 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
+| 1.1–3.3 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
 
 ---
 
@@ -65,7 +69,9 @@ pip install pygame
 - [ ] 2.2 — PNG-спрайт загружается через `pygame.image.load` и `blit`
 - [ ] 2.3 — Счёт выводится через `font.render` + `blit`
 - [ ] 2.4 — Есть start → playing → game over; SPACE перезапускает
-- [ ] 3.1–3.3 — *(позже)*
+- [ ] 3.1 — `rect.colliderect()` собирает монету и переносит её
+- [ ] 3.2 — Капстоун: звёзды появляются, падают, ловятся, счёт обновляется, перезапуск работает
+- [ ] 3.3 — Полировка: рекорд (сессия), рост сложности, опциональные звуки catch/miss
 
 ---
 

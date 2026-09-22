@@ -1,6 +1,6 @@
 # Course 3: Game Development with Python
 
-> **Status:** Draft — Block 1 authored  
+> **Status:** Draft — Blocks 1–2 authored  
 > **Audience:** Ages 11+ · **Python:** 3.12+ · **Pygame**  
 > **Pace:** ~4–6 weeks at 1–2 lessons/week (~30–40 min each) when all blocks ship  
 > **Prerequisites:** [Course 1](../course-1-python-basics/README.md) (loops, conditionals, functions, lists). Turtle (Block 5) recommended. Course 2 is helpful for venv/`pip` habits but not required.
@@ -17,7 +17,7 @@ Build a complete 2D mini-game with **Pygame** — windows, colors, shapes, keybo
 | Block | Theme | Lessons | Status | Index |
 |-------|-------|---------|--------|-------|
 | 1 | Getting Started with Pygame | 1.1 – 1.4 | **Draft** | [block-1-getting-started-pygame](block-1-getting-started-pygame/README.md) |
-| 2 | Player Controls & Animations | 2.1 – 2.4 | Planned | — |
+| 2 | Player Controls & Animations | 2.1 – 2.4 | **Draft** | [block-2-player-controls-animations](block-2-player-controls-animations/README.md) |
 | 3 | Physics & Collisions (Final Project) | 3.1 – 3.3 | Planned | — |
 
 **Suggested path:** Block 1 → 2 → 3 (11 lessons when complete).

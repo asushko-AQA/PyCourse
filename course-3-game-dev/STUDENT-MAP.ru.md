@@ -16,11 +16,16 @@ PyCourse/
 ├── course-3-game-dev/
 │   ├── README.md                    ← оглавление Курса 3
 │   ├── STUDENT-MAP.ru.md
-│   └── block-1-getting-started-pygame/
-│       ├── lesson-1-1-install-pygame-game-loop/
-│       ├── lesson-1-2-game-window-colors/
-│       ├── lesson-1-3-shapes-coordinates/
-│       └── lesson-1-4-delta-time-smooth-movement/
+│   ├── block-1-getting-started-pygame/
+│   │   ├── lesson-1-1-install-pygame-game-loop/
+│   │   ├── lesson-1-2-game-window-colors/
+│   │   ├── lesson-1-3-shapes-coordinates/
+│   │   └── lesson-1-4-delta-time-smooth-movement/
+│   └── block-2-player-controls-animations/
+│       ├── lesson-2-1-keyboard-events/
+│       ├── lesson-2-2-images-sprites/
+│       ├── lesson-2-3-score-text-rendering/
+│       └── lesson-2-4-game-states/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -30,7 +35,7 @@ PyCourse/
 
 | Урок | Вместо длинного `cd`… |
 |------|------------------------|
-| 1.1–1.4 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
+| 1.1–2.4 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
 
 ---
 
@@ -56,7 +61,10 @@ pip install pygame
 - [ ] 1.2 — Фон заливается цветом; цвет меняется каждый кадр
 - [ ] 1.3 — Прямоугольник двигается по окну через `x` / `y`
 - [ ] 1.4 — Движение через `dt = clock.tick(60) / 1000` (плавно на любом ПК)
-- [ ] 2.1–2.4 — *(позже)*
+- [ ] 2.1 — Стрелки двигают игрока через `get_pressed`
+- [ ] 2.2 — PNG-спрайт загружается через `pygame.image.load` и `blit`
+- [ ] 2.3 — Счёт выводится через `font.render` + `blit`
+- [ ] 2.4 — Есть start → playing → game over; SPACE перезапускает
 - [ ] 3.1–3.3 — *(позже)*
 
 ---

@@ -44,4 +44,4 @@
 
 **Previous / Предыдущее:** [Lesson 5.20 — Flip & Match](../lesson-5-20-twin-cards-flip-match/README.md)
 
-**Next / Дальше:** [Lesson Block 5 — Tic-Tac-Bot (coming soon)](../README.md)
+**Next / Дальше:** [Lesson 5.22 — Grid & Hot-Seat Turns](../lesson-5-22-tic-tac-bot-grid-turns/README.md)

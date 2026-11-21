@@ -154,7 +154,7 @@ python solution\game.py
 
 ## What's Next
 
-→ [Block 5 — Tic-Tac-Bot (coming soon)](../README.md)
+→ [Lesson 5.22 — Grid & Hot-Seat Turns](../lesson-5-22-tic-tac-bot-grid-turns/README.md) — **Tic-Tac-Bot** ★ project #7!
 
 ---
 

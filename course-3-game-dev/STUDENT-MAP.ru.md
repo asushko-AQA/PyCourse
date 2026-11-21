@@ -64,7 +64,10 @@ PyCourse/
 │       ├── lesson-5-18-merge-magic-complete/
 │       ├── lesson-5-19-twin-cards-symbol-deck/
 │       ├── lesson-5-20-twin-cards-flip-match/
-│       └── lesson-5-21-twin-cards-complete/
+│       ├── lesson-5-21-twin-cards-complete/
+│       ├── lesson-5-22-tic-tac-bot-grid-turns/
+│       ├── lesson-5-23-tic-tac-bot-win-score/
+│       └── lesson-5-24-tic-tac-bot-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -171,6 +174,12 @@ pip install pygame
 - [ ] 5.20 — Клики; idle/first/waiting; таймер прячет промахи
 - [ ] 5.21 — Полный Twin Cards: ходы, время, 3 размера, звёзды, рекорд
 
+### Опциональный ★ Блок 5 II — Tic-Tac-Bot
+
+- [ ] 5.22 — доска из 9 клеток; болт X / шестерня O; ходы по очереди
+- [ ] 5.23 — `WIN_LINES`, подсветка победы, счёт, новый раунд
+- [ ] 5.24 — полный Tic-Tac-Bot: бот Easy/Medium/Hard, задержка, старт, сессия
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -181,7 +190,7 @@ pip install pygame
 
 **★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады блока 4!
 
-**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm**, **Bounce Forge**, **Orbit Guard**, **Mine Whisper**, **Merge Magic** и **Twin Cards** (ещё ★ игры — *скоро* на README блока).
+**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm**, **Bounce Forge**, **Orbit Guard**, **Mine Whisper**, **Merge Magic**, **Twin Cards** и **Tic-Tac-Bot** (ещё ★ игры — *скоро* на README блока).
 
 → [Оглавление Курса 3](README.md)
 

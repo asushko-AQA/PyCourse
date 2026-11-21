@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects II *(optional — after Block 4)*  
-> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · **Mine Whisper (5.12–5.15)** · **Merge Magic (5.16–5.18)** · **Twin Cards (5.19–5.21)** · Tic-Tac-Bot–Lane Rush: *coming soon*  
+> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · **Mine Whisper (5.12–5.15)** · **Merge Magic (5.16–5.18)** · **Twin Cards (5.19–5.21)** · **Tic-Tac-Bot (5.22–5.24)** · Leap Lands–Lane Rush: *coming soon*  
 > **Optional:** Finish Block 3 (required path) and Block 4 ★ if you like; these lessons are extra credit.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -23,7 +23,7 @@ Block 5 uses **lesson IDs 5.x**. Each ★ mini-game gets **2–5 consecutive les
 | **5.12 – 5.15** | **Mine Whisper** | Minesweeper-like | **Shipped** |
 | **5.16 – 5.18** | **Merge Magic** | 2048-like | **Shipped** |
 | **5.19 – 5.21** | **Twin Cards** | memory / pairs | **Shipped** |
-| 5.22 – 5.24 | **Tic-Tac-Bot** | tic-tac-toe + simple AI | *Coming soon* |
+| **5.22 – 5.24** | **Tic-Tac-Bot** | tic-tac-toe + simple AI | **Shipped** |
 | 5.25 – 5.29 | **Leap Lands** | mini platformer, text map level | *Coming soon* |
 | 5.30 – 5.34 | **Night Swarm** | top-down survivor-like | *Coming soon* |
 | 5.35 – 5.37 | **Lane Rush** | top-down dodge racer | *Coming soon* |
@@ -33,7 +33,7 @@ Add one ★ game per PR using the next free **5.x** slots.
 
 ---
 
-## Lessons / Уроки — Glow Worm · Bounce Forge · Orbit Guard · Mine Whisper · Merge Magic · Twin Cards
+## Lessons / Уроки — Glow Worm · Bounce Forge · Orbit Guard · Mine Whisper · Merge Magic · Twin Cards · Tic-Tac-Bot
 
 | # | English | Русский | Level |
 |---|---------|---------|-------|
@@ -58,6 +58,9 @@ Add one ★ game per PR using the next free **5.x** slots.
 | 5.19 | [Symbol Deck & Grid](lesson-5-19-twin-cards-symbol-deck/README.md) | Колода символов | Level ★31 — Cosmic Deck |
 | 5.20 | [Flip & Match](lesson-5-20-twin-cards-flip-match/README.md) | Переворот и пара | Level ★32 — Flip Focus |
 | 5.21 | [Twin Cards Complete](lesson-5-21-twin-cards-complete/README.md) | Twin Cards целиком | Level ★33 — Twin Cards Pro |
+| 5.22 | [Grid & Hot-Seat Turns](lesson-5-22-tic-tac-bot-grid-turns/README.md) | Сетка и ходы | Level ★34 — Robot Grid |
+| 5.23 | [Win Lines & Scoreboard](lesson-5-23-tic-tac-bot-win-score/README.md) | Линии и счёт | Level ★35 — Circuit Win |
+| 5.24 | [Tic-Tac-Bot Complete](lesson-5-24-tic-tac-bot-complete/README.md) | Tic-Tac-Bot целиком | Level ★36 — Tic-Tac-Bot Pro |
 
 **Previous / Предыдущее:** [Block 4 ★](../block-4-bonus-star-projects/README.md) — [Glyph Grove 4.12](../block-4-bonus-star-projects/lesson-4-12-glyph-grove-complete/README.md) *(recommended)*
 
@@ -112,6 +115,18 @@ Add one ★ game per PR using the next free **5.x** slots.
 - [ ] `wait_timer` flips non-matching cards back; matches stay open
 - [ ] Full game: moves + elapsed timer; sizes **4×3**, **4×4**, **6×4**
 - [ ] Win overlay with **star rating** by moves; **R** restart; session **best moves**
+
+## Block 5 readiness checklist (Tic-Tac-Bot)
+
+- [ ] `board` is a list of 9 cells; indices `0–8` map to rows/cols with `divmod`
+- [ ] Draw **bolt X** (lines) and **gear O** (ring + hub) with shapes only
+- [ ] `mouse_to_cell` uses `collidepoint`; hot-seat alternates `"X"` / `"O"`
+- [ ] `WIN_LINES` holds 8 winning triples; highlight the winning line in pink
+- [ ] Score dict tracks round wins; **R** starts a new round
+- [ ] Bot **Easy** = random; **Medium** = win → block → centre → corner → any
+- [ ] Bot **Hard** = minimax lookahead (optional stretch — bot never loses)
+- [ ] `bot_timer` delays robot moves; menu picks PvP vs bot, difficulty, who starts
+- [ ] Session **wins / losses / draws** when playing against the bot
 
 ---
 

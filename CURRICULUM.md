@@ -201,8 +201,11 @@ After Block 4 ★. Ten more arcade ideas on the roadmap; lessons ship one ★ ga
 | **5.19** | Symbol deck & grid | **Twin Cards** — pairs list, `random.shuffle`, draw backs vs shapes |
 | **5.20** | Flip & match | Mouse picks, `idle/first/waiting`, `wait_timer`, matched stay open |
 | **5.21** | Twin Cards complete | Moves + timer, 3 grid sizes, win stars, restart, session best moves |
+| **5.22** | Grid & hot-seat turns | **Tic-Tac-Bot** — 9-cell list, draw X/O shapes, mouse place, two-player |
+| **5.23** | Win lines & scoreboard | `WIN_LINES`, highlight winner, draws, score table, round restart |
+| **5.24** | Tic-Tac-Bot complete | Easy/Medium/Hard bot, move delay, who starts, session W/L/D, minimax Hard |
 
-*Coming soon in Block 5:* Tic-Tac-Bot, Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
+*Coming soon in Block 5:* Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

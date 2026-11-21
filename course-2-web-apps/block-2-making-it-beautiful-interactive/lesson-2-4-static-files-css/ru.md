@@ -38,9 +38,58 @@ python starter\app.py
 
 **Mac/Linux:** `python starter/app.py`
 
+Зайди на `/` и `/about`. Серый-синий фон и меню означают, что CSS загрузился.
+
 ---
 
-## Практическое задание
+## Пример кода
+
+**Файл: [solution/templates/base.html](solution/templates/base.html)** (ссылка на CSS)
+
+```html
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+**Файл: [solution/app.py](solution/app.py)**
+
+```python
+@app.route("/")
+def home():
+    return render_template(
+        "home.html",
+        page_title="Home",
+        headline="Welcome to My Styled Studio",
+    )
+```
+
+Стили — в [solution/static/style.css](solution/static/style.css).
+
+---
+
+## Запуск кода
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-4-static-files-css
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+Открой `http://127.0.0.1:5000/` и `/about`.
+
+**Ожидаемый результат:** серый-синий фон, оформленное меню и читаемая типографика (не «голый» HTML).
+
+---
+
+## Быстрые упражнения
+
+1. **Смени цвет** — измени `background` в `body`. Обнови страницу.
+2. **Инспектор** — DevTools → Network → статус `style.css` должен быть 200.
+3. **Узкий экран** — сожми окно. Меняются ли отступы на 480px?
+
+---
+
+## Задание для практики
 
 **Квест:** Своя цветовая тема. **Эталон:** [solution/](solution/)
 

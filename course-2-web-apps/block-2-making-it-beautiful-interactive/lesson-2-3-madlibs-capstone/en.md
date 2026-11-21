@@ -97,6 +97,46 @@ Change the story template or add a fifth word field. Keep: form → POST → sho
 
 ---
 
+## Code Example
+
+**File: [solution/app.py](solution/app.py)**
+
+```python
+@app.route("/", methods=["GET", "POST"])
+def madlibs():
+    story = ""
+    if request.method == "POST":
+        noun = request.form.get("noun", "something").strip() or "something"
+        verb = request.form.get("verb", "move").strip() or "move"
+        adjective = request.form.get("adjective", "silly").strip() or "silly"
+        place = request.form.get("place", "somewhere").strip() or "somewhere"
+        story = (
+            f"One sunny day, a {adjective} {noun} decided to {verb} "
+            f"all the way to {place}. The crowd cheered. The end!"
+        )
+    return render_template("madlibs.html", story=story)
+```
+
+Full imports and `app = Flask(__name__)` are at the top of [solution/app.py](solution/app.py). The form lives in [solution/templates/madlibs.html](solution/templates/madlibs.html).
+
+---
+
+## Code Execution
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-3-madlibs-capstone
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+1. Open `http://127.0.0.1:5000/`
+2. Fill in sample words (robot, dance, sparkly, moon base) and click **Create Story**
+
+**Expected result:** Your custom Mad-Libs paragraph appears under **Your Story**.
+
+---
+
 ## Quick Drills
 
 1. **Field map** — match each `name="..."` to its `request.form.get(...)`.

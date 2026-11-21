@@ -102,6 +102,54 @@ Your prompt returns to normal. Run `check_setup.py` again without the venv — s
 
 ---
 
+## Code Example
+
+**File: [solution/check_setup.py](solution/check_setup.py)** (after finishing the TODOs)
+
+```python
+import importlib.metadata
+
+
+def main():
+    try:
+        import flask
+
+        print("venv ready")
+        print(f"Flask version: {importlib.metadata.version('flask')}")
+    except ImportError:
+        print("Flask is not installed yet.")
+        print("Steps:")
+        print("  1. Activate your .venv (see lesson steps)")
+        print("  2. Run: pip install flask")
+        print("  3. Run this script again")
+
+
+main()
+```
+
+---
+
+## Code Execution
+
+```text
+cd course-2-web-apps\block-0-environment-setup\lesson-0-1-virtual-environments
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install flask
+python starter\check_setup.py
+```
+
+**Mac/Linux:** `source .venv/bin/activate` and forward slashes in paths.
+
+**Expected output (venv active, Flask installed):**
+
+```text
+venv ready
+Flask version: 3.x.x
+```
+
+---
+
 ## Quick Drills
 
 1. Run `pip list` and find `Flask` in the list.

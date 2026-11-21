@@ -98,6 +98,62 @@ python starter\app.py
 
 ---
 
+## Пример кода
+
+**Файл: [solution/app.py](solution/app.py)** (ключевые маршруты)
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    links = (
+        "<h1>My Flask Site</h1>"
+        "<p>Welcome! Visit <a href='/about'>About</a> or <a href='/jokes'>Jokes</a>.</p>"
+        "<p>Calculator: try <a href='/add/3/5'>/add/3/5</a></p>"
+    )
+    return links
+
+
+@app.route("/add/<int:a>/<int:b>")
+def add(a, b):
+    total = a + b
+    return f"<h1>Calculator</h1><p>{a} + {b} = {total}</p>"
+
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+```
+
+Полное решение также включает `/about` и `/jokes` — см. [solution/app.py](solution/app.py).
+
+---
+
+## Запуск кода
+
+```text
+cd course-2-web-apps\block-1-web-basics-flask\lesson-1-4-multiple-routes
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+1. Открой `http://127.0.0.1:5000/` и пройди по ссылкам.
+2. Зайди на `http://127.0.0.1:5000/add/10/7`
+
+**В браузере на `/add/10/7`:**
+
+```text
+10 + 7 = 17
+```
+
+(В абзаце калькулятора на странице.)
+
+---
+
 ## Быстрые упражнения
 
 1. На главной работают ссылки на все разделы.
@@ -106,7 +162,7 @@ python starter\app.py
 
 ---
 
-## Попробуй сам
+## Задание для практики
 
 ### Задание 1 (обязательное)
 

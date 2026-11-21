@@ -88,6 +88,60 @@ python starter\app.py
 
 ---
 
+## Code Example
+
+**File: [solution/app.py](solution/app.py)**
+
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+
+@app.route("/greet", methods=["GET"])
+def greet():
+    name = request.args.get("name", "").strip()
+    message = ""
+    if name:
+        message = f"Hello, {name}! Nice to meet you."
+    return render_template("greet.html", message=message, name=name)
+
+
+@app.route("/message", methods=["GET", "POST"])
+def message():
+    text = ""
+    reply = ""
+    if request.method == "POST":
+        text = request.form.get("text", "").strip()
+        if text:
+            reply = f"You said: {text}"
+    return render_template("message.html", message=reply, text=text)
+
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+```
+
+Form HTML is in `solution/templates/` — see [solution/templates/greet.html](solution/templates/greet.html).
+
+---
+
+## Code Execution
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-2-html-forms
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+1. Open `http://127.0.0.1:5000/greet`, enter a name — URL becomes `?name=...`
+2. Open `http://127.0.0.1:5000/message`, submit text — URL stays `/message`
+
+**Expected result:** Both pages show your input in the results area.
+
+---
+
 ## Quick Drills
 
 1. **URL detective** — submit GET with name `Sam`. Copy the full URL.

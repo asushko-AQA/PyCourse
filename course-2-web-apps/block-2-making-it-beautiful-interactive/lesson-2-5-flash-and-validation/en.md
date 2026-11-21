@@ -107,6 +107,53 @@ python starter\app.py
 
 ---
 
+## Code Example
+
+**File: [solution/app.py](solution/app.py)**
+
+```python
+from flask import Flask, render_template, request, flash
+
+app = Flask(__name__)
+app.secret_key = "learning-flash-key"
+
+
+@app.route("/", methods=["GET", "POST"])
+def calc():
+    total = None
+    if request.method == "POST":
+        raw_a = request.form.get("a", "").strip()
+        raw_b = request.form.get("b", "").strip()
+        if not raw_a or not raw_b:
+            flash("Please enter both numbers.")
+        else:
+            try:
+                num_a = int(raw_a)
+                num_b = int(raw_b)
+                total = num_a + num_b
+            except ValueError:
+                flash("Use whole numbers only (like 3 or 10).")
+    return render_template("calc.html", total=total)
+```
+
+Flash messages render in [solution/templates/calc.html](solution/templates/calc.html) via `get_flashed_messages()`.
+
+---
+
+## Code Execution
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-5-flash-and-validation
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+1. Open `http://127.0.0.1:5000/`, enter `7` and `5` — **Result** shows `12`
+2. Submit with an empty field — a friendly error message appears (flash), no crash
+
+---
+
 ## Quick Drills
 
 1. **Flash once** — trigger an error, then submit valid numbers. Does the old error stay?

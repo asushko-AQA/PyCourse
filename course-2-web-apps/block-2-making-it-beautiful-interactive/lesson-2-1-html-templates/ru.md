@@ -65,6 +65,57 @@ python starter\app.py
 
 ---
 
+## Пример кода
+
+**Файл: [solution/app.py](solution/app.py)**
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return render_template(
+        "home.html",
+        page_title="Home",
+        headline="Welcome to My Studio",
+    )
+
+
+@app.route("/about")
+def about():
+    return render_template(
+        "about.html",
+        page_title="About",
+        bio="I am learning Flask and building pages with templates!",
+    )
+
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+```
+
+Дочерние шаблоны в `solution/templates/` — каждый наследует [solution/templates/base.html](solution/templates/base.html).
+
+---
+
+## Запуск кода
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-templates
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+Открой `http://127.0.0.1:5000/`, затем **About** и **Jokes**.
+
+**Ожидаемый результат:** общая навигация на каждой странице; меняется только середина.
+
+---
+
 ## Быстрые упражнения
 
 1. Найди `{% block content %}` в `base.html`.
@@ -73,7 +124,7 @@ python starter\app.py
 
 ---
 
-## Практическое задание
+## Задание для практики
 
 **Квест:** Доделай Studio Pages — все TODO, три страницы работают. **Эталон:** [solution/](solution/)
 

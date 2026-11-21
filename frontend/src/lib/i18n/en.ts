@@ -133,13 +133,14 @@ export const en: Dict = {
       emoji: "🌐",
     },
     "course-3": {
-      title: "Game Development with Pygame",
+      title: "Game Development with Python",
       description:
         "Build 2D games with Pygame — windows, colors, movement, and your own playable mini-game.",
       emoji: "🎮",
     },
   },
   blocks: {
+    "course-1/block-0": { title: "Getting Started", emoji: "🚀" },
     "course-1/block-1": { title: "Meeting Your Computer", emoji: "🖥️" },
     "course-1/block-2": { title: "Talking to Python", emoji: "📦" },
     "course-1/block-3": { title: "Making Choices", emoji: "🔀" },

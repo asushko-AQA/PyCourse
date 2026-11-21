@@ -25,8 +25,12 @@ def test_landing_ui_and_styles(page: Page, base_url: str) -> None:
 
     card_one = page.get_by_test_id("course-card-course-1")
     card_two = page.get_by_test_id("course-card-course-2")
+    card_three = page.get_by_test_id("course-card-course-3")
     expect(card_one).to_contain_text("Python Basics")
     expect(card_two).to_contain_text("Web Apps with Flask")
+    expect(card_three).to_contain_text("Game Development with Python")
+    expect(card_three).to_contain_text("11")
+    expect(card_three).not_to_contain_text("course-3-game-dev")
 
     cta_pill = card_one.locator("span.bg-violet-500")
     matches_violet_500 = cta_pill.evaluate(
@@ -57,6 +61,19 @@ def test_course_cards_navigate_to_course_maps(page: Page, base_url: str) -> None
     page.goto(f"{base_url}/en")
     page.get_by_test_id("course-card-course-2").click()
     expect(page).to_have_url(f"{base_url}/en/course-2")
+
+    page.goto(f"{base_url}/en")
+    page.get_by_test_id("course-card-course-3").click()
+    expect(page).to_have_url(f"{base_url}/en/course-3")
+
+
+def test_course_three_card_localized_in_russian(page: Page, base_url: str) -> None:
+    page.goto(f"{base_url}/ru")
+
+    card_three = page.get_by_test_id("course-card-course-3")
+    expect(card_three).to_contain_text("Разработка игр на Python")
+    expect(card_three).to_contain_text("11")
+    expect(card_three).not_to_contain_text("course-3-game-dev")
 
 
 def test_language_toggle_switches_locale(page: Page, base_url: str) -> None:

@@ -134,13 +134,14 @@ export const ru: Dict = {
       emoji: "🌐",
     },
     "course-3": {
-      title: "Игры на Python с Pygame",
+      title: "Разработка игр на Python",
       description:
         "Создавай 2D-игры с Pygame — окна, цвета, движение и свою мини-игру.",
       emoji: "🎮",
     },
   },
   blocks: {
+    "course-1/block-0": { title: "С чего начать", emoji: "🚀" },
     "course-1/block-1": { title: "Знакомство с компьютером", emoji: "🖥️" },
     "course-1/block-2": { title: "Разговор с Python", emoji: "📦" },
     "course-1/block-3": { title: "Принятие решений", emoji: "🔀" },

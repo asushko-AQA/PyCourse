@@ -6,6 +6,7 @@
  */
 
 import { getCourses } from "../src/lib/courseParser";
+import { getDict } from "../src/lib/i18n";
 import { LANGS } from "../src/lib/types";
 
 let lessonCount = 0;
@@ -17,6 +18,42 @@ const problems: string[] = [];
 const warnings: string[] = [];
 
 const courses = getCourses();
+const SLUG_TITLE_RE = /^course-\d+(?:-[a-z0-9-]+)?$/i;
+
+for (const course of courses) {
+  for (const lang of LANGS) {
+    const dict = getDict(lang);
+    const meta = dict.courses[course.id];
+    const where = `i18n/${lang}.ts courses["${course.id}"]`;
+
+    if (!meta) {
+      problems.push(`${where}: missing course metadata (card would show slug "${course.slug}")`);
+      continue;
+    }
+    if (!meta.title.trim()) {
+      problems.push(`${where}: empty title`);
+    } else if (meta.title === course.slug || SLUG_TITLE_RE.test(meta.title)) {
+      problems.push(
+        `${where}: title "${meta.title}" looks like a raw slug; add a human-readable title`,
+      );
+    }
+    if (!meta.description.trim()) {
+      problems.push(`${where}: empty description`);
+    }
+  }
+
+  for (const block of course.blocks) {
+    const blockKey = `${course.id}/${block.id}`;
+    for (const lang of LANGS) {
+      const blockMeta = getDict(lang).blocks[blockKey];
+      if (!blockMeta) {
+        problems.push(
+          `i18n/${lang}.ts blocks["${blockKey}"]: missing block metadata`,
+        );
+      }
+    }
+  }
+}
 
 for (const course of courses) {
   for (const block of course.blocks) {

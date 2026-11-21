@@ -154,7 +154,7 @@ python solution\game.py
 
 ## Что дальше
 
-→ [Блок 5 — Tic-Tac-Bot (скоро)](../README.md)
+→ [Урок 5.22 — Сетка и ходы](../lesson-5-22-tic-tac-bot-grid-turns/README.md) — **Tic-Tac-Bot** ★ №7!
 
 ---
 

@@ -204,8 +204,13 @@ After Block 4 ★. Ten more arcade ideas on the roadmap; lessons ship one ★ ga
 | **5.22** | Grid & hot-seat turns | **Tic-Tac-Bot** — 9-cell list, draw X/O shapes, mouse place, two-player |
 | **5.23** | Win lines & scoreboard | `WIN_LINES`, highlight winner, draws, score table, round restart |
 | **5.24** | Tic-Tac-Bot complete | Easy/Medium/Hard bot, move delay, who starts, session W/L/D, minimax Hard |
+| **5.25** | Player & jump | **Leap Lands** — `Rect` player, arrows + `dt`, gravity, grounded jump |
+| **5.26** | Text map & tiles | `#`/`=` solids, `S` spawn, build rects, axis-separated collision |
+| **5.27** | Coins, spikes & lives | `C` coins, `^` hazards, lives, respawn, HUD |
+| **5.28** | Patrollers & camera | `E` patrol enemies, stomp, horizontal `camera_x` scroll |
+| **5.29** | Leap Lands complete | 3 map levels, `F` flag, game states, timer + coins, session best |
 
-*Coming soon in Block 5:* Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
+*Coming soon in Block 5:* Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

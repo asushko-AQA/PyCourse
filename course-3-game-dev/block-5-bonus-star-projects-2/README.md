@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects II *(optional — after Block 4)*  
-> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · **Mine Whisper (5.12–5.15)** · **Merge Magic (5.16–5.18)** · **Twin Cards (5.19–5.21)** · **Tic-Tac-Bot (5.22–5.24)** · Leap Lands–Lane Rush: *coming soon*  
+> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · **Mine Whisper (5.12–5.15)** · **Merge Magic (5.16–5.18)** · **Twin Cards (5.19–5.21)** · **Tic-Tac-Bot (5.22–5.24)** · **Leap Lands (5.25–5.29)** · Night Swarm–Lane Rush: *coming soon*  
 > **Optional:** Finish Block 3 (required path) and Block 4 ★ if you like; these lessons are extra credit.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -24,7 +24,7 @@ Block 5 uses **lesson IDs 5.x**. Each ★ mini-game gets **2–5 consecutive les
 | **5.16 – 5.18** | **Merge Magic** | 2048-like | **Shipped** |
 | **5.19 – 5.21** | **Twin Cards** | memory / pairs | **Shipped** |
 | **5.22 – 5.24** | **Tic-Tac-Bot** | tic-tac-toe + simple AI | **Shipped** |
-| 5.25 – 5.29 | **Leap Lands** | mini platformer, text map level | *Coming soon* |
+| **5.25 – 5.29** | **Leap Lands** | mini platformer, text map level | **Shipped** |
 | 5.30 – 5.34 | **Night Swarm** | top-down survivor-like | *Coming soon* |
 | 5.35 – 5.37 | **Lane Rush** | top-down dodge racer | *Coming soon* |
 
@@ -61,6 +61,11 @@ Add one ★ game per PR using the next free **5.x** slots.
 | 5.22 | [Grid & Hot-Seat Turns](lesson-5-22-tic-tac-bot-grid-turns/README.md) | Сетка и ходы | Level ★34 — Robot Grid |
 | 5.23 | [Win Lines & Scoreboard](lesson-5-23-tic-tac-bot-win-score/README.md) | Линии и счёт | Level ★35 — Circuit Win |
 | 5.24 | [Tic-Tac-Bot Complete](lesson-5-24-tic-tac-bot-complete/README.md) | Tic-Tac-Bot целиком | Level ★36 — Tic-Tac-Bot Pro |
+| 5.25 | [Player & Jump](lesson-5-25-leap-lands-player-jump/README.md) | Игрок и прыжок | Level ★37 — Crystal Hop |
+| 5.26 | [Text Map & Tiles](lesson-5-26-leap-lands-text-map/README.md) | Текстовая карта | Level ★38 — Map Mason |
+| 5.27 | [Coins, Spikes & Lives](lesson-5-27-leap-lands-coins-lives/README.md) | Монеты и жизни | Level ★39 — Hazard Bloom |
+| 5.28 | [Patrollers & Camera](lesson-5-28-leap-lands-enemies-camera/README.md) | Патруль и камера | Level ★40 — Scroll Patrol |
+| 5.29 | [Leap Lands Complete](lesson-5-29-leap-lands-complete/README.md) | Leap Lands целиком | Level ★41 — Leap Lands Pro |
 
 **Previous / Предыдущее:** [Block 4 ★](../block-4-bonus-star-projects/README.md) — [Glyph Grove 4.12](../block-4-bonus-star-projects/lesson-4-12-glyph-grove-complete/README.md) *(recommended)*
 
@@ -127,6 +132,16 @@ Add one ★ game per PR using the next free **5.x** slots.
 - [ ] Bot **Hard** = minimax lookahead (optional stretch — bot never loses)
 - [ ] `bot_timer` delays robot moves; menu picks PvP vs bot, difficulty, who starts
 - [ ] Session **wins / losses / draws** when playing against the bot
+
+## Block 5 readiness checklist (Leap Lands)
+
+- [ ] Player uses `Rect` + `vel_y`; **SPACE** jump only when `grounded`
+- [ ] Level is a **list of strings**; `#` / `=` solids, `S` spawn, `C` coin, `F` flag, `^` spike, `E` enemy
+- [ ] **Axis-separated** collision: move X → resolve, move Y → resolve
+- [ ] Coins collected; spikes cost **lives**; respawn at `S`; HUD shows lives + coins
+- [ ] `E` enemies patrol; stomp from above removes them; side hit hurts the player
+- [ ] `camera_x` scrolls horizontally so wide maps stay in view
+- [ ] Full game: **3 levels**, flag → next level, MENU / PLAY / WIN / GAME_OVER, timer + session best
 
 ---
 

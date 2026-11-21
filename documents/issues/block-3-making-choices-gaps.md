@@ -4,7 +4,7 @@
 **Block context:** block-3-making-choices  
 **Reviewer:** agent (verify-lesson-in-block, implementation pass)
 
-**Status:** closed (no critical gaps)
+**Status:** closed (no critical gaps; triage 2026-11-21 — B3-GAP-001 stretch hint still acceptable, no action)
 
 ## Summary
 

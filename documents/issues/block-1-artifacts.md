@@ -1,6 +1,6 @@
 # Block 1 Artifacts — Review Register
 
-**Status:** resolved (2026-06-06)  
+**Status:** resolved (2026-06-06; triaged still-resolved 2026-11-21)  
 **Scope:** Course 1, Block 1 — Lessons 1.1–1.5  
 **Original review:** 2026-06-06
 

@@ -1,8 +1,8 @@
 # Issue: Lesson schema v2 migration gap list (feeds plan 15)
 
-**Status:** open
-**Date:** 2026-06-24
-**Severity:** medium
+**Status:** resolved (2026-11-21)  
+**Date:** 2026-06-24  
+**Severity:** medium  
 **Location:** all existing lessons (Course 1: 21, Course 2: 11)
 
 ## Problem
@@ -21,14 +21,29 @@ as non-fatal warnings.
 Every lesson has both code sections and uses `## Practice Task` (with localized RU
 heading), EN/RU in parity.
 
-## Gaps by block
+## Resolution log (2026-11-21)
+
+**Triage:** Re-scanned `main` + applied migrations on branch
+`cursor/gap-issues-triage-3a70`. `npm run validate-content` now reports **0 warnings**
+for schema v2 sections.
+
+| Item (original gap) | Status | What changed |
+|---------------------|--------|----------------|
+| C1 Block 2 — 2-3, 2-4, 2-5 missing `## Code Execution` | **Fixed** | Added `## Code Execution` / `## Запуск кода` with run commands and expected output; expanded thin Code Example blocks for 2-4 and 2-5 (EN + RU). |
+| C2 Block 0 — 0-1 missing Code Example + Code Execution | **Fixed** | Added sections from `solution/check_setup.py` (EN + RU). |
+| C2 Block 1 — 1.1–1.4 missing Code Example + Code Execution | **Fixed** | Added sections per lesson solution (EN + RU). |
+| C2 Block 1 — legacy `## Try it yourself` | **Fixed** | Renamed to `## Practice Task` (EN) and `## Задание для практики` (RU) in 1.1–1.4. |
+| C2 Block 2 — 2.1–2.5 missing Code Example + Code Execution | **Fixed** | Added Flask run + browser/curl expected output patterns (EN + RU). |
+| C2 — 0.2 already complete | **Already fixed** | No change. |
+
+## Gaps by block (historical snapshot — pre-migration)
 
 ### Course 1 — Python Basics
 
 | Block | Lessons needing work | Gap |
 |-------|----------------------|-----|
 | Block 1 — Meeting Your Computer | — | ✅ all 5 have Code Example + Code Execution + Practice Task |
-| Block 2 — Talking to Python | 2-3 math-operators, 2-4 strings-in-action, 2-5 creator-data-pack | have Code Example but **missing `## Code Execution`** |
+| Block 2 — Talking to Python | 2-3 math-operators, 2-4 strings-in-action, 2-5 creator-data-pack | had Code Example but **missing `## Code Execution`** → **fixed 2026-11-21** |
 | Block 3 — Making Choices | — | ✅ complete |
 | Block 4 — Organizing Code | — | ✅ complete |
 | Block 5 — Creative Turtle | — | ✅ complete |
@@ -37,22 +52,20 @@ heading), EN/RU in parity.
 
 | Block | Lessons needing work | Gap |
 |-------|----------------------|-----|
-| Block 0 — Environment Setup | 0-1 virtual-environments | missing Code Example + Code Execution (0-2 is ✅) |
-| Block 1 — Web Basics with Flask | 1-1 installing-flask, 1-2 first-web-page, 1-3 dynamic-routes, 1-4 multiple-routes | missing Code Example + Code Execution **and** use legacy `## Try it yourself` → rename to `## Practice Task` |
-| Block 2 — Making It Beautiful & Interactive | 2-1 html-templates, 2-2 html-forms, 2-3 madlibs-capstone, 2-4 static-files-css, 2-5 flash-and-validation | missing Code Example + Code Execution (Practice Task heading already correct) |
+| Block 0 — Environment Setup | 0-1 virtual-environments | missing Code Example + Code Execution (0-2 is ✅) → **fixed 2026-11-21** |
+| Block 1 — Web Basics with Flask | 1-1 … 1-4 | missing Code Example + Code Execution **and** legacy `## Try it yourself` → **fixed 2026-11-21** |
+| Block 2 — Making It Beautiful & Interactive | 2-1 … 2-5 | missing Code Example + Code Execution → **fixed 2026-11-21** |
 
-### Summary counts
+### Summary counts (historical)
 
-- Missing `## Code Execution`: **13 lessons** (C1: 3, C2: 10).
-- Missing `## Code Example`: **10 lessons** (all Course 2 except 0-2).
-- Legacy `## Try it yourself` heading: **4 lessons** (Course 2 Block 1) — parser normalizes
-  these for display, but migration should rename to the canonical heading.
+- Missing `## Code Execution`: **13 lessons** (C1: 3, C2: 10). → **0 remaining**
+- Missing `## Code Example`: **10 lessons** (all Course 2 except 0-2). → **0 remaining**
+- Legacy `## Try it yourself` heading: **4 lessons** (Course 2 Block 1). → **0 remaining**
 
 ## Proposed fix
 
-Plan 15 migrates these per block (verify-lesson-in-block after each batch), then re-runs
-the sync job. The parser already normalizes legacy headings, so the app keeps working
-during migration; warnings clear as each block is converted.
+~~Plan 15 migrates these per block~~ **Done** — plan 15 batches can treat this list as
+complete; re-run `npm run validate-content` after any new lesson.
 
 ## Related
 

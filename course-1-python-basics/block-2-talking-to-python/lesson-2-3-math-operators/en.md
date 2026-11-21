@@ -82,6 +82,30 @@ print("Quotient:", num1 / num2)
 
 ---
 
+## Code Execution
+
+```text
+cd course-1-python-basics\block-2-talking-to-python\lesson-2-3-math-operators
+python starter\calculator.py
+```
+
+**Mac/Linux:** `python starter/calculator.py`
+
+**Type:** `10` then `3`
+
+**Expected output:**
+
+```text
+=== CALCULATOR SPELLS ===
+Sum: 13
+Difference: 7
+Product: 30
+Quotient: 3.3333333333333335
+Calculator complete!
+```
+
+---
+
 ## Quick Drills
 
 1. **Predict** — before running, guess all four results for `8` and `2`.

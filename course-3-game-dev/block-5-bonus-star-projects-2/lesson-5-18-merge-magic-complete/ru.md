@@ -165,7 +165,7 @@ python solution\game.py
 
 ## Что дальше
 
-→ [Блок 5 — Twin Cards (скоро)](../README.md)
+→ [Урок 5.19 — Колода символов](../lesson-5-19-twin-cards-symbol-deck/README.md) — **Twin Cards** ★ №6!
 
 ---
 

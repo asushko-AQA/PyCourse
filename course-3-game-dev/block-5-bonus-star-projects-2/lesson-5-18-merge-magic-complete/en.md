@@ -156,7 +156,7 @@ python solution\game.py
 4. **a)** One step back.
 
 
-5. **a)** Twin Cards (coming soon).
+5. **a)** Twin Cards symbol deck.
 
 
 </details>
@@ -165,7 +165,7 @@ python solution\game.py
 
 ## What's Next
 
-→ [Block 5 — Twin Cards (coming soon)](../README.md)
+→ [Lesson 5.19 — Symbol Deck & Grid](../lesson-5-19-twin-cards-symbol-deck/README.md) — **Twin Cards** ★ project #6!
 
 ---
 

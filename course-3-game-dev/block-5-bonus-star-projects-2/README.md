@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects II *(optional — after Block 4)*  
-> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · Orbit Guard–Lane Rush: *coming soon*  
+> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · Mine Whisper–Lane Rush: *coming soon*  
 > **Optional:** Finish Block 3 (required path) and Block 4 ★ if you like; these lessons are extra credit.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -19,7 +19,7 @@ Block 5 uses **lesson IDs 5.x**. Each ★ mini-game gets **2–5 consecutive les
 |---------|-----------|------------|--------|
 | **5.1 – 5.3** | **Glow Worm** | grid snake, segments list, grow + speed | **Shipped** |
 | **5.4 – 5.7** | **Bounce Forge** | Pong / Breakout-like | **Shipped** |
-| 5.8 – 5.11 | **Orbit Guard** | Space Invaders-like | *Coming soon* |
+| **5.8 – 5.11** | **Orbit Guard** | Space Invaders-like | **Shipped** |
 | 5.12 – 5.15 | **Mine Whisper** | Minesweeper-like | *Coming soon* |
 | 5.16 – 5.18 | **Merge Magic** | 2048-like | *Coming soon* |
 | 5.19 – 5.21 | **Twin Cards** | memory / pairs | *Coming soon* |
@@ -33,7 +33,7 @@ Add one ★ game per PR using the next free **5.x** slots.
 
 ---
 
-## Lessons / Уроки — Glow Worm (project #1) · Bounce Forge (project #2)
+## Lessons / Уроки — Glow Worm · Bounce Forge · Orbit Guard
 
 | # | English | Русский | Level |
 |---|---------|---------|-------|
@@ -44,6 +44,10 @@ Add one ★ game per PR using the next free **5.x** slots.
 | 5.5 | [Paddle & Lives](lesson-5-5-bounce-forge-paddle-lives/README.md) | Ракетка и жизни | Level ★17 — Anvil Paddle |
 | 5.6 | [Bricks & Score](lesson-5-6-bounce-forge-bricks-score/README.md) | Кирпичи и счёт | Level ★18 — Ember Bricks |
 | 5.7 | [Bounce Forge Complete](lesson-5-7-bounce-forge-complete/README.md) | Bounce Forge целиком | Level ★19 — Bounce Forge Pro |
+| 5.8 | [Patrol Ship & Blasters](lesson-5-8-orbit-guard-patrol-ship/README.md) | Патрульный корабль | Level ★20 — Patrol Bolt |
+| 5.9 | [Invader Formation](lesson-5-9-orbit-guard-invader-formation/README.md) | Формация захватчиков | Level ★21 — Invader March |
+| 5.10 | [Shields, Lives & Score](lesson-5-10-orbit-guard-shields-lives/README.md) | Щиты и счёт | Level ★22 — Shield Wall |
+| 5.11 | [Orbit Guard Complete](lesson-5-11-orbit-guard-complete/README.md) | Orbit Guard целиком | Level ★23 — Orbit Guard Pro |
 
 **Previous / Предыдущее:** [Block 4 ★](../block-4-bonus-star-projects/README.md) — [Glyph Grove 4.12](../block-4-bonus-star-projects/lesson-4-12-glyph-grove-complete/README.md) *(recommended)*
 
@@ -64,6 +68,13 @@ Add one ★ game per PR using the next free **5.x** slots.
 - [ ] Paddle `hit_frac` steers the ball angle; **lives** drop when the ball falls through
 - [ ] `bricks` is a `list` of `Rect`; side detection flips `vx` or `vy`; `score` rises
 - [ ] Title / play / win / game over; **LEVEL_PATTERNS**; session **high_score**; optional **Pong** with **P**
+
+## Block 5 readiness checklist (Orbit Guard)
+
+- [ ] Patrol ship slides on the bottom; `player_bolts` list with cooldown and off-screen cleanup
+- [ ] Invader **grid** marches sideways; at edges flip `march_dir` and `step_down`
+- [ ] Bolt ↔ invader removes both; enemy bolts; **shields** wear down; **lives** and **score**
+- [ ] **Waves** speed up; bonus **UFO**; start / wave clear / game over / victory; session **high_score**
 
 ---
 

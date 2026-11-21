@@ -152,7 +152,7 @@ python solution\game.py
 
 ## Что дальше
 
-→ [Блок 5 — Orbit Guard (скоро)](../README.md)
+→ [Урок 5.8 — Патрульный корабль](../lesson-5-8-orbit-guard-patrol-ship/README.md) — старт **Orbit Guard** ★ №3!
 
 ---
 

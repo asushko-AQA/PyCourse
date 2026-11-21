@@ -33,7 +33,10 @@ PyCourse/
 │   └── block-4-bonus-star-projects/  ← опциональный ★ бонус после Блока 3
 │       ├── lesson-4-1-sky-hopper-gravity-flap/
 │       ├── lesson-4-2-scrolling-gateways/
-│       └── lesson-4-3-sky-hopper-complete/
+│       ├── lesson-4-3-sky-hopper-complete/
+│       ├── lesson-4-4-prism-dash-auto-scroll/
+│       ├── lesson-4-5-prism-dash-jump-rotate/
+│       └── lesson-4-6-prism-dash-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -43,7 +46,7 @@ PyCourse/
 
 | Урок | Вместо длинного `cd`… |
 |------|------------------------|
-| 1.1–4.3 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
+| 1.1–4.6 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
 
 ---
 
@@ -83,6 +86,12 @@ pip install pygame
 - [ ] 4.2 — Прокрутка ворот, счёт, crash
 - [ ] 4.3 — Полный Sky Hopper: титул / игра / game over, рекорд, рамп скорости
 
+### Опциональный ★ Блок 4 — Prism Dash
+
+- [ ] 4.4 — Прокрутка `world_x`; куб на фиксированном X
+- [ ] 4.5 — Прыжок с земли; вращение в воздухе
+- [ ] 4.6 — Полный Prism Dash: строка уровня, шипы, прогресс %, попытки, лучший %
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -91,7 +100,7 @@ pip install pygame
 2. [ ] Капстоун **Catch the Falling Stars** работает целиком  
 3. [ ] Родитель или учитель сыграл один раунд  
 
-**★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**!
+**★ Бонус:** пройди Блок 4 и покажи **Sky Hopper** и **Prism Dash**!
 
 → [Оглавление Курса 3](README.md)
 

@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects *(optional — after Block 3)*  
-> **Status:** Sky Hopper (4.1–4.3) available · more ★ games planned  
+> **Status:** Sky Hopper (4.1–4.3) + Prism Dash (4.4–4.6) available · more ★ games planned  
 > **Optional:** Finish Block 3 first; these lessons are extra credit, not required for Course 3 graduation.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -17,13 +17,13 @@ Block 4 uses **lesson IDs 4.x**. Each ★ mini-game gets **2–3 consecutive les
 
 | Lessons | ★ Project | Game style | Status |
 |---------|-----------|------------|--------|
-| **4.1 – 4.3** | **Sky Hopper** | flap + scrolling gateways (Flappy-like) | **This PR** |
-| 4.4 – 4.6 | *(planned)* | Geometry Dash-like runner | Future PR |
+| **4.1 – 4.3** | **Sky Hopper** | flap + scrolling gateways (Flappy-like) | **Shipped** |
+| **4.4 – 4.6** | **Prism Dash** | auto-scroll + jump + level string obstacles | **This PR** |
 | 4.7 – 4.9 | *(planned)* | Tetris-like stack puzzle | Future PR |
 | 4.10 – 4.12 | *(planned)* | Mahjong solitaire-like match | Future PR |
 
 **Folder pattern:** `lesson-4-{n}-{slug}/` inside `block-4-bonus-star-projects/`.  
-When adding project #2, start at **4.4**, not 4.1 again.
+When adding a new ★ game, use the next free **4.x** slot (see table above); do not restart at 4.1.
 
 ---
 
@@ -37,7 +37,25 @@ When adding project #2, start at **4.4**, not 4.1 again.
 
 **Previous / Предыдущее:** [Block 3 — Physics & Collisions](../block-3-physics-collisions-final-project/README.md) (required foundation)
 
-**Next / Дальше:** *(future)* ★ Project #2 at lessons 4.4–4.6.
+## Lessons / Уроки — Prism Dash (project #2)
+
+| # | English | Русский | Level |
+|---|---------|---------|-------|
+| 4.4 | [Auto Scroll & Runner](lesson-4-4-prism-dash-auto-scroll/README.md) | Автопрокрутка и бег | Level ★4 — Neon Cruiser |
+| 4.5 | [Jump, Gravity & Spin](lesson-4-5-prism-dash-jump-rotate/README.md) | Прыжок и вращение | Level ★5 — Air Spin Cube |
+| 4.6 | [Prism Dash Complete](lesson-4-6-prism-dash-complete/README.md) | Prism Dash целиком | Level ★6 — Prism Dash Pro |
+
+**Next / Дальше:** *(future)* ★ Project #3 at lessons 4.7–4.9.
+
+---
+
+## Block 4 readiness checklist (Prism Dash)
+
+- [ ] `world_x` scrolls; cube stays at `PLAYER_X`
+- [ ] Jump only when `grounded`; cube spins mid-air
+- [ ] `LEVEL` string builds platforms (`#`) and spikes (`^`)
+- [ ] Spike hit restarts run; progress % and attempts HUD work
+- [ ] Session **best %** on title; gentle **speed ramp** feels fair
 
 ---
 
@@ -53,7 +71,7 @@ When adding project #2, start at **4.4**, not 4.1 again.
 
 ## For parents and teachers
 
-These lessons are **optional stretch goals** after the Course 3 capstone. Same homework style as Block 3: **self-mark + Quick Check quiz**. Expect ~30–40 min per lesson (~2 hours for Sky Hopper).
+These lessons are **optional stretch goals** after the Course 3 capstone. Same homework style as Block 3: **self-mark + Quick Check quiz**. Expect ~30–40 min per lesson (~2 hours per ★ mini-game).
 
 **Display:** Graphical desktop required (Pygame window).
 

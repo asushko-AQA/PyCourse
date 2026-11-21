@@ -48,4 +48,4 @@
 
 **Previous / Предыдущий урок:** [Lesson 4.2](../lesson-4-2-scrolling-gateways/README.md)
 
-**Next / Дальше:** [Block 4 index](../README.md) — ★ project #2 (lessons 4.4–4.6) coming in a future update!
+**Next / Дальше:** [Lesson 4.4 — Auto Scroll & Runner](../lesson-4-4-prism-dash-auto-scroll/README.md) — start ★ project **#2**, Prism Dash!

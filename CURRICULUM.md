@@ -174,6 +174,18 @@ After Block 3. Not required for graduation. Each ★ arcade-style game uses 2–
 | **4.11** | Mouse & free tiles | `MOUSEBUTTONDOWN`, `collidepoint`, free-tile rule, pair removal |
 | **4.12** | Glyph Grove complete | Hint, shuffle, timer/moves, win/stuck, session best time |
 
+### Block 5 *(optional bonus ★ II)*: Star Projects II
+
+After Block 4 ★. Ten more arcade ideas on the roadmap; lessons ship one ★ game per PR.
+
+| Lesson | Topic | Mini-project / outcome |
+|--------|-------|------------------------|
+| **5.1** | Grid & segments | **Glow Worm** — `(col, row)` list, direction tuple, timed steps |
+| **5.2** | Food & growth | Random food, grow tail, wall/self crash |
+| **5.3** | Glow Worm complete | Title / play / game over, score, speed ramp, session best |
+
+*Coming soon in Block 5:* Bounce Forge (5.4–5.7), Orbit Guard, Mine Whisper, Merge Magic, Twin Cards, Tic-Tac-Bot, Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
+
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 
 **Alternative entry path:** Pygame Zero (`pgzero`) for simpler first game — document in `shared/notes/pygame-zero-alternative.md` if needed.

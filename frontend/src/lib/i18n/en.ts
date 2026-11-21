@@ -156,5 +156,9 @@ export const en: Dict = {
       title: "Bonus ★ Star Projects (optional)",
       emoji: "🌟",
     },
+    "course-3/block-5": {
+      title: "Bonus ★ Star Projects II (optional)",
+      emoji: "✨",
+    },
   },
 };

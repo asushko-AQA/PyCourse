@@ -43,6 +43,10 @@ PyCourse/
 │       ├── lesson-4-10-glyph-grove-tiles-layout/
 │       ├── lesson-4-11-glyph-grove-mouse-matching/
 │       └── lesson-4-12-glyph-grove-complete/
+│   └── block-5-bonus-star-projects-2/  ← optional ★ II after Block 4
+│       ├── lesson-5-1-glow-worm-grid-segments/
+│       ├── lesson-5-2-glow-worm-food-growth/
+│       └── lesson-5-3-glow-worm-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -52,7 +56,7 @@ PyCourse/
 
 | Lesson | Instead of long `cd`… |
 |--------|------------------------|
-| 1.1–4.12 | Copy the lesson `starter/` folder anywhere; activate a venv with Pygame; `cd` there before running |
+| 1.1–5.37 | Copy the lesson `starter/` folder anywhere; activate a venv with Pygame; `cd` there before running |
 
 ---
 
@@ -110,6 +114,12 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 4.11 — Mouse pick; free-tile rule; matching pairs
 - [ ] 4.12 — Full Glyph Grove: hint, shuffle, timer, best time, win/stuck
 
+### Optional ★ Block 5 II — Glow Worm
+
+- [ ] 5.1 — `segments` list; `(col, row)`; direction tuple; timed steps
+- [ ] 5.2 — Food spawn; grow tail; wall + self crash
+- [ ] 5.3 — Full Glow Worm: start / play / game over, score, speed ramp, session best
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -118,7 +128,9 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 2. [ ] Capstone **Catch the Falling Stars** runs end-to-end  
 3. [ ] A parent or teacher played one round of your game  
 
-**★ Bonus:** finish Block 4 and demo **Sky Hopper**, **Prism Dash**, **Shard Stack**, and **Glyph Grove** — all four ★ arcade projects!
+**★ Bonus:** finish Block 4 and demo **Sky Hopper**, **Prism Dash**, **Shard Stack**, and **Glyph Grove** — all four Block 4 ★ projects!
+
+**★ II Bonus:** continue in Block 5 with **Glow Worm** (more ★ games *coming soon* on the block README roadmap).
 
 → [Course 3 index](README.md)
 

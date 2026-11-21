@@ -191,8 +191,12 @@ After Block 4 ★. Ten more arcade ideas on the roadmap; lessons ship one ★ ga
 | **5.9** | Invader formation | Grid march sideways, step down at margins |
 | **5.10** | Shields, lives & score | Bullet ↔ invader, enemy fire, destructible shields |
 | **5.11** | Orbit Guard complete | Waves, speed-up, UFO bonus, states, session best |
+| **5.12** | Crystal grid & clicks | **Mine Whisper** — 2D cell dicts, draw board, mouse → `(col, row)` |
+| **5.13** | Mines & neighbor counts | Random mines after first safe click, `neighbors`, reveal numbers |
+| **5.14** | Flood reveal & flags | Recursive/ stack flood-fill for zeros, right-click flags |
+| **5.15** | Mine Whisper complete | Difficulty presets, mine counter, timer, win/lose, session best time |
 
-*Coming soon in Block 5:* Mine Whisper, Merge Magic, Twin Cards, Tic-Tac-Bot, Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
+*Coming soon in Block 5:* Merge Magic, Twin Cards, Tic-Tac-Bot, Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

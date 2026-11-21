@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects II *(optional — after Block 4)*  
-> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · Mine Whisper–Lane Rush: *coming soon*  
+> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · **Mine Whisper (5.12–5.15)** · Merge Magic–Lane Rush: *coming soon*  
 > **Optional:** Finish Block 3 (required path) and Block 4 ★ if you like; these lessons are extra credit.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -20,7 +20,7 @@ Block 5 uses **lesson IDs 5.x**. Each ★ mini-game gets **2–5 consecutive les
 | **5.1 – 5.3** | **Glow Worm** | grid snake, segments list, grow + speed | **Shipped** |
 | **5.4 – 5.7** | **Bounce Forge** | Pong / Breakout-like | **Shipped** |
 | **5.8 – 5.11** | **Orbit Guard** | Space Invaders-like | **Shipped** |
-| 5.12 – 5.15 | **Mine Whisper** | Minesweeper-like | *Coming soon* |
+| **5.12 – 5.15** | **Mine Whisper** | Minesweeper-like | **Shipped** |
 | 5.16 – 5.18 | **Merge Magic** | 2048-like | *Coming soon* |
 | 5.19 – 5.21 | **Twin Cards** | memory / pairs | *Coming soon* |
 | 5.22 – 5.24 | **Tic-Tac-Bot** | tic-tac-toe + simple AI | *Coming soon* |
@@ -33,7 +33,7 @@ Add one ★ game per PR using the next free **5.x** slots.
 
 ---
 
-## Lessons / Уроки — Glow Worm · Bounce Forge · Orbit Guard
+## Lessons / Уроки — Glow Worm · Bounce Forge · Orbit Guard · Mine Whisper
 
 | # | English | Русский | Level |
 |---|---------|---------|-------|
@@ -48,6 +48,10 @@ Add one ★ game per PR using the next free **5.x** slots.
 | 5.9 | [Invader Formation](lesson-5-9-orbit-guard-invader-formation/README.md) | Формация захватчиков | Level ★21 — Invader March |
 | 5.10 | [Shields, Lives & Score](lesson-5-10-orbit-guard-shields-lives/README.md) | Щиты и счёт | Level ★22 — Shield Wall |
 | 5.11 | [Orbit Guard Complete](lesson-5-11-orbit-guard-complete/README.md) | Orbit Guard целиком | Level ★23 — Orbit Guard Pro |
+| 5.12 | [Crystal Grid & Clicks](lesson-5-12-mine-whisper-crystal-grid/README.md) | Сетка кристаллов | Level ★24 — Crystal Lattice |
+| 5.13 | [Mines & Neighbor Numbers](lesson-5-13-mine-whisper-mines-numbers/README.md) | Шахты и числа | Level ★25 — Hidden Echo |
+| 5.14 | [Flood Reveal & Flags](lesson-5-14-mine-whisper-flood-flags/README.md) | Заливка и флажки | Level ★26 — Whisper Flood |
+| 5.15 | [Mine Whisper Complete](lesson-5-15-mine-whisper-complete/README.md) | Mine Whisper целиком | Level ★27 — Mine Whisper Pro |
 
 **Previous / Предыдущее:** [Block 4 ★](../block-4-bonus-star-projects/README.md) — [Glyph Grove 4.12](../block-4-bonus-star-projects/lesson-4-12-glyph-grove-complete/README.md) *(recommended)*
 
@@ -75,6 +79,14 @@ Add one ★ game per PR using the next free **5.x** slots.
 - [ ] Invader **grid** marches sideways; at edges flip `march_dir` and `step_down`
 - [ ] Bolt ↔ invader removes both; enemy bolts; **shields** wear down; **lives** and **score**
 - [ ] **Waves** speed up; bonus **UFO**; start / wave clear / game over / victory; session **high_score**
+
+## Block 5 readiness checklist (Mine Whisper)
+
+- [ ] `grid` is a 2D list of cell dicts; `mouse_to_cell` maps clicks to `(col, row)`
+- [ ] Mines place **after first click**; safe zone around that click has no mines
+- [ ] `neighbors` counts adjacent mines; digits `1`–`8` render on reveal
+- [ ] Zero regions **flood-fill** (recursive idea + stack implementation); right-click **flags**
+- [ ] Difficulty presets; mine counter; timer; win / lose with mine reveal; session **best time**
 
 ---
 

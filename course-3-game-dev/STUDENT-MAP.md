@@ -54,7 +54,11 @@ PyCourse/
 │       ├── lesson-5-8-orbit-guard-patrol-ship/
 │       ├── lesson-5-9-orbit-guard-invader-formation/
 │       ├── lesson-5-10-orbit-guard-shields-lives/
-│       └── lesson-5-11-orbit-guard-complete/
+│       ├── lesson-5-11-orbit-guard-complete/
+│       ├── lesson-5-12-mine-whisper-crystal-grid/
+│       ├── lesson-5-13-mine-whisper-mines-numbers/
+│       ├── lesson-5-14-mine-whisper-flood-flags/
+│       └── lesson-5-15-mine-whisper-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -142,6 +146,13 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 5.10 — Collisions, enemy bolts, shields with HP, lives & score
 - [ ] 5.11 — Full Orbit Guard: waves, UFO bonus, states, session best
 
+### Optional ★ Block 5 II — Mine Whisper
+
+- [ ] 5.12 — 2D cell dict grid; draw crystals; mouse → `(col, row)`
+- [ ] 5.13 — Mines after first click; neighbor counts; reveal numbers
+- [ ] 5.14 — Flood-fill open zeros; right-click flags
+- [ ] 5.15 — Full Mine Whisper: difficulties, timer, mine counter, win/lose, best time
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -152,7 +163,7 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 
 **★ Bonus:** finish Block 4 and demo **Sky Hopper**, **Prism Dash**, **Shard Stack**, and **Glyph Grove** — all four Block 4 ★ projects!
 
-**★ II Bonus:** continue in Block 5 with **Glow Worm**, **Bounce Forge**, and **Orbit Guard** (more ★ games *coming soon* on the block README roadmap).
+**★ II Bonus:** continue in Block 5 with **Glow Worm**, **Bounce Forge**, **Orbit Guard**, and **Mine Whisper** (more ★ games *coming soon* on the block README roadmap).
 
 → [Course 3 index](README.md)
 

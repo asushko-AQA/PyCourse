@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects II *(optional — after Block 4)*  
-> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · **Mine Whisper (5.12–5.15)** · **Merge Magic (5.16–5.18)** · **Twin Cards (5.19–5.21)** · **Tic-Tac-Bot (5.22–5.24)** · **Leap Lands (5.25–5.29)** · Night Swarm–Lane Rush: *coming soon*  
+> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · **Mine Whisper (5.12–5.15)** · **Merge Magic (5.16–5.18)** · **Twin Cards (5.19–5.21)** · **Tic-Tac-Bot (5.22–5.24)** · **Leap Lands (5.25–5.29)** · **Night Swarm (5.30–5.34)** · Lane Rush: *coming soon*  
 > **Optional:** Finish Block 3 (required path) and Block 4 ★ if you like; these lessons are extra credit.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -25,7 +25,7 @@ Block 5 uses **lesson IDs 5.x**. Each ★ mini-game gets **2–5 consecutive les
 | **5.19 – 5.21** | **Twin Cards** | memory / pairs | **Shipped** |
 | **5.22 – 5.24** | **Tic-Tac-Bot** | tic-tac-toe + simple AI | **Shipped** |
 | **5.25 – 5.29** | **Leap Lands** | mini platformer, text map level | **Shipped** |
-| 5.30 – 5.34 | **Night Swarm** | top-down survivor-like | *Coming soon* |
+| **5.30 – 5.34** | **Night Swarm** | top-down survivor-like | **Shipped** |
 | 5.35 – 5.37 | **Lane Rush** | top-down dodge racer | *Coming soon* |
 
 **Folder pattern:** `lesson-5-{n}-{slug}/` inside `block-5-bonus-star-projects-2/`.  
@@ -66,6 +66,11 @@ Add one ★ game per PR using the next free **5.x** slots.
 | 5.27 | [Coins, Spikes & Lives](lesson-5-27-leap-lands-coins-lives/README.md) | Монеты и жизни | Level ★39 — Hazard Bloom |
 | 5.28 | [Patrollers & Camera](lesson-5-28-leap-lands-enemies-camera/README.md) | Патруль и камера | Level ★40 — Scroll Patrol |
 | 5.29 | [Leap Lands Complete](lesson-5-29-leap-lands-complete/README.md) | Leap Lands целиком | Level ★41 — Leap Lands Pro |
+| 5.30 | [Lantern Keeper Move](lesson-5-30-night-swarm-lantern-move/README.md) | Ходьба со светильником | Level ★42 — Lantern Step |
+| 5.31 | [Shadow Spawns & HP](lesson-5-31-night-swarm-shadow-spawns/README.md) | Тени и полоска HP | Level ★43 — Shadow Tide |
+| 5.32 | [Light Orbs Auto-Fire](lesson-5-32-night-swarm-light-orbs/README.md) | Авто-сферы света | Level ★44 — Orb Sentinel |
+| 5.33 | [XP & Level-Up Choices](lesson-5-33-night-swarm-level-up/README.md) | Опыт и улучшения | Level ★45 — Bright Choice |
+| 5.34 | [Night Swarm Complete](lesson-5-34-night-swarm-complete/README.md) | Night Swarm целиком | Level ★46 — Night Swarm Pro |
 
 **Previous / Предыдущее:** [Block 4 ★](../block-4-bonus-star-projects/README.md) — [Glyph Grove 4.12](../block-4-bonus-star-projects/lesson-4-12-glyph-grove-complete/README.md) *(recommended)*
 
@@ -142,6 +147,17 @@ Add one ★ game per PR using the next free **5.x** slots.
 - [ ] `E` enemies patrol; stomp from above removes them; side hit hurts the player
 - [ ] `camera_x` scrolls horizontally so wide maps stay in view
 - [ ] Full game: **3 levels**, flag → next level, MENU / PLAY / WIN / GAME_OVER, timer + session best
+
+## Block 5 readiness checklist (Night Swarm)
+
+- [ ] Player uses `pygame.Vector2`; 8-way input with `.normalize()` and `dt`
+- [ ] Arena `MARGIN` clamp keeps the lantern inside the playfield
+- [ ] Shadows spawn on a timer at **screen edges**; cap `MAX_ENEMIES` for performance
+- [ ] Chase uses `direction_toward` each frame; contact damage with short **hurt cooldown**
+- [ ] Auto light orbs pick **nearest** shadow; orb list moves with `vel * dt`
+- [ ] Defeated shadows drop **XP gems**; collecting gems fills XP → **level-up pause**
+- [ ] Level-up shows **3 random** upgrades from an `UPGRADE_POOL` dict (keys `1`–`3`)
+- [ ] Full game: survive timer goal (~3 min), harder spawns over time, MENU / PAUSE / WIN / GAME_OVER, session **best time**
 
 ---
 

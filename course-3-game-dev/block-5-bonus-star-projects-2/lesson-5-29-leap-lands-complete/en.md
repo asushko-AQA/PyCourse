@@ -144,7 +144,7 @@ python solution\game.py
 
 ## What's Next
 
-→ [Block 5 — Night Swarm (coming soon)](../README.md)
+→ [Lesson 5.30 — Lantern Keeper Move](../lesson-5-30-night-swarm-lantern-move/README.md) — **Night Swarm** ★ project #9!
 
 ---
 

@@ -29,7 +29,7 @@ def test_landing_ui_and_styles(page: Page, base_url: str) -> None:
     expect(card_one).to_contain_text("Python Basics")
     expect(card_two).to_contain_text("Web Apps with Flask")
     expect(card_three).to_contain_text("Game Development with Python")
-    expect(card_three).to_contain_text("52 lessons")
+    expect(card_three).to_contain_text("57 lessons")
     expect(card_three).not_to_contain_text("course-3-game-dev")
 
     cta_pill = card_one.locator("span.bg-violet-500")
@@ -72,7 +72,7 @@ def test_course_three_card_localized_in_russian(page: Page, base_url: str) -> No
 
     card_three = page.get_by_test_id("course-card-course-3")
     expect(card_three).to_contain_text("Разработка игр на Python")
-    expect(card_three).to_contain_text("52 уроков")
+    expect(card_three).to_contain_text("57 уроков")
     expect(card_three).not_to_contain_text("course-3-game-dev")
 
 

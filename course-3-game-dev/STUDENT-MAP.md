@@ -72,7 +72,12 @@ PyCourse/
 │       ├── lesson-5-26-leap-lands-text-map/
 │       ├── lesson-5-27-leap-lands-coins-lives/
 │       ├── lesson-5-28-leap-lands-enemies-camera/
-│       └── lesson-5-29-leap-lands-complete/
+│       ├── lesson-5-29-leap-lands-complete/
+│       ├── lesson-5-30-night-swarm-lantern-move/
+│       ├── lesson-5-31-night-swarm-shadow-spawns/
+│       ├── lesson-5-32-night-swarm-light-orbs/
+│       ├── lesson-5-33-night-swarm-level-up/
+│       └── lesson-5-34-night-swarm-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -193,6 +198,14 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 5.28 — Patrol enemies `E`, stomp, `camera_x` scroll
 - [ ] 5.29 — Full Leap Lands: 3 levels, flag win, timer + session best
 
+### Optional ★ Block 5 II — Night Swarm
+
+- [ ] 5.30 — `Vector2` 8-way move, normalize, arena clamp + `dt`
+- [ ] 5.31 — Edge spawns on timer, vector chase, contact damage, HP bar
+- [ ] 5.32 — Nearest-target auto orbs, enemy HP, XP gem drops
+- [ ] 5.33 — XP level-up pause; 3 random upgrades from dict
+- [ ] 5.34 — Full Night Swarm: survive ~3 min, wave ramp, states, session best
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -203,7 +216,7 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 
 **★ Bonus:** finish Block 4 and demo **Sky Hopper**, **Prism Dash**, **Shard Stack**, and **Glyph Grove** — all four Block 4 ★ projects!
 
-**★ II Bonus:** continue in Block 5 through **Leap Lands** (eight ★ games shipped); **Night Swarm** and **Lane Rush** *coming soon* on the block README roadmap).
+**★ II Bonus:** continue in Block 5 through **Night Swarm** (nine ★ games shipped); **Lane Rush** *coming soon* on the block README roadmap).
 
 → [Course 3 index](README.md)
 

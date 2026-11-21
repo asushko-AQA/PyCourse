@@ -43,4 +43,4 @@
 
 **Previous / Предыдущее:** [Lesson 5.28 — Patrollers & Camera](../lesson-5-28-leap-lands-enemies-camera/README.md)
 
-**Next / Дальше:** [Block 5 — Night Swarm (coming soon)](../README.md)
+**Next / Дальше:** [Lesson 5.30 — Lantern Keeper Move](../lesson-5-30-night-swarm-lantern-move/README.md)

@@ -72,7 +72,12 @@ PyCourse/
 │       ├── lesson-5-26-leap-lands-text-map/
 │       ├── lesson-5-27-leap-lands-coins-lives/
 │       ├── lesson-5-28-leap-lands-enemies-camera/
-│       └── lesson-5-29-leap-lands-complete/
+│       ├── lesson-5-29-leap-lands-complete/
+│       ├── lesson-5-30-night-swarm-lantern-move/
+│       ├── lesson-5-31-night-swarm-shadow-spawns/
+│       ├── lesson-5-32-night-swarm-light-orbs/
+│       ├── lesson-5-33-night-swarm-level-up/
+│       └── lesson-5-34-night-swarm-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -193,6 +198,14 @@ pip install pygame
 - [ ] 5.28 — враги `E`, удар сверху, прокрутка камеры
 - [ ] 5.29 — полный Leap Lands: 3 уровня, флаг, рекорд
 
+### Опциональный ★ Блок 5 II — Night Swarm
+
+- [ ] 5.30 — `Vector2`, 8 направлений, normalize, границы + `dt`
+- [ ] 5.31 — спавн с краёв, преследование, урон, полоска HP
+- [ ] 5.32 — авто-сферы в ближайшую цель, HP теней, кристаллы XP
+- [ ] 5.33 — экран level-up; 3 случайных улучшения
+- [ ] 5.34 — полный Night Swarm: ~3 мин выживания, волны, состояния, рекорд
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -203,7 +216,7 @@ pip install pygame
 
 **★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады блока 4!
 
-**★ II Бонус:** в Блоке 5 уже восемь ★ игр до **Leap Lands**; **Night Swarm** и **Lane Rush** — *скоро* на README блока.
+**★ II Бонус:** в Блоке 5 девять ★ игр до **Night Swarm**; **Lane Rush** — *скоро* на README блока.
 
 → [Оглавление Курса 3](README.md)
 

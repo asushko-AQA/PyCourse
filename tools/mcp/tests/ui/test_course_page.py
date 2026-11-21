@@ -1,3 +1,5 @@
+from playwright.sync_api import expect
+
 from .pages.course_map_page import CourseMapPage
 from .pages.home_page import HomePage
 
@@ -12,6 +14,13 @@ def test_course_page_navigation_from_home(page, base_url: str) -> None:
     course.expect_course_title("Python Basics")
     course.back_to_all_courses()
     course.expect_url_path("/en")
+
+
+def test_course_three_map_shows_localized_title(page, base_url: str) -> None:
+    course = CourseMapPage(page, base_url)
+    course.goto("/en/course-3")
+    course.expect_course_title("Game Development with Python")
+    expect(page.locator("body")).not_to_contain_text("course-3-game-dev")
 
 
 def test_course_page_lesson_node_navigation(page, base_url: str) -> None:

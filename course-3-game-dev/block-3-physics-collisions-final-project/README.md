@@ -20,7 +20,8 @@
 
 **Previous / Предыдущее:** [Block 2 — Player Controls & Animations](../block-2-player-controls-animations/README.md)
 
-**Next / Дальше:** Course 3 complete — show your **Catch the Falling Stars** game!
+**Next / Дальше:** Course 3 core path complete — show **Catch the Falling Stars**!  
+**Optional ★:** [Block 4 — Bonus Star Projects](../block-4-bonus-star-projects/README.md) (Sky Hopper 4.1–4.3).
 
 ---
 

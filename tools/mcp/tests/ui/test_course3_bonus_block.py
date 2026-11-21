@@ -1,0 +1,64 @@
+from playwright.sync_api import Page, expect
+
+from .pages.course_map_page import CourseMapPage
+
+
+def _unlock_lesson_4_1(page: Page) -> None:
+    """Lesson 4.1 requires course-3/lesson-3-3 in the progress store."""
+    page.add_init_script(
+        """
+        localStorage.setItem(
+          "pyquest-progress",
+          JSON.stringify({
+            state: {
+              xp: 0,
+              completedLessons: ["course-3/lesson-3-3"],
+              completedQuizzes: [],
+              hasMergedLocal: false,
+              mergedForUserId: null,
+              pendingUpdates: [],
+            },
+            version: 0,
+          }),
+        );
+        """
+    )
+
+
+def test_course3_bonus_block_visible_en(page, base_url: str) -> None:
+    _unlock_lesson_4_1(page)
+    course = CourseMapPage(page, base_url)
+    course.goto("/en/course-3")
+    expect(
+        course.page.get_by_role(
+            "heading", name="Bonus ★ Star Projects (optional)"
+        )
+    ).to_be_visible()
+    course.open_lesson_node("course-3", "lesson-4-1")
+    course.expect_url_path("/en/course-3/block-4/lesson-4-1")
+    expect(
+        course.page.get_by_role("heading", name="Gravity & Flap")
+    ).to_be_visible()
+
+
+def test_course3_bonus_block_visible_ru(page, base_url: str) -> None:
+    _unlock_lesson_4_1(page)
+    course = CourseMapPage(page, base_url)
+    course.goto("/ru/course-3")
+    expect(
+        course.page.get_by_role(
+            "heading", name="Бонус ★ Проекты (опционально)"
+        )
+    ).to_be_visible()
+    course.open_lesson_node("course-3", "lesson-4-1")
+    course.expect_url_path("/ru/course-3/block-4/lesson-4-1")
+    expect(
+        course.page.get_by_role("heading", name="Гравитация и взмах")
+    ).to_be_visible()
+
+
+def test_course3_home_lesson_count_includes_bonus(page, base_url: str) -> None:
+    course = CourseMapPage(page, base_url)
+    course.goto("/en")
+    card = course.page.get_by_test_id("course-card-course-3")
+    expect(card).to_contain_text("14 lessons")

@@ -26,10 +26,14 @@ PyCourse/
 │   │   ├── lesson-2-2-images-sprites/
 │   │   ├── lesson-2-3-score-text-rendering/
 │   │   └── lesson-2-4-game-states/
-│   └── block-3-physics-collisions-final-project/
-│       ├── lesson-3-1-collision-detection/
-│       ├── lesson-3-2-catch-the-falling-stars/
-│       └── lesson-3-3-polish/
+│   ├── block-3-physics-collisions-final-project/
+│   │   ├── lesson-3-1-collision-detection/
+│   │   ├── lesson-3-2-catch-the-falling-stars/
+│   │   └── lesson-3-3-polish/
+│   └── block-4-bonus-star-projects/  ← опциональный ★ бонус после Блока 3
+│       ├── lesson-4-1-sky-hopper-gravity-flap/
+│       ├── lesson-4-2-scrolling-gateways/
+│       └── lesson-4-3-sky-hopper-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -39,7 +43,7 @@ PyCourse/
 
 | Урок | Вместо длинного `cd`… |
 |------|------------------------|
-| 1.1–3.3 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
+| 1.1–4.3 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
 
 ---
 
@@ -73,6 +77,12 @@ pip install pygame
 - [ ] 3.2 — Капстоун: звёзды появляются, падают, ловятся, счёт обновляется, перезапуск работает
 - [ ] 3.3 — Полировка: рекорд (сессия), рост сложности, опциональные звуки catch/miss
 
+### Опциональный ★ Блок 4 — Sky Hopper
+
+- [ ] 4.1 — Гравитация и взмах, птица из фигур
+- [ ] 4.2 — Прокрутка ворот, счёт, crash
+- [ ] 4.3 — Полный Sky Hopper: титул / игра / game over, рекорд, рамп скорости
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -80,6 +90,8 @@ pip install pygame
 1. [ ] Все уроки Блоков 1–3 отмечены  
 2. [ ] Капстоун **Catch the Falling Stars** работает целиком  
 3. [ ] Родитель или учитель сыграл один раунд  
+
+**★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**!
 
 → [Оглавление Курса 3](README.md)
 

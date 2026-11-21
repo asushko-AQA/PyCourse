@@ -152,5 +152,9 @@ export const en: Dict = {
     "course-3/block-1": { title: "Getting Started with Pygame", emoji: "🕹️" },
     "course-3/block-2": { title: "Player Controls & Animations", emoji: "🎛️" },
     "course-3/block-3": { title: "Physics & Collisions (Final Project)", emoji: "⭐" },
+    "course-3/block-4": {
+      title: "Bonus ★ Star Projects (optional)",
+      emoji: "🌟",
+    },
   },
 };

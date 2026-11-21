@@ -26,10 +26,14 @@ PyCourse/
 │   │   ├── lesson-2-2-images-sprites/
 │   │   ├── lesson-2-3-score-text-rendering/
 │   │   └── lesson-2-4-game-states/
-│   └── block-3-physics-collisions-final-project/
-│       ├── lesson-3-1-collision-detection/
-│       ├── lesson-3-2-catch-the-falling-stars/
-│       └── lesson-3-3-polish/
+│   ├── block-3-physics-collisions-final-project/
+│   │   ├── lesson-3-1-collision-detection/
+│   │   ├── lesson-3-2-catch-the-falling-stars/
+│   │   └── lesson-3-3-polish/
+│   └── block-4-bonus-star-projects/  ← optional ★ bonus after Block 3
+│       ├── lesson-4-1-sky-hopper-gravity-flap/
+│       ├── lesson-4-2-scrolling-gateways/
+│       └── lesson-4-3-sky-hopper-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -39,7 +43,7 @@ PyCourse/
 
 | Lesson | Instead of long `cd`… |
 |--------|------------------------|
-| 1.1–3.3 | Copy the lesson `starter/` folder anywhere; activate a venv with Pygame; `cd` there before running |
+| 1.1–4.3 | Copy the lesson `starter/` folder anywhere; activate a venv with Pygame; `cd` there before running |
 
 ---
 
@@ -73,6 +77,12 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 3.2 — Capstone: stars spawn, fall, get caught, score updates, restart works
 - [ ] 3.3 — Polish: high score (session), difficulty ramp, optional catch/miss sounds
 
+### Optional ★ Block 4 — Sky Hopper
+
+- [ ] 4.1 — Gravity + flap with procedural bird
+- [ ] 4.2 — Scrolling gateways, score, crash
+- [ ] 4.3 — Full Sky Hopper: title / play / game over, high score, speed ramp
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -80,6 +90,8 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 1. [ ] All Block 1–3 lessons ticked  
 2. [ ] Capstone **Catch the Falling Stars** runs end-to-end  
 3. [ ] A parent or teacher played one round of your game  
+
+**★ Bonus:** finish Block 4 and demo **Sky Hopper** too!
 
 → [Course 3 index](README.md)
 

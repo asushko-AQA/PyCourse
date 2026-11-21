@@ -143,7 +143,7 @@ python solution\game.py
 
 ## What's Next
 
-→ [Block 5 — Leap Lands (coming soon)](../README.md)
+→ [Lesson 5.25 — Player & Jump](../lesson-5-25-leap-lands-player-jump/README.md) — **Leap Lands** ★ project #8!
 
 ---
 

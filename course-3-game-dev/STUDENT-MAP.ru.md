@@ -67,7 +67,12 @@ PyCourse/
 │       ├── lesson-5-21-twin-cards-complete/
 │       ├── lesson-5-22-tic-tac-bot-grid-turns/
 │       ├── lesson-5-23-tic-tac-bot-win-score/
-│       └── lesson-5-24-tic-tac-bot-complete/
+│       ├── lesson-5-24-tic-tac-bot-complete/
+│       ├── lesson-5-25-leap-lands-player-jump/
+│       ├── lesson-5-26-leap-lands-text-map/
+│       ├── lesson-5-27-leap-lands-coins-lives/
+│       ├── lesson-5-28-leap-lands-enemies-camera/
+│       └── lesson-5-29-leap-lands-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -180,6 +185,14 @@ pip install pygame
 - [ ] 5.23 — `WIN_LINES`, подсветка победы, счёт, новый раунд
 - [ ] 5.24 — полный Tic-Tac-Bot: бот Easy/Medium/Hard, задержка, старт, сессия
 
+### Опциональный ★ Блок 5 II — Leap Lands
+
+- [ ] 5.25 — игрок, стрелки + `dt`, гравитация, прыжок на земле
+- [ ] 5.26 — карта из строк; коллизия по осям
+- [ ] 5.27 — монеты, шипы, жизни, HUD
+- [ ] 5.28 — враги `E`, удар сверху, прокрутка камеры
+- [ ] 5.29 — полный Leap Lands: 3 уровня, флаг, рекорд
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -190,7 +203,7 @@ pip install pygame
 
 **★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады блока 4!
 
-**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm**, **Bounce Forge**, **Orbit Guard**, **Mine Whisper**, **Merge Magic**, **Twin Cards** и **Tic-Tac-Bot** (ещё ★ игры — *скоро* на README блока).
+**★ II Бонус:** в Блоке 5 уже восемь ★ игр до **Leap Lands**; **Night Swarm** и **Lane Rush** — *скоро* на README блока.
 
 → [Оглавление Курса 3](README.md)
 

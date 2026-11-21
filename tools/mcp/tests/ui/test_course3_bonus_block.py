@@ -61,7 +61,7 @@ def test_course3_home_lesson_count_includes_bonus(page, base_url: str) -> None:
     course = CourseMapPage(page, base_url)
     course.goto("/en")
     card = course.page.get_by_test_id("course-card-course-3")
-    expect(card).to_contain_text("47 lessons")
+    expect(card).to_contain_text("52 lessons")
 
 
 def test_course3_prism_dash_lesson_en(page, base_url: str) -> None:
@@ -620,6 +620,64 @@ def test_course3_tic_tac_bot_lesson_ru(page, base_url: str) -> None:
     course.expect_url_path("/ru/course-3/block-5/lesson-5-22")
     expect(
         course.page.get_by_role("heading", name="Сетка и ходы по очереди")
+    ).to_be_visible()
+
+
+def test_course3_leap_lands_lesson_en(page, base_url: str) -> None:
+    _unlock_lesson_4_1(page)
+    page.add_init_script(
+        """
+        localStorage.setItem(
+          "pyquest-progress",
+          JSON.stringify({
+            state: {
+              xp: 0,
+              completedLessons: ["course-3/lesson-3-3", "course-3/lesson-5-24"],
+              completedQuizzes: [],
+              hasMergedLocal: false,
+              mergedForUserId: null,
+              pendingUpdates: [],
+            },
+            version: 0,
+          }),
+        );
+        """
+    )
+    course = CourseMapPage(page, base_url)
+    course.goto("/en/course-3")
+    course.open_lesson_node("course-3", "lesson-5-25")
+    course.expect_url_path("/en/course-3/block-5/lesson-5-25")
+    expect(
+        course.page.get_by_role("heading", name="Player & Jump")
+    ).to_be_visible()
+
+
+def test_course3_leap_lands_lesson_ru(page, base_url: str) -> None:
+    _unlock_lesson_4_1(page)
+    page.add_init_script(
+        """
+        localStorage.setItem(
+          "pyquest-progress",
+          JSON.stringify({
+            state: {
+              xp: 0,
+              completedLessons: ["course-3/lesson-3-3", "course-3/lesson-5-24"],
+              completedQuizzes: [],
+              hasMergedLocal: false,
+              mergedForUserId: null,
+              pendingUpdates: [],
+            },
+            version: 0,
+          }),
+        );
+        """
+    )
+    course = CourseMapPage(page, base_url)
+    course.goto("/ru/course-3")
+    course.open_lesson_node("course-3", "lesson-5-25")
+    course.expect_url_path("/ru/course-3/block-5/lesson-5-25")
+    expect(
+        course.page.get_by_role("heading", name="Игрок и прыжок")
     ).to_be_visible()
 
 

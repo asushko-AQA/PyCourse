@@ -67,7 +67,12 @@ PyCourse/
 │       ├── lesson-5-21-twin-cards-complete/
 │       ├── lesson-5-22-tic-tac-bot-grid-turns/
 │       ├── lesson-5-23-tic-tac-bot-win-score/
-│       └── lesson-5-24-tic-tac-bot-complete/
+│       ├── lesson-5-24-tic-tac-bot-complete/
+│       ├── lesson-5-25-leap-lands-player-jump/
+│       ├── lesson-5-26-leap-lands-text-map/
+│       ├── lesson-5-27-leap-lands-coins-lives/
+│       ├── lesson-5-28-leap-lands-enemies-camera/
+│       └── lesson-5-29-leap-lands-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -180,6 +185,14 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 5.23 — `WIN_LINES`, highlight win, score table, round restart
 - [ ] 5.24 — Full Tic-Tac-Bot: Easy/Medium/Hard bot, delay, who starts, session W/L/D
 
+### Optional ★ Block 5 II — Leap Lands
+
+- [ ] 5.25 — Player `Rect`, arrows + `dt`, gravity, jump when grounded
+- [ ] 5.26 — Text map tiles; axis-separated collision
+- [ ] 5.27 — Coins `C`, spikes `^`, lives, HUD, respawn at `S`
+- [ ] 5.28 — Patrol enemies `E`, stomp, `camera_x` scroll
+- [ ] 5.29 — Full Leap Lands: 3 levels, flag win, timer + session best
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -190,7 +203,7 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 
 **★ Bonus:** finish Block 4 and demo **Sky Hopper**, **Prism Dash**, **Shard Stack**, and **Glyph Grove** — all four Block 4 ★ projects!
 
-**★ II Bonus:** continue in Block 5 with **Glow Worm**, **Bounce Forge**, **Orbit Guard**, **Mine Whisper**, **Merge Magic**, **Twin Cards**, and **Tic-Tac-Bot** (more ★ games *coming soon* on the block README roadmap).
+**★ II Bonus:** continue in Block 5 through **Leap Lands** (eight ★ games shipped); **Night Swarm** and **Lane Rush** *coming soon* on the block README roadmap).
 
 → [Course 3 index](README.md)
 

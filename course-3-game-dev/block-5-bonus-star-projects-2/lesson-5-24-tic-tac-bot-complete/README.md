@@ -44,4 +44,4 @@
 
 **Previous / Предыдущее:** [Lesson 5.23 — Win Lines & Scoreboard](../lesson-5-23-tic-tac-bot-win-score/README.md)
 
-**Next / Дальше:** [Block 5 — Leap Lands (coming soon)](../README.md)
+**Next / Дальше:** [Lesson 5.25 — Player & Jump](../lesson-5-25-leap-lands-player-jump/README.md)

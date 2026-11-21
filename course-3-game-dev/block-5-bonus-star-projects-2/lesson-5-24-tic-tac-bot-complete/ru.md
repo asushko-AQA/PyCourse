@@ -143,7 +143,7 @@ python solution\game.py
 
 ## Что дальше
 
-→ [Блок 5 — Leap Lands (скоро)](../README.md)
+→ [Урок 5.25 — Игрок и прыжок](../lesson-5-25-leap-lands-player-jump/README.md) — **Leap Lands** ★ №8!
 
 ---
 

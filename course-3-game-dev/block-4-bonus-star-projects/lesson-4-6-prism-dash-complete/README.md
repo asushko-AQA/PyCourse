@@ -50,4 +50,4 @@
 
 **Previous / Предыдущий урок:** [Lesson 4.5 — Jump & Spin](../lesson-4-5-prism-dash-jump-rotate/README.md)
 
-**Next / Дальше:** [Block 4 index](../README.md) — ★ project **#2** done! Future **4.7** starts the next bonus game.
+**Next / Дальше:** [Lesson 4.7 — Grid & Cells](../lesson-4-7-shard-stack-grid-cells/README.md) — ★ project **#3** **Shard Stack**.

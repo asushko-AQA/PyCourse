@@ -36,7 +36,10 @@ PyCourse/
 │       ├── lesson-4-3-sky-hopper-complete/
 │       ├── lesson-4-4-prism-dash-auto-scroll/
 │       ├── lesson-4-5-prism-dash-jump-rotate/
-│       └── lesson-4-6-prism-dash-complete/
+│       ├── lesson-4-6-prism-dash-complete/
+│       ├── lesson-4-7-shard-stack-grid-cells/
+│       ├── lesson-4-8-shard-stack-falling-pieces/
+│       └── lesson-4-9-shard-stack-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -46,7 +49,7 @@ PyCourse/
 
 | Урок | Вместо длинного `cd`… |
 |------|------------------------|
-| 1.1–4.6 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
+| 1.1–4.9 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
 
 ---
 
@@ -92,6 +95,12 @@ pip install pygame
 - [ ] 4.5 — Прыжок с земли; вращение в воздухе
 - [ ] 4.6 — Полный Prism Dash: строка уровня, шипы, прогресс %, попытки, лучший %
 
+### Опциональный ★ Блок 4 — Shard Stack
+
+- [ ] 4.7 — 2D-список `grid`; рисование колодца и смещений
+- [ ] 4.8 — `can_move`, таймер падения, `lock_piece`
+- [ ] 4.9 — Полный Shard Stack: поворот, линии, счёт, рекорд
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -100,7 +109,7 @@ pip install pygame
 2. [ ] Капстоун **Catch the Falling Stars** работает целиком  
 3. [ ] Родитель или учитель сыграл один раунд  
 
-**★ Бонус:** пройди Блок 4 и покажи **Sky Hopper** и **Prism Dash**!
+**★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash** и **Shard Stack**!
 
 → [Оглавление Курса 3](README.md)
 

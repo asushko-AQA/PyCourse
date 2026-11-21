@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects *(optional — after Block 3)*  
-> **Status:** Sky Hopper (4.1–4.3) + Prism Dash (4.4–4.6) available · more ★ games planned  
+> **Status:** Sky Hopper (4.1–4.3) + Prism Dash (4.4–4.6) + Shard Stack (4.7–4.9) · more ★ games planned  
 > **Optional:** Finish Block 3 first; these lessons are extra credit, not required for Course 3 graduation.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -18,8 +18,8 @@ Block 4 uses **lesson IDs 4.x**. Each ★ mini-game gets **2–3 consecutive les
 | Lessons | ★ Project | Game style | Status |
 |---------|-----------|------------|--------|
 | **4.1 – 4.3** | **Sky Hopper** | flap + scrolling gateways (Flappy-like) | **Shipped** |
-| **4.4 – 4.6** | **Prism Dash** | auto-scroll + jump + level string obstacles | **This PR** |
-| 4.7 – 4.9 | *(planned)* | Tetris-like stack puzzle | Future PR |
+| **4.4 – 4.6** | **Prism Dash** | auto-scroll + jump + level string obstacles | **Shipped** |
+| **4.7 – 4.9** | **Shard Stack** | 2D grid, falling shards, line clear | **Shipped** |
 | 4.10 – 4.12 | *(planned)* | Mahjong solitaire-like match | Future PR |
 
 **Folder pattern:** `lesson-4-{n}-{slug}/` inside `block-4-bonus-star-projects/`.  
@@ -45,7 +45,25 @@ When adding a new ★ game, use the next free **4.x** slot (see table above); do
 | 4.5 | [Jump, Gravity & Spin](lesson-4-5-prism-dash-jump-rotate/README.md) | Прыжок и вращение | Level ★5 — Air Spin Cube |
 | 4.6 | [Prism Dash Complete](lesson-4-6-prism-dash-complete/README.md) | Prism Dash целиком | Level ★6 — Prism Dash Pro |
 
-**Next / Дальше:** *(future)* ★ Project #3 at lessons 4.7–4.9.
+## Lessons / Уроки — Shard Stack (project #3)
+
+| # | English | Русский | Level |
+|---|---------|---------|-------|
+| 4.7 | [Grid & Cells](lesson-4-7-shard-stack-grid-cells/README.md) | Сетка и клетки | Level ★7 — Crystal Well |
+| 4.8 | [Falling Pieces & Controls](lesson-4-8-shard-stack-falling-pieces/README.md) | Падающие осколки | Level ★8 — Drift Shard |
+| 4.9 | [Shard Stack Complete](lesson-4-9-shard-stack-complete/README.md) | Shard Stack целиком | Level ★9 — Shard Stack Pro |
+
+**Next / Дальше:** *(future)* ★ Project #4 at lessons 4.10–4.12.
+
+---
+
+## Block 4 readiness checklist (Shard Stack)
+
+- [ ] `grid[row][col]` draws a 10×20 well
+- [ ] `can_move` stops at walls and locked cells
+- [ ] Timer + arrows move the active shard
+- [ ] `rotate_cells` with simple wall nudge works
+- [ ] Full lines clear; score, level, session high score feel fair
 
 ---
 

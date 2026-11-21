@@ -185,9 +185,9 @@ python starter\game.py
 
 ## What's Next
 
-→ [Оглавление Блока 4](../README.md) — ты закрыл ★ проект **№2**!  
-→ В следующих уроках **4.7–4.9** начнётся следующая бонусная игра.  
-→ Сравни прокрутку и прыжки Prism Dash с навыками взмаха в **Sky Hopper**!
+→ [Урок 4.7 — Сетка и клетки](../lesson-4-7-shard-stack-grid-cells/README.md) — начинается ★ **Shard Stack**!  
+→ Или [оглавление Блока 4](../README.md).  
+→ Сравни Prism Dash с **Sky Hopper**!
 
 ---
 

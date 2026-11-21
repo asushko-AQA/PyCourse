@@ -58,7 +58,10 @@ PyCourse/
 │       ├── lesson-5-12-mine-whisper-crystal-grid/
 │       ├── lesson-5-13-mine-whisper-mines-numbers/
 │       ├── lesson-5-14-mine-whisper-flood-flags/
-│       └── lesson-5-15-mine-whisper-complete/
+│       ├── lesson-5-15-mine-whisper-complete/
+│       ├── lesson-5-16-merge-magic-rune-board/
+│       ├── lesson-5-17-merge-magic-slide-merge/
+│       └── lesson-5-18-merge-magic-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -153,6 +156,12 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 5.14 — Flood-fill open zeros; right-click flags
 - [ ] 5.15 — Full Mine Whisper: difficulties, timer, mine counter, win/lose, best time
 
+### Optional ★ Block 5 II — Merge Magic
+
+- [ ] 5.16 — 4×4 int `board`; `RUNE_COLORS`; spawn 2/4 in empty cells
+- [ ] 5.17 — `merge_row` slide+merge; four directions; spawn on change only
+- [ ] 5.18 — Full Merge Magic: score, 2048 win + continue, game over, undo, best score
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -163,7 +172,7 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 
 **★ Bonus:** finish Block 4 and demo **Sky Hopper**, **Prism Dash**, **Shard Stack**, and **Glyph Grove** — all four Block 4 ★ projects!
 
-**★ II Bonus:** continue in Block 5 with **Glow Worm**, **Bounce Forge**, **Orbit Guard**, and **Mine Whisper** (more ★ games *coming soon* on the block README roadmap).
+**★ II Bonus:** continue in Block 5 with **Glow Worm**, **Bounce Forge**, **Orbit Guard**, **Mine Whisper**, and **Merge Magic** (more ★ games *coming soon* on the block README roadmap).
 
 → [Course 3 index](README.md)
 

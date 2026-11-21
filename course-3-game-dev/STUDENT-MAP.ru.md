@@ -58,7 +58,10 @@ PyCourse/
 │       ├── lesson-5-12-mine-whisper-crystal-grid/
 │       ├── lesson-5-13-mine-whisper-mines-numbers/
 │       ├── lesson-5-14-mine-whisper-flood-flags/
-│       └── lesson-5-15-mine-whisper-complete/
+│       ├── lesson-5-15-mine-whisper-complete/
+│       ├── lesson-5-16-merge-magic-rune-board/
+│       ├── lesson-5-17-merge-magic-slide-merge/
+│       └── lesson-5-18-merge-magic-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -153,6 +156,12 @@ pip install pygame
 - [ ] 5.14 — Заливка нулей; флажки правой кнопкой
 - [ ] 5.15 — Полный Mine Whisper: сложность, таймер, счётчик мин, победа/поражение
 
+### Опциональный ★ Блок 5 II — Merge Magic
+
+- [ ] 5.16 — `board` 4×4; `RUNE_COLORS`; появление 2/4 в пустых клетках
+- [ ] 5.17 — `merge_row`; четыре направления; spawn только при изменении
+- [ ] 5.18 — Полный Merge Magic: счёт, 2048, game over, undo, лучший счёт
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -163,7 +172,7 @@ pip install pygame
 
 **★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады блока 4!
 
-**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm**, **Bounce Forge**, **Orbit Guard** и **Mine Whisper** (ещё ★ игры — *скоро* на README блока).
+**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm**, **Bounce Forge**, **Orbit Guard**, **Mine Whisper** и **Merge Magic** (ещё ★ игры — *скоро* на README блока).
 
 → [Оглавление Курса 3](README.md)
 

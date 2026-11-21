@@ -134,8 +134,8 @@ python solution\game.py
    - **c)** Random seed
    - **d)** Lesson slug
 
-5. Next ★ roadmap game is…
-   - **a)** Merge Magic (coming soon)
+5. Next ★ roadmap game after Merge Magic is…
+   - **a)** Twin Cards (coming soon)
    - **b)** Course 2 only
    - **c)** Block 0 essay
    - **d)** Removing pygame
@@ -153,7 +153,7 @@ python solution\game.py
 
 4. **a)** MINE_COUNT minus flags placed.
 
-5. **a)** Merge Magic (coming soon).
+5. **a)** Twin Cards (coming soon).
 
 
 </details>
@@ -162,7 +162,7 @@ python solution\game.py
 
 ## What's Next
 
-→ [Block 5 — Merge Magic (coming soon)](../README.md)
+→ [Lesson 5.16 — Rune Lattice & Spawn](../lesson-5-16-merge-magic-rune-board/README.md) — **Merge Magic** ★ project #5!
 
 ---
 

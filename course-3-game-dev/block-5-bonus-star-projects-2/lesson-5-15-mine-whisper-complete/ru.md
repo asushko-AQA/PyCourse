@@ -133,7 +133,7 @@ python solution\game.py
    - **d)** slug
 
 5. Следующая ★ игра…
-   - **a)** Merge Magic (скоро)
+   - **a)** Twin Cards (скоро)
    - **b)** Course 2
    - **c)** Эссе
    - **d)** Без pygame
@@ -151,7 +151,7 @@ python solution\game.py
 
 4. **a)** MINE_COUNT − флажки.
 
-5. **a)** Merge Magic (скоро).
+5. **a)** Twin Cards (скоро).
 
 
 </details>
@@ -160,7 +160,7 @@ python solution\game.py
 
 ## Что дальше
 
-→ [Блок 5 — Merge Magic (скоро)](../README.md)
+→ [Урок 5.16 — Руническая решётка](../lesson-5-16-merge-magic-rune-board/README.md) — **Merge Magic** ★ №5!
 
 ---
 

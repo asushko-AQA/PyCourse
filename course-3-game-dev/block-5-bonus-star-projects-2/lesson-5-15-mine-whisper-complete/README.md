@@ -45,4 +45,4 @@
 
 **Previous / Предыдущее:** [Lesson 5.14 — Flood Reveal & Flags](../lesson-5-14-mine-whisper-flood-flags/README.md)
 
-**Next / Дальше:** [Block 5 — Merge Magic (coming soon)](../README.md)
+**Next / Дальше:** [Lesson 5.16 — Rune Lattice & Spawn](../lesson-5-16-merge-magic-rune-board/README.md)

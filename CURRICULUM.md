@@ -195,8 +195,11 @@ After Block 4 ★. Ten more arcade ideas on the roadmap; lessons ship one ★ ga
 | **5.13** | Mines & neighbor counts | Random mines after first safe click, `neighbors`, reveal numbers |
 | **5.14** | Flood reveal & flags | Recursive/ stack flood-fill for zeros, right-click flags |
 | **5.15** | Mine Whisper complete | Difficulty presets, mine counter, timer, win/lose, session best time |
+| **5.16** | Rune lattice & spawn | **Merge Magic** — 4×4 int grid, `RUNE_COLORS`, spawn 2/4 in empty cell |
+| **5.17** | Slide & merge | `merge_row` compress/merge; four directions; spawn on change only |
+| **5.18** | Merge Magic complete | Score, win 2048 + continue, game over, undo, session best |
 
-*Coming soon in Block 5:* Merge Magic, Twin Cards, Tic-Tac-Bot, Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
+*Coming soon in Block 5:* Twin Cards, Tic-Tac-Bot, Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

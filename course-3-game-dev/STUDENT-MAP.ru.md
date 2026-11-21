@@ -43,6 +43,10 @@ PyCourse/
 │       ├── lesson-4-10-glyph-grove-tiles-layout/
 │       ├── lesson-4-11-glyph-grove-mouse-matching/
 │       └── lesson-4-12-glyph-grove-complete/
+│   └── block-5-bonus-star-projects-2/  ← опциональный ★ II после Блока 4
+│       ├── lesson-5-1-glow-worm-grid-segments/
+│       ├── lesson-5-2-glow-worm-food-growth/
+│       └── lesson-5-3-glow-worm-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -52,7 +56,7 @@ PyCourse/
 
 | Урок | Вместо длинного `cd`… |
 |------|------------------------|
-| 1.1–4.12 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
+| 1.1–5.37 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
 
 ---
 
@@ -110,6 +114,12 @@ pip install pygame
 - [ ] 4.11 — Мышь; правило «свободной» плитки; пары
 - [ ] 4.12 — Полный Glyph Grove: подсказка, shuffle, таймер, лучшее время
 
+### Опциональный ★ Блок 5 II — Glow Worm
+
+- [ ] 5.1 — Список `segments`; `(col, row)`; направление; шаг по таймеру
+- [ ] 5.2 — Еда; рост хвоста; стена и самоудар
+- [ ] 5.3 — Полный Glow Worm: титул / игра / game over, счёт, ускорение, рекорд сессии
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -118,7 +128,9 @@ pip install pygame
 2. [ ] Капстоун **Catch the Falling Stars** работает целиком  
 3. [ ] Родитель или учитель сыграл один раунд  
 
-**★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады!
+**★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады блока 4!
+
+**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm** (ещё ★ игры — *скоро* на README блока).
 
 → [Оглавление Курса 3](README.md)
 

@@ -169,9 +169,9 @@ python solution\game.py
 
 ## Что дальше
 
-→ [Карта курса 3](../../STUDENT-MAP.ru.md) — **все ★ проекты пройдены!**  
-→ [Оглавление курса 3](../../README.md) — покажи учителю четыре аркады.  
-→ Сравни с [Catch the Falling Stars](../../../block-3-physics-collisions-final-project/lesson-3-2-catch-the-falling-stars/README.md): клавиатура vs мышь.
+→ [Урок 5.1 — Сетка и сегменты](../../block-5-bonus-star-projects-2/lesson-5-1-glow-worm-grid-segments/README.md) — старт **Glow Worm** в **блоке 5 ★ II**!  
+→ [Дорожная карта блока 5](../../block-5-bonus-star-projects-2/README.md) — ещё десять аркад (*Bounce Forge* скоро).  
+→ [Карта курса 3](../../STUDENT-MAP.ru.md) — четыре ★ игры блока 4 пройдены.
 
 ---
 

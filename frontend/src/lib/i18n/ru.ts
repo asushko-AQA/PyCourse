@@ -157,5 +157,9 @@ export const ru: Dict = {
       title: "Бонус ★ Проекты (опционально)",
       emoji: "🌟",
     },
+    "course-3/block-5": {
+      title: "Бонус ★ Проекты II (опционально)",
+      emoji: "✨",
+    },
   },
 };

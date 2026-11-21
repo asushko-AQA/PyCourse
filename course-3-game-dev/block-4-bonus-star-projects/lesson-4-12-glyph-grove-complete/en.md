@@ -169,9 +169,9 @@ python solution\game.py
 
 ## What's Next
 
-→ [Course 3 Student Map](../../STUDENT-MAP.md) — **you cleared every ★ star project!**  
-→ [Course 3 index](../../README.md) — show a teacher your four arcade demos.  
-→ Revisit [Catch the Falling Stars](../../../block-3-physics-collisions-final-project/lesson-3-2-catch-the-falling-stars/README.md) and compare keyboard vs mouse skills.
+→ [Lesson 5.1 — Grid & Segments](../../block-5-bonus-star-projects-2/lesson-5-1-glow-worm-grid-segments/README.md) — **Block 5 ★ II** begins with **Glow Worm**!  
+→ [Block 5 roadmap](../../block-5-bonus-star-projects-2/README.md) — ten more arcade ideas (*Bounce Forge* coming soon).  
+→ [Course 3 Student Map](../../STUDENT-MAP.md) — you cleared all four Block 4 ★ games.
 
 ---
 

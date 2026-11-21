@@ -17,9 +17,9 @@
 
 ## What you'll build / Что ты создашь
 
-**EN:** Ship the full **Glyph Grove** loop: title → play → win / no-moves, **timer** + **move counter**, **hint** and **shuffle**, and **session best time**. This is the **last ★ project** in Course 3!
+**EN:** Ship the full **Glyph Grove** loop: title → play → win / no-moves, **timer** + **move counter**, **hint** and **shuffle**, and **session best time**. This is the **last ★ project in Block 4** — Block 5 ★ II is next!
 
-**RU:** Собери полный цикл **Glyph Grove**: титул → игра → победа / тупик, **таймер**, **ходы**, **подсказка** и **перемешивание**, **лучшее время**. Это **последний ★ проект** курса 3!
+**RU:** Собери полный цикл **Glyph Grove**: титул → игра → победа / тупик, **таймер**, **ходы**, **подсказка** и **перемешивание**, **лучшее время**. Это **финал блока 4 ★** — дальше **блок 5 ★ II**!
 
 ## What you'll learn / Что ты узнаешь
 
@@ -44,4 +44,4 @@
 
 **Previous / Предыдущий урок:** [Lesson 4.11](../lesson-4-11-glyph-grove-mouse-matching/README.md)
 
-**Next / Дальше:** [Course 3 map](../../STUDENT-MAP.md) — you finished every ★ bonus game!
+**Next / Дальше:** [Lesson 5.1 — Grid & Segments](../../block-5-bonus-star-projects-2/lesson-5-1-glow-worm-grid-segments/README.md) — **Glow Worm** in Block 5 ★ II!

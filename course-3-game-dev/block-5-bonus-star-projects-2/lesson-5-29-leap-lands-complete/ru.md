@@ -144,7 +144,7 @@ python solution\game.py
 
 ## Что дальше
 
-→ [Блок 5 — Night Swarm (скоро)](../README.md)
+→ [Урок 5.30 — Ходьба со светильником](../lesson-5-30-night-swarm-lantern-move/README.md) — старт **Night Swarm** ★ №9!
 
 ---
 

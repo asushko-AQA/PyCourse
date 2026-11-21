@@ -209,8 +209,13 @@ After Block 4 ★. Ten more arcade ideas on the roadmap; lessons ship one ★ ga
 | **5.27** | Coins, spikes & lives | `C` coins, `^` hazards, lives, respawn, HUD |
 | **5.28** | Patrollers & camera | `E` patrol enemies, stomp, horizontal `camera_x` scroll |
 | **5.29** | Leap Lands complete | 3 map levels, `F` flag, game states, timer + coins, session best |
+| **5.30** | Lantern keeper move | **Night Swarm** — `Vector2` 8-way input, normalize, arena bounds + `dt` |
+| **5.31** | Shadow spawns & HP | Timer spawns at edges, vector chase, contact damage, HP bar |
+| **5.32** | Light orbs auto-fire | Nearest target, projectile list, enemy HP, XP gem drops |
+| **5.33** | XP & level-up | Gem pickup → XP; pause; 3 random upgrades from dict (`1`–`3`) |
+| **5.34** | Night Swarm complete | Survive timer (~3 min), ramping waves, states, pause, session best time |
 
-*Coming soon in Block 5:* Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
+*Coming soon in Block 5:* Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

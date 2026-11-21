@@ -152,7 +152,7 @@ python solution\game.py
 
 ## What's Next
 
-→ [Block 5 — Orbit Guard (coming soon)](../README.md)
+→ [Lesson 5.8 — Patrol Ship & Blasters](../lesson-5-8-orbit-guard-patrol-ship/README.md) — **Orbit Guard** ★ project #3!
 
 ---
 

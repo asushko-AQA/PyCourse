@@ -50,7 +50,11 @@ PyCourse/
 │       ├── lesson-5-4-bounce-forge-ball-walls/
 │       ├── lesson-5-5-bounce-forge-paddle-lives/
 │       ├── lesson-5-6-bounce-forge-bricks-score/
-│       └── lesson-5-7-bounce-forge-complete/
+│       ├── lesson-5-7-bounce-forge-complete/
+│       ├── lesson-5-8-orbit-guard-patrol-ship/
+│       ├── lesson-5-9-orbit-guard-invader-formation/
+│       ├── lesson-5-10-orbit-guard-shields-lives/
+│       └── lesson-5-11-orbit-guard-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -131,6 +135,13 @@ pip install pygame
 - [ ] 5.6 — Список кирпичей `Rect`, сторона удара, счёт
 - [ ] 5.7 — Полный Bounce Forge: уровни, рекорд, Pong по **P**
 
+### Опциональный ★ Блок 5 II — Orbit Guard
+
+- [ ] 5.8 — Патрульный корабль, список `player_bolts`, кулдаун, очистка за экраном
+- [ ] 5.9 — Марш сетки захватчиков и шаг вниз у краёв
+- [ ] 5.10 — Столкновения, вражеский огонь, щиты с HP, жизни и счёт
+- [ ] 5.11 — Полный Orbit Guard: волны, НЛО, состояния, рекорд сессии
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -141,7 +152,7 @@ pip install pygame
 
 **★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады блока 4!
 
-**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm** и **Bounce Forge** (ещё ★ игры — *скоро* на README блока).
+**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm**, **Bounce Forge** и **Orbit Guard** (ещё ★ игры — *скоро* на README блока).
 
 → [Оглавление Курса 3](README.md)
 

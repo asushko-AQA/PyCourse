@@ -52,4 +52,4 @@
 
 **Previous / Предыдущее:** [Lesson 5.6 — Bricks & Score](../lesson-5-6-bounce-forge-bricks-score/README.md)
 
-**Next / Дальше:** [Block 5 — Orbit Guard (coming soon)](../README.md)
+**Next / Дальше:** [Lesson 5.8 — Patrol Ship & Blasters](../lesson-5-8-orbit-guard-patrol-ship/README.md)

@@ -50,7 +50,11 @@ PyCourse/
 │       ├── lesson-5-4-bounce-forge-ball-walls/
 │       ├── lesson-5-5-bounce-forge-paddle-lives/
 │       ├── lesson-5-6-bounce-forge-bricks-score/
-│       └── lesson-5-7-bounce-forge-complete/
+│       ├── lesson-5-7-bounce-forge-complete/
+│       ├── lesson-5-8-orbit-guard-patrol-ship/
+│       ├── lesson-5-9-orbit-guard-invader-formation/
+│       ├── lesson-5-10-orbit-guard-shields-lives/
+│       └── lesson-5-11-orbit-guard-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -131,6 +135,13 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 5.6 — Brick `Rect` list, side bounce, score
 - [ ] 5.7 — Full Bounce Forge: levels, high score, optional Pong (**P**)
 
+### Optional ★ Block 5 II — Orbit Guard
+
+- [ ] 5.8 — Patrol ship + `player_bolts` list, cooldown, off-screen cleanup
+- [ ] 5.9 — Invader grid march + step down at screen edges
+- [ ] 5.10 — Collisions, enemy bolts, shields with HP, lives & score
+- [ ] 5.11 — Full Orbit Guard: waves, UFO bonus, states, session best
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -141,7 +152,7 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 
 **★ Bonus:** finish Block 4 and demo **Sky Hopper**, **Prism Dash**, **Shard Stack**, and **Glyph Grove** — all four Block 4 ★ projects!
 
-**★ II Bonus:** continue in Block 5 with **Glow Worm** and **Bounce Forge** (more ★ games *coming soon* on the block README roadmap).
+**★ II Bonus:** continue in Block 5 with **Glow Worm**, **Bounce Forge**, and **Orbit Guard** (more ★ games *coming soon* on the block README roadmap).
 
 → [Course 3 index](README.md)
 

@@ -167,6 +167,9 @@ After Block 3. Not required for graduation. Each ★ arcade-style game uses 2–
 | **4.4** | Auto-scroll runner | **Prism Dash** — `world_x` scroll, cube fixed at `PLAYER_X` |
 | **4.5** | Jump, gravity & spin | Grounded jump, snap landing, `transform.rotate` cube |
 | **4.6** | Prism Dash complete | Level string obstacles, progress %, attempts, best %, speed ramp |
+| **4.7** | Grid & cells | **Shard Stack** — 2D `grid`, draw well, piece offsets |
+| **4.8** | Falling shards | `can_move`, `lock_piece`, timer drop, arrow controls |
+| **4.9** | Shard Stack complete | Rotate, clear lines, score/level, next preview, high score |
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

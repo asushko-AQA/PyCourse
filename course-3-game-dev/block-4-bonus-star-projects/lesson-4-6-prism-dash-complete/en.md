@@ -185,8 +185,8 @@ python starter\game.py
 
 ## What's Next
 
-→ [Block 4 index](../README.md) — you finished ★ project **#2**!  
-→ Future lessons **4.7–4.9** will start the next bonus game.  
+→ [Lesson 4.7 — Grid & Cells](../lesson-4-7-shard-stack-grid-cells/README.md) — ★ project **#3** **Shard Stack** begins!  
+→ Or jump to [Block 4 index](../README.md) for the full ★ menu.  
 → Compare Prism Dash scroll + jump to your **Sky Hopper** flap skills!
 
 ---

@@ -173,8 +173,8 @@ python starter\game.py
 
 ## What's Next
 
-→ [Block 4 index](../README.md) — you finished ★ project **#1**!  
-→ Future lessons **4.4–4.6** will start the next bonus game.  
+→ [Lesson 4.4 — Auto Scroll & Runner](../lesson-4-4-prism-dash-auto-scroll/README.md) — start ★ project **#2**, **Prism Dash**!  
+→ Or jump to [Block 4 index](../README.md) for the full ★ menu.  
 → Show **Sky Hopper** to someone who played your Catch the Falling Stars capstone!
 
 ---

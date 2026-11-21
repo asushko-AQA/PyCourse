@@ -61,4 +61,60 @@ def test_course3_home_lesson_count_includes_bonus(page, base_url: str) -> None:
     course = CourseMapPage(page, base_url)
     course.goto("/en")
     card = course.page.get_by_test_id("course-card-course-3")
-    expect(card).to_contain_text("14 lessons")
+    expect(card).to_contain_text("17 lessons")
+
+
+def test_course3_prism_dash_lesson_en(page, base_url: str) -> None:
+    _unlock_lesson_4_1(page)
+    page.add_init_script(
+        """
+        localStorage.setItem(
+          "pyquest-progress",
+          JSON.stringify({
+            state: {
+              xp: 0,
+              completedLessons: ["course-3/lesson-3-3", "course-3/lesson-4-3"],
+              completedQuizzes: [],
+              hasMergedLocal: false,
+              mergedForUserId: null,
+              pendingUpdates: [],
+            },
+            version: 0,
+          }),
+        );
+        """
+    )
+    course = CourseMapPage(page, base_url)
+    course.goto("/en/course-3")
+    course.open_lesson_node("course-3", "lesson-4-4")
+    course.expect_url_path("/en/course-3/block-4/lesson-4-4")
+    expect(course.page.get_by_role("heading", name="Auto Scroll & Runner")).to_be_visible()
+
+
+def test_course3_prism_dash_lesson_ru(page, base_url: str) -> None:
+    _unlock_lesson_4_1(page)
+    page.add_init_script(
+        """
+        localStorage.setItem(
+          "pyquest-progress",
+          JSON.stringify({
+            state: {
+              xp: 0,
+              completedLessons: ["course-3/lesson-3-3", "course-3/lesson-4-3"],
+              completedQuizzes: [],
+              hasMergedLocal: false,
+              mergedForUserId: null,
+              pendingUpdates: [],
+            },
+            version: 0,
+          }),
+        );
+        """
+    )
+    course = CourseMapPage(page, base_url)
+    course.goto("/ru/course-3")
+    course.open_lesson_node("course-3", "lesson-4-4")
+    course.expect_url_path("/ru/course-3/block-4/lesson-4-4")
+    expect(
+        course.page.get_by_role("heading", name="Автопрокрутка и бегун")
+    ).to_be_visible()

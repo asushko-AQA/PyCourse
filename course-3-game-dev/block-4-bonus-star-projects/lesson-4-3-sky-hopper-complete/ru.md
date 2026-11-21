@@ -173,8 +173,8 @@ python starter\game.py
 
 ## What's Next
 
-→ [Оглавление Блока 4](../README.md) — ★ проект **№1** готов!  
-→ Уроки **4.4–4.6** — следующая бонусная игра.  
+→ [Урок 4.4 — Автопрокрутка и бег](../lesson-4-4-prism-dash-auto-scroll/README.md) — старт ★ проекта **№2**, **Prism Dash**!  
+→ Или [оглавление Блока 4](../README.md) со всеми ★ играми.  
 → Покажи **Sky Hopper** тому, кто играл в Catch the Falling Stars!
 
 ---

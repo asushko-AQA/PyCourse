@@ -33,7 +33,10 @@ PyCourse/
 │   └── block-4-bonus-star-projects/  ← optional ★ bonus after Block 3
 │       ├── lesson-4-1-sky-hopper-gravity-flap/
 │       ├── lesson-4-2-scrolling-gateways/
-│       └── lesson-4-3-sky-hopper-complete/
+│       ├── lesson-4-3-sky-hopper-complete/
+│       ├── lesson-4-4-prism-dash-auto-scroll/
+│       ├── lesson-4-5-prism-dash-jump-rotate/
+│       └── lesson-4-6-prism-dash-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -43,7 +46,7 @@ PyCourse/
 
 | Lesson | Instead of long `cd`… |
 |--------|------------------------|
-| 1.1–4.3 | Copy the lesson `starter/` folder anywhere; activate a venv with Pygame; `cd` there before running |
+| 1.1–4.6 | Copy the lesson `starter/` folder anywhere; activate a venv with Pygame; `cd` there before running |
 
 ---
 
@@ -83,6 +86,12 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 4.2 — Scrolling gateways, score, crash
 - [ ] 4.3 — Full Sky Hopper: title / play / game over, high score, speed ramp
 
+### Optional ★ Block 4 — Prism Dash
+
+- [ ] 4.4 — `world_x` scroll; cube stays at fixed X
+- [ ] 4.5 — Jump when grounded; cube spins in air
+- [ ] 4.6 — Full Prism Dash: level string, spikes, progress %, attempts, best %
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -91,7 +100,7 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 2. [ ] Capstone **Catch the Falling Stars** runs end-to-end  
 3. [ ] A parent or teacher played one round of your game  
 
-**★ Bonus:** finish Block 4 and demo **Sky Hopper** too!
+**★ Bonus:** finish Block 4 and demo **Sky Hopper** and **Prism Dash**!
 
 → [Course 3 index](README.md)
 

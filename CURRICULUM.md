@@ -157,13 +157,16 @@ Bridge between basics and game/web courses. Uses stdlib `turtle` — no pip inst
 
 ### Block 4 *(optional bonus ★)*: Star Projects
 
-After Block 3. Not required for graduation. Each ★ arcade-style game uses 2–3 lessons; numbering **4.1–4.3** (Sky Hopper), **4.4–4.6**, **4.7–4.9**, **4.10–4.12** for future projects.
+After Block 3. Not required for graduation. Each ★ arcade-style game uses 2–3 lessons; numbering **4.1–4.3** (Sky Hopper), **4.4–4.6** (Prism Dash), **4.7–4.9**, **4.10–4.12** for future projects.
 
 | Lesson | Topic | Mini-project / outcome |
 |--------|-------|------------------------|
 | **4.1** | Gravity & flap | **Sky Hopper** — procedural bird, `vel_y`, SPACE flap |
 | **4.2** | Scrolling gateways | Pipe pairs, `colliderect`, score per gateway |
 | **4.3** | Sky Hopper complete | Title / play / game over, session high score, speed ramp |
+| **4.4** | Auto-scroll runner | **Prism Dash** — `world_x` scroll, cube fixed at `PLAYER_X` |
+| **4.5** | Jump, gravity & spin | Grounded jump, snap landing, `transform.rotate` cube |
+| **4.6** | Prism Dash complete | Level string obstacles, progress %, attempts, best %, speed ramp |
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

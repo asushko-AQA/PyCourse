@@ -43,4 +43,4 @@
 
 **Previous / Предыдущее:** [Lesson 5.33 — XP & Level-Up Choices](../lesson-5-33-night-swarm-level-up/README.md)
 
-**Next / Дальше:** [Block 5 — Lane Rush (coming soon)](../../README.md) · [Блок 5 — Lane Rush (скоро)](../../README.md)
+**Next / Дальше:** [Lesson 5.35 — Scrolling Road & Lanes](../lesson-5-35-lane-rush-road-scroll/README.md) · [Урок 5.35 — Прокрутка дороги](../lesson-5-35-lane-rush-road-scroll/README.md)

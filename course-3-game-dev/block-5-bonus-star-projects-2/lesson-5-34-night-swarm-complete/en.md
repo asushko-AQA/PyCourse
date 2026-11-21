@@ -138,7 +138,7 @@ python solution\game.py
 
 ## What's Next
 
-→ [Block 5 — Lane Rush (coming soon)](../../README.md) — **Lane Rush** ★ project #10 on the roadmap
+→ [Lesson 5.35 — Scrolling Road & Lanes](../lesson-5-35-lane-rush-road-scroll/README.md) — **Lane Rush** ★ project #10!
 
 ---
 

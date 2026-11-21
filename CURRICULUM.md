@@ -214,8 +214,9 @@ After Block 4 ★. Ten more arcade ideas on the roadmap; lessons ship one ★ ga
 | **5.32** | Light orbs auto-fire | Nearest target, projectile list, enemy HP, XP gem drops |
 | **5.33** | XP & level-up | Gem pickup → XP; pause; 3 random upgrades from dict (`1`–`3`) |
 | **5.34** | Night Swarm complete | Survive timer (~3 min), ramping waves, states, pause, session best time |
-
-*Coming soon in Block 5:* Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
+| **5.35** | Scrolling road & lanes | **Lane Rush** — stripe offset scroll, lane lerp with `dt` |
+| **5.36** | Traffic spawns & distance | Timer spawns, move down, crash, distance score |
+| **5.37** | Lane Rush complete | Speed ramp, fuel/coins, near-miss, states, session best, Block 5 finale |
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

@@ -1,6 +1,6 @@
 # Course 3: Game Development with Python
 
-> **Status:** Draft — Blocks 1–4; Block 5 ★ II (Glow Worm … Night Swarm 5.1–5.34 shipped)  
+> **Status:** Draft — Blocks 1–4; Block 5 ★ II **complete** (Glow Worm … Lane Rush 5.1–5.37)  
 > **Audience:** Ages 11+ · **Python:** 3.12+ · **Pygame**  
 > **Pace:** ~4–6 weeks at 1–2 lessons/week (~30–40 min each) when all blocks ship  
 > **Prerequisites:** [Course 1](../course-1-python-basics/README.md) (loops, conditionals, functions, lists). Turtle (Block 5) recommended. Course 2 is helpful for venv/`pip` habits but not required.
@@ -20,9 +20,9 @@ Build a complete 2D mini-game with **Pygame** — windows, colors, shapes, keybo
 | 2 | Player Controls & Animations | 2.1 – 2.4 | **Draft** | [block-2-player-controls-animations](block-2-player-controls-animations/README.md) |
 | 3 | Physics & Collisions (Final Project) | 3.1 – 3.3 | **Draft** | [block-3-physics-collisions-final-project](block-3-physics-collisions-final-project/README.md) |
 | 4 ★ | Bonus Star Projects *(optional)* | 4.1 – 4.12 | **Draft** | [block-4-bonus-star-projects](block-4-bonus-star-projects/README.md) |
-| 5 ★ | Bonus Star Projects II *(optional)* | 5.1 – 5.37 *(roadmap)* | **Glow Worm … Night Swarm 5.1–5.34** | [block-5-bonus-star-projects-2](block-5-bonus-star-projects-2/README.md) |
+| 5 ★ | Bonus Star Projects II *(optional)* | 5.1 – 5.37 | **All ten ★ games shipped** | [block-5-bonus-star-projects-2](block-5-bonus-star-projects-2/README.md) |
 
-**Suggested path:** Block 1 → 2 → 3 (11 lessons). **Block 4 ★** is extra credit after the capstone (Sky Hopper 4.1–4.3, Prism Dash 4.4–4.6, Shard Stack 4.7–4.9, Glyph Grove 4.10–4.12). **Block 5 ★ II** adds more arcade games through **Night Swarm**. **57 lessons** when Blocks 4–5 bonus content shipped so far is included.
+**Suggested path:** Block 1 → 2 → 3 (11 lessons). **Block 4 ★** is extra credit after the capstone (Sky Hopper 4.1–4.3, Prism Dash 4.4–4.6, Shard Stack 4.7–4.9, Glyph Grove 4.10–4.12). **Block 5 ★ II** adds ten arcade games through **Lane Rush**. **60 lessons** when all Blocks 4–5 bonus content is included.
 
 ---
 
@@ -38,7 +38,7 @@ When you finish Block 3 (required path), you can:
 
 **Block 4 ★ (optional):** **Sky Hopper**, **Prism Dash**, **Shard Stack**, **Glyph Grove** — bonus arcade games with procedural shapes and font glyphs only.
 
-**Block 5 ★ II (optional):** **Glow Worm** through **Night Swarm** (nine ★ games shipped); **Lane Rush** on the roadmap (*coming soon*).
+**Block 5 ★ II (optional):** all **ten** ★ arcade games from **Glow Worm** through **Lane Rush** — Block 5 roadmap complete.
 
 **Block 1 exit skills (now):** game loop, window + quit, RGB fill, `draw.rect`, x/y motion, `clock.tick` + `dt`.
 

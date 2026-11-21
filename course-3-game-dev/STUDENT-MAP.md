@@ -61,7 +61,10 @@ PyCourse/
 │       ├── lesson-5-15-mine-whisper-complete/
 │       ├── lesson-5-16-merge-magic-rune-board/
 │       ├── lesson-5-17-merge-magic-slide-merge/
-│       └── lesson-5-18-merge-magic-complete/
+│       ├── lesson-5-18-merge-magic-complete/
+│       ├── lesson-5-19-twin-cards-symbol-deck/
+│       ├── lesson-5-20-twin-cards-flip-match/
+│       └── lesson-5-21-twin-cards-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -162,6 +165,12 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 5.17 — `merge_row` slide+merge; four directions; spawn on change only
 - [ ] 5.18 — Full Merge Magic: score, 2048 win + continue, game over, undo, best score
 
+### Optional ★ Block 5 II — Twin Cards
+
+- [ ] 5.19 — Pair deck, shuffle, 4×3 grid, card backs vs shape symbols
+- [ ] 5.20 — Click flips; idle/first/waiting; timer hides mismatches
+- [ ] 5.21 — Full Twin Cards: moves, timer, 3 sizes, win stars, session best
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -172,7 +181,7 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 
 **★ Bonus:** finish Block 4 and demo **Sky Hopper**, **Prism Dash**, **Shard Stack**, and **Glyph Grove** — all four Block 4 ★ projects!
 
-**★ II Bonus:** continue in Block 5 with **Glow Worm**, **Bounce Forge**, **Orbit Guard**, **Mine Whisper**, and **Merge Magic** (more ★ games *coming soon* on the block README roadmap).
+**★ II Bonus:** continue in Block 5 with **Glow Worm**, **Bounce Forge**, **Orbit Guard**, **Mine Whisper**, **Merge Magic**, and **Twin Cards** (more ★ games *coming soon* on the block README roadmap).
 
 → [Course 3 index](README.md)
 

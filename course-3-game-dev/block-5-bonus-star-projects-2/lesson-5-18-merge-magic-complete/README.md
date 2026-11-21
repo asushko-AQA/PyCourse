@@ -44,4 +44,4 @@
 
 **Previous / Предыдущее:** [Lesson 5.17 — Slide & Merge](../lesson-5-17-merge-magic-slide-merge/README.md)
 
-**Next / Дальше:** [Block 5 — Twin Cards (coming soon)](../../README.md)
+**Next / Дальше:** [Lesson 5.19 — Symbol Deck & Grid](../lesson-5-19-twin-cards-symbol-deck/README.md)

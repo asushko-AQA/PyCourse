@@ -198,8 +198,11 @@ After Block 4 ★. Ten more arcade ideas on the roadmap; lessons ship one ★ ga
 | **5.16** | Rune lattice & spawn | **Merge Magic** — 4×4 int grid, `RUNE_COLORS`, spawn 2/4 in empty cell |
 | **5.17** | Slide & merge | `merge_row` compress/merge; four directions; spawn on change only |
 | **5.18** | Merge Magic complete | Score, win 2048 + continue, game over, undo, session best |
+| **5.19** | Symbol deck & grid | **Twin Cards** — pairs list, `random.shuffle`, draw backs vs shapes |
+| **5.20** | Flip & match | Mouse picks, `idle/first/waiting`, `wait_timer`, matched stay open |
+| **5.21** | Twin Cards complete | Moves + timer, 3 grid sizes, win stars, restart, session best moves |
 
-*Coming soon in Block 5:* Twin Cards, Tic-Tac-Bot, Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
+*Coming soon in Block 5:* Tic-Tac-Bot, Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

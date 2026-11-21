@@ -155,6 +155,16 @@ Bridge between basics and game/web courses. Uses stdlib `turtle` — no pip inst
 | 3.2 | **Catch the Falling Stars** | Full capstone: spawn, fall, catch, score, restart |
 | **3.3** *(new)* | **Polish** | Sound effects, high score, difficulty ramp |
 
+### Block 4 *(optional bonus ★)*: Star Projects
+
+After Block 3. Not required for graduation. Each ★ arcade-style game uses 2–3 lessons; numbering **4.1–4.3** (Sky Hopper), **4.4–4.6**, **4.7–4.9**, **4.10–4.12** for future projects.
+
+| Lesson | Topic | Mini-project / outcome |
+|--------|-------|------------------------|
+| **4.1** | Gravity & flap | **Sky Hopper** — procedural bird, `vel_y`, SPACE flap |
+| **4.2** | Scrolling gateways | Pipe pairs, `colliderect`, score per gateway |
+| **4.3** | Sky Hopper complete | Title / play / game over, session high score, speed ramp |
+
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 
 **Alternative entry path:** Pygame Zero (`pgzero`) for simpler first game — document in `shared/notes/pygame-zero-alternative.md` if needed.

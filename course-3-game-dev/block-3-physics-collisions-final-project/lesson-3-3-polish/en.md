@@ -234,7 +234,8 @@ Pick the best answer for each question. Try without scrolling down first!
 ## What's Next
 
 → [Block 3 index](../README.md) — tick the Course 3 graduation checklist!  
-→ You finished **Course 3: Game Development with Python**. Show your game!
+→ You finished the **required** Course 3 path. Show your game!  
+→ **Optional ★:** [Lesson 4.1 — Gravity & Flap](../../block-4-bonus-star-projects/lesson-4-1-sky-hopper-gravity-flap/README.md) starts **Sky Hopper**.
 
 ---
 

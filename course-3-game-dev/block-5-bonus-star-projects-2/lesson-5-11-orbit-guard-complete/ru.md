@@ -131,7 +131,7 @@ python solution\game.py
    - **d)** Less code
 
 5. Next ★ roadmap project is…
-   - **a)** Mine Whisper (coming soon)
+   - **a)** Mine Whisper (5.12 сетка)
    - **b)** Course 1 turtle only
    - **c)** Block 0 essays
    - **d)** Removing lists
@@ -152,7 +152,7 @@ python solution\game.py
 
 ## Что дальше
 
-→ [Блок 5 — Mine Whisper (скоро)](../README.md)
+→ [Урок 5.12 — Сетка кристаллов](../lesson-5-12-mine-whisper-crystal-grid/README.md) — **Mine Whisper** ★ №4!
 
 ---
 

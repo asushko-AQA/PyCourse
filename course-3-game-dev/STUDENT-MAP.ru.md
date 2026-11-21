@@ -54,7 +54,11 @@ PyCourse/
 │       ├── lesson-5-8-orbit-guard-patrol-ship/
 │       ├── lesson-5-9-orbit-guard-invader-formation/
 │       ├── lesson-5-10-orbit-guard-shields-lives/
-│       └── lesson-5-11-orbit-guard-complete/
+│       ├── lesson-5-11-orbit-guard-complete/
+│       ├── lesson-5-12-mine-whisper-crystal-grid/
+│       ├── lesson-5-13-mine-whisper-mines-numbers/
+│       ├── lesson-5-14-mine-whisper-flood-flags/
+│       └── lesson-5-15-mine-whisper-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -142,6 +146,13 @@ pip install pygame
 - [ ] 5.10 — Столкновения, вражеский огонь, щиты с HP, жизни и счёт
 - [ ] 5.11 — Полный Orbit Guard: волны, НЛО, состояния, рекорд сессии
 
+### Опциональный ★ Блок 5 II — Mine Whisper
+
+- [ ] 5.12 — Сетка dict-клеток; кристаллы; мышь → `(col, row)`
+- [ ] 5.13 — Мины после первого клика; соседи; цифры
+- [ ] 5.14 — Заливка нулей; флажки правой кнопкой
+- [ ] 5.15 — Полный Mine Whisper: сложность, таймер, счётчик мин, победа/поражение
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -152,7 +163,7 @@ pip install pygame
 
 **★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады блока 4!
 
-**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm**, **Bounce Forge** и **Orbit Guard** (ещё ★ игры — *скоро* на README блока).
+**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm**, **Bounce Forge**, **Orbit Guard** и **Mine Whisper** (ещё ★ игры — *скоро* на README блока).
 
 → [Оглавление Курса 3](README.md)
 

@@ -45,4 +45,4 @@
 
 **Previous / Предыдущее:** [Lesson 5.10 — Shields, Lives & Score](../lesson-5-10-orbit-guard-shields-lives/README.md)
 
-**Next / Дальше:** [Block 5 — Mine Whisper (coming soon)](../README.md)
+**Next / Дальше:** [Lesson 5.12 — Crystal Grid & Clicks](../lesson-5-12-mine-whisper-crystal-grid/README.md)

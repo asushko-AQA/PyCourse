@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects II *(optional — after Block 4)*  
-> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · **Mine Whisper (5.12–5.15)** · Merge Magic–Lane Rush: *coming soon*  
+> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · **Mine Whisper (5.12–5.15)** · **Merge Magic (5.16–5.18)** · Twin Cards–Lane Rush: *coming soon*  
 > **Optional:** Finish Block 3 (required path) and Block 4 ★ if you like; these lessons are extra credit.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -21,7 +21,7 @@ Block 5 uses **lesson IDs 5.x**. Each ★ mini-game gets **2–5 consecutive les
 | **5.4 – 5.7** | **Bounce Forge** | Pong / Breakout-like | **Shipped** |
 | **5.8 – 5.11** | **Orbit Guard** | Space Invaders-like | **Shipped** |
 | **5.12 – 5.15** | **Mine Whisper** | Minesweeper-like | **Shipped** |
-| 5.16 – 5.18 | **Merge Magic** | 2048-like | *Coming soon* |
+| **5.16 – 5.18** | **Merge Magic** | 2048-like | **Shipped** |
 | 5.19 – 5.21 | **Twin Cards** | memory / pairs | *Coming soon* |
 | 5.22 – 5.24 | **Tic-Tac-Bot** | tic-tac-toe + simple AI | *Coming soon* |
 | 5.25 – 5.29 | **Leap Lands** | mini platformer, text map level | *Coming soon* |
@@ -33,7 +33,7 @@ Add one ★ game per PR using the next free **5.x** slots.
 
 ---
 
-## Lessons / Уроки — Glow Worm · Bounce Forge · Orbit Guard · Mine Whisper
+## Lessons / Уроки — Glow Worm · Bounce Forge · Orbit Guard · Mine Whisper · Merge Magic
 
 | # | English | Русский | Level |
 |---|---------|---------|-------|
@@ -52,6 +52,9 @@ Add one ★ game per PR using the next free **5.x** slots.
 | 5.13 | [Mines & Neighbor Numbers](lesson-5-13-mine-whisper-mines-numbers/README.md) | Шахты и числа | Level ★25 — Hidden Echo |
 | 5.14 | [Flood Reveal & Flags](lesson-5-14-mine-whisper-flood-flags/README.md) | Заливка и флажки | Level ★26 — Whisper Flood |
 | 5.15 | [Mine Whisper Complete](lesson-5-15-mine-whisper-complete/README.md) | Mine Whisper целиком | Level ★27 — Mine Whisper Pro |
+| 5.16 | [Rune Lattice & Spawn](lesson-5-16-merge-magic-rune-board/README.md) | Руническая решётка | Level ★28 — Rune Lattice |
+| 5.17 | [Slide & Merge](lesson-5-17-merge-magic-slide-merge/README.md) | Сдвиг и слияние | Level ★29 — Rune Slide |
+| 5.18 | [Merge Magic Complete](lesson-5-18-merge-magic-complete/README.md) | Merge Magic целиком | Level ★30 — Merge Magic Pro |
 
 **Previous / Предыдущее:** [Block 4 ★](../block-4-bonus-star-projects/README.md) — [Glyph Grove 4.12](../block-4-bonus-star-projects/lesson-4-12-glyph-grove-complete/README.md) *(recommended)*
 
@@ -87,6 +90,15 @@ Add one ★ game per PR using the next free **5.x** slots.
 - [ ] `neighbors` counts adjacent mines; digits `1`–`8` render on reveal
 - [ ] Zero regions **flood-fill** (recursive idea + stack implementation); right-click **flags**
 - [ ] Difficulty presets; mine counter; timer; win / lose with mine reveal; session **best time**
+
+## Block 5 readiness checklist (Merge Magic)
+
+- [ ] `board` is a 4×4 list of ints; `0` means empty
+- [ ] `RUNE_COLORS` tints tiles; numbers drawn in the center
+- [ ] `merge_row` compresses, merges once per pair, compresses again (pure function)
+- [ ] Four directions via reverse / transpose; **spawn only when board changed**
+- [ ] Score tracks merges; **2048** win with continue; **game over** when no moves
+- [ ] **Undo** one step; session **best_score**; optional slide glow animation
 
 ---
 

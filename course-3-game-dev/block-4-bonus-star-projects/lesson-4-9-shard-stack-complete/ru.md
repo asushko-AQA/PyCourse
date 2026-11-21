@@ -172,7 +172,8 @@ python solution\game.py
 ## What's Next
 
 → [Блок 4](../README.md) — ★ проект **№3** готов!  
-→ Дальше **4.10–4.12**.  
+→ [Урок 4.10 — Плитки и раскладка](../lesson-4-10-glyph-grove-tiles-layout/README.md) — старт **Glyph Grove** (#4)!  
+→ [Индекс блока 4](../README.md) — проект #3 готов!  
 → Сравни сетку с **Prism Dash**!
 
 ---

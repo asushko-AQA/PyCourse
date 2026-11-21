@@ -217,6 +217,13 @@ playwright install chromium
 pytest tools/mcp/tests/
 ```
 
+## Cursor Cloud specific instructions
+
+- Ubuntu images need `python3.12-venv` before `python3 -m venv` works, and `python-is-python3` so `python` exists. The MCP `quiz_hash` tool spawns `python`.
+- Platform Python deps live in a repo-root `.venv`: `pip install -e "backend[dev]"` and `pip install -r tools/mcp/tests/requirements.txt`, then `playwright install --with-deps chromium`.
+- From `backend/`, run `alembic upgrade head` and `python -m app.sync.index_lessons` with `DATABASE_URL=sqlite:///data/pycourse.db` (that file is `backend/data/pycourse.db`). Then start Uvicorn on port 8000 (`uvicorn app.main:app --host 0.0.0.0 --port 8000`) and `npm run dev` in `frontend/` on port 3000.
+- Playwright UI tests build and serve the frontend on port 3100 unless `E2E_BASE_URL` points at an already running app: `E2E_BASE_URL=http://127.0.0.1:3000 pytest tools/mcp/tests/ui`.
+
 ## When Building Lessons
 
 1. Read [CURRICULUM.md](CURRICULUM.md) for scope and prerequisites.

@@ -51,4 +51,4 @@
 
 **Previous / Предыдущий урок:** [Lesson 5.2 — Food, Growth & Collisions](../lesson-5-2-glow-worm-food-growth/README.md)
 
-**Next / Дальше:** [Block 5 ★ II — Bounce Forge coming soon](../README.md) · [Course 3 map](../../STUDENT-MAP.md)
+**Next / Дальше:** [Lesson 5.4 — Ball & Wall Bounces](../lesson-5-4-bounce-forge-ball-walls/README.md) — **Bounce Forge** project #2!

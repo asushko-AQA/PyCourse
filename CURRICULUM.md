@@ -183,8 +183,12 @@ After Block 4 ★. Ten more arcade ideas on the roadmap; lessons ship one ★ ga
 | **5.1** | Grid & segments | **Glow Worm** — `(col, row)` list, direction tuple, timed steps |
 | **5.2** | Food & growth | Random food, grow tail, wall/self crash |
 | **5.3** | Glow Worm complete | Title / play / game over, score, speed ramp, session best |
+| **5.4** | Ball & walls | **Bounce Forge** — velocity vector, wall bounce, forge spark art |
+| **5.5** | Paddle & lives | Anvil paddle, angle from `hit_frac`, lives counter |
+| **5.6** | Bricks & score | `Rect` brick list, collision side, remove brick, score |
+| **5.7** | Bounce Forge complete | Levels, speed-up, win/lose, session best, optional 2-player Pong |
 
-*Coming soon in Block 5:* Bounce Forge (5.4–5.7), Orbit Guard, Mine Whisper, Merge Magic, Twin Cards, Tic-Tac-Bot, Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
+*Coming soon in Block 5:* Orbit Guard, Mine Whisper, Merge Magic, Twin Cards, Tic-Tac-Bot, Leap Lands, Night Swarm, Lane Rush — see [block-5 README](course-3-game-dev/block-5-bonus-star-projects-2/README.md).
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

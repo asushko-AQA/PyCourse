@@ -46,7 +46,11 @@ PyCourse/
 │   └── block-5-bonus-star-projects-2/  ← опциональный ★ II после Блока 4
 │       ├── lesson-5-1-glow-worm-grid-segments/
 │       ├── lesson-5-2-glow-worm-food-growth/
-│       └── lesson-5-3-glow-worm-complete/
+│       ├── lesson-5-3-glow-worm-complete/
+│       ├── lesson-5-4-bounce-forge-ball-walls/
+│       ├── lesson-5-5-bounce-forge-paddle-lives/
+│       ├── lesson-5-6-bounce-forge-bricks-score/
+│       └── lesson-5-7-bounce-forge-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -120,6 +124,13 @@ pip install pygame
 - [ ] 5.2 — Еда; рост хвоста; стена и самоудар
 - [ ] 5.3 — Полный Glow Worm: титул / игра / game over, счёт, ускорение, рекорд сессии
 
+### Опциональный ★ Блок 5 II — Bounce Forge
+
+- [ ] 5.4 — `ball_vx` / `ball_vy` и отскоки от стен (искра)
+- [ ] 5.5 — Ракетка-наковальня, угол `hit_frac`, жизни
+- [ ] 5.6 — Список кирпичей `Rect`, сторона удара, счёт
+- [ ] 5.7 — Полный Bounce Forge: уровни, рекорд, Pong по **P**
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -130,7 +141,7 @@ pip install pygame
 
 **★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады блока 4!
 
-**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm** (ещё ★ игры — *скоро* на README блока).
+**★ II Бонус:** продолжи в Блоке 5 с **Glow Worm** и **Bounce Forge** (ещё ★ игры — *скоро* на README блока).
 
 → [Оглавление Курса 3](README.md)
 

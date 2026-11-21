@@ -39,7 +39,10 @@ PyCourse/
 │       ├── lesson-4-6-prism-dash-complete/
 │       ├── lesson-4-7-shard-stack-grid-cells/
 │       ├── lesson-4-8-shard-stack-falling-pieces/
-│       └── lesson-4-9-shard-stack-complete/
+│       ├── lesson-4-9-shard-stack-complete/
+│       ├── lesson-4-10-glyph-grove-tiles-layout/
+│       ├── lesson-4-11-glyph-grove-mouse-matching/
+│       └── lesson-4-12-glyph-grove-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -49,7 +52,7 @@ PyCourse/
 
 | Урок | Вместо длинного `cd`… |
 |------|------------------------|
-| 1.1–4.9 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
+| 1.1–4.12 | Скопируй папку `starter/` куда угодно; активируй venv с Pygame; `cd` туда перед запуском |
 
 ---
 
@@ -101,6 +104,12 @@ pip install pygame
 - [ ] 4.8 — `can_move`, таймер падения, `lock_piece`
 - [ ] 4.9 — Полный Shard Stack: поворот, линии, счёт, рекорд
 
+### Опциональный ★ Блок 4 — Glyph Grove
+
+- [ ] 4.10 — Словари плиток; слои; знаки через шрифт
+- [ ] 4.11 — Мышь; правило «свободной» плитки; пары
+- [ ] 4.12 — Полный Glyph Grove: подсказка, shuffle, таймер, лучшее время
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -109,7 +118,7 @@ pip install pygame
 2. [ ] Капстоун **Catch the Falling Stars** работает целиком  
 3. [ ] Родитель или учитель сыграл один раунд  
 
-**★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash** и **Shard Stack**!
+**★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады!
 
 → [Оглавление Курса 3](README.md)
 

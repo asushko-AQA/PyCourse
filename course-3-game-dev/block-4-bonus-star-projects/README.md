@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects *(optional — after Block 3)*  
-> **Status:** Sky Hopper (4.1–4.3) + Prism Dash (4.4–4.6) + Shard Stack (4.7–4.9) · more ★ games planned  
+> **Status:** Sky Hopper (4.1–4.3) + Prism Dash (4.4–4.6) + Shard Stack (4.7–4.9) + Glyph Grove (4.10–4.12) · **Block 4 complete**  
 > **Optional:** Finish Block 3 first; these lessons are extra credit, not required for Course 3 graduation.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -20,7 +20,7 @@ Block 4 uses **lesson IDs 4.x**. Each ★ mini-game gets **2–3 consecutive les
 | **4.1 – 4.3** | **Sky Hopper** | flap + scrolling gateways (Flappy-like) | **Shipped** |
 | **4.4 – 4.6** | **Prism Dash** | auto-scroll + jump + level string obstacles | **Shipped** |
 | **4.7 – 4.9** | **Shard Stack** | 2D grid, falling shards, line clear | **Shipped** |
-| 4.10 – 4.12 | *(planned)* | Mahjong solitaire-like match | Future PR |
+| **4.10 – 4.12** | **Glyph Grove** | mouse match, free-tile rule, hint/shuffle | **Shipped** |
 
 **Folder pattern:** `lesson-4-{n}-{slug}/` inside `block-4-bonus-star-projects/`.  
 When adding a new ★ game, use the next free **4.x** slot (see table above); do not restart at 4.1.
@@ -53,7 +53,25 @@ When adding a new ★ game, use the next free **4.x** slot (see table above); do
 | 4.8 | [Falling Pieces & Controls](lesson-4-8-shard-stack-falling-pieces/README.md) | Падающие осколки | Level ★8 — Drift Shard |
 | 4.9 | [Shard Stack Complete](lesson-4-9-shard-stack-complete/README.md) | Shard Stack целиком | Level ★9 — Shard Stack Pro |
 
-**Next / Дальше:** *(future)* ★ Project #4 at lessons 4.10–4.12.
+## Lessons / Уроки — Glyph Grove (project #4)
+
+| # | English | Русский | Level |
+|---|---------|---------|-------|
+| 4.10 | [Tiles & Layout](lesson-4-10-glyph-grove-tiles-layout/README.md) | Плитки и раскладка | Level ★10 — Garden Tiles |
+| 4.11 | [Mouse Pick & Matching](lesson-4-11-glyph-grove-mouse-matching/README.md) | Мышь и совпадения | Level ★11 — Pair Pick |
+| 4.12 | [Glyph Grove Complete](lesson-4-12-glyph-grove-complete/README.md) | Glyph Grove целиком | Level ★12 — Glyph Grove Pro |
+
+**You finished Block 4 ★ / Блок 4 ★ пройден:** all four bonus arcade games shipped!
+
+---
+
+## Block 4 readiness checklist (Glyph Grove)
+
+- [ ] Tile dicts with `kind`, `row`, `col`, `layer` draw with font glyphs
+- [ ] `MOUSEBUTTONDOWN` + `rect.collidepoint` selects tiles
+- [ ] Free rule: not covered, open left or right
+- [ ] Matching pair sets `removed`; win when board empty
+- [ ] Hint, shuffle, timer, moves, start/win/stuck, session best time
 
 ---
 

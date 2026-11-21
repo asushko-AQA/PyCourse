@@ -157,7 +157,7 @@ Bridge between basics and game/web courses. Uses stdlib `turtle` — no pip inst
 
 ### Block 4 *(optional bonus ★)*: Star Projects
 
-After Block 3. Not required for graduation. Each ★ arcade-style game uses 2–3 lessons; numbering **4.1–4.3** (Sky Hopper), **4.4–4.6** (Prism Dash), **4.7–4.9**, **4.10–4.12** for future projects.
+After Block 3. Not required for graduation. Each ★ arcade-style game uses 2–3 lessons; numbering **4.1–4.3** (Sky Hopper), **4.4–4.6** (Prism Dash), **4.7–4.9** (Shard Stack), **4.10–4.12** (Glyph Grove).
 
 | Lesson | Topic | Mini-project / outcome |
 |--------|-------|------------------------|
@@ -170,6 +170,9 @@ After Block 3. Not required for graduation. Each ★ arcade-style game uses 2–
 | **4.7** | Grid & cells | **Shard Stack** — 2D `grid`, draw well, piece offsets |
 | **4.8** | Falling shards | `can_move`, `lock_piece`, timer drop, arrow controls |
 | **4.9** | Shard Stack complete | Rotate, clear lines, score/level, next preview, high score |
+| **4.10** | Tile grid & glyphs | **Glyph Grove** — tile dicts, layered layout, procedural font symbols |
+| **4.11** | Mouse & free tiles | `MOUSEBUTTONDOWN`, `collidepoint`, free-tile rule, pair removal |
+| **4.12** | Glyph Grove complete | Hint, shuffle, timer/moves, win/stuck, session best time |
 
 **Course 3 exit skills:** game loop, events, sprites, collision, game states, scoring.
 

@@ -188,8 +188,8 @@ python solution\game.py
 
 ## What's Next
 
+→ [Lesson 4.10 — Tiles & Layout](../lesson-4-10-glyph-grove-tiles-layout/README.md) — ★ project **#4** **Glyph Grove** begins!  
 → [Block 4 index](../README.md) — you finished ★ project **#3**!  
-→ Future lessons **4.10–4.12** will add the next bonus game.  
 → Compare grid logic to your **Prism Dash** side-scroller!
 
 ---

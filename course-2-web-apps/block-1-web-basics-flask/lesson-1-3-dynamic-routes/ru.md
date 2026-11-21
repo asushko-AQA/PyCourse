@@ -77,6 +77,60 @@ python starter\app.py
 
 ---
 
+## Пример кода
+
+**Файл: [solution/app.py](solution/app.py)**
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return "Welcome to Dynamic Routes! Try /hello/YourName"
+
+
+@app.route("/hello/<name>")
+def hello(name):
+    return f"Hello, {name}!"
+
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+```
+
+---
+
+## Запуск кода
+
+```text
+cd course-2-web-apps\block-1-web-basics-flask\lesson-1-3-dynamic-routes
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+Открой в браузере:
+
+| URL | Ожидаемая страница |
+|-----|---------------------|
+| `http://127.0.0.1:5000/` | Приветствие с подсказкой |
+| `http://127.0.0.1:5000/hello/Alex` | `Hello, Alex!` |
+
+**curl (по желанию):**
+
+```text
+curl http://127.0.0.1:5000/hello/Web
+```
+
+```text
+Hello, Web!
+```
+
+---
+
 ## Быстрые упражнения
 
 1. Три разных имени в `/hello/...` — три разных приветствия.
@@ -85,7 +139,7 @@ python starter\app.py
 
 ---
 
-## Попробуй сам
+## Задание для практики
 
 ### Задание 1 (обязательное)
 

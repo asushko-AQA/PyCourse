@@ -77,6 +77,60 @@ Edit only the **last part** of the URL in the address bar and press **Enter** â€
 
 ---
 
+## Code Example
+
+**File: [solution/app.py](solution/app.py)**
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return "Welcome to Dynamic Routes! Try /hello/YourName"
+
+
+@app.route("/hello/<name>")
+def hello(name):
+    return f"Hello, {name}!"
+
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+```
+
+---
+
+## Code Execution
+
+```text
+cd course-2-web-apps\block-1-web-basics-flask\lesson-1-3-dynamic-routes
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+Visit these URLs in the browser:
+
+| URL | Expected page |
+|-----|----------------|
+| `http://127.0.0.1:5000/` | Welcome message with a hint |
+| `http://127.0.0.1:5000/hello/Alex` | `Hello, Alex!` |
+
+**curl (optional):**
+
+```text
+curl http://127.0.0.1:5000/hello/Web
+```
+
+```text
+Hello, Web!
+```
+
+---
+
 ## Quick Drills
 
 1. Visit three different names in `/hello/...` â€” each shows a different greeting.
@@ -85,7 +139,7 @@ Edit only the **last part** of the URL in the address bar and press **Enter** â€
 
 ---
 
-## Try it yourself
+## Practice Task
 
 ### Challenge 1 (required)
 

@@ -74,6 +74,45 @@ Visit `/` and `/about`. Gray-blue background and styled nav mean CSS loaded.
 
 ---
 
+## Code Example
+
+**File: [solution/templates/base.html](solution/templates/base.html)** (CSS link)
+
+```html
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+**File: [solution/app.py](solution/app.py)**
+
+```python
+@app.route("/")
+def home():
+    return render_template(
+        "home.html",
+        page_title="Home",
+        headline="Welcome to My Styled Studio",
+    )
+```
+
+Styles live in [solution/static/style.css](solution/static/style.css).
+
+---
+
+## Code Execution
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-4-static-files-css
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+Visit `http://127.0.0.1:5000/` and `/about`.
+
+**Expected result:** Gray-blue background, styled navigation, and readable typography (not plain HTML).
+
+---
+
 ## Quick Drills
 
 1. **Color swap** — change `background` in `body`. Refresh.

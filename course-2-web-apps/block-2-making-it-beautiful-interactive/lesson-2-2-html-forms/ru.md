@@ -63,9 +63,73 @@ python starter\app.py
 
 GET меняет URL; POST — нет.
 
+**Ожидаемый результат:** обе страницы повторяют ввод в области результата.
+
 ---
 
-## Практическое задание
+## Пример кода
+
+**Файл: [solution/app.py](solution/app.py)**
+
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+
+@app.route("/greet", methods=["GET"])
+def greet():
+    name = request.args.get("name", "").strip()
+    message = ""
+    if name:
+        message = f"Hello, {name}! Nice to meet you."
+    return render_template("greet.html", message=message, name=name)
+
+
+@app.route("/message", methods=["GET", "POST"])
+def message():
+    text = ""
+    reply = ""
+    if request.method == "POST":
+        text = request.form.get("text", "").strip()
+        if text:
+            reply = f"You said: {text}"
+    return render_template("message.html", message=reply, text=text)
+
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+```
+
+HTML форм — в `solution/templates/`, см. [solution/templates/greet.html](solution/templates/greet.html).
+
+---
+
+## Запуск кода
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-2-html-forms
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+1. Открой `http://127.0.0.1:5000/greet`, введи имя — URL станет `?name=...`
+2. Открой `http://127.0.0.1:5000/message`, отправь текст — URL остаётся `/message`
+
+**Ожидаемый результат:** обе страницы показывают твой ввод в области результата.
+
+---
+
+## Быстрые упражнения
+
+1. **Детектив URL** — отправь GET с именем `Sam`. Скопируй полный URL.
+2. **Пустой POST** — отправь `/message` с пустым полем. Что произойдёт?
+3. **Strip** — зачем вызываем `.strip()` у значений формы?
+
+---
+
+## Задание для практики
 
 **Квест:** Доделай Form Lab. **Эталон:** [solution/](solution/)
 

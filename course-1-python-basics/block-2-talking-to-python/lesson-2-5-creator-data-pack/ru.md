@@ -86,7 +86,48 @@ Block 2 complete!
 
 ## Пример кода
 
-См. [solution/creator_pack.py](solution/creator_pack.py) после своей попытки.
+**Файл: [solution/creator_pack.py](solution/creator_pack.py)**
+
+```python
+print("=== CREATOR DATA PACK ===")
+
+name = input("What is your name? ")
+favorite_game = input("What is your favorite game? ")
+age = int(input("How old are you? "))
+
+days_on_earth = age * 365
+
+print(f"Name: {name}")
+print(f"Favorite game: {favorite_game}")
+print(f"Days on Earth (about): {days_on_earth}")
+print(f"Shout: {name.upper()} RULES!")
+print("Block 2 complete!")
+```
+
+---
+
+## Запуск кода
+
+```text
+cd my_data
+python creator_pack.py
+```
+
+**Ввод:** Alex, Minecraft, 11 (или свои ответы)
+
+**Ожидаемый вывод:**
+
+```text
+=== CREATOR DATA PACK ===
+What is your name? Alex
+What is your favorite game? Minecraft
+How old are you? 11
+Name: Alex
+Favorite game: Minecraft
+Days on Earth (about): 4015
+Shout: ALEX RULES!
+Block 2 complete!
+```
 
 ---
 

@@ -76,7 +76,45 @@ The end.
 
 ## Пример кода
 
-См. [starter/madlibs.py](starter/madlibs.py) — четыре ввода, `.upper()`, `.lower()` и один срез.
+**Файл: [solution/madlibs.py](solution/madlibs.py)**
+
+```python
+hero = input("Name a hero: ")
+creature = input("Name a silly creature: ")
+place = input("Name a place: ")
+power = input("Name a superpower: ")
+
+short_creature = creature[0:3]
+
+print("=== STORY FACTORY ===")
+print(f"{hero} battled a {creature.lower()} in {place}.")
+print(f"The creature's first three letters: {short_creature}")
+print(f"{hero} used {power.upper()} to win!")
+print("The end.")
+```
+
+---
+
+## Запуск кода
+
+```text
+cd course-1-python-basics\block-2-talking-to-python\lesson-2-4-strings-in-action
+python starter\madlibs.py
+```
+
+**Mac/Linux:** `python starter/madlibs.py`
+
+**Ввод:** Sam, dragon, castle, laser (или свои слова)
+
+**Ожидаемый вывод:**
+
+```text
+=== STORY FACTORY ===
+Sam battled a dragon in castle.
+The creature's first three letters: dra
+Sam used LASER to win!
+The end.
+```
 
 ---
 

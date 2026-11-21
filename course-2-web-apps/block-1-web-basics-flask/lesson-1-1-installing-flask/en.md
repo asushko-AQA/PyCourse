@@ -118,6 +118,40 @@ Flask version: 3.x.x
 
 ---
 
+## Code Example
+
+**File: [solution/check_flask.py](solution/check_flask.py)**
+
+```python
+import importlib.metadata
+import flask
+
+print("Flask import OK!")
+print(f"Flask version: {importlib.metadata.version('flask')}")
+```
+
+---
+
+## Code Execution
+
+Activate your `.venv`, then:
+
+```text
+cd course-2-web-apps\block-1-web-basics-flask\lesson-1-1-installing-flask
+python starter\check_flask.py
+```
+
+**Mac/Linux:** `python starter/check_flask.py`
+
+**Expected output:**
+
+```text
+Flask import OK!
+Flask version: 3.x.x
+```
+
+---
+
 ## Quick Drills
 
 1. Run `pip list` — circle **Flask** on a sticky note.
@@ -126,7 +160,7 @@ Flask version: 3.x.x
 
 ---
 
-## Try it yourself
+## Practice Task
 
 ### Challenge 1 (required)
 

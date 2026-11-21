@@ -46,9 +46,65 @@ python starter\app.py
 
 **Mac/Linux:** `python starter/app.py`
 
+**Пример слов:** robot, dance, sparkly, moon base
+
 ---
 
-## Практическое задание
+### Шаг 4: Сделай по-своему
+
+Поменяй шаблон истории или добавь пятое поле. Главное: форма → POST → история на той же странице.
+
+---
+
+## Пример кода
+
+**Файл: [solution/app.py](solution/app.py)**
+
+```python
+@app.route("/", methods=["GET", "POST"])
+def madlibs():
+    story = ""
+    if request.method == "POST":
+        noun = request.form.get("noun", "something").strip() or "something"
+        verb = request.form.get("verb", "move").strip() or "move"
+        adjective = request.form.get("adjective", "silly").strip() or "silly"
+        place = request.form.get("place", "somewhere").strip() or "somewhere"
+        story = (
+            f"One sunny day, a {adjective} {noun} decided to {verb} "
+            f"all the way to {place}. The crowd cheered. The end!"
+        )
+    return render_template("madlibs.html", story=story)
+```
+
+Импорты и `app = Flask(__name__)` — в начале [solution/app.py](solution/app.py). Форма — в [solution/templates/madlibs.html](solution/templates/madlibs.html).
+
+---
+
+## Запуск кода
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-3-madlibs-capstone
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+1. Открой `http://127.0.0.1:5000/`
+2. Введи слова и нажми **Create Story**
+
+**Ожидаемый результат:** под **Your Story** появится твой абзац Mad-Libs.
+
+---
+
+## Быстрые упражнения
+
+1. **Сопоставь поля** — каждый `name="..."` связан с `request.form.get(...)`.
+2. **Пустое существительное** — отправь с пустым полем. Что выведется?
+3. **Новое предложение** — перепиши историю про школу или спорт.
+
+---
+
+## Задание для практики
 
 **Квест:** Скопируй в `my_web_madlibs/`, доделай TODO, свой шаблон истории. **Эталон:** [solution/](solution/)
 

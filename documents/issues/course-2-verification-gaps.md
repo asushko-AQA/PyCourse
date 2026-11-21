@@ -1,6 +1,6 @@
 # Issue: Course 2 bulk verification gaps
 
-**Status:** resolved  
+**Status:** resolved (triage 2026-11-21: no new gaps; schema v2 tracked separately in lesson-schema-v2-gap-list.md)  
 **Date:** 2026-06-08  
 **Severity:** low–medium  
 **Location:** Course 2 — post-implementation review

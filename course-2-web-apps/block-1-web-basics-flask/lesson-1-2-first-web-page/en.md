@@ -122,6 +122,54 @@ With `debug=True`, sometimes Flask auto-reloads. If you do not see changes, stop
 
 ---
 
+## Code Example
+
+**File: [solution/app.py](solution/app.py)**
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return "Hello, Web World!"
+
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+```
+
+---
+
+## Code Execution
+
+```text
+cd course-2-web-apps\block-1-web-basics-flask\lesson-1-2-first-web-page
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+**Terminal (server start):**
+
+```text
+ * Running on http://127.0.0.1:5000
+```
+
+Open `http://127.0.0.1:5000/` in the browser.
+
+**Browser page text:**
+
+```text
+Hello, Web World!
+```
+
+Stop the server with **Ctrl+C** when you are done.
+
+---
+
 ## Quick Drills
 
 1. Start the server — terminal shows `Running on http://127.0.0.1:5000`.
@@ -130,7 +178,7 @@ With `debug=True`, sometimes Flask auto-reloads. If you do not see changes, stop
 
 ---
 
-## Try it yourself
+## Practice Task
 
 ### Challenge 1 (required)
 

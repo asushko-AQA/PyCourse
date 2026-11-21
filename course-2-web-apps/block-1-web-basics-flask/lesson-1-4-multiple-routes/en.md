@@ -98,6 +98,62 @@ Stop with **Ctrl+C** when done.
 
 ---
 
+## Code Example
+
+**File: [solution/app.py](solution/app.py)** (key routes)
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    links = (
+        "<h1>My Flask Site</h1>"
+        "<p>Welcome! Visit <a href='/about'>About</a> or <a href='/jokes'>Jokes</a>.</p>"
+        "<p>Calculator: try <a href='/add/3/5'>/add/3/5</a></p>"
+    )
+    return links
+
+
+@app.route("/add/<int:a>/<int:b>")
+def add(a, b):
+    total = a + b
+    return f"<h1>Calculator</h1><p>{a} + {b} = {total}</p>"
+
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+```
+
+The full solution also includes `/about` and `/jokes` — see [solution/app.py](solution/app.py).
+
+---
+
+## Code Execution
+
+```text
+cd course-2-web-apps\block-1-web-basics-flask\lesson-1-4-multiple-routes
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+1. Open `http://127.0.0.1:5000/` and click through the site links.
+2. Visit `http://127.0.0.1:5000/add/10/7`
+
+**Browser at `/add/10/7`:**
+
+```text
+10 + 7 = 17
+```
+
+(On the page inside the calculator paragraph.)
+
+---
+
 ## Quick Drills
 
 1. Home page has working links to all three sections.
@@ -106,7 +162,7 @@ Stop with **Ctrl+C** when done.
 
 ---
 
-## Try it yourself
+## Practice Task
 
 ### Challenge 1 (required)
 

@@ -4,7 +4,7 @@
 **Block context:** block-5-creative-turtle  
 **Reviewer:** agent (verify-lesson-in-block, implementation pass)
 
-**Status:** closed (no critical gaps)
+**Status:** closed (no critical gaps; triage 2026-11-21 — GUI verification remains student-local, no repo action)
 
 ## Summary
 

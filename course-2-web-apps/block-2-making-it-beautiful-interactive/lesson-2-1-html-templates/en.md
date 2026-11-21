@@ -75,6 +75,57 @@ Open `http://127.0.0.1:5000/` and click **About** and **Jokes**.
 
 ---
 
+## Code Example
+
+**File: [solution/app.py](solution/app.py)**
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return render_template(
+        "home.html",
+        page_title="Home",
+        headline="Welcome to My Studio",
+    )
+
+
+@app.route("/about")
+def about():
+    return render_template(
+        "about.html",
+        page_title="About",
+        bio="I am learning Flask and building pages with templates!",
+    )
+
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+```
+
+Child templates live in `solution/templates/` — each extends [solution/templates/base.html](solution/templates/base.html).
+
+---
+
+## Code Execution
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-templates
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+Open `http://127.0.0.1:5000/`, then **About** and **Jokes**.
+
+**Expected result:** Shared navigation on every page; only the middle section changes.
+
+---
+
 ## Quick Drills
 
 1. **Block spot** — find `{% block content %}` in `base.html`. What goes there?

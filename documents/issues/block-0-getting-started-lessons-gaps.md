@@ -1,6 +1,6 @@
 # Issue: Block 0 (lessons 0.1 & 0.2) verification gaps
 
-**Status:** resolved — fixed in the same session (plan 03)
+**Status:** resolved — fixed in the same session (plan 03); triage 2026-11-21 — still resolved, no open items
 **Date:** 2026-06-28
 **Severity:** low
 **Verification date:** 2026-06-28

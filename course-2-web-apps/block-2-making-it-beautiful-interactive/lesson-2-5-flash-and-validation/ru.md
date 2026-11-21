@@ -50,7 +50,62 @@ python starter\app.py
 
 ---
 
-## Практическое задание
+## Пример кода
+
+**Файл: [solution/app.py](solution/app.py)**
+
+```python
+from flask import Flask, render_template, request, flash
+
+app = Flask(__name__)
+app.secret_key = "learning-flash-key"
+
+
+@app.route("/", methods=["GET", "POST"])
+def calc():
+    total = None
+    if request.method == "POST":
+        raw_a = request.form.get("a", "").strip()
+        raw_b = request.form.get("b", "").strip()
+        if not raw_a or not raw_b:
+            flash("Please enter both numbers.")
+        else:
+            try:
+                num_a = int(raw_a)
+                num_b = int(raw_b)
+                total = num_a + num_b
+            except ValueError:
+                flash("Use whole numbers only (like 3 or 10).")
+    return render_template("calc.html", total=total)
+```
+
+Flash выводится в [solution/templates/calc.html](solution/templates/calc.html) через `get_flashed_messages()`.
+
+---
+
+## Запуск кода
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-5-flash-and-validation
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+1. Открой `http://127.0.0.1:5000/`, введи `7` и `5` — в **Result** будет `12`
+2. Отправь с пустым полем — появится дружелюбное сообщение (flash), без падения
+
+---
+
+## Быстрые упражнения
+
+1. **Flash один раз** — вызови ошибку, затем введи правильные числа. Старая ошибка остаётся?
+2. **Сравни** — URL-калькулятор Блока 1 и этот калькулятор на форме.
+3. **Плохой ввод** — введи `abc` и `2`. Какое flash-сообщение?
+
+---
+
+## Задание для практики
 
 **Квест:** Скопируй в `my_web_calc/`, доделай TODO. **Эталон:** [solution/](solution/)
 

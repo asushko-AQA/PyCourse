@@ -122,6 +122,54 @@ Hello, Web World!
 
 ---
 
+## Пример кода
+
+**Файл: [solution/app.py](solution/app.py)**
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return "Hello, Web World!"
+
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+```
+
+---
+
+## Запуск кода
+
+```text
+cd course-2-web-apps\block-1-web-basics-flask\lesson-1-2-first-web-page
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
+
+**Терминал (запуск сервера):**
+
+```text
+ * Running on http://127.0.0.1:5000
+```
+
+Открой `http://127.0.0.1:5000/` в браузере.
+
+**Текст на странице:**
+
+```text
+Hello, Web World!
+```
+
+Останови сервер с **Ctrl+C**, когда закончишь.
+
+---
+
 ## Быстрые упражнения
 
 1. Запусти сервер — в терминале `Running on http://127.0.0.1:5000`.
@@ -130,7 +178,7 @@ Hello, Web World!
 
 ---
 
-## Попробуй сам
+## Задание для практики
 
 ### Задание 1 (обязательное)
 

@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects II *(optional — after Block 4)*  
-> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · **Orbit Guard (5.8–5.11)** · **Mine Whisper (5.12–5.15)** · **Merge Magic (5.16–5.18)** · **Twin Cards (5.19–5.21)** · **Tic-Tac-Bot (5.22–5.24)** · **Leap Lands (5.25–5.29)** · **Night Swarm (5.30–5.34)** · Lane Rush: *coming soon*  
+> **Status:** **Block 5 ★ II complete** — Glow Worm through **Lane Rush** (5.1–5.37)  
 > **Optional:** Finish Block 3 (required path) and Block 4 ★ if you like; these lessons are extra credit.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -26,7 +26,7 @@ Block 5 uses **lesson IDs 5.x**. Each ★ mini-game gets **2–5 consecutive les
 | **5.22 – 5.24** | **Tic-Tac-Bot** | tic-tac-toe + simple AI | **Shipped** |
 | **5.25 – 5.29** | **Leap Lands** | mini platformer, text map level | **Shipped** |
 | **5.30 – 5.34** | **Night Swarm** | top-down survivor-like | **Shipped** |
-| 5.35 – 5.37 | **Lane Rush** | top-down dodge racer | *Coming soon* |
+| **5.35 – 5.37** | **Lane Rush** | top-down dodge racer | **Shipped** |
 
 **Folder pattern:** `lesson-5-{n}-{slug}/` inside `block-5-bonus-star-projects-2/`.  
 Add one ★ game per PR using the next free **5.x** slots.
@@ -71,6 +71,9 @@ Add one ★ game per PR using the next free **5.x** slots.
 | 5.32 | [Light Orbs Auto-Fire](lesson-5-32-night-swarm-light-orbs/README.md) | Авто-сферы света | Level ★44 — Orb Sentinel |
 | 5.33 | [XP & Level-Up Choices](lesson-5-33-night-swarm-level-up/README.md) | Опыт и улучшения | Level ★45 — Bright Choice |
 | 5.34 | [Night Swarm Complete](lesson-5-34-night-swarm-complete/README.md) | Night Swarm целиком | Level ★46 — Night Swarm Pro |
+| 5.35 | [Scrolling Road & Lanes](lesson-5-35-lane-rush-road-scroll/README.md) | Прокрутка дороги | Level ★47 — Neon Stripes |
+| 5.36 | [Traffic Spawns & Distance](lesson-5-36-lane-rush-traffic-spawn/README.md) | Поток машин | Level ★48 — Traffic Tide |
+| 5.37 | [Lane Rush Complete](lesson-5-37-lane-rush-complete/README.md) | Lane Rush целиком | Level ★49 — Lane Rush Pro |
 
 **Previous / Предыдущее:** [Block 4 ★](../block-4-bonus-star-projects/README.md) — [Glyph Grove 4.12](../block-4-bonus-star-projects/lesson-4-12-glyph-grove-complete/README.md) *(recommended)*
 
@@ -158,6 +161,16 @@ Add one ★ game per PR using the next free **5.x** slots.
 - [ ] Defeated shadows drop **XP gems**; collecting gems fills XP → **level-up pause**
 - [ ] Level-up shows **3 random** upgrades from an `UPGRADE_POOL` dict (keys `1`–`3`)
 - [ ] Full game: survive timer goal (~3 min), harder spawns over time, MENU / PAUSE / WIN / GAME_OVER, session **best time**
+
+## Block 5 readiness checklist (Lane Rush)
+
+- [ ] `scroll_offset` wraps with `% STRIPE_H`; lane centers from `ROAD_LEFT` + lane index
+- [ ] Player lerps toward `lane_center(player_lane)` with `dt`
+- [ ] Traffic spawns on a timer in random lanes; moves down; `colliderect` ends the run
+- [ ] Distance score from scroll speed; optional restart key
+- [ ] Full game: speed ramp, fuel drain, coin/fuel pickups, near-miss bonus (+25)
+- [ ] MENU / PLAY / GAME_OVER / GRADUATE; session **best distance** in `~/.lane_rush_best.json`
+- [ ] **GRADUATE** screen celebrates completing all **ten** Block 5 ★ games
 
 ---
 

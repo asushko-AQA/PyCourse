@@ -1,4 +1,4 @@
-# game.py — Lesson 5.27: Leap Lands — coins, spikes & lives (starter — finish TODOs)
+# game.py — Lesson 5.27: Leap Lands — coins, spikes & lives (starter)
 import pygame
 
 pygame.init()
@@ -29,6 +29,7 @@ SOLID = {"#", "="}
 
 
 def build_level(rows: list[str]) -> tuple[list[pygame.Rect], list[pygame.Rect], list[pygame.Rect], pygame.Rect, pygame.Rect]:
+    """TODO: parse C coins, ^ spikes, S spawn, F flag like the solution."""
     solids: list[pygame.Rect] = []
     coins: list[pygame.Rect] = []
     spikes: list[pygame.Rect] = []
@@ -39,14 +40,7 @@ def build_level(rows: list[str]) -> tuple[list[pygame.Rect], list[pygame.Rect], 
             x, y = col_i * TILE, row_i * TILE
             if ch in SOLID:
                 solids.append(pygame.Rect(x, y, TILE, TILE))
-            elif ch == "C":
-                coins.append(pygame.Rect(x + 8, y + 8, TILE - 16, TILE - 16))
-            elif ch == "^":
-                spikes.append(pygame.Rect(x + 4, y + TILE // 2, TILE - 8, TILE // 2))
-            elif ch == "S":
-                spawn = pygame.Rect(x, y - PLAYER_H + TILE, PLAYER_W, PLAYER_H)
-            elif ch == "F":
-                flag = pygame.Rect(x, y - TILE, TILE, TILE * 2)
+            # TODO: elif branches for C, ^, S, F
     return solids, coins, spikes, spawn, flag
 
 
@@ -106,61 +100,19 @@ while running:
     vel_y += GRAVITY * dt
     player, grounded = move_and_resolve(player, solids, dx, vel_y * dt)
 
-    for spike in spikes:
-        if player.colliderect(spike):
-            lives -= 1
-            respawn()
-            break
-
-    for coin in coins[:]:
-        if player.colliderect(coin):
-            coins.remove(coin)
-            coin_count += 1
-
-    if player.colliderect(flag):
-        pygame.draw.rect(screen, (40, 180, 120), (0, 0, WIDTH, HEIGHT))
-        msg = font.render("Flag touched! (full game in 5.29)", True, (255, 255, 255))
-        screen.blit(msg, (120, HEIGHT // 2))
-        pygame.display.flip()
-        pygame.time.wait(800)
-        running = False
-        continue
+    # TODO: spike hit → lives -= 1, respawn()
+    # TODO: coin colliderect → remove coin, coin_count += 1
+    # TODO: optional early win message when touching flag (see solution)
 
     screen.fill((16, 20, 42))
     for tile in solids:
-        ch = LEVEL[tile.y // TILE][tile.x // TILE]
-        color = (70, 85, 130) if ch == "#" else (100, 180, 220)
-        pygame.draw.rect(screen, color, tile, border_radius=2)
+        pygame.draw.rect(screen, (70, 85, 130), tile, border_radius=2)
 
-    for spike in spikes:
-        points = [
-            (spike.centerx, spike.top),
-            (spike.right, spike.bottom),
-            (spike.left, spike.bottom),
-        ]
-        pygame.draw.polygon(screen, (255, 90, 120), points)
-
-    for coin in coins:
-        pygame.draw.circle(screen, (255, 220, 80), coin.center, coin.width // 2)
-
-    pygame.draw.rect(screen, (80, 255, 160), flag, border_radius=4)
-    pygame.draw.polygon(screen, (255, 240, 200), [
-        (flag.right, flag.centery),
-        (flag.right + 14, flag.centery - 10),
-        (flag.right + 14, flag.centery + 10),
-    ])
+    # TODO: draw spikes, coins, flag, HUD (lives + coins)
 
     pygame.draw.rect(screen, (90, 250, 200), player, border_radius=5)
-
-    hud = font.render(f"Lives: {lives}   Coins: {coin_count}", True, (230, 235, 255))
-    screen.blit(hud, (8, 8))
-
-    if lives <= 0:
-        over = font.render("Game Over — close window", True, (255, 120, 120))
-        screen.blit(over, (WIDTH // 2 - 140, HEIGHT // 2))
-        pygame.display.flip()
-        continue
-
+    hint = font.render("Finish TODOs — hazards, coins, lives!", True, (210, 220, 255))
+    screen.blit(hint, (8, 8))
     pygame.display.flip()
 
 pygame.quit()

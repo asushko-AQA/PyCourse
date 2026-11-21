@@ -77,7 +77,10 @@ PyCourse/
 │       ├── lesson-5-31-night-swarm-shadow-spawns/
 │       ├── lesson-5-32-night-swarm-light-orbs/
 │       ├── lesson-5-33-night-swarm-level-up/
-│       └── lesson-5-34-night-swarm-complete/
+│       ├── lesson-5-34-night-swarm-complete/
+│       ├── lesson-5-35-lane-rush-road-scroll/
+│       ├── lesson-5-36-lane-rush-traffic-spawn/
+│       └── lesson-5-37-lane-rush-complete/
 └── .venv/                           ← ТЫ создаёшь (или переиспользуешь из Курса 2)
 ```
 
@@ -206,6 +209,12 @@ pip install pygame
 - [ ] 5.33 — экран level-up; 3 случайных улучшения
 - [ ] 5.34 — полный Night Swarm: ~3 мин выживания, волны, состояния, рекорд
 
+### Опциональный ★ Блок 5 II — Lane Rush
+
+- [ ] 5.35 — полосы `scroll_offset % STRIPE_H`; lerp полос с `dt`
+- [ ] 5.36 — таймер спавна трафика, столкновения, счёт дистанции
+- [ ] 5.37 — полный Lane Rush: топливо, подборы, near-miss, рекорд, финал Блока 5
+
 ---
 
 ## Чек-лист выпуска Курса 3 (весь курс)
@@ -216,7 +225,7 @@ pip install pygame
 
 **★ Бонус:** пройди Блок 4 и покажи **Sky Hopper**, **Prism Dash**, **Shard Stack** и **Glyph Grove** — все четыре ★ аркады блока 4!
 
-**★ II Бонус:** в Блоке 5 девять ★ игр до **Night Swarm**; **Lane Rush** — *скоро* на README блока.
+**★ II Бонус:** пройди все **десять** ★ игр Блока 5 до **Lane Rush** 5.37 — отметь пункты Lane Rush выше для полного ★ II!
 
 → [Оглавление Курса 3](README.md)
 

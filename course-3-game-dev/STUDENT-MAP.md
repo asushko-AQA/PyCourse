@@ -77,7 +77,10 @@ PyCourse/
 │       ├── lesson-5-31-night-swarm-shadow-spawns/
 │       ├── lesson-5-32-night-swarm-light-orbs/
 │       ├── lesson-5-33-night-swarm-level-up/
-│       └── lesson-5-34-night-swarm-complete/
+│       ├── lesson-5-34-night-swarm-complete/
+│       ├── lesson-5-35-lane-rush-road-scroll/
+│       ├── lesson-5-36-lane-rush-traffic-spawn/
+│       └── lesson-5-37-lane-rush-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -206,6 +209,12 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 5.33 — XP level-up pause; 3 random upgrades from dict
 - [ ] 5.34 — Full Night Swarm: survive ~3 min, wave ramp, states, session best
 
+### Optional ★ Block 5 II — Lane Rush
+
+- [ ] 5.35 — Scrolling stripes `scroll_offset % STRIPE_H`; lane lerp with `dt`
+- [ ] 5.36 — Traffic spawn timer, move down, crash + distance score
+- [ ] 5.37 — Full Lane Rush: fuel, pickups, near-miss, speed ramp, session best, Block 5 finale
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -216,7 +225,7 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 
 **★ Bonus:** finish Block 4 and demo **Sky Hopper**, **Prism Dash**, **Shard Stack**, and **Glyph Grove** — all four Block 4 ★ projects!
 
-**★ II Bonus:** continue in Block 5 through **Night Swarm** (nine ★ games shipped); **Lane Rush** *coming soon* on the block README roadmap).
+**★ II Bonus:** finish all **ten** Block 5 ★ games through **Lane Rush** 5.37 — tick every Lane Rush item above for the full ★ II graduation!
 
 → [Course 3 index](README.md)
 

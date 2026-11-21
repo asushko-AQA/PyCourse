@@ -138,7 +138,7 @@ python solution\game.py
 
 ## What's Next
 
-→ [Блок 5 — Lane Rush (скоро)](../../README.md)
+→ [Урок 5.35 — Прокрутка дороги и полосы](../lesson-5-35-lane-rush-road-scroll/README.md) — старт **Lane Rush** ★ №10!
 
 ---
 

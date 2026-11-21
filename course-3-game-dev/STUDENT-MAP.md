@@ -46,7 +46,11 @@ PyCourse/
 │   └── block-5-bonus-star-projects-2/  ← optional ★ II after Block 4
 │       ├── lesson-5-1-glow-worm-grid-segments/
 │       ├── lesson-5-2-glow-worm-food-growth/
-│       └── lesson-5-3-glow-worm-complete/
+│       ├── lesson-5-3-glow-worm-complete/
+│       ├── lesson-5-4-bounce-forge-ball-walls/
+│       ├── lesson-5-5-bounce-forge-paddle-lives/
+│       ├── lesson-5-6-bounce-forge-bricks-score/
+│       └── lesson-5-7-bounce-forge-complete/
 └── .venv/                           ← YOU create (or reuse Course 2 .venv)
 ```
 
@@ -120,6 +124,13 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 - [ ] 5.2 — Food spawn; grow tail; wall + self crash
 - [ ] 5.3 — Full Glow Worm: start / play / game over, score, speed ramp, session best
 
+### Optional ★ Block 5 II — Bounce Forge
+
+- [ ] 5.4 — `ball_vx` / `ball_vy` + wall bounces (forge spark)
+- [ ] 5.5 — Anvil paddle, `hit_frac` angle, lives
+- [ ] 5.6 — Brick `Rect` list, side bounce, score
+- [ ] 5.7 — Full Bounce Forge: levels, high score, optional Pong (**P**)
+
 ---
 
 ## Course 3 graduation checklist (full course)
@@ -130,7 +141,7 @@ You may reuse a Course 2 `.venv` and just `pip install pygame` into it.
 
 **★ Bonus:** finish Block 4 and demo **Sky Hopper**, **Prism Dash**, **Shard Stack**, and **Glyph Grove** — all four Block 4 ★ projects!
 
-**★ II Bonus:** continue in Block 5 with **Glow Worm** (more ★ games *coming soon* on the block README roadmap).
+**★ II Bonus:** continue in Block 5 with **Glow Worm** and **Bounce Forge** (more ★ games *coming soon* on the block README roadmap).
 
 → [Course 3 index](README.md)
 

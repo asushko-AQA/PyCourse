@@ -177,7 +177,7 @@ python solution\game.py
    - **d)** Удалить Surface
 
 5. После этого ★-проекта в Блоке 5…
-   - **a)** **Bounce Forge** (скоро в индексе блока)
+   - **a)** **Bounce Forge** — дальше урок 5.4
    - **b)** Калькулятор Flask
    - **c)** Установка Python
    - **d)** Без списков
@@ -200,8 +200,8 @@ python solution\game.py
 
 Поздравляем — **Glow Worm** готов как полноценный ★ мини-игра!
 
-→ [Блок 5 ★ Проекты II](../README.md) — **Bounce Forge** и другие бонусы **скоро**.  
-→ [Карта курса 3](../../STUDENT-MAP.ru.md) — все блоки одним взглядом.
+→ [Урок 5.4 — Мяч и стены](../lesson-5-4-bounce-forge-ball-walls/README.md) — старт **Bounce Forge**!  
+→ [Дорожная карта блока 5](../README.md) — **Orbit Guard** и другие ★ *скоро*.
 
 ---
 

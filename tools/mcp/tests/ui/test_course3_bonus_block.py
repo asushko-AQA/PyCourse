@@ -61,7 +61,7 @@ def test_course3_home_lesson_count_includes_bonus(page, base_url: str) -> None:
     course = CourseMapPage(page, base_url)
     course.goto("/en")
     card = course.page.get_by_test_id("course-card-course-3")
-    expect(card).to_contain_text("26 lessons")
+    expect(card).to_contain_text("30 lessons")
 
 
 def test_course3_prism_dash_lesson_en(page, base_url: str) -> None:
@@ -272,6 +272,64 @@ def test_course3_glow_worm_lesson_ru(page, base_url: str) -> None:
     course.expect_url_path("/ru/course-3/block-5/lesson-5-1")
     expect(
         course.page.get_by_role("heading", name="Сетка и сегменты")
+    ).to_be_visible()
+
+
+def test_course3_bounce_forge_lesson_en(page, base_url: str) -> None:
+    _unlock_lesson_4_1(page)
+    page.add_init_script(
+        """
+        localStorage.setItem(
+          "pyquest-progress",
+          JSON.stringify({
+            state: {
+              xp: 0,
+              completedLessons: ["course-3/lesson-3-3", "course-3/lesson-5-3"],
+              completedQuizzes: [],
+              hasMergedLocal: false,
+              mergedForUserId: null,
+              pendingUpdates: [],
+            },
+            version: 0,
+          }),
+        );
+        """
+    )
+    course = CourseMapPage(page, base_url)
+    course.goto("/en/course-3")
+    course.open_lesson_node("course-3", "lesson-5-4")
+    course.expect_url_path("/en/course-3/block-5/lesson-5-4")
+    expect(
+        course.page.get_by_role("heading", name="Ball & Wall Bounces")
+    ).to_be_visible()
+
+
+def test_course3_bounce_forge_lesson_ru(page, base_url: str) -> None:
+    _unlock_lesson_4_1(page)
+    page.add_init_script(
+        """
+        localStorage.setItem(
+          "pyquest-progress",
+          JSON.stringify({
+            state: {
+              xp: 0,
+              completedLessons: ["course-3/lesson-3-3", "course-3/lesson-5-3"],
+              completedQuizzes: [],
+              hasMergedLocal: false,
+              mergedForUserId: null,
+              pendingUpdates: [],
+            },
+            version: 0,
+          }),
+        );
+        """
+    )
+    course = CourseMapPage(page, base_url)
+    course.goto("/ru/course-3")
+    course.open_lesson_node("course-3", "lesson-5-4")
+    course.expect_url_path("/ru/course-3/block-5/lesson-5-4")
+    expect(
+        course.page.get_by_role("heading", name="Мяч и отскоки от стен")
     ).to_be_visible()
 
 

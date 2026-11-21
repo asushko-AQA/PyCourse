@@ -2,7 +2,7 @@
 
 > **Course:** Game Development with Python  
 > **Block:** Bonus ★ Star Projects II *(optional — after Block 4)*  
-> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge–Lane Rush: coming soon**  
+> **Status:** Glow Worm (5.1–5.3) · **Bounce Forge (5.4–5.7)** · Orbit Guard–Lane Rush: *coming soon*  
 > **Optional:** Finish Block 3 (required path) and Block 4 ★ if you like; these lessons are extra credit.
 
 **Folder map / Карта папок:** [STUDENT-MAP.md](../STUDENT-MAP.md) · [STUDENT-MAP.ru.md](../STUDENT-MAP.ru.md)
@@ -18,7 +18,7 @@ Block 5 uses **lesson IDs 5.x**. Each ★ mini-game gets **2–5 consecutive les
 | Lessons | ★ Project | Game style | Status |
 |---------|-----------|------------|--------|
 | **5.1 – 5.3** | **Glow Worm** | grid snake, segments list, grow + speed | **Shipped** |
-| 5.4 – 5.7 | **Bounce Forge** | Pong / Breakout-like | *Coming soon* |
+| **5.4 – 5.7** | **Bounce Forge** | Pong / Breakout-like | **Shipped** |
 | 5.8 – 5.11 | **Orbit Guard** | Space Invaders-like | *Coming soon* |
 | 5.12 – 5.15 | **Mine Whisper** | Minesweeper-like | *Coming soon* |
 | 5.16 – 5.18 | **Merge Magic** | 2048-like | *Coming soon* |
@@ -33,13 +33,17 @@ Add one ★ game per PR using the next free **5.x** slots.
 
 ---
 
-## Lessons / Уроки — Glow Worm (project #1)
+## Lessons / Уроки — Glow Worm (project #1) · Bounce Forge (project #2)
 
 | # | English | Русский | Level |
 |---|---------|---------|-------|
 | 5.1 | [Grid & Segments](lesson-5-1-glow-worm-grid-segments/README.md) | Сетка и сегменты | Level ★13 — Neon Trail |
 | 5.2 | [Food, Growth & Collisions](lesson-5-2-glow-worm-food-growth/README.md) | Еда, рост и столкновения | Level ★14 — Spark Bite |
 | 5.3 | [Glow Worm Complete](lesson-5-3-glow-worm-complete/README.md) | Glow Worm целиком | Level ★15 — Glow Worm Pro |
+| 5.4 | [Ball & Wall Bounces](lesson-5-4-bounce-forge-ball-walls/README.md) | Мяч и стены | Level ★16 — Spark Ball |
+| 5.5 | [Paddle & Lives](lesson-5-5-bounce-forge-paddle-lives/README.md) | Ракетка и жизни | Level ★17 — Anvil Paddle |
+| 5.6 | [Bricks & Score](lesson-5-6-bounce-forge-bricks-score/README.md) | Кирпичи и счёт | Level ★18 — Ember Bricks |
+| 5.7 | [Bounce Forge Complete](lesson-5-7-bounce-forge-complete/README.md) | Bounce Forge целиком | Level ★19 — Bounce Forge Pro |
 
 **Previous / Предыдущее:** [Block 4 ★](../block-4-bonus-star-projects/README.md) — [Glyph Grove 4.12](../block-4-bonus-star-projects/lesson-4-12-glyph-grove-complete/README.md) *(recommended)*
 
@@ -53,6 +57,13 @@ Add one ★ game per PR using the next free **5.x** slots.
 - [ ] Food spawns on empty cells; eating grows the worm and bumps score
 - [ ] Wall or self hit ends the run
 - [ ] Start → play → game over → restart; session **best score**; speed ramps with score
+
+## Block 5 readiness checklist (Bounce Forge)
+
+- [ ] Ball uses `(ball_vx, ball_vy)` and `dt`; walls flip the correct velocity sign
+- [ ] Paddle `hit_frac` steers the ball angle; **lives** drop when the ball falls through
+- [ ] `bricks` is a `list` of `Rect`; side detection flips `vx` or `vy`; `score` rises
+- [ ] Title / play / win / game over; **LEVEL_PATTERNS**; session **high_score**; optional **Pong** with **P**
 
 ---
 

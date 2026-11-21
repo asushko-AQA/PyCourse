@@ -186,7 +186,7 @@ python solution\game.py
    - **d)** Delete pygame.Surface
 
 5. After this ★ project, Block 5 continues with…
-   - **a)** **Bounce Forge** (coming soon on the block index)
+   - **a)** **Bounce Forge** — Lesson 5.4 next
    - **b)** Flask calculator capstone
    - **c)** Course 1 installing Python
    - **d)** Removing all lists
@@ -209,8 +209,8 @@ python solution\game.py
 
 Congratulations — **Glow Worm** is a full ★ mini-game!
 
-→ [Block 5 ★ Star Projects II](../README.md) — **Bounce Forge** and more bonus projects are **coming soon**.  
-→ [Course 3 student map](../../STUDENT-MAP.md) — see every block at a glance.
+→ [Lesson 5.4 — Ball & Wall Bounces](../lesson-5-4-bounce-forge-ball-walls/README.md) — start **Bounce Forge** (spark ball + walls)!  
+→ [Block 5 roadmap](../README.md) — **Orbit Guard** and more ★ games *coming soon*.
 
 ---
 

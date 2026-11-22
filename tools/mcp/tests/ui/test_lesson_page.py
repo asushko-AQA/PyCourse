@@ -16,7 +16,11 @@ def test_lesson_page_tabs_and_back_navigation(page, base_url: str) -> None:
 
 
 def test_lesson_files_tab_shows_starter(page, base_url: str) -> None:
+    # Course 2 lesson 0.1 is the first lesson, so the lock guard does not hide the tabs.
     lesson = LessonPage(page, base_url)
-    lesson.goto("/en/course-1/block-1/lesson-1-1")
+    lesson.goto("/en/course-2/block-0/lesson-0-1")
     lesson.open_tab("files")
-    expect(page.locator("#lesson-file-starter-hello-py")).to_contain_text("Hello, World!")
+    starter = page.locator("section").filter(
+        has=page.get_by_role("heading", name="starter/check_setup.py")
+    )
+    expect(starter).to_contain_text("import flask")

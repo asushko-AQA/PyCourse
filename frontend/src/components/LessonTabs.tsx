@@ -7,10 +7,11 @@
  *  - Quiz tab hosts the QuizEngine (XP + confetti + completion).
  */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import type { QuizQuestion } from "@/lib/types";
+import type { LessonFile, QuizQuestion } from "@/lib/types";
+import { lessonFileAnchor } from "@/lib/lessonFiles";
 import type { Dict } from "@/lib/i18n";
 import { useHydrated, useProgressStore } from "@/stores/progressStore";
 import MarkdownView from "./MarkdownView";
@@ -23,18 +24,20 @@ interface LessonTabsProps {
   theory: string;
   assignments: string;
   quiz: QuizQuestion[];
+  files: LessonFile[];
   dict: Dict;
   courseHref: string;
   nextHref: string | null;
 }
 
-type TabId = "theory" | "assignments" | "quiz";
+type TabId = "theory" | "assignments" | "quiz" | "files";
 
 export default function LessonTabs({
   lessonKey,
   theory,
   assignments,
   quiz,
+  files,
   dict,
   courseHref,
   nextHref,
@@ -49,7 +52,22 @@ export default function LessonTabs({
     { id: "theory", label: dict.tabs.theory },
     { id: "assignments", label: dict.tabs.assignments },
     { id: "quiz", label: dict.tabs.quiz },
+    ...(files.length > 0 ? [{ id: "files" as const, label: dict.tabs.files }] : []),
   ];
+
+  useEffect(() => {
+    function openFileFromHash() {
+      const id = window.location.hash.replace(/^#/, "");
+      if (!id.startsWith("lesson-file-")) return;
+      setTab("files");
+      window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ block: "start" });
+      }, 50);
+    }
+    openFileFromHash();
+    window.addEventListener("hashchange", openFileFromHash);
+    return () => window.removeEventListener("hashchange", openFileFromHash);
+  }, []);
 
   function markAssignmentsDone() {
     if (lessonDone) return;
@@ -104,6 +122,19 @@ export default function LessonTabs({
             >
               {lessonDone ? dict.lesson.markedDone : dict.lesson.markDone}
             </button>
+          </div>
+        )}
+
+        {tab === "files" && (
+          <div className="flex flex-col gap-6">
+            {files.map((file) => (
+              <section key={file.path} id={lessonFileAnchor(file.path)} className="scroll-mt-24">
+                <h3 className="mb-2 font-mono text-sm font-extrabold text-slate-700">{file.path}</h3>
+                <pre className="overflow-x-auto rounded-2xl bg-slate-900 p-4 text-sm text-slate-100">
+                  <code>{file.content}</code>
+                </pre>
+              </section>
+            ))}
           </div>
         )}
 

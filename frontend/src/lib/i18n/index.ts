@@ -43,6 +43,7 @@ export interface Dict {
     theory: string;
     assignments: string;
     quiz: string;
+    files: string;
   };
   lesson: {
     lockedTitle: string;
@@ -64,6 +65,7 @@ export interface Dict {
     resultsTitle: string;
     resultsBody: string; // "{score}" and "{total}" placeholders
     xpEarned: string; // "{xp}" placeholder
+    xpNeedsPerfect: string; // "{xp}" placeholder
     alreadyEarned: string;
     replay: string;
     backToMap: string;

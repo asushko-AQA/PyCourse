@@ -76,12 +76,15 @@ export default function QuizEngine({
       setWrongPicks([]);
       setFeedback(null);
     } else {
-      const isFirstCompletion = !completedQuizzes.includes(lessonKey);
-      setEarnedNow(isFirstCompletion);
-      completeQuiz(lessonKey);
+      const perfect = firstTryCount === questions.length;
+      const isFirstPerfect = perfect && !completedQuizzes.includes(lessonKey);
+      setEarnedNow(isFirstPerfect);
+      completeQuiz(lessonKey, perfect);
       setFinished(true);
-      playChime("finish");
-      fireConfettiCelebration();
+      if (perfect) {
+        playChime("finish");
+        fireConfettiCelebration();
+      }
     }
   }
 
@@ -122,6 +125,7 @@ export default function QuizEngine({
           })}
         </p>
         <div
+          data-automation-id="quiz-xp"
           className={`rounded-full px-4 py-1.5 text-sm font-extrabold ${
             earnedNow
               ? "bg-violet-500 text-white shadow-lg"
@@ -130,7 +134,9 @@ export default function QuizEngine({
         >
           {earnedNow
             ? fill(dict.quiz.xpEarned, { xp: XP_PER_QUIZ })
-            : dict.quiz.alreadyEarned}
+            : firstTryCount === questions.length
+              ? dict.quiz.alreadyEarned
+              : fill(dict.quiz.xpNeedsPerfect, { xp: XP_PER_QUIZ })}
         </div>
         <div className="mt-2 flex flex-wrap justify-center gap-3">
           {nextHref && (

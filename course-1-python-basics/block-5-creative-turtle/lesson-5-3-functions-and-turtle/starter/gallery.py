@@ -8,29 +8,20 @@ t.speed(0)
 
 
 def draw_star():
-    # TODO: Loop 6 times — forward 100, left 144, change pencolor
-    colors = ["red", "orange", "gold", "green", "blue", "purple"]
-    for i in range(6):
-        t.pencolor(colors[i % len(colors)])
-        t.forward(100)
-        t.left(144)
+    # TODO: colors = ["red", "orange", "gold", "green", "blue"]
+    # for i in range(5): set pencolor to colors[i], forward(100), right(144)
+    pass
 
 
 def draw_branch(length):
-    # TODO: forward then backward
-    t.forward(length)
-    t.backward(length)
+    # TODO: forward(length) then backward(length)
+    pass
 
 
 def draw_snowflake():
-    # TODO: Move right, draw 6 branches with left(60) between
-    t.penup()
-    t.goto(120, 0)
-    t.pendown()
-    t.pencolor("sky blue")
-    for _ in range(6):
-        draw_branch(40)
-        t.left(60)
+    # TODO: penup, goto(200, 0), pendown, pencolor "sky blue"
+    # six times: draw_branch(40) then left(60)
+    pass
 
 
 print("=== TURTLE GALLERY ===")

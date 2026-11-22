@@ -45,6 +45,12 @@ print(f"{hero} used {power.upper()} to win!")
 - `.upper()` on the superpower makes the final move feel dramatic.
 - `[0:3]` slices the first three letters of the creature for a quick preview.
 
+Now open [starter/madlibs.py](starter/madlibs.py). The four `input()` questions are ready. Finish the TODOs:
+
+1. Change `short_creature = creature` to `short_creature = creature[0:3]`.
+2. Print the title `=== STORY FACTORY ===`, then the three story lines above, then `The end.`
+3. Delete the last line `print("Complete the TODO lines above, then delete this line!")` and save (**Ctrl+S**).
+
 ---
 
 ### Step 3: Run madlibs.py
@@ -99,10 +105,10 @@ print("The end.")
 
 ```text
 cd course-1-python-basics\block-2-talking-to-python\lesson-2-4-strings-in-action
-python starter\madlibs.py
+python solution\madlibs.py
 ```
 
-**Mac/Linux:** `python starter/madlibs.py`
+**Mac/Linux:** `python solution/madlibs.py`
 
 **Type:** Sam, dragon, castle, laser (or your own silly words)
 
@@ -159,16 +165,16 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** An error
 
 2. What does `"Alex"[0:3]` produce?
-   - **a)** `Alex`
-   - **b)** `Ale`
-   - **c)** `lex`
-   - **d)** `A`
+   - **a)** `A`
+   - **b)** `Alex`
+   - **c)** `Ale`
+   - **d)** `lex`
 
 3. In this lesson, `madlibs.py` is…
-   - **a)** A brand-new script (not an extension of `greeting.py`)
-   - **b)** A copy of `character_sheet.py`
-   - **c)** A file that only uses integers
-   - **d)** A web browser app
+   - **a)** A copy of `character_sheet.py`
+   - **b)** A file that only uses integers
+   - **c)** A web browser app
+   - **d)** A brand-new script (not an extension of `greeting.py`)
 
 4. Why might `creature[5]` cause `IndexError` on a short creature name?
    - **a)** You asked for a letter position that does not exist
@@ -177,20 +183,20 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** You forgot a colon after `if`
 
 5. In the sample story, `power.upper()` makes the superpower…
-   - **a)** ALL CAPS for a dramatic final move
-   - **b)** all lowercase
-   - **c)** Only the first three letters
-   - **d)** Disappear from the story
+   - **a)** Disappear from the story
+   - **b)** ALL CAPS for a dramatic final move
+   - **c)** all lowercase
+   - **d)** Only the first three letters
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
 1. **b)** `.upper()` makes ALL CAPS.
-2. **b)** `[0:3]` slices the first three letters: `Ale`.
-3. **a)** The lesson uses a new `madlibs.py` script.
+2. **c)** `[0:3]` slices the first three letters: `Ale`.
+3. **d)** The lesson uses a new `madlibs.py` script.
 4. **a)** A 3-letter word only has indices 0, 1, 2; use `[0:3]` for safe slicing.
-5. **a)** `.upper()` on the superpower makes it feel epic (e.g. `LASER`).
+5. **b)** `.upper()` on the superpower makes it feel epic (e.g. `LASER`).
 
 </details>
 

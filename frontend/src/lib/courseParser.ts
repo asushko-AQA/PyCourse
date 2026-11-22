@@ -15,12 +15,14 @@ import type {
   Block,
   Course,
   Lesson,
+  Lang,
   LessonContent,
+  LessonFile,
   LessonMeta,
   QuizQuestion,
   SectionPresence,
 } from "./types";
-import { LANGS } from "./types";
+import { LANGS, LESSON_FILE_HREF } from "./types";
 
 // ---------------------------------------------------------------------------
 // Content root resolution
@@ -186,14 +188,97 @@ function categorize(heading: string): SectionCategory {
 }
 
 /**
- * Replace relative markdown links (starter/…, ../lesson-…, README.md) with
- * their plain text — those targets don't exist as routes in the app.
- * Absolute http(s) links are kept.
+ * Rewrite relative markdown links. Links to files shown in the Files tab
+ * (`starter/…`, `exercises/…`, `solution/…`) become `#lesson-file:<path>`;
+ * other relative targets (../lesson-…, README.md) don't exist as routes in
+ * the app and are replaced with their bold text. Absolute http(s) links and
+ * in-page anchors are kept.
  */
-function stripRelativeLinks(md: string): string {
+function rewriteRelativeLinks(md: string, files: LessonFile[] = []): string {
   return md.replace(
-    /\[([^\]]+)\]\((?!https?:\/\/|#)[^)]+\)/g,
-    (_m, text: string) => `**${text}**`,
+    /\[([^\]]+)\]\((?!https?:\/\/|#)([^)\s]+)\)/g,
+    (_m, text: string, target: string) => {
+      const filePath = resolveLessonFileLink(target, files);
+      return filePath !== null
+        ? `[${text}](${LESSON_FILE_HREF}${filePath})`
+        : `**${text}**`;
+    },
+  );
+}
+
+function resolveLessonFileLink(target: string, files: LessonFile[]): string | null {
+  const clean = target.replace(/^\.\//, "").split("#")[0];
+  if (!/^(starter|exercises|solution)(\/|$)/.test(clean)) return null;
+  if (clean.endsWith("/") || !clean.includes("/")) {
+    const dir = clean.replace(/\/$/, "");
+    return files.some((f) => f.path.startsWith(`${dir}/`)) ? `${dir}/` : null;
+  }
+  if (files.some((f) => f.path === clean)) return clean;
+  // An EN link to exercises/x.md resolves to the RU prompt x.ru.md and back.
+  const swapped = clean.endsWith(".ru.md")
+    ? clean.replace(/\.ru\.md$/, ".md")
+    : clean.replace(/\.md$/, ".ru.md");
+  if (files.some((f) => f.path === swapped)) return swapped;
+  return files.some((f) => f.path.startsWith(`${clean}/`)) ? `${clean}/` : null;
+}
+
+// ---------------------------------------------------------------------------
+// Lesson folder files (Files tab)
+// ---------------------------------------------------------------------------
+
+const FILE_KINDS: LessonFile["kind"][] = ["starter", "exercises", "solution"];
+const FILE_LANGUAGES: Record<string, string> = {
+  ".py": "python",
+  ".html": "html",
+  ".css": "css",
+  ".md": "markdown",
+  ".txt": "text",
+  ".json": "json",
+  ".yaml": "yaml",
+  ".yml": "yaml",
+};
+const MAX_FILE_BYTES = 64 * 1024;
+
+function walkFiles(dir: string): string[] {
+  const out: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.name.startsWith(".") || entry.name === "__pycache__") continue;
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...walkFiles(full));
+    else out.push(full);
+  }
+  return out;
+}
+
+/**
+ * Text files from starter/, exercises/ and solution/. Exercise prompts exist as
+ * `x.md` (EN) and optionally `x.ru.md` (RU); each language gets its own prompt,
+ * falling back to the EN one. Binary assets are skipped.
+ */
+function collectLessonFiles(lessonDir: string, lang: Lang): LessonFile[] {
+  const files: LessonFile[] = [];
+  for (const kind of FILE_KINDS) {
+    const kindDir = path.join(lessonDir, kind);
+    if (!fs.existsSync(kindDir)) continue;
+    const all = walkFiles(kindDir)
+      .map((full) => path.relative(lessonDir, full).split(path.sep).join("/"))
+      .sort();
+    for (const rel of all) {
+      const ext = path.extname(rel).toLowerCase();
+      const language = FILE_LANGUAGES[ext];
+      if (!language) continue;
+      if (ext === ".md") {
+        const isRu = rel.endsWith(".ru.md");
+        if (lang === "en" && isRu) continue;
+        if (lang === "ru" && !isRu && all.includes(rel.replace(/\.md$/, ".ru.md"))) continue;
+      }
+      const full = path.join(lessonDir, rel);
+      if (fs.statSync(full).size > MAX_FILE_BYTES) continue;
+      files.push({ path: rel, kind, language, content: fs.readFileSync(full, "utf-8") });
+    }
+  }
+  return files.map((f) =>
+    f.language === "markdown" ? { ...f, content: rewriteRelativeLinks(f.content, files) } : f,
   );
 }
 
@@ -292,8 +377,9 @@ function extractLevelTitle(body: string): string | null {
   return m ? m[1].trim() : null;
 }
 
-function parseLessonFile(filePath: string): LessonContent {
+function parseLessonFile(filePath: string, lang: Lang): LessonContent {
   const raw = fs.readFileSync(filePath, "utf-8");
+  const files = collectLessonFiles(path.dirname(filePath), lang);
   const { meta, stripped } = parseMeta(raw);
   const { preamble, sections } = splitSections(stripped);
 
@@ -335,11 +421,12 @@ function parseLessonFile(filePath: string): LessonContent {
   return {
     title: extractTitle(preamble),
     levelTitle,
-    theory: stripRelativeLinks(theoryParts.join("\n").trim()),
-    assignments: stripRelativeLinks(assignmentParts.join("\n").trim()),
+    theory: rewriteRelativeLinks(theoryParts.join("\n").trim(), files),
+    assignments: rewriteRelativeLinks(assignmentParts.join("\n").trim(), files),
     quiz,
     meta,
     present,
+    files,
   };
 }
 
@@ -397,8 +484,8 @@ function buildCourse(root: string, courseSlug: string): Course | null {
         order,
         prerequisiteKey: prevKey,
         content: {
-          en: parseLessonFile(enPath),
-          ru: parseLessonFile(ruPath),
+          en: parseLessonFile(enPath, "en"),
+          ru: parseLessonFile(ruPath, "ru"),
         },
       });
       prevKey = key;
@@ -416,6 +503,11 @@ function buildCourse(root: string, courseSlug: string): Course | null {
 // ---------------------------------------------------------------------------
 
 let cache: Course[] | null = null;
+
+/** Absolute path of the repo root that holds the `course-*` folders. */
+export function getContentRoot(): string {
+  return resolveContentRoot();
+}
 
 export function getCourses(): Course[] {
   if (cache) return cache;

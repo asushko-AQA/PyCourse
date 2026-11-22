@@ -25,7 +25,7 @@ This is Block 1's capstone — no new concepts, only **proof** you can:
 4. Run `python badge.py`
 5. Break your code on purpose, read the error, and fix it
 
-Before you start, tick the [Block 1 readiness checklist](../../README.md#block-1-readiness-checklist).
+Before you start, tick the [Block 1 readiness checklist](../README.md#block-1-readiness-checklist).
 
 ---
 
@@ -33,17 +33,13 @@ Before you start, tick the [Block 1 readiness checklist](../../README.md#block-1
 
 **Recommended:** Use VS Code Explorer — right-click your **project root** (e.g. `PyCourse`), choose **New Folder**, name it **`my_mission`**.
 
-**Or in terminal** — first go to your project root, then create the folder:
-
-```text
-cd Documents\PyCourse
-```
-
-*(Adjust if your project lives elsewhere — match the path in VS Code's title bar.)*
+**Or in the terminal.** The VS Code terminal already opens in the project root — the prompt ends in `PyCourse>` (PowerShell: `PS C:\Users\you\Documents\PyCourse>`). From there:
 
 ```text
 mkdir my_mission
 ```
+
+Only a brand-new Command Prompt or Mac Terminal (the one that starts in your home folder, `C:\Users\you>`) needs a `cd` first, for example `cd Documents\PyCourse` on Windows or `cd Documents/PyCourse` on macOS. Change that path if your folder lives somewhere else.
 
 **Expected:** A new empty folder `my_mission` **next to** `course-1-python-basics`, not inside a lesson folder.
 
@@ -189,7 +185,7 @@ Python 3.12.x
 
 ## Quick Drills
 
-Before the main quest, tick every box on the [Block 1 readiness checklist](../../README.md#block-1-readiness-checklist).
+Before the main quest, tick every box on the [Block 1 readiness checklist](../README.md#block-1-readiness-checklist).
 
 If any box is empty, revisit that lesson before continuing.
 
@@ -212,7 +208,7 @@ If any box is empty, revisit that lesson before continuing.
 
 - Take a screenshot of your terminal output.
 - Add one more joke line to `badge.py`.
-- Complete the full [Block 1 checklist](../../README.md#block-1-readiness-checklist) — you are ready for Block 2!
+- Complete the full [Block 1 checklist](../README.md#block-1-readiness-checklist) — you are ready for Block 2!
 
 ---
 
@@ -244,16 +240,16 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Nowhere — use the terminal only
 
 2. How many `print()` lines should your finished `badge.py` have?
-   - **a)** Exactly 1
-   - **b)** 5 to 8 lines of your own output
-   - **c)** 50 minimum
-   - **d)** Zero — only `# TODO` comments
+   - **a)** Zero — only `# TODO` comments
+   - **b)** Exactly 1
+   - **c)** 5 to 8 lines of your own output
+   - **d)** 50 minimum
 
 3. What terminal command creates a new folder called `my_mission`?
-   - **a)** `mkdir my_mission`
-   - **b)** `python my_mission`
-   - **c)** `dir my_mission`
-   - **d)** `cd my_mission`
+   - **a)** `python my_mission`
+   - **b)** `dir my_mission`
+   - **c)** `cd my_mission`
+   - **d)** `mkdir my_mission`
 
 4. After `cd my_mission`, what command runs your badge script?
    - **a)** `python badge.py`
@@ -272,8 +268,8 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **b)** `my_mission` belongs at project root, beside the course folders.
-2. **b)** The capstone asks for 5–8 personal `print()` lines in your badge.
-3. **a)** `mkdir` makes a new folder; then you `cd` into it.
+2. **c)** The capstone asks for 5–8 personal `print()` lines in your badge.
+3. **d)** `mkdir` makes a new folder; then you `cd` into it.
 4. **a)** From inside `my_mission`, run `python badge.py` to launch your badge.
 5. **b)** Deleting a closing quote causes a SyntaxError — you read it and fix it.
 

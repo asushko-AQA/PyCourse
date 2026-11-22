@@ -3,11 +3,8 @@
 
 print("=== ASCII PATTERN ===")
 
-# TODO: Outer loop: rows 1 to 5
-for row in range(1, 6):
-    # TODO: Inner loop: print row number of stars
-    for star in range(row):
-        print("*", end="")
-    print()
+# TODO: Outer loop for row in range(1, 6).
+# Inside it, an inner loop for star in range(row) that does print("*", end="").
+# After the inner loop, print() with no arguments starts the next row.
 
 print("Pattern complete!")

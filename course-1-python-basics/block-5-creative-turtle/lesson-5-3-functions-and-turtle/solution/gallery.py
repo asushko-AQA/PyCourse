@@ -9,11 +9,11 @@ t.speed(0)
 
 
 def draw_star():
-    colors = ["red", "orange", "gold", "green", "blue", "purple"]
-    for i in range(6):
-        t.pencolor(colors[i % len(colors)])
+    colors = ["red", "orange", "gold", "green", "blue"]
+    for i in range(5):
+        t.pencolor(colors[i])
         t.forward(100)
-        t.left(144)
+        t.right(144)
 
 
 def draw_branch(length):
@@ -23,7 +23,7 @@ def draw_branch(length):
 
 def draw_snowflake():
     t.penup()
-    t.goto(120, 0)
+    t.goto(200, 0)
     t.pendown()
     t.pencolor("sky blue")
     for _ in range(6):

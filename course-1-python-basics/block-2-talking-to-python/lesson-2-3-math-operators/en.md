@@ -38,7 +38,12 @@ You type `7`, press Enter, and `num1` holds the **number** 7, not the text `"7"`
 
 ### Step 2: Open calculator.py
 
-Open [starter/calculator.py](starter/calculator.py). Two inputs and four print lines await.
+Open [starter/calculator.py](starter/calculator.py). The `Sum:` line is already written as an example. Your TODOs:
+
+1. **TODO 1–2:** Replace the placeholders `0` and `1` with `int(input(...))`, like Step 1. Prompts: `"Enter the first number: "` and `"Enter the second number: "`.
+2. **TODO 3–5:** Copy the pattern of the `Sum:` line to print `Difference:` (`-`), `Product:` (`*`), and `Quotient:` (`/`).
+
+Save the file (**Ctrl+S**).
 
 ---
 
@@ -66,18 +71,25 @@ Quotient: 3.3333333333333335
 Calculator complete!
 ```
 
+The script did not ask you for numbers and printed `Sum: 1`? TODO 1–2 are not done yet — go back to Step 2.
+
 ---
 
 ## Code Example
+
+**File: [solution/calculator.py](solution/calculator.py)**
 
 ```python
 num1 = int(input("Enter the first number: "))
 num2 = int(input("Enter the second number: "))
 
+print("=== CALCULATOR SPELLS ===")
 print("Sum:", num1 + num2)
 print("Difference:", num1 - num2)
 print("Product:", num1 * num2)
 print("Quotient:", num1 / num2)
+
+print("Calculator complete!")
 ```
 
 ---
@@ -86,10 +98,10 @@ print("Quotient:", num1 / num2)
 
 ```text
 cd course-1-python-basics\block-2-talking-to-python\lesson-2-3-math-operators
-python starter\calculator.py
+python solution\calculator.py
 ```
 
-**Mac/Linux:** `python starter/calculator.py`
+**Mac/Linux:** `python solution/calculator.py`
 
 **Type:** `10` then `3`
 
@@ -118,7 +130,7 @@ Calculator complete!
 
 **Quest name:** Calculator Spells
 
-1. Complete all four print lines in [starter/calculator.py](starter/calculator.py).
+1. Complete all five TODOs in [starter/calculator.py](starter/calculator.py) (Step 2).
 2. Run with your birth month and birth day as the two numbers.
 3. **Bonus — Quick calc:** Make a shorter version that only prints **sum** and **product** (two operations instead of four).
 
@@ -141,10 +153,10 @@ Calculator complete!
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What is `10 / 4` in Python?
-   - **a)** `2`
-   - **b)** `2.5`
-   - **c)** `3`
-   - **d)** `2` with no decimal
+   - **a)** `2.5`
+   - **b)** `3`
+   - **c)** `2` with no decimal
+   - **d)** `2`
 
 2. What is `5 * 3`?
    - **a)** `8`
@@ -153,32 +165,32 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** `2`
 
 3. Why wrap `input()` with `int()` before adding numbers?
-   - **a)** Because `input()` gives text, and `int()` turns digits into a real number
-   - **b)** Because `int()` makes strings uppercase
-   - **c)** Because `input()` only works with letters
-   - **d)** Because Python cannot add any numbers
+   - **a)** Because `input()` only works with letters
+   - **b)** Because Python cannot add any numbers
+   - **c)** Because `input()` gives text, and `int()` turns digits into a real number
+   - **d)** Because `int()` makes strings uppercase
 
 4. You type `hello` when the program expects a number. What error appears?
-   - **a)** `ValueError`
-   - **b)** `NameError`
-   - **c)** `IndexError`
-   - **d)** `SyntaxError`
+   - **a)** `NameError`
+   - **b)** `IndexError`
+   - **c)** `SyntaxError`
+   - **d)** `ValueError`
 
 5. For inputs `10` and `3`, what is the **difference** (`num1 - num2`)?
-   - **a)** `13`
-   - **b)** `7`
-   - **c)** `30`
-   - **d)** `3.333…`
+   - **a)** `7`
+   - **b)** `30`
+   - **c)** `3.333…`
+   - **d)** `13`
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** `/` can produce a decimal (`2.5`).
+1. **a)** `/` can produce a decimal (`2.5`).
 2. **b)** `*` means multiply: `5 * 3 = 15`.
-3. **a)** `input()` returns a string; `int()` converts valid whole-number text.
-4. **a)** `int()` cannot convert non-digit text like `hello`.
-5. **b)** `10 - 3 = 7` (matches the lesson's calculator example).
+3. **c)** `input()` returns a string; `int()` converts valid whole-number text.
+4. **d)** `int()` cannot convert non-digit text like `hello`.
+5. **a)** `10 - 3 = 7` (matches the lesson's calculator example).
 
 </details>
 

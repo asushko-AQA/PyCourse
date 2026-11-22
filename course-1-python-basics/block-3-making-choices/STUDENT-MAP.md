@@ -39,7 +39,7 @@ PyCourse/
 | 3.1 | Copy `true_false_quiz.py` anywhere; `cd` to that folder before running |
 | 3.2 | Copy `choose_path.py`; run from the folder where you saved it |
 | 3.3 | Copy **both** `countdown.py` and `times_table.py`; run each separately |
-| 3.4 | Copy `ascii_pattern.py`; run from your project folder |
+| 3.4 | Copy `ascii_pattern.py`; copy `gate_quest.py` into `my_quest/` |
 
 ---
 

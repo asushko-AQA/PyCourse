@@ -55,7 +55,11 @@ age = 11
 
 ### Шаг 3: Открой лист персонажа
 
-Открой [starter/character_sheet.py](starter/character_sheet.py). Три переменные готовы — `name`, `age`, `favorite_game`.
+Открой [starter/character_sheet.py](starter/character_sheet.py). Три переменные готовы — `name`, `age`, `favorite_game`. Твоя задача: заполни четыре **TODO-строки с `print()`**, чтобы показать лист персонажа.
+
+- Каждая строка — подпись в кавычках, запятая, потом имя переменной. Например: `print("Name:", name)`.
+- Когда все четыре строки написаны, удали последнюю строку `print("Fill in the TODO print lines above, then delete this line!")`.
+- Сохрани файл (**Ctrl+S**).
 
 ---
 
@@ -84,8 +88,9 @@ python starter\character_sheet.py
 Name: Alex
 Age: 11
 Favorite game: Minecraft
-Edit the variables above, then run again!
 ```
+
+Видишь только `Fill in the TODO print lines above, then delete this line!`? Вернись к Шагу 3 — TODO-строки ещё пустые.
 
 ---
 
@@ -104,17 +109,20 @@ print(name, "is ready for adventure!")
 
 ## Пример кода
 
-**Файл: [starter/character_sheet.py](starter/character_sheet.py)**
+**Файл: [solution/character_sheet.py](solution/character_sheet.py)** — готовый лист с четвёртой коробкой (`school`) и строкой, которая объединяет две коробки:
 
 ```python
 name = "Alex"
 age = 11
 favorite_game = "Minecraft"
+school = "Creator Academy"
 
 print("=== CHARACTER SHEET ===")
 print("Name:", name)
 print("Age:", age)
 print("Favorite game:", favorite_game)
+print("School:", school)
+print(name, "loves", favorite_game)
 ```
 
 **Пока без `input()`** — значения ты пишешь прямо в коде. Вопросы пользователю — в Уроке 2.2.
@@ -125,8 +133,10 @@ print("Favorite game:", favorite_game)
 
 ```text
 cd course-1-python-basics\block-2-talking-to-python\lesson-2-1-variables
-python starter\character_sheet.py
+python solution\character_sheet.py
 ```
+
+**Mac/Linux:** `python solution/character_sheet.py` (прямые слэши).
 
 **Ожидаемый вывод:**
 
@@ -135,7 +145,8 @@ python starter\character_sheet.py
 Name: Alex
 Age: 11
 Favorite game: Minecraft
-Edit the variables above, then run again!
+School: Creator Academy
+Alex loves Minecraft
 ```
 
 ---
@@ -152,12 +163,25 @@ Edit the variables above, then run again!
 
 **Название квеста:** Твой лист персонажа
 
+Продолжай работать в [starter/character_sheet.py](starter/character_sheet.py) — файле, который ты заполнил в Шаге 3.
+
 1. Измени все три переменные на **свои** данные (или выдуманные).
-2. Добавь четвёртую переменную — `school`, `pet` или `favorite_food`.
+2. Добавь четвёртую переменную — `school`, `pet` или `favorite_food` — и напечатай её с подписью, например `print("School:", school)`.
 3. Добавь один `print()`, объединяющий две переменные через запятую:
 
 ```python
 print(name, "loves", favorite_game)
+```
+
+**Ожидаемый вывод** (с данными из примера и `school = "Creator Academy"`):
+
+```text
+=== CHARACTER SHEET ===
+Name: Alex
+Age: 11
+Favorite game: Minecraft
+School: Creator Academy
+Alex loves Minecraft
 ```
 
 **Бонус:** Добавь заголовок с `===` как в примере. Попробуй `print("Age next year:", age + 1)` — Python умеет прибавлять 1 к числу!
@@ -181,44 +205,44 @@ print(name, "loves", favorite_game)
 Выбери лучший ответ на каждый вопрос. Сначала попробуй без подсказок!
 
 1. Что делает знак `=` в строке `name = "Alex"`?
-   - **a)** Сравнивает два значения
-   - **b)** Кладёт значение в подписанную переменную
-   - **c)** Печатает текст на экран
-   - **d)** Удаляет переменную
+   - **a)** Удаляет переменную
+   - **b)** Сравнивает два значения
+   - **c)** Кладёт значение в подписанную переменную
+   - **d)** Печатает текст на экран
 
 2. Какая строка правильно хранит **целое число**?
-   - **a)** `age = "11"`
-   - **b)** `age = 11`
-   - **c)** `age = True`
-   - **d)** `11 = age`
+   - **a)** `age = True`
+   - **b)** `11 = age`
+   - **c)** `age = "11"`
+   - **d)** `age = 11`
 
 3. Если поставить кавычки вокруг числа (`"11"`), Python считает его…
-   - **a)** Целым числом для математики
-   - **b)** Текстом (строкой), а не числом для математики
-   - **c)** Значением True/False
-   - **d)** Ошибкой, которая всегда останавливает программу
+   - **a)** Текстом (строкой), а не числом для математики
+   - **b)** Значением True/False
+   - **c)** Ошибкой, которая всегда останавливает программу
+   - **d)** Целым числом для математики
 
 4. Ошибка `NameError: name 'nmae' is not defined`. Вероятная причина?
-   - **a)** Опечатка в имени переменной (орфография должна совпадать точно)
-   - **b)** Забыли `input()`
-   - **c)** Использовали `==` вместо `=`
-   - **d)** Число было слишком большим
+   - **a)** Число было слишком большим
+   - **b)** Опечатка в имени переменной (орфография должна совпадать точно)
+   - **c)** Забыли `input()`
+   - **d)** Использовали `==` вместо `=`
 
 5. Ты меняешь `name = "Alex"` на `name = "Sam"`. Что произойдёт с каждым `print()`, где есть `name`?
-   - **a)** Автоматически покажут новое значение
-   - **b)** Всё ещё покажут "Alex", пока не перезагрузишь компьютер
-   - **c)** Python удалит остальные переменные
-   - **d)** Нужно переименовать каждую строку `print()` вручную
+   - **a)** Python удалит остальные переменные
+   - **b)** Нужно переименовать каждую строку `print()` вручную
+   - **c)** Автоматически покажут новое значение
+   - **d)** Всё ещё покажут "Alex", пока не перезагрузишь компьютер
 
 ---
 
 <details><summary>Нажми, чтобы показать ответы</summary>
 
-1. **b)** `=` сохраняет значение в переменной (коробке).
-2. **b)** Целые числа пишут **без** кавычек.
-3. **b)** Кавычки делают текст; в Уроке 2.3 это исправят через `int()`.
-4. **a)** Имена переменных должны совпадать точно; `nmae` ≠ `name`.
-5. **a)** Измени значение один раз — все строки с этой переменной обновятся.
+1. **c)** `=` сохраняет значение в переменной (коробке).
+2. **d)** Целые числа пишут **без** кавычек.
+3. **a)** Кавычки делают текст; в Уроке 2.3 это исправят через `int()`.
+4. **b)** Имена переменных должны совпадать точно; `nmae` ≠ `name`.
+5. **c)** Измени значение один раз — все строки с этой переменной обновятся.
 
 </details>
 

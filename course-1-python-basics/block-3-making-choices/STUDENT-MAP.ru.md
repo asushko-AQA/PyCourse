@@ -22,10 +22,12 @@ PyCourse/
 │       │   ├── starter/countdown.py
 │       │   └── starter/times_table.py
 │       └── lesson-3-4-loop-patterns/
-│           └── starter/ascii_pattern.py
+│           ├── starter/ascii_pattern.py
+│           └── starter/gate_quest.py   (скопируй в my_quest/)
 ├── my_mission/
 ├── my_data/
-└── my_adventure/
+└── my_quest/                          ← создаёшь в уроке 3.4
+    └── gate_quest.py
 ```
 
 ---
@@ -37,7 +39,7 @@ PyCourse/
 | 3.1 | Скопируй `true_false_quiz.py` куда угодно; `cd` в эту папку |
 | 3.2 | Скопируй `choose_path.py` |
 | 3.3 | Скопируй **оба** файла; запускай по отдельности |
-| 3.4 | Скопируй `ascii_pattern.py` |
+| 3.4 | Скопируй `ascii_pattern.py`; скопируй `gate_quest.py` в `my_quest/` |
 
 ---
 
@@ -46,7 +48,7 @@ PyCourse/
 - [ ] 3.1 — викторина True/False
 - [ ] 3.2 — история с ветвлением
 - [ ] 3.3 — обратный отсчёт и таблица умножения
-- [ ] 3.4 — ASCII-паттерн
+- [ ] 3.4 — `ascii_pattern.py` печатает пирамиду; **`my_quest/gate_quest.py`** запускается
 
 → [Чеклист блока 3](README.md#block-3-readiness-checklist)
 

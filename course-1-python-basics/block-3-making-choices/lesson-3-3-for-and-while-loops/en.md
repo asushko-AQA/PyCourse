@@ -36,6 +36,8 @@ while counter > 0:
 print("Blastoff!")
 ```
 
+**Your turn:** Open [starter/countdown.py](starter/countdown.py). `counter = 5` is ready. Under the `# TODO`, write the `while` loop yourself: the `while counter > 0:` line, then two indented lines — print the counter and subtract 1. If you run the starter before writing the loop, you only see `=== COUNTDOWN ===` and `Blastoff!`.
+
 **Path A:**
 
 ```text
@@ -72,6 +74,8 @@ for i in range(1, 11):
     print(f"{number} x {i} = {result}")
 ```
 
+**Your turn:** Open [starter/times_table.py](starter/times_table.py). `number = 3` is ready. Under the `# TODO`, write the `for` loop yourself: the `for i in range(1, 11):` line, then two indented lines — work out `result` and print it with an f-string. Before you write the loop, the starter prints only `=== TIMES TABLE ===` and `Table complete!`.
+
 **Run:**
 
 ```text
@@ -101,14 +105,49 @@ Table complete!
 
 ## Code Example
 
-**while:** [starter/countdown.py](starter/countdown.py)  
-**for:** [starter/times_table.py](starter/times_table.py)
+**while** — the reference [solution/countdown.py](solution/countdown.py):
+
+```python
+# countdown.py — reference solution
+
+print("=== COUNTDOWN ===")
+counter = 5
+
+while counter > 0:
+    print(counter)
+    counter = counter - 1
+
+print("Blastoff!")
+```
+
+**for** — the reference [solution/times_table.py](solution/times_table.py):
+
+```python
+# times_table.py — reference solution
+
+print("=== TIMES TABLE ===")
+number = 3
+
+for i in range(1, 11):
+    result = number * i
+    print(f"{number} x {i} = {result}")
+
+print("Table complete!")
+```
 
 ---
 
 ## Code Execution
 
-Run **both** scripts from the lesson folder (Path A) or from your copy folder (Path B).
+Run **both** scripts from the lesson folder (Path A) or from your copy folder (Path B), one after the other:
+
+```text
+cd course-1-python-basics\block-3-making-choices\lesson-3-3-for-and-while-loops
+python starter\countdown.py
+python starter\times_table.py
+```
+
+**Expected output** (after you write both loops): `countdown.py` prints the lines from Part A, and `times_table.py` prints the lines from Part B.
 
 ---
 
@@ -122,9 +161,10 @@ Run **both** scripts from the lesson folder (Path A) or from your copy folder (P
 
 ## Practice Task
 
-1. Make countdown print `"Liftoff!"` instead of `"Blastoff!"`.
-2. Make times_table print only rows where `i` is even (hint: `if i % 2 == 0:`).
-3. Try [exercises/loop_drills.md](exercises/loop_drills.md) for bonus loops.
+1. Write both loops in `starter/countdown.py` and `starter/times_table.py` — the output must match Part A and Part B.
+2. Make countdown print `"Liftoff!"` instead of `"Blastoff!"`.
+3. Make times_table print only rows where `i` is even (hint: `if i % 2 == 0:`).
+4. Try [exercises/loop_drills.md](exercises/loop_drills.md) for bonus loops.
 
 **Reference solutions:** [solution/countdown.py](solution/countdown.py) · [solution/times_table.py](solution/times_table.py)
 
@@ -145,22 +185,22 @@ Run **both** scripts from the lesson folder (Path A) or from your copy folder (P
 Pick the best answer for each question. Try without scrolling down first!
 
 1. When should you use a `while` loop?
-   - **a)** Repeat **until** a condition becomes False
-   - **b)** Repeat a fixed number of times using `range()` only
-   - **c)** Compare strings with `==`
-   - **d)** Store variables in labeled boxes
+   - **a)** Store variables in labeled boxes
+   - **b)** Repeat **until** a condition becomes False
+   - **c)** Repeat a fixed number of times using `range()` only
+   - **d)** Compare strings with `==`
 
 2. When is a `for` loop with `range()` a good fit?
-   - **a)** When you need a **fixed number** of repeats (like a times table)
-   - **b)** When you never want the loop to stop
-   - **c)** When you only print True/False
-   - **d)** When you convert input with `int()`
+   - **a)** When you only print True/False
+   - **b)** When you convert input with `int()`
+   - **c)** When you need a **fixed number** of repeats (like a times table)
+   - **d)** When you never want the loop to stop
 
 3. What numbers does `range(1, 11)` give you?
-   - **a)** `1` through `10` (11 is **not** included)
-   - **b)** `1` through `11`
-   - **c)** `0` through `10`
-   - **d)** `1` through `9`
+   - **a)** `1` through `11`
+   - **b)** `0` through `10`
+   - **c)** `1` through `9`
+   - **d)** `1` through `10` (11 is **not** included)
 
 4. The terminal prints `5` forever. What is the most likely cause?
    - **a)** Infinite loop — you forgot to update `counter` inside the `while` loop
@@ -169,20 +209,20 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** You used `.upper()` on a number
 
 5. In `countdown.py`, what prints after the loop finishes counting down?
-   - **a)** `Blastoff!`
-   - **b)** `Table complete!`
-   - **c)** `Pattern complete!`
-   - **d)** `Block 2 complete!`
+   - **a)** `Block 2 complete!`
+   - **b)** `Blastoff!`
+   - **c)** `Table complete!`
+   - **d)** `Pattern complete!`
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** `while` repeats while the condition stays True (countdown timer).
-2. **a)** `for` + `range()` marches through a fixed set of steps.
-3. **a)** The **stop** number in `range()` is never included.
+1. **b)** `while` repeats while the condition stays True (countdown timer).
+2. **c)** `for` + `range()` marches through a fixed set of steps.
+3. **d)** The **stop** number in `range()` is never included.
 4. **a)** Without `counter = counter - 1`, the condition never becomes False.
-5. **a)** After `5, 4, 3, 2, 1`, countdown prints `Blastoff!`.
+5. **b)** After `5, 4, 3, 2, 1`, countdown prints `Blastoff!`.
 
 </details>
 

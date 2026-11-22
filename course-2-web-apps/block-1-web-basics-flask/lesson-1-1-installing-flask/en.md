@@ -195,16 +195,16 @@ Look at `pip show flask` in the terminal. Find the **Location** line — that is
 Pick the best answer for each question. Try without scrolling down first!
 
 1. This lesson is mainly a check that Flask is ready — not a repeat of what step from Block 0?
-   - **a)** Creating and using a virtual environment
-   - **b)** Learning Turtle graphics
-   - **c)** Writing Mad-Libs in the terminal
-   - **d)** Installing Pygame
+   - **a)** Writing Mad-Libs in the terminal
+   - **b)** Installing Pygame
+   - **c)** Creating and using a virtual environment
+   - **d)** Learning Turtle graphics
 
 2. If `pip list` shows Flask while `(.venv)` is active, where is Flask installed?
-   - **a)** Inside your project's venv
-   - **b)** Only on the Flask company website
-   - **c)** Inside your browser cache
-   - **d)** In every folder on your Desktop
+   - **a)** Only on the Flask company website
+   - **b)** Inside your browser cache
+   - **c)** In every folder on your Desktop
+   - **d)** Inside your project's venv
 
 3. You run `python starter\check_flask.py` and get `ModuleNotFoundError: No module named 'flask'`. What is the most likely fix?
    - **a)** Activate the venv, then `pip install flask`, then run again
@@ -213,26 +213,26 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Add `@app.route` to the check script
 
 4. What should `check_flask.py` print when everything works?
-   - **a)** `Flask import OK!` and a Flask version line
-   - **b)** `Hello, Web World!` in the browser only
-   - **c)** A list of every website on the internet
-   - **d)** Nothing — silence means success
+   - **a)** Nothing — silence means success
+   - **b)** `Flask import OK!` and a Flask version line
+   - **c)** `Hello, Web World!` in the browser only
+   - **d)** A list of every website on the internet
 
 5. Why do Flask lessons start by activating `.venv`?
-   - **a)** So Python uses the toolbox where Flask lives
-   - **b)** Because Flask only works on Tuesdays
-   - **c)** To turn on `debug=True` automatically
-   - **d)** Because routes cannot be created without it
+   - **a)** To turn on `debug=True` automatically
+   - **b)** Because routes cannot be created without it
+   - **c)** So Python uses the toolbox where Flask lives
+   - **d)** Because Flask only works on Tuesdays
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** Block 0 taught venv + pip; this lesson verifies Flask is there.
-2. **a)** Active venv + `pip list` shows packages in that environment.
+1. **c)** Block 0 taught venv + pip; this lesson verifies Flask is there.
+2. **d)** Active venv + `pip list` shows packages in that environment.
 3. **a)** Usually the venv is off or Flask was never installed there.
-4. **a)** The check script confirms import and prints the version.
-5. **a)** Flask must be importable from the activated project venv.
+4. **b)** The check script confirms import and prints the version.
+5. **c)** Flask must be importable from the activated project venv.
 
 </details>
 

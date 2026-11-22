@@ -180,22 +180,22 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** It requires a CSS file
 
 2. In `@app.route("/hello/<name>")` and `def hello(name):`, what must match?
-   - **a)** The variable name in the path and the function parameter
-   - **b)** The port number and the file name
-   - **c)** The browser brand and the OS version
-   - **d)** The HTML tag and the pip version
+   - **a)** The HTML tag and the pip version
+   - **b)** The variable name in the path and the function parameter
+   - **c)** The port number and the file name
+   - **d)** The browser brand and the OS version
 
 3. You visit `/hello/Alex`. What should the `name` argument be?
-   - **a)** `Alex`
-   - **b)** `/hello`
-   - **c)** `name`
-   - **d)** `5000`
+   - **a)** `name`
+   - **b)** `5000`
+   - **c)** `Alex`
+   - **d)** `/hello`
 
 4. You visit `/hello/` with nothing after the slash. What often happens?
-   - **a)** Flask cannot match the route — often a 404 error
-   - **b)** The server installs Flask again
-   - **c)** The browser deletes the URL
-   - **d)** Python opens a new `.venv`
+   - **a)** The server installs Flask again
+   - **b)** The browser deletes the URL
+   - **c)** Python opens a new `.venv`
+   - **d)** Flask cannot match the route — often a 404 error
 
 5. Why use an f-string like `f"Hello, {name}!"`?
    - **a)** To plug the URL value into the text you send back
@@ -208,9 +208,9 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **a)** `<name>` captures the changing part of the URL.
-2. **a)** The path variable and parameter must share the same name.
-3. **a)** Flask passes the URL segment as `name='Alex'`.
-4. **a)** An empty name usually does not match the route pattern.
+2. **b)** The path variable and parameter must share the same name.
+3. **c)** Flask passes the URL segment as `name='Alex'`.
+4. **d)** An empty name usually does not match the route pattern.
 5. **a)** f-strings insert the dynamic value into your greeting.
 
 </details>

@@ -1,20 +1,24 @@
 "use client";
 
 /**
- * Lesson player: Theory / Assignments / Quiz tabs.
+ * Lesson player: Theory / Assignments / Quiz / Files tabs.
  *  - Theory & Assignments render markdown.
  *  - Assignments tab has a "mark done" button that completes the lesson.
  *  - Quiz tab hosts the QuizEngine (XP + confetti + completion).
+ *  - Files tab shows the lesson folder files (starter, exercises, solution);
+ *    links to those files in the markdown switch to it.
+ * Panels stay mounted (hidden when inactive) so quiz progress survives tab switches.
  */
 
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import type { QuizQuestion } from "@/lib/types";
+import type { LessonFile, QuizQuestion } from "@/lib/types";
 import type { Dict } from "@/lib/i18n";
 import { useHydrated, useProgressStore } from "@/stores/progressStore";
 import MarkdownView from "./MarkdownView";
 import QuizEngine from "./QuizEngine";
+import LessonFiles, { lessonFileAnchorId } from "./LessonFiles";
 import { fireConfettiBurst } from "./ConfettiTrigger";
 import { playChime } from "./ChimePlayer";
 
@@ -23,18 +27,20 @@ interface LessonTabsProps {
   theory: string;
   assignments: string;
   quiz: QuizQuestion[];
+  files: LessonFile[];
   dict: Dict;
   courseHref: string;
   nextHref: string | null;
 }
 
-type TabId = "theory" | "assignments" | "quiz";
+type TabId = "theory" | "assignments" | "quiz" | "files";
 
 export default function LessonTabs({
   lessonKey,
   theory,
   assignments,
   quiz,
+  files,
   dict,
   courseHref,
   nextHref,
@@ -49,7 +55,22 @@ export default function LessonTabs({
     { id: "theory", label: dict.tabs.theory },
     { id: "assignments", label: dict.tabs.assignments },
     { id: "quiz", label: dict.tabs.quiz },
+    ...(files.length > 0 ? [{ id: "files" as const, label: dict.tabs.files }] : []),
   ];
+
+  function openFile(filePath: string) {
+    setTab("files");
+    requestAnimationFrame(() => {
+      if (filePath.startsWith("solution")) {
+        document
+          .querySelector<HTMLDetailsElement>('[data-automation-id="lesson-solution"]')
+          ?.setAttribute("open", "");
+      }
+      document
+        .getElementById(lessonFileAnchorId(filePath))
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 
   function markAssignmentsDone() {
     if (lessonDone) return;
@@ -61,7 +82,7 @@ export default function LessonTabs({
   return (
     <div className="flex flex-col gap-6">
       {/* Tab bar */}
-      <div className="flex gap-1.5 self-start rounded-full bg-slate-100 p-1.5">
+      <div className="flex flex-wrap gap-1.5 self-start rounded-3xl bg-slate-100 p-1.5" role="tablist">
         {tabs.map((t) => (
           <button
             key={t.id}
@@ -87,11 +108,13 @@ export default function LessonTabs({
 
       {/* Tab content */}
       <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100 sm:p-8">
-        {tab === "theory" && <MarkdownView markdown={theory} />}
+        <div hidden={tab !== "theory"}>
+          <MarkdownView markdown={theory} onFileLink={openFile} />
+        </div>
 
-        {tab === "assignments" && (
+        <div hidden={tab !== "assignments"}>
           <div className="flex flex-col gap-6">
-            <MarkdownView markdown={assignments} />
+            <MarkdownView markdown={assignments} onFileLink={openFile} />
             <button
               data-automation-id="lesson-mark-done"
               onClick={markAssignmentsDone}
@@ -105,10 +128,10 @@ export default function LessonTabs({
               {lessonDone ? dict.lesson.markedDone : dict.lesson.markDone}
             </button>
           </div>
-        )}
+        </div>
 
-        {tab === "quiz" &&
-          (quiz.length > 0 ? (
+        <div hidden={tab !== "quiz"}>
+          {quiz.length > 0 ? (
             <QuizEngine
               lessonKey={lessonKey}
               questions={quiz}
@@ -118,7 +141,14 @@ export default function LessonTabs({
             />
           ) : (
             <p className="font-semibold text-slate-500">{dict.lesson.noQuiz}</p>
-          ))}
+          )}
+        </div>
+
+        {files.length > 0 && (
+          <div hidden={tab !== "files"}>
+            <LessonFiles files={files} dict={dict} onFileLink={openFile} />
+          </div>
+        )}
       </div>
 
       {/* Footer nav */}

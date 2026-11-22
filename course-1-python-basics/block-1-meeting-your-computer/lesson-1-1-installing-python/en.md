@@ -100,7 +100,7 @@ If you see a version number — **Level Complete!** Python is ready.
 2. Choose your course folder (for example: `Documents\PyCourse`).
 3. Click **Select Folder**.
 
-You are now inside your coding base!
+You are now inside your coding base! This `PyCourse` folder is your **project root** — home base for the whole course.
 
 ---
 
@@ -111,6 +111,13 @@ The terminal is your **Command Portal**. Heroes use it to run programs.
 1. In VS Code, click **Terminal → New Terminal** (or press **Ctrl + `** — the key above Tab).
 2. A panel opens at the bottom. That is the terminal.
 3. You will see a blinking cursor. That means the portal is open and waiting for your command.
+4. Read the text before the cursor — the **prompt**. It shows the folder you are standing in. Because you opened `PyCourse` in Step 6, the terminal **already starts inside it**, so the prompt ends in `PyCourse>`:
+
+```text
+PS C:\Users\you\Documents\PyCourse>
+```
+
+*(On macOS it looks like `you@MacBook PyCourse %`, on Linux like `you@computer:~/PyCourse$`.)*
 
 **Tip:** You can also click the **+** in the terminal panel to open another terminal tab.
 
@@ -121,7 +128,7 @@ The terminal is your **Command Portal**. Heroes use it to run programs.
 Create your first spell file. In VS Code:
 
 1. Go to **File → New Text File**.
-2. Save it as **`hello.py`** inside your project folder.
+2. Save it as **`hello.py`** directly inside your `PyCourse` folder (next to `course-1-python-basics`).
 3. Type the code below.
 
 A **`.py` file** is a Python script — a scroll of instructions for your computer.
@@ -156,15 +163,19 @@ You can also open the ready-made file in this lesson folder: [starter/hello.py](
 
 Time to cast your spell! Use the **terminal** (Command Portal).
 
-### 1. Go to the folder where `hello.py` lives
+### 1. Check that you are in the folder where `hello.py` lives
 
-If your file is in `Documents\PyCourse`, type:
+Look at your terminal prompt. If it ends in `PyCourse>` (for example `PS C:\Users\you\Documents\PyCourse>`), you are already in the right folder — **no `cd` needed**. Go straight to step 2.
+
+**Using a separate terminal instead?** A Command Prompt from the Start menu (or Terminal on a Mac) starts in your home folder (`C:\Users\you>`), not in `PyCourse`. Walk to your project first:
 
 ```text
 cd Documents\PyCourse
 ```
 
-*(Change the path if your folder is somewhere else. `cd` means **c**hange **d**irectory — walk to a new folder.)*
+On macOS/Linux: `cd Documents/PyCourse`
+
+*(Change the path if your folder is somewhere else. `cd` means **c**hange **d**irectory — walk to a new folder. You will practise it in Lesson 1.2.)*
 
 ### 2. Run your script
 
@@ -196,7 +207,7 @@ python --version
 
 1. Open `hello.py` in the editor.
 2. Open the terminal (**Terminal → New Terminal**).
-3. Make sure you are in the right folder (use `cd` if needed).
+3. Check that the prompt ends in `PyCourse>` — the folder where `hello.py` lives.
 4. Type `python hello.py` and press **Enter**.
 
 **Or:** click the **Run** button (play icon) at the top-right when the Python extension is installed.
@@ -207,7 +218,13 @@ python --version
 
 1. **Version check** — open terminal, run `python --version`, write the number down.
 2. **Portal open** — in VS Code, **Terminal → New Terminal** — see the blinking cursor?
-3. **First run** — from this lesson folder, run `python starter\hello.py` after install.
+3. **Ready-made spell** — from the project root (prompt ends in `PyCourse>`), run this lesson's starter file. Type the start of each folder name and press **Tab** to finish it:
+
+```text
+python course-1-python-basics\block-1-meeting-your-computer\lesson-1-1-installing-python\starter\hello.py
+```
+
+On macOS/Linux, use `/` instead of `\`.
 
 ---
 
@@ -240,7 +257,7 @@ python my_intro.py
 **Stuck?** Read the error message like a detective clue. Common fixes:
 
 - **`python is not recognized`** → Install again and check **Add to PATH**.
-- **`No such file`** → Use `cd` to go to the folder where your `.py` file is saved.
+- **`No such file`** → Make sure your `.py` file is saved in the folder shown in your prompt (your `PyCourse` folder).
 - **Forgot quotes** → Text inside `print()` must be inside `"..."`.
 
 ---
@@ -266,22 +283,22 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Skip the terminal option
 
 2. What command checks that Python is installed correctly?
-   - **a)** `python --help`
-   - **b)** `python --version`
-   - **c)** `pip install python`
-   - **d)** `code --version`
+   - **a)** `code --version`
+   - **b)** `python --help`
+   - **c)** `python --version`
+   - **d)** `pip install python`
 
 3. In this course, what is the VS Code terminal often called?
-   - **a)** The Debug Panel
-   - **b)** The Command Portal
-   - **c)** The Extensions Hub
-   - **d)** The Output Window
+   - **a)** The Extensions Hub
+   - **b)** The Output Window
+   - **c)** The Debug Panel
+   - **d)** The Command Portal
 
 4. What file extension should a Python script have?
-   - **a)** `.txt`
-   - **b)** `.py`
-   - **c)** `.python`
-   - **d)** `.code`
+   - **a)** `.py`
+   - **b)** `.python`
+   - **c)** `.code`
+   - **d)** `.txt`
 
 5. What does a line starting with `#` do in a Python file?
    - **a)** Deletes the next line
@@ -294,9 +311,9 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **b)** PATH tells Windows where Python lives so `python` works from the terminal.
-2. **b)** `python --version` shows your version when install and PATH are correct.
-3. **b)** The lesson calls the terminal your Command Portal for commands and scripts.
-4. **b)** A `.py` file is a Python script — instructions for your computer.
+2. **c)** `python --version` shows your version when install and PATH are correct.
+3. **d)** The lesson calls the terminal your Command Portal for commands and scripts.
+4. **a)** A `.py` file is a Python script — instructions for your computer.
 5. **b)** Comments with `#` are notes for you; Python skips them when running code.
 
 </details>

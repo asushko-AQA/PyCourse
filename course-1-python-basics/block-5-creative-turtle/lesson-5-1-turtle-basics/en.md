@@ -153,16 +153,16 @@ Save, run again, and close the window when you are finished.
 Pick the best answer for each question. Try without scrolling down first!
 
 1. How do you load the turtle drawing toolkit?
-   - **a)** `pip install turtle`
-   - **b)** `import turtle` (stdlib — no pip needed)
-   - **c)** `from web import turtle`
-   - **d)** `python turtle.py` in the terminal first
+   - **a)** `from web import turtle`
+   - **b)** `python turtle.py` in the terminal first
+   - **c)** `pip install turtle`
+   - **d)** `import turtle` (stdlib — no pip needed)
 
 2. The turtle window closes instantly after drawing. What is the most likely fix?
-   - **a)** Delete `import turtle`
-   - **b)** Add `turtle.done()` as the **last line** of the script
-   - **c)** Use `print()` instead of `forward()`
-   - **d)** Run the file twice
+   - **a)** Add `turtle.done()` as the **last line** of the script
+   - **b)** Use `print()` instead of `forward()`
+   - **c)** Run the file twice
+   - **d)** Delete `import turtle`
 
 3. How many sides and what turn angle does the lesson use for a **square**?
    - **a)** 3 sides, `left(120)`
@@ -171,26 +171,26 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** 6 sides, `left(60)`
 
 4. Why does the triangle loop use `left(120)`?
-   - **a)** Because 360 ÷ 3 = 120 degrees per corner
-   - **b)** Because turtles only turn 120°
-   - **c)** Because `120` is the default speed
-   - **d)** Because squares need 120°
+   - **a)** Because `120` is the default speed
+   - **b)** Because squares need 120°
+   - **c)** Because 360 ÷ 3 = 120 degrees per corner
+   - **d)** Because turtles only turn 120°
 
 5. What do `t.penup()` and `t.pendown()` do together between shapes?
-   - **a)** Change the turtle's color
-   - **b)** Move without drawing a line between the square and triangle
-   - **c)** Close the turtle window
-   - **d)** Delete the previous shape
+   - **a)** Close the turtle window
+   - **b)** Delete the previous shape
+   - **c)** Change the turtle's color
+   - **d)** Move without drawing a line between the square and triangle
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** `turtle` is in Python's standard library — just `import turtle`.
-2. **b)** `turtle.done()` keeps the window open until you close it.
+1. **d)** `turtle` is in Python's standard library — just `import turtle`.
+2. **a)** `turtle.done()` keeps the window open until you close it.
 3. **b)** A square needs 4 repeats of forward + `left(90)`.
-4. **a)** Three equal turns of 120° add up to 360° for a closed triangle.
-5. **b)** Pen up lifts the pen so the turtle can reposition without a connecting line.
+4. **c)** Three equal turns of 120° add up to 360° for a closed triangle.
+5. **d)** Pen up lifts the pen so the turtle can reposition without a connecting line.
 
 </details>
 

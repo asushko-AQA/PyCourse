@@ -31,17 +31,52 @@ In [starter/templates/base.html](starter/templates/base.html), add the `<link>` 
 
 ---
 
-### Step 2: Style the page
+### Step 2: How a CSS rule is written
 
-Finish TODOs in [starter/static/style.css](starter/static/style.css):
+CSS is a list of rules. Every rule has the same shape — a **selector**, then curly braces, then `property: value;` lines:
 
-- Background color and `max-width` on `body`
-- Nav link colors
-- `@media` rule for small screens
+```css
+selector {
+    property: value;
+}
+```
+
+The selector names the HTML you want to change. `body` is the whole page. `nav` is the menu. `nav a` is a link inside that menu. `nav a:hover` is that link when the mouse is on it. `h1` is the big heading. `button` and `input[type="text"]` are the button and the text box (you style those in the bonus).
+
+Here is the page rule, with this lesson's colors. `#f4f7fb` is the soft gray-blue background, and `#222` is dark text. `max-width` plus `margin: 2rem auto` keeps the words in a centered column:
+
+```css
+body {
+    background: #f4f7fb;
+    color: #222;
+    max-width: 640px;
+    margin: 2rem auto;
+}
+```
+
+Give each other selector its own `{ }` block, and end every property with `;`:
+
+- `nav` — `border-bottom: 2px solid #4a90d9;` (blue line under the menu)
+- `nav a` — `color: #4a90d9;` (same blue) and `font-weight: bold;`
+- `h1` — `color: #2c5282;` (a deeper blue)
+
+`@media (max-width: 480px)` is a rule that applies only on a narrow screen, like a phone. Inside it, set `body` to `margin: 1rem;` and `padding: 0.5rem;` so the text still fits.
+
+**Bonus colors:** `button` uses `background: #4a90d9;` and `color: white;`. `input[type="text"]` uses `border: 1px solid #ccc;`.
 
 ---
 
-### Step 3: Add the About route
+### Step 3: Style the page
+
+Finish the `# TODO` in [starter/static/style.css](starter/static/style.css) with the rules from Step 2. The starter stays your file to fill in — peek at [solution/static/style.css](solution/static/style.css) only after you try.
+
+- Background color and `max-width` on `body`
+- Nav link colors (`nav` and `nav a`)
+- An `@media` rule for small screens
+
+---
+
+### Step 4: Add the About route
 
 ```python
 @app.route("/about")
@@ -57,20 +92,35 @@ Home and About both extend `base.html` and share the same CSS.
 
 ---
 
-### Step 4: Run the app
+### Step 5: Run the app
 
-**Path A:**
+**1. Activate your venv.** The VS Code terminal starts in your project root (where `.venv` lives). Activate:
+
+```text
+.venv\Scripts\Activate.ps1
+```
+
+**Command Prompt (cmd):** `.venv\Scripts\activate.bat` · **macOS/Linux:** `source .venv/bin/activate`
+
+You should see `(.venv)` at the start of the terminal line.
+
+**2. Go into this lesson folder and run:**
 
 ```text
 cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-4-static-files-css
 python starter\app.py
 ```
 
-**Path B:** Copy `starter/` — see [STUDENT-MAP](../STUDENT-MAP.md).
+**macOS/Linux:**
 
-**Mac/Linux:** `python starter/app.py`
+```text
+cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-4-static-files-css
+python starter/app.py
+```
 
-Visit `/` and `/about`. Gray-blue background and styled nav mean CSS loaded.
+**Path B:** Copy `starter/` into your workshop folder (next to `.venv`) and run `python app.py` from that copy. See [STUDENT-MAP](../STUDENT-MAP.md).
+
+Visit `/` and `/about`. A gray-blue background (`#f4f7fb`) and a blue nav mean CSS loaded.
 
 ---
 
@@ -100,12 +150,19 @@ Styles live in [solution/static/style.css](solution/static/style.css).
 
 ## Code Execution
 
+With `(.venv)` active, from your project root:
+
 ```text
 cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-4-static-files-css
 python starter\app.py
 ```
 
-**Mac/Linux:** `python starter/app.py`
+**macOS/Linux:**
+
+```text
+cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-4-static-files-css
+python starter/app.py
+```
 
 Visit `http://127.0.0.1:5000/` and `/about`.
 
@@ -148,22 +205,22 @@ Visit `http://127.0.0.1:5000/` and `/about`.
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What is the main job of **CSS** in this lesson?
-   - **a)** Control colors, fonts, and layout — how the page looks
-   - **b)** Store Python routes
-   - **c)** Replace HTML entirely
-   - **d)** Activate the virtual environment
+   - **a)** Activate the virtual environment
+   - **b)** Control colors, fonts, and layout — how the page looks
+   - **c)** Store Python routes
+   - **d)** Replace HTML entirely
 
 2. Where should `style.css` live in a Flask project?
-   - **a)** In the `static/` folder next to `app.py`
-   - **b)** Inside `templates/base.html` only as plain text
-   - **c)** In the `.venv` folder
-   - **d)** On a USB drive only
+   - **a)** In the `.venv` folder
+   - **b)** On a USB drive only
+   - **c)** In the `static/` folder next to `app.py`
+   - **d)** Inside `templates/base.html` only as plain text
 
 3. Why use `{{ url_for('static', filename='style.css') }}` in a template?
-   - **a)** Flask builds the correct link to the CSS file
-   - **b)** To read POST form data
-   - **c)** To set `app.secret_key`
-   - **d)** To define a dynamic route `<name>`
+   - **a)** To read POST form data
+   - **b)** To set `app.secret_key`
+   - **c)** To define a dynamic route `<name>`
+   - **d)** Flask builds the correct link to the CSS file
 
 4. HTML tells the browser what to show. CSS tells it what?
    - **a)** How it should look
@@ -172,20 +229,20 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** How to run `python app.py`
 
 5. What does a `@media (max-width: 480px)` rule help with?
-   - **a)** Adjust styles on narrow screens (responsive layout)
-   - **b)** Block all CSS from loading
-   - **c)** Convert GET forms to POST
-   - **d)** Delete flash messages
+   - **a)** Delete flash messages
+   - **b)** Adjust styles on narrow screens (responsive layout)
+   - **c)** Block all CSS from loading
+   - **d)** Convert GET forms to POST
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** CSS styles the page — colors, spacing, fonts.
-2. **a)** Flask serves files from `static/` automatically.
-3. **a)** `url_for` generates the right `/static/style.css` path.
+1. **b)** CSS styles the page — colors, spacing, fonts.
+2. **c)** Flask serves files from `static/` automatically.
+3. **d)** `url_for` generates the right `/static/style.css` path.
 4. **a)** HTML = structure; CSS = appearance.
-5. **a)** Media queries tweak layout for small screens.
+5. **b)** Media queries tweak layout for small screens.
 
 </details>
 

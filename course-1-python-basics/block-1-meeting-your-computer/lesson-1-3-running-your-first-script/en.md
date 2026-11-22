@@ -68,11 +68,13 @@ Open [starter/hello.py](starter/hello.py). This is the same spell from Level 1 �
 
 ### Step 5: cd to this lesson folder
 
-**Path A — PyCourse repo** (if you cloned the full course):
+**Path A — PyCourse repo** (if you cloned the full course). From the project root (the prompt ends in `PyCourse>`):
 
 ```text
 cd course-1-python-basics\block-1-meeting-your-computer\lesson-1-3-running-your-first-script
 ```
+
+On Mac/Linux, use `/` instead of `\`. **Still in the Lesson 1.2 folder?** Type `cd ..` three times, or open a new terminal — it starts at the project root.
 
 **Path B — your own folder:** Open VS Code on any folder where you keep scripts. Skip the long `cd` path — you are already in the right place when the terminal prompt matches your project folder.
 
@@ -149,6 +151,8 @@ You already know `print()`. This lesson is about **launching** it reliably.
 ## Code Execution
 
 ### 1. Go to this lesson folder
+
+From the project root (the prompt ends in `PyCourse>`; not sure? open a new terminal):
 
 ```text
 cd course-1-python-basics\block-1-meeting-your-computer\lesson-1-3-running-your-first-script
@@ -255,16 +259,16 @@ python launch.py
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What is the correct launch sequence from this lesson?
-   - **a)** Run first, then save, then `cd`
-   - **b)** Create `.py` file → Save → `cd` to folder → `python file.py`
-   - **c)** `cd` → delete file → `print`
-   - **d)** Save As → never `cd` → run from anywhere
+   - **a)** `cd` → delete file → `print`
+   - **b)** Save As → never `cd` → run from anywhere
+   - **c)** Run first, then save, then `cd`
+   - **d)** Create `.py` file → Save → `cd` to folder → `python file.py`
 
 2. Your VS Code tab says `launch.py.txt` instead of `launch.py`. What is wrong?
-   - **a)** You need to install Flask
-   - **b)** The real extension may be hidden — the file is not a true `.py` script
-   - **c)** You must use `python3` instead of `python`
-   - **d)** VS Code is broken
+   - **a)** The real extension may be hidden — the file is not a true `.py` script
+   - **b)** You must use `python3` instead of `python`
+   - **c)** VS Code is broken
+   - **d)** You need to install Flask
 
 3. You see `can't open file ... No such file or directory`. What is a likely cause?
    - **a)** A missing quote in `print()`
@@ -273,26 +277,26 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** You need more RAM
 
 4. Why should the Explorer folder and terminal prompt match before running `python hello.py`?
-   - **a)** Python only runs on certain days
-   - **b)** Python looks for the file relative to your current terminal folder
-   - **c)** VS Code will crash if they differ
-   - **d)** It only matters for Mac users
+   - **a)** It only matters for Mac users
+   - **b)** Python only runs on certain days
+   - **c)** Python looks for the file relative to your current terminal folder
+   - **d)** VS Code will crash if they differ
 
 5. What does `dir starter` help you do before running a script?
-   - **a)** Delete the `starter` folder
-   - **b)** Confirm `hello.py` (or your script) is listed in that folder
-   - **c)** Install the Python extension
-   - **d)** Clear the screen
+   - **a)** Install the Python extension
+   - **b)** Clear the screen
+   - **c)** Delete the `starter` folder
+   - **d)** Confirm `hello.py` (or your script) is listed in that folder
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** The launch sequence is create, save, navigate to the right folder, then run.
-2. **b)** Windows can hide extensions — `launch.py.txt` is not a real Python script name.
+1. **d)** The launch sequence is create, save, navigate to the right folder, then run.
+2. **a)** Windows can hide extensions — `launch.py.txt` is not a real Python script name.
 3. **b)** This error usually means wrong folder, typo, or a hidden `.txt` extension.
-4. **b)** `python hello.py` looks for the file in the folder shown in your terminal prompt.
-5. **b)** Listing `starter` confirms the script exists before you run it.
+4. **c)** `python hello.py` looks for the file in the folder shown in your terminal prompt.
+5. **d)** Listing `starter` confirms the script exists before you run it.
 
 </details>
 

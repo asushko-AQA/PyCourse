@@ -5,7 +5,7 @@
 ## Путь A — структура PyCourse
 
 - [ ] Открыть терминал в VS Code
-- [ ] `cd` в папку `PyCourse` (корень проекта)
+- [ ] Проверить, что приглашение заканчивается на `PyCourse>` — ты в корне проекта (не уверен? открой новый терминал)
 - [ ] `cd course-1-python-basics\block-1-meeting-your-computer`
 - [ ] `dir` — видны папки уроков
 - [ ] `cd lesson-1-1-installing-python`
@@ -13,15 +13,16 @@
 - [ ] `cd ..` — на уровень выше
 - [ ] Ты снова в `block-1-meeting-your-computer`
 
-## Путь B — любой компьютер (свой лабиринт)
+## Путь B — построй свой лабиринт
 
-- [ ] Создать папки `quests\treasure` на рабочем столе (или в проекте)
+- [ ] Создать папки `quests\treasure` в корне проекта (`PyCourse`)
 - [ ] Создать `clue.txt` с текстом: "The treasure is in treasure.py"
-- [ ] В терминале `cd` на рабочий стол (или родительскую папку)
-- [ ] `cd quests\treasure`
+- [ ] Открыть терминал — приглашение заканчивается на `PyCourse>`
+- [ ] `cd quests\treasure` (Mac/Linux: `cd quests/treasure`)
 - [ ] `dir` — виден `clue.txt`
 - [ ] Скопировать `treasure.py` из `starter/` этого урока сюда
 - [ ] `python treasure.py` — появится `Treasure found!`
+- [ ] `cd ..` дважды — снова в `PyCourse>`
 
 ---
 

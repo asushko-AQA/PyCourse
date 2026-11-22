@@ -5,7 +5,7 @@
 
 Learn to write Python scripts, use the terminal, make choices with logic, organize code with functions and collections, and draw with Turtle.
 
-**Master curriculum:** [CURRICULUM.md](../../CURRICULUM.md)  
+**Master curriculum:** [CURRICULUM.md](../CURRICULUM.md)  
 **Folder map (all blocks):** [STUDENT-MAP.md](STUDENT-MAP.md) · [STUDENT-MAP.ru.md](STUDENT-MAP.ru.md)
 
 ---
@@ -65,5 +65,5 @@ Finished all 21 lessons? Use the [graduation checklist in STUDENT-MAP](STUDENT-M
 
 ## For contributors
 
-Read [AGENTS.md](../../AGENTS.md) before editing lessons. Planning: [documents/plans/course-1-complete.md](../../documents/plans/course-1-complete.md).
+Read [AGENTS.md](../AGENTS.md) before editing lessons. Planning: [documents/plans/course-1-complete.md](../documents/plans/course-1-complete.md).
 

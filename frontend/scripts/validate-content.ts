@@ -5,9 +5,16 @@
  * Run from frontend/:  npm run validate-content
  */
 
-import { getCourses } from "../src/lib/courseParser";
+import path from "node:path";
+import { getContentRoot, getCourses } from "../src/lib/courseParser";
 import { getDict } from "../src/lib/i18n";
 import { LANGS } from "../src/lib/types";
+import {
+  checkLessonParity,
+  checkQuizBalance,
+  checkRelativeLinks,
+  checkStarterVsSolution,
+} from "./content-checks";
 
 let lessonCount = 0;
 let fileCount = 0;
@@ -18,7 +25,13 @@ const problems: string[] = [];
 const warnings: string[] = [];
 
 const courses = getCourses();
+const contentRoot = getContentRoot();
 const SLUG_TITLE_RE = /^course-\d+(?:-[a-z0-9-]+)?$/i;
+
+const report = {
+  problem: (msg: string) => problems.push(msg),
+  warning: (msg: string) => warnings.push(msg),
+};
 
 for (const course of courses) {
   for (const lang of LANGS) {
@@ -96,8 +109,28 @@ for (const course of courses) {
             `${where}: quiz count ${c.quiz.length} ≠ en ${enQuizLen} (parity)`,
           );
       }
+
+      if (course.id === "course-1" || course.id === "course-2") {
+        const lessonDir = path.join(
+          contentRoot,
+          course.slug,
+          block.slug,
+          lesson.slug,
+        );
+        const whereLesson = `${course.slug}/${block.slug}/${lesson.slug}`;
+        checkStarterVsSolution(lesson, lessonDir, whereLesson, report);
+        checkLessonParity(lesson, lessonDir, whereLesson, report);
+      }
     }
   }
+}
+
+for (const course of courses) {
+  // These checks are enforced for Courses 1–2 (the audited courses). Course 3
+  // keeps the original parse-only checks while its own gaps are tracked separately.
+  if (course.id !== "course-1" && course.id !== "course-2") continue;
+  checkQuizBalance(course, report);
+  checkRelativeLinks(contentRoot, course, report);
 }
 
 console.log(

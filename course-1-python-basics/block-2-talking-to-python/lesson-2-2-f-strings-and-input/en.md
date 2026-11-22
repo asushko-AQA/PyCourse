@@ -45,7 +45,14 @@ Without `f`, Python prints the literal text `{name}` — a common bug!
 
 ### Step 3: Open greeting.py
 
-Open [starter/greeting.py](starter/greeting.py). Two questions and two f-string responses are ready as TODOs.
+Open [starter/greeting.py](starter/greeting.py). It has four TODOs for you:
+
+1. Replace `"Visitor"` with `input("What is your name? ")` — like Step 1.
+2. Replace `"?"` with an `input()` that asks `"How old are you? "`.
+3. Write a `print()` with an f-string that greets the visitor by `{name}`.
+4. Write a `print()` with an f-string that shows `{age}`.
+
+When all four are done, delete the last line `print("Fill in the TODOs above, then delete this line!")` and save (**Ctrl+S**).
 
 ---
 
@@ -72,19 +79,25 @@ How old are you? 11
 ```text
 Hello, Alex! Welcome to the Data Lab.
 You said you are 11 years old.
-Type your answers when the terminal waits for you!
 ```
+
+Still see `Fill in the TODOs above, then delete this line!`? Go back to Step 3 and finish the TODOs.
 
 ---
 
 ## Code Example
 
+**File: [solution/greeting.py](solution/greeting.py)** — the finished greeter, with a third question and a bonus line:
+
 ```python
 name = input("What is your name? ")
 age = input("How old are you? ")
+color = input("What is your favorite color? ")
 
 print(f"Hello, {name}! Welcome to the Data Lab.")
 print(f"You said you are {age} years old.")
+print(f"Your favorite color is {color}. Nice choice!")
+print(f"\n{name}, you are officially a Data Lab apprentice!")
 ```
 
 ---
@@ -92,17 +105,22 @@ print(f"You said you are {age} years old.")
 ## Code Execution
 
 ```text
-python starter\greeting.py
+cd course-1-python-basics\block-2-talking-to-python\lesson-2-2-f-strings-and-input
+python solution\greeting.py
 ```
 
-**Type:** `Alex` then `11`
+**Mac/Linux:** `python solution/greeting.py` (forward slashes).
+
+**Type:** `Alex`, then `11`, then `blue`
 
 **Expected output:**
 
 ```text
 Hello, Alex! Welcome to the Data Lab.
 You said you are 11 years old.
-Type your answers when the terminal waits for you!
+Your favorite color is blue. Nice choice!
+
+Alex, you are officially a Data Lab apprentice!
 ```
 
 ---
@@ -119,12 +137,22 @@ Type your answers when the terminal waits for you!
 
 **Quest name:** Personal Greeter
 
-1. Complete both TODO f-strings in [starter/greeting.py](starter/greeting.py).
-2. Add a third question — favorite color, game, or hobby.
-3. Add a multiline f-string using `\n`:
+1. Finish all four TODOs in [starter/greeting.py](starter/greeting.py) (Step 3).
+2. Add a third question — favorite color, game, or hobby — and answer it with an f-string, like `print(f"Your favorite color is {color}. Nice choice!")`.
+3. Add a multiline f-string using `\n` (it prints an empty line first):
 
 ```python
 print(f"\n{name}, you are officially a Data Lab apprentice!")
+```
+
+**Expected output** (typing `Alex`, `11`, `blue`):
+
+```text
+Hello, Alex! Welcome to the Data Lab.
+You said you are 11 years old.
+Your favorite color is blue. Nice choice!
+
+Alex, you are officially a Data Lab apprentice!
 ```
 
 **Bonus:** Ask two questions in one story line: name + favorite food.
@@ -148,10 +176,10 @@ print(f"\n{name}, you are officially a Data Lab apprentice!")
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What does `input()` always give you, even if you type digits?
-   - **a)** Text (a string)
-   - **b)** An integer
-   - **c)** True or False
-   - **d)** Nothing — it only prints
+   - **a)** An integer
+   - **b)** True or False
+   - **c)** Nothing — it only prints
+   - **d)** Text (a string)
 
 2. What does the `f` in `print(f"Hello, {name}!")` do?
    - **a)** Tells Python to replace `{name}` with the real value
@@ -166,26 +194,26 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** A blank line
 
 4. The text inside `input("What is your name? ")` is called the…
-   - **a)** Prompt — the question shown to the user
-   - **b)** Slice
-   - **c)** Quotient
-   - **d)** Boolean
+   - **a)** Quotient
+   - **b)** Boolean
+   - **c)** Prompt — the question shown to the user
+   - **d)** Slice
 
 5. Which line asks a question and saves the answer in `color`?
-   - **a)** `color = input("What is your favorite color? ")`
-   - **b)** `input(color) = "blue"`
-   - **c)** `print(color = input)`
-   - **d)** `color == input("blue")`
+   - **a)** `input(color) = "blue"`
+   - **b)** `print(color = input)`
+   - **c)** `color == input("blue")`
+   - **d)** `color = input("What is your favorite color? ")`
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** `input()` always returns a string; Lesson 2.3 uses `int()` for math.
+1. **d)** `input()` always returns a string; Lesson 2.3 uses `int()` for math.
 2. **a)** The `f` enables fill-in-the-blank substitution with `{variables}`.
 3. **b)** Without `f`, `{name}` is printed as plain text.
-4. **a)** The quoted text is the prompt shown before the user types.
-5. **a)** `input()` on the right, variable name on the left of `=`.
+4. **c)** The quoted text is the prompt shown before the user types.
+5. **d)** `input()` on the right, variable name on the left of `=`.
 
 </details>
 

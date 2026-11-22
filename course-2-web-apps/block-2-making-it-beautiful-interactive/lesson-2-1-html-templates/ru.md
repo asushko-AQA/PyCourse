@@ -13,17 +13,17 @@
 
 ## Объяснение
 
-В Блоке 1 HTML был одной строкой. **Шаблоны** — отдельные файлы в `templates/`. Flask заполняет их через **Jinja2**.
+В Блоке 1 ты возвращал HTML одной длинной строкой. **Шаблоны** — это отдельные HTML-файлы в папке `templates/`. Flask заполняет их с помощью **Jinja2**.
 
-`base.html` — рамка с меню и `{% block content %}`, куда каждая страница вставляет свой контент.
+Представь `base.html` как рамку для картины: в ней ссылки меню и пустое место (`{% block content %}`), где каждая страница рисует своё содержимое.
 
-**Новый термин:** `render_template("home.html", page_title="Home")` — Flask обрабатывает шаблон и отправляет HTML в браузер.
+**Новый термин:** `render_template("home.html", page_title="Home")` — Flask находит файл, прогоняет его через Jinja2 и отправляет готовый HTML в браузер.
 
 ---
 
 ### Шаг 1: Изучи base.html
 
-Дочерние страницы **расширяют** базу:
+В [starter/templates/base.html](starter/templates/base.html) — общее меню навигации. Дочерние страницы **расширяют** (extends) его:
 
 ```html
 {% extends "base.html" %}
@@ -37,31 +37,53 @@
 ### Шаг 2: Маршрут Home
 
 ```python
-return render_template("home.html", page_title="Home", headline="Welcome to My Studio")
+@app.route("/")
+def home():
+    return render_template(
+        "home.html",
+        page_title="Home",
+        headline="Welcome to My Studio",
+    )
 ```
 
----
-
-### Шаг 3: Добавь About и Jokes
-
-**TODO в starter:** маршруты `/about` и `/jokes` с отдельными шаблонами.
+Переменные, которые ты передаёшь из Python, превращаются в `{{ headline }}` в HTML.
 
 ---
 
-### Шаг 4: Запуск
+### Шаг 3: Добавь маршруты About и Jokes
+
+**TODO в starter:** добавь маршруты `/about` и `/jokes` со своими шаблонами. Передай текст шутки через переменные — та же идея, что в Уроке 1.4 Блока 1, только с файлами шаблонов вместо одной длинной строки.
+
+---
+
+### Шаг 4: Запусти приложение
+
+**1. Активируй venv.** В VS Code открой папку, где лежит твой `.venv` (**Путь A:** папка `PyCourse`; **Путь B:** твоя папка-мастерская, например `web_workshop`). Открой терминал (**Terminal → New Terminal**) — он сразу запускается в этой папке. Активируй:
+
+```text
+.venv\Scripts\Activate.ps1
+```
+
+**Командная строка (cmd):** `.venv\Scripts\activate.bat` · **macOS/Linux:** `source .venv/bin/activate`
+
+В начале строки терминала должно появиться `(.venv)`.
+
+**2. Перейди в папку starter и запусти.**
 
 **Путь A:**
 
 ```text
-cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-templates
-python starter\app.py
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-templates\starter
+python app.py
 ```
 
-**Путь B:** Скопируй `starter/` — см. [STUDENT-MAP](../STUDENT-MAP.ru.md).
+**macOS/Linux:** `cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-1-html-templates/starter`, затем `python app.py`
 
-**Mac/Linux:** `python starter/app.py`
+**Путь B:** Скопируй всю папку `starter/` этого урока (вместе с `templates/` внутри) в свою папку-мастерскую, рядом с `.venv`, и переименуй её в `lesson-2-1`. Затем `cd lesson-2-1` и `python app.py`. См. [STUDENT-MAP](../STUDENT-MAP.ru.md).
 
-**Ожидаемый результат:** общее меню на всех страницах, разный контент в середине.
+Открой `http://127.0.0.1:5000/` и нажми **About** и **Jokes**.
+
+**Ожидаемый результат:** у всех трёх страниц одно и то же меню; меняется только содержимое в середине.
 
 ---
 
@@ -97,42 +119,71 @@ if __name__ == "__main__":
     app.run(port=5000, debug=True)
 ```
 
-Дочерние шаблоны в `solution/templates/` — каждый наследует [solution/templates/base.html](solution/templates/base.html).
+Дочерние шаблоны лежат в `solution/templates/` — каждый расширяет [solution/templates/base.html](solution/templates/base.html).
 
 ---
 
 ## Запуск кода
 
+С активным `(.venv)`, из папки, открытой в VS Code:
+
 ```text
-cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-templates
-python starter\app.py
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-templates\starter
+python app.py
 ```
 
-**Mac/Linux:** `python starter/app.py`
+**macOS/Linux:** `cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-1-html-templates/starter`, затем `python app.py` · **Путь B:** `cd lesson-2-1`, затем `python app.py`
+
+**Ожидаемый вывод (терминал):**
+
+```text
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+```
 
 Открой `http://127.0.0.1:5000/`, затем **About** и **Jokes**.
 
-**Ожидаемый результат:** общая навигация на каждой странице; меняется только середина.
+**Ожидаемый вывод (браузер, главная страница):**
+
+```text
+Home | About | Jokes
+Welcome to My Studio
+Use the links above to visit About and Jokes.
+```
+
+**Ожидаемый результат:** общее меню на каждой странице; меняется только середина. Останови сервер клавишами **Ctrl+C**, когда закончишь.
 
 ---
 
 ## Быстрые упражнения
 
-1. Найди `{% block content %}` в `base.html`.
-2. Передай `bio="..."` в `about.html`.
-3. **Бонус:** страница `/contact`.
+1. **Где блок** — найди `{% block content %}` в `base.html`. Что туда попадает?
+2. **Новая переменная** — передай `bio="..."` в `about.html` и покажи её в `<p>`.
+3. **Четвёртая страница** — добавь `/contact` с новым дочерним шаблоном (бонус: добавь ссылку в меню).
 
 ---
 
 ## Задание для практики
 
-**Квест:** Доделай Studio Pages — все TODO, три страницы работают. **Эталон:** [solution/](solution/)
+**Квест:** Доделай Studio Pages
+
+1. Выполни все TODO в `app.py` и дочерних шаблонах.
+2. Открой `/`, `/about` и `/jokes`.
+3. **Бонус:** Напиши свою шутку в шаблоне Jokes.
+
+**Эталон:** [solution/](solution/)
 
 ---
 
 ## Уголок отладки
 
-**Проблема:** `TemplateNotFound: home.html` — нет файла в `templates/` рядом с `app.py`.
+**Проблема:** `TemplateNotFound: home.html`
+
+**Причина:** Flask ищет шаблоны в папке `templates/`, которая лежит **прямо рядом с `app.py`**, — а не в той папке, где сейчас находится терминал.
+
+**Решение:** Проверь, что файл лежит по пути `templates/home.html` рядом с `app.py` (если копировал `app.py`, скопируй и его папку `templates/`). Проверь написание: папка называется `templates` с буквой **s** на конце, а имя файла должно точно совпадать с `render_template("home.html", ...)`.
 
 ---
 
@@ -141,16 +192,16 @@ python starter\app.py
 Выбери лучший ответ на каждый вопрос. Сначала попробуй без подсказок!
 
 1. Зачем выносить HTML в `templates/`, а не в одну длинную строку в `app.py`?
-   - **a)** Удобнее читать, править и переиспользовать общий каркас
-   - **b)** Flask после Блока 1 не отдаёт строки
-   - **c)** Браузеры больше не показывают строки
-   - **d)** pip сам устанавливает шаблоны
+   - **a)** Браузеры больше не показывают строки
+   - **b)** pip сам устанавливает шаблоны
+   - **c)** Удобнее читать, править и переиспользовать общий каркас
+   - **d)** Flask после Блока 1 не отдаёт строки
 
 2. Что делает `render_template("home.html", headline="Welcome")`?
-   - **a)** Подставляет переменные в шаблон и отправляет HTML в браузер
-   - **b)** Скачивает home.html из интернета
-   - **c)** Копирует CSS в терминал
-   - **d)** Активирует виртуальное окружение
+   - **a)** Скачивает home.html из интернета
+   - **b)** Копирует CSS в терминал
+   - **c)** Активирует виртуальное окружение
+   - **d)** Подставляет переменные в шаблон и отправляет HTML в браузер
 
 3. В Jinja2 что значит `{{ headline }}`?
    - **a)** Показать значение переменной `headline` из Python
@@ -159,26 +210,26 @@ python starter\app.py
    - **d)** Ссылка на `static/style.css`
 
 4. Для чего `{% block content %}` в `base.html`?
-   - **a)** Место, куда дочерняя страница вставляет свой уникальный контент
-   - **b)** Список пакетов pip
-   - **c)** Секретный ключ Flask
-   - **d)** Номер порта (5000)
+   - **a)** Номер порта (5000)
+   - **b)** Место, куда дочерняя страница вставляет свой уникальный контент
+   - **c)** Список пакетов pip
+   - **d)** Секретный ключ Flask
 
 5. Дочерний шаблон начинается с `{% extends "base.html" %}`. Это значит?
-   - **a)** Переиспользовать общую рамку (меню, разметку) из `base.html`
-   - **b)** Удалить `base.html` после сохранения
-   - **c)** Запускать приложение без `app.run()`
-   - **d)** Отправлять формы только через GET
+   - **a)** Запускать приложение без `app.run()`
+   - **b)** Отправлять формы только через GET
+   - **c)** Переиспользовать общую рамку (меню, разметку) из `base.html`
+   - **d)** Удалить `base.html` после сохранения
 
 ---
 
 <details><summary>Нажми, чтобы увидеть ответы</summary>
 
-1. **a)** Шаблоны отделяют вёрстку от логики Python.
-2. **a)** `render_template` подставляет данные в HTML-файлы.
+1. **c)** Шаблоны отделяют вёрстку от логики Python.
+2. **d)** `render_template` подставляет данные в HTML-файлы.
 3. **a)** Двойные фигурные скобки выводят значение переменной.
-4. **a)** Дочерние шаблоны заполняют блок `content`.
-5. **a)** `extends` наследует каркас родителя.
+4. **b)** Дочерние шаблоны заполняют блок `content`.
+5. **c)** `extends` наследует каркас родителя.
 
 </details>
 
@@ -186,4 +237,8 @@ python starter\app.py
 
 ## Что дальше
 
-→ [Урок 2.2: HTML-формы](../lesson-2-2-html-forms/README.md)
+→ [Урок 2.2: HTML-формы](../lesson-2-2-html-forms/README.md) — отправляем данные через GET и POST.
+
+---
+
+*Один каркас — много страниц. Твоя студия обретает форму!*

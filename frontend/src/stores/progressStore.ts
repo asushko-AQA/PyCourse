@@ -29,6 +29,21 @@ export const XP_PER_QUIZ = 10;
 export const XP_PER_LESSON = 5;
 export const XP_PER_LEVEL = 50;
 
+/**
+ * XP is derived from progress, never accumulated separately, so it can always be
+ * rebuilt from a server snapshot: every completed lesson is worth XP_PER_LESSON,
+ * every perfect quiz adds XP_PER_QUIZ (a perfect quiz also completes its lesson).
+ */
+export function computeXp(completedLessons: string[], completedQuizzes: string[]): number {
+  const lessons = new Set([...completedLessons, ...completedQuizzes]);
+  return lessons.size * XP_PER_LESSON + new Set(completedQuizzes).size * XP_PER_QUIZ;
+}
+
+/** A quiz counts (XP, `quizPerfect`, lesson completion) only when every answer was right on the first try. */
+export function isPerfectQuiz(firstTryCount: number, total: number): boolean {
+  return total > 0 && firstTryCount >= total;
+}
+
 export function getLevel(xp: number): number {
   return Math.floor(xp / XP_PER_LEVEL) + 1;
 }
@@ -54,9 +69,12 @@ interface ProgressState {
   syncStatus: SyncStatus;
   isSignedIn: boolean;
 
-  addXp: (amount: number) => void;
   completeLesson: (key: string) => void;
-  completeQuiz: (key: string) => void;
+  /**
+   * Record a finished quiz. Returns true when this attempt earned the reward
+   * (perfect score and not collected before); imperfect attempts change nothing.
+   */
+  completeQuiz: (key: string, firstTryCount: number, total: number) => boolean;
   setLastPosition: (position: string) => void;
   reset: () => void;
 
@@ -71,7 +89,16 @@ function enqueueSync(task: () => Promise<void>): void {
   syncChain = syncChain.then(task).catch(() => undefined);
 }
 
-function snapshotToLocal(snapshot: ProgressSnapshot): Pick<ProgressState, "completedLessons" | "completedQuizzes"> {
+/** Rebuild local progress, including XP, from a server snapshot (PL-05). */
+export function progressFromSnapshot(
+  snapshot: ProgressSnapshot,
+): Pick<ProgressState, "completedLessons" | "completedQuizzes" | "xp"> {
+  return snapshotToLocal(snapshot);
+}
+
+function snapshotToLocal(
+  snapshot: ProgressSnapshot,
+): Pick<ProgressState, "completedLessons" | "completedQuizzes" | "xp"> {
   const completedLessons = new Set<string>();
   const completedQuizzes = new Set<string>();
 
@@ -87,6 +114,7 @@ function snapshotToLocal(snapshot: ProgressSnapshot): Pick<ProgressState, "compl
   return {
     completedLessons: [...completedLessons],
     completedQuizzes: [...completedQuizzes],
+    xp: computeXp([...completedLessons], [...completedQuizzes]),
   };
 }
 
@@ -149,30 +177,34 @@ export const useProgressStore = create<ProgressState>()(
       syncStatus: "idle",
       isSignedIn: false,
 
-      addXp: (amount) => set((s) => ({ xp: s.xp + amount })),
-
       completeLesson: (key) => {
         set((s) => {
           if (s.completedLessons.includes(key)) return s;
+          const completedLessons = [...s.completedLessons, key];
           return {
-            completedLessons: [...s.completedLessons, key],
-            xp: s.xp + XP_PER_LESSON,
+            completedLessons,
+            xp: computeXp(completedLessons, s.completedQuizzes),
           };
         });
         queueOrSync(get, set, { lessonKey: key, readingDone: true });
       },
 
-      completeQuiz: (key) => {
+      completeQuiz: (key, firstTryCount, total) => {
+        if (!isPerfectQuiz(firstTryCount, total)) return false;
+        if (get().completedQuizzes.includes(key)) return false;
         set((s) => {
-          if (s.completedQuizzes.includes(key)) return s;
-          const lessonAlreadyDone = s.completedLessons.includes(key);
+          const completedQuizzes = [...s.completedQuizzes, key];
+          const completedLessons = s.completedLessons.includes(key)
+            ? s.completedLessons
+            : [...s.completedLessons, key];
           return {
-            completedQuizzes: [...s.completedQuizzes, key],
-            completedLessons: lessonAlreadyDone ? s.completedLessons : [...s.completedLessons, key],
-            xp: s.xp + XP_PER_QUIZ + (lessonAlreadyDone ? 0 : XP_PER_LESSON),
+            completedQuizzes,
+            completedLessons,
+            xp: computeXp(completedLessons, completedQuizzes),
           };
         });
         queueOrSync(get, set, { lessonKey: key, quizPerfect: true, readingDone: true });
+        return true;
       },
 
       setLastPosition: (position) => {
@@ -194,13 +226,19 @@ export const useProgressStore = create<ProgressState>()(
         }),
 
       setSignedIn: (signedIn, userId) => {
-        set({ isSignedIn: signedIn });
-        if (signedIn) {
+        // Header components call this on mount, before localStorage has been
+        // read. A set() that early would persist the empty initial state and
+        // wipe saved progress, so wait until rehydration has finished.
+        const apply = () => {
+          set({ isSignedIn: signedIn });
+          if (!signedIn) return;
           if (userId && get().mergedForUserId !== userId) {
             set({ hasMergedLocal: false });
           }
           enqueueSync(() => get().syncWithServer(userId));
-        }
+        };
+        if (useProgressStore.persist.hasHydrated()) apply();
+        else useProgressStore.persist.onFinishHydration(() => apply());
       },
 
       flushPending: async () => {
@@ -273,6 +311,14 @@ export const useProgressStore = create<ProgressState>()(
     }),
     {
       name: "pyquest-progress",
+      // Older builds stored an accumulated XP counter; always re-derive it.
+      merge: (persisted, current) => {
+        const merged = { ...current, ...(persisted as Partial<ProgressState>) };
+        return {
+          ...merged,
+          xp: computeXp(merged.completedLessons ?? [], merged.completedQuizzes ?? []),
+        };
+      },
       partialize: (state) => ({
         xp: state.xp,
         completedLessons: state.completedLessons,

@@ -58,16 +58,28 @@ Variables you pass in Python become `{{ headline }}` in HTML.
 
 ### Step 4: Run the app
 
+**1. Activate your venv.** In VS Code, open the folder that has your `.venv` (**Path A:** the `PyCourse` folder; **Path B:** your own workshop folder, for example `web_workshop`). Open the terminal (**Terminal → New Terminal**) — it already starts in that folder. Activate:
+
+```text
+.venv\Scripts\Activate.ps1
+```
+
+**Command Prompt (cmd):** `.venv\Scripts\activate.bat` · **macOS/Linux:** `source .venv/bin/activate`
+
+You should see `(.venv)` at the start of the terminal line.
+
+**2. Go to the starter folder and run.**
+
 **Path A:**
 
 ```text
-cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-templates
-python starter\app.py
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-templates\starter
+python app.py
 ```
 
-**Path B:** Copy the whole `starter/` folder to your project. Activate venv, run `python app.py`. See [STUDENT-MAP](../STUDENT-MAP.md).
+**macOS/Linux:** `cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-1-html-templates/starter`, then `python app.py`
 
-**Mac/Linux:** `python starter/app.py`
+**Path B:** Copy this lesson's whole `starter/` folder (with `templates/` inside) into your workshop folder, next to `.venv`, and rename it `lesson-2-1`. Then `cd lesson-2-1` and `python app.py`. See [STUDENT-MAP](../STUDENT-MAP.md).
 
 Open `http://127.0.0.1:5000/` and click **About** and **Jokes**.
 
@@ -113,16 +125,35 @@ Child templates live in `solution/templates/` — each extends [solution/templat
 
 ## Code Execution
 
+With `(.venv)` active, from the folder you opened in VS Code:
+
 ```text
-cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-templates
-python starter\app.py
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-templates\starter
+python app.py
 ```
 
-**Mac/Linux:** `python starter/app.py`
+**macOS/Linux:** `cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-1-html-templates/starter`, then `python app.py` · **Path B:** `cd lesson-2-1`, then `python app.py`
+
+**Expected output (terminal):**
+
+```text
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+```
 
 Open `http://127.0.0.1:5000/`, then **About** and **Jokes**.
 
-**Expected result:** Shared navigation on every page; only the middle section changes.
+**Expected output (browser, home page):**
+
+```text
+Home | About | Jokes
+Welcome to My Studio
+Use the links above to visit About and Jokes.
+```
+
+**Expected result:** Shared navigation on every page; only the middle section changes. Stop the server with **Ctrl+C** when you are done.
 
 ---
 
@@ -150,9 +181,9 @@ Open `http://127.0.0.1:5000/`, then **About** and **Jokes**.
 
 **Problem:** `TemplateNotFound: home.html`
 
-**Cause:** Flask looks for templates inside `templates/` next to `app.py`.
+**Cause:** Flask looks for templates in a folder called `templates/` that sits **right next to `app.py`** — not in the folder your terminal happens to be in.
 
-**Fix:** Make sure `starter/templates/home.html` exists and you run `app.py` from the lesson folder (or copy `templates/` with your app).
+**Fix:** Check that the file is at `templates/home.html` beside `app.py` (if you copied `app.py`, copy its `templates/` folder too). Check the spelling: the folder is `templates` with an **s**, and the file name must match `render_template("home.html", ...)` exactly.
 
 ---
 
@@ -161,16 +192,16 @@ Open `http://127.0.0.1:5000/`, then **About** and **Jokes**.
 Pick the best answer for each question. Try without scrolling down first!
 
 1. Why move HTML into a `templates/` folder instead of one giant string in `app.py`?
-   - **a)** Easier to read, edit, and reuse layout across pages
-   - **b)** Flask refuses to return strings after Block 1
-   - **c)** Browsers cannot show strings anymore
-   - **d)** pip installs templates automatically
+   - **a)** Browsers cannot show strings anymore
+   - **b)** pip installs templates automatically
+   - **c)** Easier to read, edit, and reuse layout across pages
+   - **d)** Flask refuses to return strings after Block 1
 
 2. What does `render_template("home.html", headline="Welcome")` do?
-   - **a)** Fills the template with variables and sends HTML to the browser
-   - **b)** Downloads home.html from the internet
-   - **c)** Copies CSS into the terminal
-   - **d)** Activates the virtual environment
+   - **a)** Downloads home.html from the internet
+   - **b)** Copies CSS into the terminal
+   - **c)** Activates the virtual environment
+   - **d)** Fills the template with variables and sends HTML to the browser
 
 3. In Jinja2, what does `{{ headline }}` mean?
    - **a)** Show the value of the `headline` variable from Python
@@ -179,26 +210,26 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Link to `static/style.css`
 
 4. What is `{% block content %}` in `base.html` for?
-   - **a)** A placeholder where each child page puts its unique content
-   - **b)** A list of pip packages
-   - **c)** The Flask secret key
-   - **d)** The port number (5000)
+   - **a)** The port number (5000)
+   - **b)** A placeholder where each child page puts its unique content
+   - **c)** A list of pip packages
+   - **d)** The Flask secret key
 
 5. A child template starts with `{% extends "base.html" %}`. What does that mean?
-   - **a)** Reuse the shared frame (nav, layout) from `base.html`
-   - **b)** Delete `base.html` after saving
-   - **c)** Run the app without `app.run()`
-   - **d)** Send forms with GET only
+   - **a)** Run the app without `app.run()`
+   - **b)** Send forms with GET only
+   - **c)** Reuse the shared frame (nav, layout) from `base.html`
+   - **d)** Delete `base.html` after saving
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** Templates separate page layout from Python logic.
-2. **a)** `render_template` merges data into HTML files.
+1. **c)** Templates separate page layout from Python logic.
+2. **d)** `render_template` merges data into HTML files.
 3. **a)** Double braces print a variable's value.
-4. **a)** Child templates fill in the `content` block.
-5. **a)** `extends` inherits the parent layout.
+4. **b)** Child templates fill in the `content` block.
+5. **c)** `extends` inherits the parent layout.
 
 </details>
 

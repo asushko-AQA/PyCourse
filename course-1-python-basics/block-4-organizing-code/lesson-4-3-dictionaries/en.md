@@ -43,13 +43,13 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-3-dictionaries
 
 ### Step 1: Open character_stats.py
 
-Open [starter/character_stats.py](starter/character_stats.py). Three stats are already filled in.
+Open [starter/character_stats.py](starter/character_stats.py). Three stats are already filled in. The `# TODO` lines show where **you** write the dictionary code.
 
 ---
 
 ### Step 2: Print known keys
 
-The script uses `character["name"]`, `character["level"]`, and `character["hp"]`. Change the values and run again.
+The script already prints the name with `character['name']`. Under the first `# TODO`, add two more `print()` lines for `character['level']` and `character['hp']` the same way. Then change the values in the dict and run again.
 
 ---
 
@@ -64,6 +64,8 @@ print(f"Magic: {magic}")
 
 If `"magic"` is missing, you get `0` — no crash.
 
+In the starter, replace each `"?"` with a `.get()` call: `character.get("magic", 0)` and `character.get("skill", "none")`.
+
 ---
 
 ### Step 4: Run the script
@@ -74,7 +76,7 @@ python starter\character_stats.py
 
 **Mac/Linux:** Use forward slashes — `python starter/character_stats.py`. List files with `ls` instead of `dir`.
 
-**Expected output:**
+**Expected output after you finish the TODOs:**
 
 ```text
 === CHARACTER STATS ===
@@ -90,9 +92,12 @@ Edit the dict keys above, then run again!
 
 ## Code Example
 
-**File: [starter/character_stats.py](starter/character_stats.py)**
+**File: [solution/character_stats.py](solution/character_stats.py)** — the finished version. Peek here if you get stuck on a TODO.
 
 ```python
+# character_stats.py
+# Adventure Workshop — labeled stat boxes (dictionaries)
+
 character = {
     "name": "Alex",
     "level": 5,
@@ -109,6 +114,8 @@ print(f"Magic: {magic}")
 
 skill = character.get("skill", "none")
 print(f"Special skill: {skill}")
+
+print("Edit the dict keys above, then run again!")
 ```
 
 ---
@@ -120,7 +127,7 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-3-dictionaries
 python starter\character_stats.py
 ```
 
-No keyboard input — output appears immediately.
+No keyboard input — output appears immediately. Your finished starter prints the same output as Step 4. To compare with the reference, run `python solution\character_stats.py`.
 
 ---
 
@@ -161,44 +168,44 @@ No keyboard input — output appears immediately.
 Pick the best answer for each question. Try without scrolling down first!
 
 1. How is a dictionary different from a list?
-   - **a)** A dictionary uses **name tags (keys)** instead of only number slots
-   - **b)** A dictionary cannot store text
-   - **c)** A dictionary has no values
-   - **d)** A dictionary always has exactly three items
+   - **a)** A dictionary always has exactly three items
+   - **b)** A dictionary uses **name tags (keys)** instead of only number slots
+   - **c)** A dictionary cannot store text
+   - **d)** A dictionary has no values
 
 2. How do you read the hero's HP from `character = {"hp": 42}`?
-   - **a)** `character(42)`
-   - **b)** `character["hp"]`
-   - **c)** `character.hp`
-   - **d)** `hp[character]`
+   - **a)** `hp[character]`
+   - **b)** `character(42)`
+   - **c)** `character["hp"]`
+   - **d)** `character.hp`
 
 3. What does `character.get("magic", 0)` do if `"magic"` is **not** in the dict?
-   - **a)** Crashes with KeyError
-   - **b)** Returns `0` without crashing
-   - **c)** Deletes the dictionary
-   - **d)** Adds `"magic"` automatically
+   - **a)** Deletes the dictionary
+   - **b)** Adds `"magic"` automatically
+   - **c)** Crashes with KeyError
+   - **d)** Returns `0` without crashing
 
 4. You write `character["magc"]` but the key is `"magic"`. What error appears?
-   - **a)** SyntaxError
-   - **b)** KeyError
-   - **c)** IndexError
-   - **d)** No error — Python guesses the key
+   - **a)** KeyError
+   - **b)** IndexError
+   - **c)** No error — Python guesses the key
+   - **d)** SyntaxError
 
 5. When should you prefer `.get()` over square brackets `[]`?
-   - **a)** When the key might be missing and you want a safe default
-   - **b)** When you never want to read values
-   - **c)** Only for lists, not dicts
-   - **d)** When you want Python to ignore typos
+   - **a)** When you want Python to ignore typos
+   - **b)** When the key might be missing and you want a safe default
+   - **c)** When you never want to read values
+   - **d)** Only for lists, not dicts
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** Dicts pair **keys** (labels like `"hp"`) with values — lists use numbered indexes.
-2. **b)** Square brackets with the exact key name: `character["hp"]`.
-3. **b)** `.get()` returns the default (`0`) when the key is missing — no crash.
-4. **b)** Keys must match **exactly**; a typo triggers `KeyError`.
-5. **a)** Use `.get(key, default)` when a key might not exist yet on the stat sheet.
+1. **b)** Dicts pair **keys** (labels like `"hp"`) with values — lists use numbered indexes.
+2. **c)** Square brackets with the exact key name: `character["hp"]`.
+3. **d)** `.get()` returns the default (`0`) when the key is missing — no crash.
+4. **a)** Keys must match **exactly**; a typo triggers `KeyError`.
+5. **b)** Use `.get(key, default)` when a key might not exist yet on the stat sheet.
 
 </details>
 

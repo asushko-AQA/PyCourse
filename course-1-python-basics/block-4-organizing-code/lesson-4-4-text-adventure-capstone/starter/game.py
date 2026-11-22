@@ -10,7 +10,7 @@ rooms = {
     },
     "library": {
         "name": "Scroll Library",
-        "description": "Dusty scrolls line the shelves. A golden key glints on a desk.",
+        "description": "Dusty scrolls line the shelves. An old desk stands in the corner.",
         "south": "start",
         "item": "golden key",
     },
@@ -25,42 +25,36 @@ inventory = []
 
 
 def show_room(room_id):
-    # TODO: Print === room name === and description
     room = rooms[room_id]
     print(f"\n=== {room['name']} ===")
     print(room["description"])
+    if "item" in room:
+        print(f"You see a {room['item']} here.")
 
 
 def move(room_id, direction):
-    # TODO: If direction exists, return the new room id; else return room_id unchanged
     room = rooms[room_id]
-    if direction in room:
-        print(f"You go {direction}.")
-        return room[direction]
-    print("You cannot go that way.")
+    # TODO: If direction in room: print(f"You go {direction}.") and return room[direction]
+    # TODO: Otherwise: print("You cannot go that way.") and return room_id
     return room_id
 
 
 def show_inventory():
-    # TODO: Print numbered list or "Your pack is empty."
-    if len(inventory) == 0:
-        print("Your pack is empty.")
-        return
-    print("=== INVENTORY ===")
-    for i in range(len(inventory)):
-        print(f"{i + 1}. {inventory[i]}")
+    # TODO: If len(inventory) == 0: print("Your pack is empty.")
+    # TODO: Otherwise: print("=== INVENTORY ===") and a numbered list
+    #       with a for loop, like Lesson 4.2: f"{i + 1}. {inventory[i]}"
+    pass
 
 
 def take_item(room_id):
-    # TODO: If room has "item", append to inventory and remove from room
     room = rooms[room_id]
-    item = room.get("item")
-    if item is None:
-        print("Nothing to take here.")
-        return
-    inventory.append(item)
-    del room["item"]
-    print(f"You picked up the {item}.")
+    # TODO: If "item" in room:
+    #           item = room["item"]
+    #           add it to the list with inventory.append(item)
+    #           remove it from the room with del room["item"]
+    #           print(f"You picked up the {item}.")
+    # TODO: Otherwise: print("Nothing to take here.")
+    pass
 
 
 def main():
@@ -69,7 +63,6 @@ def main():
 
     current_room = "start"
 
-    # TODO: Game loop — show room, read command, update current_room from move()
     while True:
         show_room(current_room)
         command = input("What do you do? ").lower().strip()

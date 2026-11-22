@@ -176,22 +176,22 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Imports turtle again
 
 2. Why call `draw_branch(100)` and then `draw_branch(70)` with a turn between?
-   - **a)** To draw two separate recipes — main stem and side branch of the snowflake
-   - **b)** Because functions can only run once per file
-   - **c)** To fix a SyntaxError
-   - **d)** To close the turtle window faster
+   - **a)** To fix a SyntaxError
+   - **b)** To close the turtle window faster
+   - **c)** To draw two separate recipes — main stem and side branch of the snowflake
+   - **d)** Because functions can only run once per file
 
 3. Lines inside `def draw_branch(length):` must be…
-   - **a)** At the left margin with no spaces
-   - **b)** **Indented** (four spaces) under the `def` line
-   - **c)** Written in ALL CAPS
-   - **d)** Placed before `import turtle`
+   - **a)** Written in ALL CAPS
+   - **b)** Placed before `import turtle`
+   - **c)** At the left margin with no spaces
+   - **d)** **Indented** (four spaces) under the `def` line
 
 4. If `forward` and `backward` are **not** indented under `def`, what error appears?
-   - **a)** KeyError
-   - **b)** `IndentationError: expected an indented block after function definition`
-   - **c)** IndexError
-   - **d)** No error — Python guesses they belong inside
+   - **a)** `IndentationError: expected an indented block after function definition`
+   - **b)** IndexError
+   - **c)** No error — Python guesses they belong inside
+   - **d)** KeyError
 
 5. Where should the Block 5 gallery capstone folder `my_gallery/` live?
    - **a)** Inside `starter/` only
@@ -204,9 +204,9 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **b)** Forward then backward brings the turtle back to the branch point for the next turn.
-2. **a)** Same function, different lengths — reusable recipe for each arm of the Y shape.
-3. **b)** Everything under `def` must be indented so Python knows it belongs to the function.
-4. **b)** Python requires an indented block after every `def` line.
+2. **c)** Same function, different lengths — reusable recipe for each arm of the Y shape.
+3. **d)** Everything under `def` must be indented so Python knows it belongs to the function.
+4. **a)** Python requires an indented block after every `def` line.
 5. **b)** `my_gallery/` goes at project root; copy `gallery.py` there to show star + snowflake together.
 
 </details>
@@ -215,7 +215,7 @@ Pick the best answer for each question. Try without scrolling down first!
 
 ## What's Next
 
-→ [Course 2: Web Applications with Python](../../../../course-2-web-apps/README.md) — you finished Course 1! Next: Flask and web pages.
+→ [Course 2: Web Applications with Python](../../../course-2-web-apps/README.md) — you finished Course 1! Next: Flask and web pages.
 
 ---
 

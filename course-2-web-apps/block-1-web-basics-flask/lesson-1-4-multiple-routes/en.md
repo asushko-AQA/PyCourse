@@ -207,22 +207,22 @@ On the home page, add another link: `<a href='/add/100/25'>/add/100/25</a>`. Ref
 Pick the best answer for each question. Try without scrolling down first!
 
 1. How can one Flask `app` serve Home, About, and Jokes?
-   - **a)** Several `@app.route` decorators — one function per path
-   - **b)** Only one route is allowed per file
-   - **c)** You must run a separate `python` command for each page
-   - **d)** Each page needs its own `.venv`
+   - **a)** Each page needs its own `.venv`
+   - **b)** Several `@app.route` decorators — one function per path
+   - **c)** Only one route is allowed per file
+   - **d)** You must run a separate `python` command for each page
 
 2. In `<a href='/about'>About</a>`, what does `href` tell the browser?
-   - **a)** Which path to request when the link is clicked
-   - **b)** Which CSS color to use
-   - **c)** Which pip package to install
-   - **d)** The secret key for flash messages
+   - **a)** Which pip package to install
+   - **b)** The secret key for flash messages
+   - **c)** Which path to request when the link is clicked
+   - **d)** Which CSS color to use
 
 3. What does `<int:a>` in `/add/<int:a>/<int:b>` tell Flask?
-   - **a)** Capture a whole number from the URL and call it `a`
-   - **b)** Accept any word, including `three`
-   - **c)** Import the math module automatically
-   - **d)** Send the form with POST
+   - **a)** Accept any word, including `three`
+   - **b)** Import the math module automatically
+   - **c)** Send the form with POST
+   - **d)** Capture a whole number from the URL and call it `a`
 
 4. Why does `/add/three/five` fail with `<int:a>`?
    - **a)** `three` and `five` are words, not integers
@@ -231,20 +231,20 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Flask does not allow more than one route
 
 5. This lesson's URL calculator puts numbers where?
-   - **a)** In the address bar as part of the URL
-   - **b)** Inside a hidden `static/` folder only
-   - **c)** In the terminal prompt after `(.venv)`
-   - **d)** In a `{% block content %}` in Jinja2
+   - **a)** In a `{% block content %}` in Jinja2
+   - **b)** In the address bar as part of the URL
+   - **c)** Inside a hidden `static/` folder only
+   - **d)** In the terminal prompt after `(.venv)`
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** Each path gets its own route function in the same `app`.
-2. **a)** `href` is the link destination path.
-3. **a)** `<int:a>` converts the URL piece to an integer named `a`.
+1. **b)** Each path gets its own route function in the same `app`.
+2. **c)** `href` is the link destination path.
+3. **d)** `<int:a>` converts the URL piece to an integer named `a`.
 4. **a)** Integer converters reject non-numeric text.
-5. **a)** `/add/3/5` passes numbers through the URL itself.
+5. **b)** `/add/3/5` passes numbers through the URL itself.
 
 </details>
 

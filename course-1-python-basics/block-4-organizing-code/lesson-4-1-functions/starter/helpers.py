@@ -2,26 +2,24 @@
 # Adventure Workshop — reusable recipe functions
 
 def draw_banner(text):
-    # TODO: Print a line of ===, then text, then another line of ===
-    print("===")
-    print(text)
-    print("===")
+    # TODO: Replace pass with three print() lines: "===", then text, then "==="
+    pass
 
 
 def ask_yes_no(question):
-    # TODO: Print the question, use input(), return "yes" or "no" (lowercase strings)
     answer = input(f"{question} (yes/no): ").lower().strip()
-    if answer in ("y", "yes"):
-        return "yes"
+    # TODO: Replace the line below with:
+    #       if answer in ("y", "yes"):
+    #           return "yes"
+    #       return "no"
     return "no"
 
 
 def main():
-    # TODO: Call draw_banner with "Adventure Workshop"
-    draw_banner("Adventure Workshop")
+    # TODO: Call draw_banner with the text "Adventure Workshop"
 
-    # TODO: Call ask_yes_no and store the answer
-    answer = ask_yes_no("Ready to build helper functions?")
+    # TODO: Replace "?" with a call: ask_yes_no("Ready to build helper functions?")
+    answer = "?"
     print(f"You answered: {answer}")
 
 

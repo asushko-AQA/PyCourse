@@ -1,16 +1,17 @@
 # greeting.py
 # Data Lab — ask the visitor questions and answer with f-strings
 
-# TODO: Ask for the visitor's name
-name = input("What is your name? ")
+# TODO 1: Replace "Visitor" with input() so the visitor types their name.
+#         Prompt text: "What is your name? "  (see Step 1)
+name = "Visitor"
 
-# TODO: Ask for their age
-age = input("How old are you? ")
+# TODO 2: Replace "?" with input() that asks: "How old are you? "
+age = "?"
 
-# TODO: Greet them with an f-string (don't forget the f before the quotes!)
-print(f"Hello, {name}! Welcome to the Data Lab.")
+# TODO 3: Print a greeting with an f-string (don't forget the f before the quotes!).
+#         It should show:  Hello, Alex! Welcome to the Data Lab.
 
-# TODO: Respond about their age with another f-string
-print(f"You said you are {age} years old.")
+# TODO 4: Print the age with another f-string.
+#         It should show:  You said you are 11 years old.
 
-print("Type your answers when the terminal waits for you!")
+print("Fill in the TODOs above, then delete this line!")

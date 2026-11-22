@@ -64,22 +64,43 @@ def message():
     return render_template("message.html", message=reply, text=text)
 ```
 
+Add the form in `message.html` — no `action` needed, because the form posts back to the same URL:
+
+```html
+<form method="post">
+    <input type="text" name="text" placeholder="Your message">
+    <button type="submit">Send</button>
+</form>
+```
+
 **TODO in starter:** Add both routes and finish the forms in the templates.
 
 ---
 
 ### Step 3: Run and compare
 
+**1. Activate your venv.** In VS Code, open the folder that has your `.venv` (**Path A:** `PyCourse`; **Path B:** your workshop folder). The terminal starts there. Activate:
+
+```text
+.venv\Scripts\Activate.ps1
+```
+
+**Command Prompt (cmd):** `.venv\Scripts\activate.bat` · **macOS/Linux:** `source .venv/bin/activate`
+
+You should see `(.venv)` at the start of the terminal line.
+
+**2. Go to the starter folder and run.**
+
 **Path A:**
 
 ```text
-cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-2-html-forms
-python starter\app.py
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-2-html-forms\starter
+python app.py
 ```
 
-**Path B:** Copy `starter/` — see [STUDENT-MAP](../STUDENT-MAP.md).
+**macOS/Linux:** `cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-2-html-forms/starter`, then `python app.py`
 
-**Mac/Linux:** `python starter/app.py`
+**Path B:** Copy this lesson's `starter/` folder into your workshop folder, next to `.venv`, and rename it `lesson-2-2`. Then `cd lesson-2-2` and `python app.py`. See [STUDENT-MAP](../STUDENT-MAP.md).
 
 1. Open `/greet`, submit a name — watch the URL change to `?name=...`
 2. Open `/message`, submit text — URL stays `/message`
@@ -128,17 +149,38 @@ Form HTML is in `solution/templates/` — see [solution/templates/greet.html](so
 
 ## Code Execution
 
+With `(.venv)` active, from the folder you opened in VS Code:
+
 ```text
-cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-2-html-forms
-python starter\app.py
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-2-html-forms\starter
+python app.py
 ```
 
-**Mac/Linux:** `python starter/app.py`
+**macOS/Linux:** `cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-2-html-forms/starter`, then `python app.py` · **Path B:** `cd lesson-2-2`, then `python app.py`
 
-1. Open `http://127.0.0.1:5000/greet`, enter a name — URL becomes `?name=...`
-2. Open `http://127.0.0.1:5000/message`, submit text — URL stays `/message`
+**Expected output (terminal):**
 
-**Expected result:** Both pages show your input in the results area.
+```text
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+```
+
+1. Open `http://127.0.0.1:5000/greet`, enter `Sam` — URL becomes `/greet?name=Sam`
+2. Open `http://127.0.0.1:5000/message`, type `Hi there` and send — URL stays `/message`
+
+**Expected output (browser, under each form):**
+
+```text
+Hello, Sam! Nice to meet you.
+```
+
+```text
+You said: Hi there
+```
+
+**Expected result:** Both pages show your input in the results area. Stop the server with **Ctrl+C** when you are done.
 
 ---
 
@@ -177,10 +219,10 @@ python starter\app.py
 Pick the best answer for each question. Try without scrolling down first!
 
 1. With a **GET** form on `/greet`, where does the name often appear after submit?
-   - **a)** In the URL, like `?name=Alex`
-   - **b)** Only inside the server hard drive, never visible
-   - **c)** In the CSS file
-   - **d)** In the `.venv` folder name
+   - **a)** Only inside the server hard drive, never visible
+   - **b)** In the CSS file
+   - **c)** In the `.venv` folder name
+   - **d)** In the URL, like `?name=Alex`
 
 2. Which Flask code reads GET data from the URL?
    - **a)** `request.args.get("name")`
@@ -189,32 +231,32 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** `url_for('static', filename='name')`
 
 3. Which Flask code reads POST data from a submitted form?
-   - **a)** `request.form.get("text")`
-   - **b)** `request.args.get("text")`
-   - **c)** `importlib.metadata.version("text")`
-   - **d)** `@app.route("<text>")`
+   - **a)** `@app.route("<text>")`
+   - **b)** `request.form.get("text")`
+   - **c)** `request.args.get("text")`
+   - **d)** `importlib.metadata.version("text")`
 
 4. Why might `/message` use `methods=["GET", "POST"]`?
-   - **a)** GET shows the form; POST handles the submitted data on the same URL
-   - **b)** Because GET and POST cannot use templates
-   - **c)** To install Flask twice
-   - **d)** So the URL always shows `?text=...`
+   - **a)** To install Flask twice
+   - **b)** So the URL always shows `?text=...`
+   - **c)** GET shows the form; POST handles the submitted data on the same URL
+   - **d)** Because GET and POST cannot use templates
 
 5. Why call `.strip()` on form values?
-   - **a)** Remove extra spaces at the start or end of what the user typed
-   - **b)** Delete the form from HTML
-   - **c)** Convert numbers to floats automatically
-   - **d)** Hide flash messages
+   - **a)** Delete the form from HTML
+   - **b)** Convert numbers to floats automatically
+   - **c)** Hide flash messages
+   - **d)** Remove extra spaces at the start or end of what the user typed
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** GET form data shows up in the query string.
+1. **d)** GET form data shows up in the query string.
 2. **a)** `request.args` is for URL query parameters.
-3. **a)** `request.form` is for POST body fields.
-4. **a)** One URL can show the form (GET) and process it (POST).
-5. **a)** `.strip()` trims accidental spaces from user input.
+3. **b)** `request.form` is for POST body fields.
+4. **c)** One URL can show the form (GET) and process it (POST).
+5. **d)** `.strip()` trims accidental spaces from user input.
 
 </details>
 

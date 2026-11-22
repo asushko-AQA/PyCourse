@@ -9,14 +9,15 @@ character = {
 
 print("=== CHARACTER STATS ===")
 print(f"Name: {character['name']}")
-print(f"Level: {character['level']}")
-print(f"HP: {character['hp']}")
+# TODO: Print the level and the HP the same way:
+#       f"Level: {character['level']}" and f"HP: {character['hp']}"
 
-# TODO: Use .get() for a key that might be missing
-magic = character.get("magic", 0)
+# TODO: Replace "?" with character.get("magic", 0)
+magic = "?"
 print(f"Magic: {magic}")
 
-skill = character.get("skill", "none")
+# TODO: Replace "?" with character.get("skill", "none")
+skill = "?"
 print(f"Special skill: {skill}")
 
 print("Edit the dict keys above, then run again!")

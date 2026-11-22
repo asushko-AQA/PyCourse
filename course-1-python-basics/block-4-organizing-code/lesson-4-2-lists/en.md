@@ -40,19 +40,19 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-2-lists
 
 ### Step 1: Open inventory.py
 
-Open [starter/inventory.py](starter/inventory.py). Two items are already in the backpack.
+Open [starter/inventory.py](starter/inventory.py). Two items are already in the backpack. The `# TODO` lines show where **you** write the list code.
 
 ---
 
 ### Step 2: Add an item
 
-Uncomment or complete the `.append("key")` line. The list grows by one slot.
+Under the first `# TODO`, write `inventory.append("key")`. The list grows by one slot.
 
 ---
 
 ### Step 3: Print a numbered list
 
-Use a `for` loop with `range(len(inventory))` to visit each index:
+Under the second `# TODO`, write a `for` loop with `range(len(inventory))` to visit each index:
 
 ```python
 for i in range(len(inventory)):
@@ -71,7 +71,7 @@ python starter\inventory.py
 
 **Mac/Linux:** Use forward slashes — `python starter/inventory.py`. List files with `ls` instead of `dir`.
 
-**Expected output:**
+**Expected output after you finish the TODOs:**
 
 ```text
 === INVENTORY ===
@@ -85,9 +85,12 @@ You are carrying 3 items.
 
 ## Code Example
 
-**File: [starter/inventory.py](starter/inventory.py)**
+**File: [solution/inventory.py](solution/inventory.py)** — the finished version. Peek here if you get stuck on a TODO.
 
 ```python
+# inventory.py
+# Adventure Workshop — pack items in a list
+
 inventory = ["torch", "rope"]
 inventory.append("key")
 
@@ -108,7 +111,7 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-2-lists
 python starter\inventory.py
 ```
 
-No keyboard input — output appears immediately.
+No keyboard input — output appears immediately. Your finished starter prints the same output as Step 4. To compare with the reference, run `python solution\inventory.py`.
 
 ---
 
@@ -149,10 +152,10 @@ No keyboard input — output appears immediately.
 Pick the best answer for each question. Try without scrolling down first!
 
 1. In `inventory = ["torch", "rope"]`, what is the index of `"torch"`?
-   - **a)** `1`
-   - **b)** `0`
-   - **c)** `-1`
-   - **d)** `"torch"`
+   - **a)** `0`
+   - **b)** `-1`
+   - **c)** `"torch"`
+   - **d)** `1`
 
 2. Which method adds a new item to the **end** of a list?
    - **a)** `.add()`
@@ -161,32 +164,32 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** `.print()`
 
 3. Why does the lesson use `print(f"{i + 1}. {inventory[i]}")` instead of `i` alone?
-   - **a)** Python lists start at 1
-   - **b)** So players see `1. torch` instead of `0. torch`
-   - **c)** `i + 1` makes the list longer
-   - **d)** It fixes IndexError automatically
+   - **a)** It fixes IndexError automatically
+   - **b)** Python lists start at 1
+   - **c)** So players see `1. torch` instead of `0. torch`
+   - **d)** `i + 1` makes the list longer
 
 4. How do you get the **last** item in a list without counting indexes?
-   - **a)** `inventory[0]`
-   - **b)** `inventory[-1]`
-   - **c)** `inventory[last]`
-   - **d)** `inventory.len()`
+   - **a)** `inventory[last]`
+   - **b)** `inventory.len()`
+   - **c)** `inventory[0]`
+   - **d)** `inventory[-1]`
 
 5. You have 3 items in `inventory` (indexes 0, 1, 2). What happens if you run `print(inventory[3])`?
-   - **a)** It prints `3`
-   - **b)** `IndexError: list index out of range`
-   - **c)** It prints the first item again
-   - **d)** The list grows to four items
+   - **a)** `IndexError: list index out of range`
+   - **b)** It prints the first item again
+   - **c)** The list grows to four items
+   - **d)** It prints `3`
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** List indexes start at **0** — the first slot is index 0.
+1. **a)** List indexes start at **0** — the first slot is index 0.
 2. **b)** `.append()` adds one new item to the end of the backpack.
-3. **b)** Adding 1 to `i` shows human-friendly numbering (1, 2, 3…) while indexes stay 0-based.
-4. **b)** `inventory[-1]` is the last slot — handy when you do not want to count.
-5. **b)** Index 3 does not exist in a 3-item list; valid indexes are 0, 1, and 2 only.
+3. **c)** Adding 1 to `i` shows human-friendly numbering (1, 2, 3…) while indexes stay 0-based.
+4. **d)** `inventory[-1]` is the last slot — handy when you do not want to count.
+5. **a)** Index 3 does not exist in a 3-item list; valid indexes are 0, 1, and 2 only.
 
 </details>
 

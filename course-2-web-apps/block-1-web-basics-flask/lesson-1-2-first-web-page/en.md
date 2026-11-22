@@ -221,10 +221,10 @@ Change the home message to include your name with an f-string inside the functio
 Pick the best answer for each question. Try without scrolling down first!
 
 1. In Flask, what does a **route** connect?
-   - **a)** A URL path to a Python function
-   - **b)** A CSS file to a database
-   - **c)** Two different virtual environments
-   - **d)** The browser to the internet provider only
+   - **a)** A CSS file to a database
+   - **b)** Two different virtual environments
+   - **c)** The browser to the internet provider only
+   - **d)** A URL path to a Python function
 
 2. What does `@app.route("/")` mean?
    - **a)** When someone visits the home path, run this function
@@ -233,32 +233,32 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Open VS Code settings
 
 3. In `http://127.0.0.1:5000`, what does `127.0.0.1` mean?
-   - **a)** This computer (localhost)
-   - **b)** A website in another country
-   - **c)** The Flask version number
-   - **d)** Your Wi-Fi password
+   - **a)** Your Wi-Fi password
+   - **b)** This computer (localhost)
+   - **c)** A website in another country
+   - **d)** The Flask version number
 
 4. Why must you keep the terminal open while testing in the browser?
-   - **a)** The Flask server is running there and waiting for requests
-   - **b)** The browser cannot load pages without VS Code open
-   - **c)** Python deletes `app.py` if you close the terminal
-   - **d)** `debug=True` only works with two terminals
+   - **a)** Python deletes `app.py` if you close the terminal
+   - **b)** `debug=True` only works with two terminals
+   - **c)** The Flask server is running there and waiting for requests
+   - **d)** The browser cannot load pages without VS Code open
 
 5. How do you **stop** the Flask server when you are done?
-   - **a)** Press **Ctrl+C** in the terminal
-   - **b)** Close the browser tab only
-   - **c)** Run `pip uninstall flask`
-   - **d)** Delete the `templates` folder
+   - **a)** Close the browser tab only
+   - **b)** Run `pip uninstall flask`
+   - **c)** Delete the `templates` folder
+   - **d)** Press **Ctrl+C** in the terminal
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** A route maps a URL to the function that builds the response.
+1. **d)** A route maps a URL to the function that builds the response.
 2. **a)** `/` is the home page path.
-3. **a)** `127.0.0.1` is localhost — your own machine.
-4. **a)** Closing the terminal stops the server process.
-5. **a)** **Ctrl+C** stops the running Flask app in the terminal.
+3. **b)** `127.0.0.1` is localhost — your own machine.
+4. **c)** Closing the terminal stops the server process.
+5. **d)** **Ctrl+C** stops the running Flask app in the terminal.
 
 </details>
 

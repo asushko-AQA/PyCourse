@@ -55,7 +55,11 @@ If you put quotes around a number (`"11"`), Python treats it as text, not math. 
 
 ### Step 3: Open the character sheet
 
-Open [starter/character_sheet.py](starter/character_sheet.py). Three variables are ready — fill in the **TODO `print()` lines** to show your character sheet.
+Open [starter/character_sheet.py](starter/character_sheet.py). Three variables are ready — `name`, `age`, `favorite_game`. Your job: fill in the four **TODO `print()` lines** to show your character sheet.
+
+- Each line is a label in quotes, a comma, then the variable name — for example `print("Name:", name)`.
+- When all four lines are written, delete the last line `print("Fill in the TODO print lines above, then delete this line!")`.
+- Save the file (**Ctrl+S**).
 
 ---
 
@@ -84,8 +88,9 @@ python starter\character_sheet.py
 Name: Alex
 Age: 11
 Favorite game: Minecraft
-Edit the variables above, then run again!
 ```
+
+Still see only `Fill in the TODO print lines above, then delete this line!`? Go back to Step 3 — the TODO lines are still empty.
 
 ---
 
@@ -104,17 +109,20 @@ Change the value in the box once — every `print()` that uses `name` updates au
 
 ## Code Example
 
-**File: [starter/character_sheet.py](starter/character_sheet.py)**
+**File: [solution/character_sheet.py](solution/character_sheet.py)** — the finished sheet, with a fourth box (`school`) and a line that combines two boxes:
 
 ```python
 name = "Alex"
 age = 11
 favorite_game = "Minecraft"
+school = "Creator Academy"
 
 print("=== CHARACTER SHEET ===")
 print("Name:", name)
 print("Age:", age)
 print("Favorite game:", favorite_game)
+print("School:", school)
+print(name, "loves", favorite_game)
 ```
 
 **No `input()` yet** — you type values directly in the code. Interactive questions come in Lesson 2.2.
@@ -125,8 +133,10 @@ print("Favorite game:", favorite_game)
 
 ```text
 cd course-1-python-basics\block-2-talking-to-python\lesson-2-1-variables
-python starter\character_sheet.py
+python solution\character_sheet.py
 ```
+
+**Mac/Linux:** `python solution/character_sheet.py` (forward slashes).
 
 **Expected output:**
 
@@ -135,7 +145,8 @@ python starter\character_sheet.py
 Name: Alex
 Age: 11
 Favorite game: Minecraft
-Edit the variables above, then run again!
+School: Creator Academy
+Alex loves Minecraft
 ```
 
 ---
@@ -152,12 +163,25 @@ Edit the variables above, then run again!
 
 **Quest name:** Your Character Sheet
 
+Keep working in [starter/character_sheet.py](starter/character_sheet.py) — the file you completed in Step 3.
+
 1. Edit all three variables to **your** real data (or fun fictional data).
-2. Add a fourth variable — `school`, `pet`, or `favorite_food`.
+2. Add a fourth variable — `school`, `pet`, or `favorite_food` — and print it with a label, like `print("School:", school)`.
 3. Add one `print()` that combines two variables with a comma:
 
 ```python
 print(name, "loves", favorite_game)
+```
+
+**Expected output** (with the sample data and `school = "Creator Academy"`):
+
+```text
+=== CHARACTER SHEET ===
+Name: Alex
+Age: 11
+Favorite game: Minecraft
+School: Creator Academy
+Alex loves Minecraft
 ```
 
 **Bonus stars:** Add a title line with `===` banners like the example. Try `print("Age next year:", age + 1)` — Python can add 1 to a number!
@@ -181,44 +205,44 @@ print(name, "loves", favorite_game)
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What does the `=` sign do in `name = "Alex"`?
-   - **a)** Compares two values
-   - **b)** Puts a value inside a labeled variable
-   - **c)** Prints text to the screen
-   - **d)** Deletes a variable
+   - **a)** Deletes a variable
+   - **b)** Compares two values
+   - **c)** Puts a value inside a labeled variable
+   - **d)** Prints text to the screen
 
 2. Which line stores a **whole number** correctly?
-   - **a)** `age = "11"`
-   - **b)** `age = 11`
-   - **c)** `age = True`
-   - **d)** `11 = age`
+   - **a)** `age = True`
+   - **b)** `11 = age`
+   - **c)** `age = "11"`
+   - **d)** `age = 11`
 
 3. If you put quotes around a number like `"11"`, Python treats it as…
-   - **a)** An integer for math
-   - **b)** Text (a string), not a number for math
-   - **c)** A True/False value
-   - **d)** An error that always stops the program
+   - **a)** Text (a string), not a number for math
+   - **b)** A True/False value
+   - **c)** An error that always stops the program
+   - **d)** An integer for math
 
 4. You get `NameError: name 'nmae' is not defined`. What is the most likely cause?
-   - **a)** A typo in the variable name (spelling must match exactly)
-   - **b)** You forgot to use `input()`
-   - **c)** You used `==` instead of `=`
-   - **d)** The number was too big
+   - **a)** The number was too big
+   - **b)** A typo in the variable name (spelling must match exactly)
+   - **c)** You forgot to use `input()`
+   - **d)** You used `==` instead of `=`
 
 5. You change `name = "Alex"` to `name = "Sam"`. What happens to every `print()` that uses `name`?
-   - **a)** They automatically show the new value
-   - **b)** They still show "Alex" until you restart the computer
-   - **c)** Python deletes the other variables
-   - **d)** You must rename every `print()` line by hand
+   - **a)** Python deletes the other variables
+   - **b)** You must rename every `print()` line by hand
+   - **c)** They automatically show the new value
+   - **d)** They still show "Alex" until you restart the computer
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** `=` stores a value in a variable (labeled box).
-2. **b)** Integers are whole numbers **without** quotes.
-3. **b)** Quotes make it text; Lesson 2.3 covers fixing that with `int()`.
-4. **a)** Variable names must match exactly; `nmae` ≠ `name`.
-5. **a)** Change the value once; every line using that variable updates.
+1. **c)** `=` stores a value in a variable (labeled box).
+2. **d)** Integers are whole numbers **without** quotes.
+3. **a)** Quotes make it text; Lesson 2.3 covers fixing that with `int()`.
+4. **b)** Variable names must match exactly; `nmae` ≠ `name`.
+5. **c)** Change the value once; every line using that variable updates.
 
 </details>
 

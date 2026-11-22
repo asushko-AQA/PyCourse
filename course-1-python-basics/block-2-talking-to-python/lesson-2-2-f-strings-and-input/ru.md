@@ -45,7 +45,14 @@ print(f"Hello, {name}!")
 
 ### Шаг 3: Открой greeting.py
 
-Открой [starter/greeting.py](starter/greeting.py). Два вопроса и два ответа f-строками ждут тебя в TODO.
+Открой [starter/greeting.py](starter/greeting.py). В нём четыре TODO для тебя:
+
+1. Замени `"Visitor"` на `input("What is your name? ")` — как в Шаге 1.
+2. Замени `"?"` на `input()` с вопросом `"How old are you? "`.
+3. Напиши `print()` с f-строкой, которая приветствует посетителя по `{name}`.
+4. Напиши `print()` с f-строкой, которая показывает `{age}`.
+
+Когда все четыре готовы, удали последнюю строку `print("Fill in the TODOs above, then delete this line!")` и сохрани файл (**Ctrl+S**).
 
 ---
 
@@ -72,19 +79,25 @@ How old are you? 11
 ```text
 Hello, Alex! Welcome to the Data Lab.
 You said you are 11 years old.
-Type your answers when the terminal waits for you!
 ```
+
+Всё ещё видишь `Fill in the TODOs above, then delete this line!`? Вернись к Шагу 3 и доделай TODO.
 
 ---
 
 ## Пример кода
 
+**Файл: [solution/greeting.py](solution/greeting.py)** — готовый приветственный бот с третьим вопросом и бонусной строкой:
+
 ```python
 name = input("What is your name? ")
 age = input("How old are you? ")
+color = input("What is your favorite color? ")
 
 print(f"Hello, {name}! Welcome to the Data Lab.")
 print(f"You said you are {age} years old.")
+print(f"Your favorite color is {color}. Nice choice!")
+print(f"\n{name}, you are officially a Data Lab apprentice!")
 ```
 
 ---
@@ -92,10 +105,23 @@ print(f"You said you are {age} years old.")
 ## Запуск кода
 
 ```text
-python starter\greeting.py
+cd course-1-python-basics\block-2-talking-to-python\lesson-2-2-f-strings-and-input
+python solution\greeting.py
 ```
 
-Ответь на оба вопроса. Увидишь персональный вывод.
+**Mac/Linux:** `python solution/greeting.py` (прямые слэши).
+
+**Вводи:** `Alex`, затем `11`, затем `blue`
+
+**Ожидаемый вывод:**
+
+```text
+Hello, Alex! Welcome to the Data Lab.
+You said you are 11 years old.
+Your favorite color is blue. Nice choice!
+
+Alex, you are officially a Data Lab apprentice!
+```
 
 ---
 
@@ -111,12 +137,22 @@ python starter\greeting.py
 
 **Название квеста:** Личный приветственный бот
 
-1. Заполни оба TODO f-строки в [starter/greeting.py](starter/greeting.py).
-2. Добавь третий вопрос — любимый цвет, игра или хобби.
-3. Добавь многострочную f-строку с `\n`:
+1. Выполни все четыре TODO в [starter/greeting.py](starter/greeting.py) (Шаг 3).
+2. Добавь третий вопрос — любимый цвет, игра или хобби — и ответь на него f-строкой, например `print(f"Your favorite color is {color}. Nice choice!")`.
+3. Добавь многострочную f-строку с `\n` (сначала она печатает пустую строку):
 
 ```python
 print(f"\n{name}, you are officially a Data Lab apprentice!")
+```
+
+**Ожидаемый вывод** (вводишь `Alex`, `11`, `blue`):
+
+```text
+Hello, Alex! Welcome to the Data Lab.
+You said you are 11 years old.
+Your favorite color is blue. Nice choice!
+
+Alex, you are officially a Data Lab apprentice!
 ```
 
 **Бонус:** Два вопроса в одной истории: имя + любимая еда.
@@ -140,10 +176,10 @@ print(f"\n{name}, you are officially a Data Lab apprentice!")
 Выбери лучший ответ на каждый вопрос. Сначала попробуй без подсказок!
 
 1. Что всегда возвращает `input()`, даже если ты вводишь цифры?
-   - **a)** Текст (строку)
-   - **b)** Целое число
-   - **c)** True или False
-   - **d)** Ничего — только печатает
+   - **a)** Целое число
+   - **b)** True или False
+   - **c)** Ничего — только печатает
+   - **d)** Текст (строку)
 
 2. Зачем буква `f` в `print(f"Hello, {name}!")`?
    - **a)** Python подставляет `{name}` вместо реального значения
@@ -158,26 +194,26 @@ print(f"\n{name}, you are officially a Data Lab apprentice!")
    - **d)** Пустая строка
 
 4. Текст внутри `input("What is your name? ")` называется…
-   - **a)** Подсказка (prompt) — вопрос пользователю
-   - **b)** Срез
-   - **c)** Частное от деления
-   - **d)** Булево значение
+   - **a)** Частное от деления
+   - **b)** Булево значение
+   - **c)** Подсказка (prompt) — вопрос пользователю
+   - **d)** Срез
 
 5. Какая строка задаёт вопрос и сохраняет ответ в `color`?
-   - **a)** `color = input("What is your favorite color? ")`
-   - **b)** `input(color) = "blue"`
-   - **c)** `print(color = input)`
-   - **d)** `color == input("blue")`
+   - **a)** `input(color) = "blue"`
+   - **b)** `print(color = input)`
+   - **c)** `color == input("blue")`
+   - **d)** `color = input("What is your favorite color? ")`
 
 ---
 
 <details><summary>Нажми, чтобы показать ответы</summary>
 
-1. **a)** `input()` всегда возвращает строку; в Уроке 2.3 для математики — `int()`.
+1. **d)** `input()` всегда возвращает строку; в Уроке 2.3 для математики — `int()`.
 2. **a)** `f` включает подстановку переменных в `{фигурных скобках}`.
 3. **b)** Без `f` `{name}` печатается как обычный текст.
-4. **a)** Текст в кавычках — подсказка перед вводом.
-5. **a)** `input()` справа, имя переменной слева от `=`.
+4. **c)** Текст в кавычках — подсказка перед вводом.
+5. **d)** `input()` справа, имя переменной слева от `=`.
 
 </details>
 

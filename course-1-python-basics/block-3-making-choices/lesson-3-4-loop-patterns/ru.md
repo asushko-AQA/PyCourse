@@ -27,6 +27,18 @@ for row in range(1, 6):
 - `print()` без аргументов — новая строка
 - `end=""` — звёзды в одной строке
 
+**`break`** досрочно выходит из цикла — запасной выход из повтора:
+
+```python
+for row in range(1, 10):
+    if row == 4:
+        break
+    print(row)
+# prints 1, 2, 3 — stops at 4 before printing it
+```
+
+Попробуй вариант 3 в [exercises/pattern_variations.ru.md](exercises/pattern_variations.ru.md).
+
 ---
 
 ### Шаг 1: Открой ascii_pattern.py
@@ -77,19 +89,42 @@ python starter\ascii_pattern.py
 
 ## Быстрые упражнения
 
-1. `range(1, 4)` — сколько строк?
-2. Замени `"*"` на `"#"`.
-3. Отметь [чеклист блока 3](../README.md#block-3-readiness-checklist).
+1. Поменяй внешний цикл на `range(1, 4)` — угадай 3 строки и проверь запуском.
+2. Замени `"*"` на `"#"` — получится пирамида из решёток.
+3. Добавь строку `print("Row:", row)` внутри внешнего цикла — прочитай лишний вывод.
 
 ---
 
-## Практическое задание
+## Задание для практики
 
 1. Пирамида из **6** строк (`range(1, 7)`).
 2. Попробуй **квадрат** 5×5 (см. [exercises/pattern_variations.ru.md](exercises/pattern_variations.ru.md)).
 3. Отметь чеклист блока 3.
 
 **Эталон:** [solution/ascii_pattern.py](solution/ascii_pattern.py)
+
+---
+
+## Итоговый проект блока 3 — Квестовые ворота (`my_quest/`)
+
+Собери `if`, `while` и `input()` в одной игре:
+
+1. Создай **`my_quest/`** в корне проекта (рядом с `my_data/`).
+2. Скопируй [starter/gate_quest.py](starter/gate_quest.py) → **`my_quest/gate_quest.py`**.
+3. В своей копии поставь `secret = random.randint(1, 20)` и `guesses_left = 5`. `random.randint` выбирает случайное целое число — здесь от 1 до 20.
+4. Заполни цикл `while`: верная догадка печатает `Correct! The gate opens. Quest complete!` и останавливается через `break`; слишком маленькая печатает `Too low.`; слишком большая — `Too high.`; каждая ошибка тратит одну попытку; когда попытки доходят до 0, напечатай `Out of tries! The secret was ...`.
+5. Запусти:
+
+```text
+cd my_quest
+python gate_quest.py
+```
+
+**Ожидаемо:** игра спрашивает `Your guess:` до пяти раз. Верный ответ заканчивает игру раньше. Пять промахов печатают секретное число.
+
+**Эталон:** [solution/gate_quest.py](solution/gate_quest.py)
+
+Отметь [чеклист готовности блока 3](../README.md#block-3-readiness-checklist), когда закончишь.
 
 ---
 

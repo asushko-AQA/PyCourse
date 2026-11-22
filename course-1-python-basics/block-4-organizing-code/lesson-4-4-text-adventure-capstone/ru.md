@@ -58,9 +58,11 @@ mkdir my_adventure
 | Функция | Задача |
 |---------|--------|
 | `show_room(room_id)` | Напечатать название и описание |
-| `move(direction)` | Сменить `current_room`, если выход есть |
+| `move(room_id, direction)` | Вернуть **новый id комнаты**, если выход есть (`global` не нужен) |
 | `show_inventory()` | Нумерованный список из `inventory` |
-| `take_item()` | Перенести `"item"` комнаты в `inventory` |
+| `take_item(room_id)` | Перенести `"item"` комнаты в `inventory` |
+
+В `main()` сохрани результат: `current_room = move(current_room, command)`.
 
 ---
 
@@ -135,7 +137,7 @@ python starter\game.py
 
 ---
 
-## Практическое задание
+## Задание для практики
 
 **Название квеста:** Твой мир приключений
 
@@ -150,7 +152,7 @@ python starter\game.py
 
 ---
 
-## Отладка
+## Уголок отладки
 
 **Проблема:** `TypeError` или неверная комната, когда пишешь `rooms["north"]` вместо `rooms[current_room]["north"]`.
 

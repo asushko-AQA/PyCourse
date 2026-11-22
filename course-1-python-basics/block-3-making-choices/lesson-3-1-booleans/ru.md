@@ -24,7 +24,19 @@
 | `>=` | больше или равно | `5 >= 5` → `True` |
 | `<=` | меньше или равно | `2 <= 9` → `True` |
 
-**`and`** — оба должны быть True. **`or`** — хотя бы один True.
+**`and`** — оба должны быть True. **`or`** — хотя бы один True:
+
+```python
+print(True and False)   # False
+print(True or False)    # True
+```
+
+**`not`** переворачивает True ↔ False — как перевернуть штамп квеста:
+
+```python
+print("not False:", not False)   # True
+print("not (5 == 3):", not (5 == 3))   # True — 5 == 3 is False, not False is True
+```
 
 **Пока без `if`** — только печатаем результаты сравнений. `if` будет в уроке 3.2.
 
@@ -101,7 +113,7 @@ python starter\true_false_quiz.py
 
 ---
 
-## Практическое задание
+## Задание для практики
 
 1. Добавь три новых сравнения с `==`, `<`, `!=`.
 2. Добавь строку с `and`.

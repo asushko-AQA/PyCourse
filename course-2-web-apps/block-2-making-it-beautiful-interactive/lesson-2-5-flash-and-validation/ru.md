@@ -13,40 +13,112 @@
 
 ## Объяснение
 
-Финал Блока 2! **Калькулятор на форме** — пара к URL-калькулятору Блока 1.
+Финал Блока 2! Собери **калькулятор на форме** — пару к URL-калькулятору Блока 1 (`/add/3/5`). Числа вводят в форму, а не в адресную строку.
 
-Создай **`my_web_calc/`** в корне проекта.
+Если поля пустые, покажи **flash-сообщение** — короткую заметку, которая появляется один раз при следующей загрузке страницы.
 
-**Путь A:**
+Создай **`my_web_calc/`** в **корне проекта** (рядом с `my_web_madlibs/`).
+
+**Путь A:** терминал VS Code уже открыт в папке `PyCourse`. Если в приглашении нет `(.venv)`, сначала включи ящик с инструментами из урока 0.1 (он лежит в этой папке):
+
+**Windows:** `.venv\Scripts\Activate.ps1`  
+**macOS:** `source .venv/bin/activate`
+
+Потом создай папку итогового проекта — ты уже в `PyCourse`:
 
 ```text
 mkdir my_web_calc
 ```
 
-Скопируй [starter/](starter/). **Путь B:** [STUDENT-MAP](../STUDENT-MAP.ru.md).
+Скопируй [starter/](starter/) в `my_web_calc/`.
+
+**Путь B:** Та же идея папки на Рабочем столе — см. [STUDENT-MAP](../STUDENT-MAP.ru.md).
 
 ---
 
-### Ключевые шаги
+### Шаг 1: Задай secret_key
 
-1. `app.secret_key = "..."` для flash
-2. Читай `a` и `b` из `request.form`
-3. `flash("...")` при пустых полях или нечисловом вводе
-4. Покажи `total` в `calc.html`
+```python
+app.secret_key = "learning-flash-key"
+```
 
-**TODO в starter:** блок POST в `app.py`.
+Flash нужен секрет для локальных сессий. Для практики подойдёт любая случайная строка.
 
 ---
 
-### Запуск
+### Шаг 2: Проверь ввод и посчитай
+
+```python
+@app.route("/", methods=["GET", "POST"])
+def calc():
+    total = None
+    if request.method == "POST":
+        raw_a = request.form.get("a", "").strip()
+        raw_b = request.form.get("b", "").strip()
+        if not raw_a or not raw_b:
+            flash("Please enter both numbers.")
+        else:
+            try:
+                num_a = int(raw_a)
+                num_b = int(raw_b)
+                total = num_a + num_b
+            except ValueError:
+                flash("Use whole numbers only (like 3 or 10).")
+    return render_template("calc.html", total=total)
+```
+
+**TODO в starter:** заполни блок POST в `app.py`.
+
+---
+
+### Шаг 3: Покажи flash в calc.html
+
+```html
+{% for message in get_flashed_messages() %}
+<p class="error"><strong>{{ message }}</strong></p>
+{% endfor %}
+```
+
+Результат появляется на той же странице, когда `total` задан:
+
+```html
+{% if total is not none %}
+<h2>Result</h2>
+<p><strong>{{ total }}</strong></p>
+{% endif %}
+```
+
+---
+
+### Шаг 4: Запуск из my_web_calc
+
+Пока `(.venv)` включён (если в приглашении его нет, сначала активируй окружение в корне `PyCourse`):
+
+**Windows:**
 
 ```text
+cd my_web_calc
+python app.py
+```
+
+**macOS:**
+
+```text
+cd my_web_calc
+python3 app.py
+```
+
+Или проверь каркас урока:
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-5-flash-and-validation
 python starter\app.py
 ```
 
 **Mac/Linux:** `python starter/app.py`
 
-`7` + `5` → `12`; пустое поле → flash-ошибка.
+1. Введи `7` и `5` → результат `12`
+2. Оставь поле пустым → flash-ошибка, без падения
 
 ---
 
@@ -79,7 +151,7 @@ def calc():
     return render_template("calc.html", total=total)
 ```
 
-Flash выводится в [solution/templates/calc.html](solution/templates/calc.html) через `get_flashed_messages()`.
+Flash-сообщения выводятся в [solution/templates/calc.html](solution/templates/calc.html) через `get_flashed_messages()`.
 
 ---
 
@@ -107,13 +179,24 @@ python starter\app.py
 
 ## Задание для практики
 
-**Квест:** Скопируй в `my_web_calc/`, доделай TODO. **Эталон:** [solution/](solution/)
+**Квест:** Твой веб-калькулятор
+
+1. Скопируй [starter/](starter/) в **`my_web_calc/`** в корне проекта.
+2. Заполни все строки TODO.
+3. Измени текст flash-сообщений под себя.
+4. **Бонус:** добавь вычитание с выпадающим списком.
+
+**Эталон:** [solution/](solution/)
 
 ---
 
 ## Уголок отладки
 
-**Проблема:** `no secret key was set` — добавь `app.secret_key`.
+**Проблема:** `RuntimeError: The session is unavailable because no secret key was set`
+
+**Причина:** `flash()` вызван без `app.secret_key`.
+
+**Исправление:** Добавь `app.secret_key = "any-random-string"` после создания приложения Flask.
 
 ---
 
@@ -170,3 +253,9 @@ python starter\app.py
 → [Чеклист Блока 2](../README.md#block-2-readiness-checklist)  
 → [Чеклист выпуска Курса 2](../../STUDENT-MAP.ru.md#чеклист-выпуска-курса-2)  
 → [Курс 3: Разработка игр](../../../course-3-game-dev/README.md) — дальше Pygame!
+
+---
+
+*Блок 2 пройден — шаблоны, формы, CSS и проверка. Настоящие веб-приложения, собранные тобой!*
+
+[← Выбрать язык](README.md)

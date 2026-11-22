@@ -13,17 +13,17 @@
 
 ## Объяснение
 
-В Блоке 1 HTML был одной строкой. **Шаблоны** — отдельные файлы в `templates/`. Flask заполняет их через **Jinja2**.
+В Блоке 1 ты возвращал HTML одной большой строкой. **Шаблоны** — отдельные HTML-файлы в папке `templates/`. Flask заполняет их через **Jinja2**.
 
-`base.html` — рамка с меню и `{% block content %}`, куда каждая страница вставляет свой контент.
+Представь `base.html` как рамку для картины: ссылки меню и пустое место (`{% block content %}`), куда каждая страница рисует свой контент.
 
-**Новый термин:** `render_template("home.html", page_title="Home")` — Flask обрабатывает шаблон и отправляет HTML в браузер.
+**Новый термин:** `render_template("home.html", page_title="Home")` — Flask находит файл, запускает Jinja2 и отправляет готовый HTML в браузер.
 
 ---
 
 ### Шаг 1: Изучи base.html
 
-Дочерние страницы **расширяют** базу:
+В [starter/templates/base.html](starter/templates/base.html) лежит общее меню. Дочерние страницы его **расширяют**:
 
 ```html
 {% extends "base.html" %}
@@ -37,18 +37,26 @@
 ### Шаг 2: Маршрут Home
 
 ```python
-return render_template("home.html", page_title="Home", headline="Welcome to My Studio")
+@app.route("/")
+def home():
+    return render_template(
+        "home.html",
+        page_title="Home",
+        headline="Welcome to My Studio",
+    )
 ```
 
----
-
-### Шаг 3: Добавь About и Jokes
-
-**TODO в starter:** маршруты `/about` и `/jokes` с отдельными шаблонами.
+Переменные, которые ты передаёшь из Python, становятся `{{ headline }}` в HTML.
 
 ---
 
-### Шаг 4: Запуск
+### Шаг 3: Добавь маршруты About и Jokes
+
+**TODO в starter:** добавь маршруты `/about` и `/jokes` со своими шаблонами. Передай текст шутки переменными — та же идея, что в уроке 1.4 Блока 1, только теперь отдельные файлы шаблонов, а не одна длинная строка.
+
+---
+
+### Шаг 4: Запусти приложение
 
 **Путь A:**
 
@@ -57,11 +65,13 @@ cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-1-html-tem
 python starter\app.py
 ```
 
-**Путь B:** Скопируй `starter/` — см. [STUDENT-MAP](../STUDENT-MAP.ru.md).
+**Путь B:** Скопируй всю папку `starter/` в свой проект. Активируй venv и запусти `python app.py`. См. [STUDENT-MAP](../STUDENT-MAP.ru.md).
 
 **Mac/Linux:** `python starter/app.py`
 
-**Ожидаемый результат:** общее меню на всех страницах, разный контент в середине.
+Открой `http://127.0.0.1:5000/` и нажми **About** и **Jokes**.
+
+**Ожидаемый результат:** у всех трёх страниц одно и то же меню; меняется только середина.
 
 ---
 
@@ -97,7 +107,7 @@ if __name__ == "__main__":
     app.run(port=5000, debug=True)
 ```
 
-Дочерние шаблоны в `solution/templates/` — каждый наследует [solution/templates/base.html](solution/templates/base.html).
+Дочерние шаблоны лежат в `solution/templates/` — каждый расширяет [solution/templates/base.html](solution/templates/base.html).
 
 ---
 
@@ -118,21 +128,31 @@ python starter\app.py
 
 ## Быстрые упражнения
 
-1. Найди `{% block content %}` в `base.html`.
-2. Передай `bio="..."` в `about.html`.
-3. **Бонус:** страница `/contact`.
+1. **Место блока** — найди `{% block content %}` в `base.html`. Что туда попадает?
+2. **Новая переменная** — передай `bio="..."` в `about.html` и покажи её в `<p>`.
+3. **Четвёртая страница** — добавь `/contact` с новым дочерним шаблоном (бонус: ссылка в меню).
 
 ---
 
 ## Задание для практики
 
-**Квест:** Доделай Studio Pages — все TODO, три страницы работают. **Эталон:** [solution/](solution/)
+**Квест:** Доделай Studio Pages
+
+1. Заполни все строки TODO в `app.py` и дочерних шаблонах.
+2. Открой `/`, `/about` и `/jokes`.
+3. **Бонус:** напиши свою шутку в шаблоне Jokes.
+
+**Эталон:** [solution/](solution/)
 
 ---
 
 ## Уголок отладки
 
-**Проблема:** `TemplateNotFound: home.html` — нет файла в `templates/` рядом с `app.py`.
+**Проблема:** `TemplateNotFound: home.html`
+
+**Причина:** Flask ищет шаблоны в папке `templates/` рядом с `app.py`.
+
+**Исправление:** Проверь, что файл `starter/templates/home.html` есть, и запускай `app.py` из папки урока (или копируй `templates/` вместе с приложением).
 
 ---
 
@@ -186,4 +206,10 @@ python starter\app.py
 
 ## Что дальше
 
-→ [Урок 2.2: HTML-формы](../lesson-2-2-html-forms/README.md)
+→ [Урок 2.2: HTML-формы](../lesson-2-2-html-forms/README.md) — отправка данных через GET и POST.
+
+---
+
+*Один каркас, много страниц — студия обретает форму!*
+
+[← Выбрать язык](README.md)

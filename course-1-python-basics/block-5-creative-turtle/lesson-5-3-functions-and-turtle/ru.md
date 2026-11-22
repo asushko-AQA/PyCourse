@@ -106,7 +106,7 @@ python starter\snowflake.py
 
 ---
 
-## Практическое задание
+## Задание для практики
 
 **Квест:** Строитель снежинок
 
@@ -115,6 +115,25 @@ python starter\snowflake.py
 3. **Бонус:** Добавь вторую боковую ветку с `t.right(120)` и третьим `draw_branch(70)`.
 
 **Эталонное решение:** [solution/snowflake.py](solution/snowflake.py)
+
+---
+
+## Итоговый проект блока 5 — Галерея Turtle (`my_gallery/`)
+
+Покажи лучшие рисунки Turtle в одном скрипте:
+
+1. Создай **`my_gallery/`** в корне проекта.
+2. Скопируй [starter/gallery.py](starter/gallery.py) → **`my_gallery/gallery.py`**.
+3. Запусти — в одном окне должны появиться **цветная звезда** и **снежинка**.
+
+```text
+cd my_gallery
+python gallery.py
+```
+
+**Эталон:** [solution/gallery.py](solution/gallery.py)
+
+Отметь [чеклист выпуска Курса 1](../../STUDENT-MAP.md#course-1-graduation-checklist) — запусти все пять итоговых папок!
 
 ---
 

@@ -31,9 +31,45 @@ In [starter/templates/base.html](starter/templates/base.html), add the `<link>` 
 
 ---
 
-### Step 2: Style the page
+### Step 2: Learn a CSS rule
 
-Finish TODOs in [starter/static/style.css](starter/static/style.css):
+A **selector** names the part of the page you style, such as `body` or `nav a`. The look goes inside braces, one declaration per line: `{ property: value; }`.
+
+```css
+nav a {
+    color: #4a90d9;
+}
+```
+
+`nav a` means every link inside the menu. `#4a90d9` is the blue the solution uses for those links.
+
+Treat `body` as the centered container. The starter already sets the font. Add the rest inside that same `body` block:
+
+- `background: #f4f7fb;` — light gray-blue page
+- `color: #222;` — dark text
+- `max-width: 640px;` — keep the page a readable column
+- `margin: 0 auto;` — `auto` centers the column. The solution writes `margin: 2rem auto`, which centers the same way and also adds space above and below
+- `padding: 1rem;` and `line-height: 1.5;` — space inside the edges, and lines that are easier to read
+
+The solution uses these selectors and colors, so you can finish every TODO from this list:
+
+| Selector | What to write |
+|----------|----------------|
+| `body` | background `#f4f7fb`, text `#222`, `max-width: 640px`, `margin: 2rem auto`, `padding: 1rem`, `line-height: 1.5` |
+| `nav` | `border-bottom: 2px solid #4a90d9` (blue line under the menu) |
+| `nav a` | `color: #4a90d9`, `font-weight: bold`, `text-decoration: none`, `margin-right: 1rem` |
+| `nav a:hover` | `text-decoration: underline` when the pointer is on the link |
+| `h1` | `color: #2c5282` |
+| `button` | background `#4a90d9`, text `white`, `border: none`, `padding: 0.5rem 1rem`, `border-radius: 4px`, `cursor: pointer` |
+| `input[type="text"]` | `border: 1px solid #ccc`, `padding: 0.4rem`, `border-radius: 4px`, `width: 100%`, `max-width: 280px` |
+
+`@media` can change rules on a narrow screen. The solution uses `@media (max-width: 480px)` to set `body` to `margin: 1rem` and `padding: 0.5rem`.
+
+---
+
+### Step 3: Style the page
+
+Finish the TODOs in [starter/static/style.css](starter/static/style.css) with the rules from Step 2:
 
 - Background color and `max-width` on `body`
 - Nav link colors
@@ -41,7 +77,7 @@ Finish TODOs in [starter/static/style.css](starter/static/style.css):
 
 ---
 
-### Step 3: Add the About route
+### Step 4: Add the About route
 
 ```python
 @app.route("/about")
@@ -57,7 +93,7 @@ Home and About both extend `base.html` and share the same CSS.
 
 ---
 
-### Step 4: Run the app
+### Step 5: Run the app
 
 **Path A:**
 

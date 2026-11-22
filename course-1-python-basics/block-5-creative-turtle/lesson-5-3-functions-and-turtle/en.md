@@ -215,7 +215,7 @@ Pick the best answer for each question. Try without scrolling down first!
 
 ## What's Next
 
-→ [Course 2: Web Applications with Python](../../../../course-2-web-apps/README.md) — you finished Course 1! Next: Flask and web pages.
+→ [Course 2: Web Applications with Python](../../../course-2-web-apps/README.md) — you finished Course 1! Next: Flask and web pages.
 
 ---
 

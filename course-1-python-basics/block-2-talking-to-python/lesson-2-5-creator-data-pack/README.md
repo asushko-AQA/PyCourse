@@ -26,12 +26,12 @@
 - Combine all Block 2 skills in one script
 - Create `my_data/` folder (like Block 1's `my_mission/`)
 - Fix a broken quote on purpose
-- Complete the [Block 2 readiness checklist](../../README.md#block-2-readiness-checklist)
+- Complete the [Block 2 readiness checklist](../README.md#block-2-readiness-checklist)
 
 ## Before you start / Перед стартом
 
 - [ ] Completed Lessons [2.1](../lesson-2-1-variables/README.md) through [2.4](../lesson-2-4-strings-in-action/README.md)
-- [ ] Review the [Block 2 checklist](../../README.md#block-2-readiness-checklist)
+- [ ] Review the [Block 2 checklist](../README.md#block-2-readiness-checklist)
 
 ## Files in this lesson / Файлы урока
 

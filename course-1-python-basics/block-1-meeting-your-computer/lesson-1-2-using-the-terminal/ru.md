@@ -47,11 +47,13 @@ C:\Users\ТвоёИмя\Documents\PyCourse>
 
 `cd` — **c**hange **d**irectory, перейти в другую папку.
 
+Шаг 1 оставил тебя внутри `PyCourse`. Там уже лежит `course-1-python-basics`. Зайди в неё (команда одна и на Windows, и на macOS):
+
 ```text
-cd Documents
+cd course-1-python-basics
 ```
 
-**Ожидается:** приглашение обновится. Ты внутри `Documents`.
+**Ожидается:** приглашение обновится и закончится на `course-1-python-basics`. Ты внутри этой папки.
 
 **Совет:** набери первые буквы имени папки и нажми **Tab** — терминал может дописать имя сам!
 
@@ -65,7 +67,7 @@ cd Documents
 cd ..
 ```
 
-**Ожидается:** в приглашении родительская папка. Ты вернулся на один уровень.
+**Ожидается:** приглашение снова заканчивается на `PyCourse`. Ты вернулся на один уровень.
 
 ---
 
@@ -121,10 +123,18 @@ cls
 
 ### Шаг 6: Перейти в папку этого урока
 
-Из корня проекта (подстрой путь под себя):
+Из корня проекта (`PyCourse` — если приглашение ещё на `course-1-python-basics`, сначала `cd ..`):
+
+**Windows:**
 
 ```text
 cd course-1-python-basics\block-1-meeting-your-computer\lesson-1-2-using-the-terminal
+```
+
+**macOS:**
+
+```text
+cd course-1-python-basics/block-1-meeting-your-computer/lesson-1-2-using-the-terminal
 ```
 
 **Ожидается:** приглашение заканчивается на `lesson-1-2-using-the-terminal>`.
@@ -150,8 +160,8 @@ dir
 ### Свиток команд (терминал)
 
 ```text
-# Войти в папку
-cd Documents
+# Войти в папку, которая уже лежит внутри PyCourse
+cd course-1-python-basics
 
 # Выйти на уровень выше
 cd ..
@@ -214,7 +224,7 @@ Treasure found!
 
 ## Быстрые упражнения
 
-1. **`cd` на Рабочий стол и назад** — `cd Desktop`, затем `cd ..`.
+1. **`cd` в папку курса и назад** — из `PyCourse`: `cd course-1-python-basics`, затем `cd ..`. Смотри, как меняется приглашение.
 2. **Считай файлы Python** — `dir` в любой папке. Сколько файлов `.py`?
 3. **Запиши путь** — полный путь из приглашения терминала в тетрадь.
 
@@ -228,23 +238,27 @@ Treasure found!
 
 ### Путь A — структура PyCourse
 
-1. Из корня проекта (`PyCourse`).
-2. `cd course-1-python-basics\block-1-meeting-your-computer`
-3. `dir` — список уроков.
+1. Из корня проекта (`PyCourse`). Приглашение заканчивается на `PyCourse`.
+2. Windows: `cd course-1-python-basics\block-1-meeting-your-computer` — macOS: `cd course-1-python-basics/block-1-meeting-your-computer`
+3. `dir` (macOS: `ls`) — список уроков.
 4. `cd lesson-1-1-installing-python`
-5. `dir` — найди `starter` и `README.md`.
+5. `dir` (macOS: `ls`) — найди `starter` и `README.md`.
 6. `cd ..` — вернись на уровень выше.
+7. Убедись, что ты снова в `block-1-meeting-your-computer`.
 
 Чеклист: [exercises/quest_paths.md](exercises/quest_paths.md)
 
-### Путь B — любой компьютер
+### Путь B — лабиринт внутри проекта
 
-1. На Рабочем столе создай `quests\treasure`
-2. Положи туда `clue.txt` с текстом: `The treasure is in treasure.py`
-3. Скопируй `starter/treasure.py` в эту папку
-4. В терминале: `cd Desktop\quests\treasure`
-5. `dir` — видишь оба файла
-6. `python treasure.py` — `Treasure found!`
+1. Приглашение должно заканчиваться на `PyCourse` (новый терминал VS Code или `cd ..`, пока не вернёшься).
+2. В проводнике: правый клик по `PyCourse` → **New Folder** → `quests`. Внутри неё — **New Folder** → `treasure`.
+3. В `treasure` создай `clue.txt` с текстом: `The treasure is in treasure.py`
+4. Скопируй `starter/treasure.py` этого урока в `quests/treasure`.
+5. В терминале:
+   **Windows:** `cd quests\treasure`
+   **macOS:** `cd quests/treasure`
+6. `dir` (macOS: `ls`) — видишь оба файла
+7. `python treasure.py` — `Treasure found!`
 
 **Бонус:**
 

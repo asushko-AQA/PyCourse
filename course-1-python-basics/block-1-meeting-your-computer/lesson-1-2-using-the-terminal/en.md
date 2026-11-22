@@ -47,11 +47,13 @@ The path before `>` is your location in the maze.
 
 `cd` means **c**hange **d**irectory — go to another folder.
 
+Step 1 left you inside `PyCourse`. That folder already contains `course-1-python-basics`. Walk into it (same command on Windows and macOS):
+
 ```text
-cd Documents
+cd course-1-python-basics
 ```
 
-**Expected:** The prompt updates. You are now inside `Documents`.
+**Expected:** The prompt updates and now ends with `course-1-python-basics`. You are inside that folder.
 
 **Tip:** Type the first few letters of a folder name and press **Tab** — the terminal can autocomplete the name for you!
 
@@ -65,7 +67,7 @@ Two dots `..` mean "the folder above" — one level up.
 cd ..
 ```
 
-**Expected:** The prompt shows the parent folder. You moved back one room.
+**Expected:** The prompt ends with `PyCourse` again. You moved back one room.
 
 ---
 
@@ -121,10 +123,18 @@ On **Mac/Linux**, use `clear`.
 
 ### Step 6: Navigate to this lesson's folder
 
-From your project root, walk into this lesson (adjust if your path is different):
+From your project root (`PyCourse` — run `cd ..` first if the prompt still ends with `course-1-python-basics`), walk into this lesson:
+
+**Windows:**
 
 ```text
 cd course-1-python-basics\block-1-meeting-your-computer\lesson-1-2-using-the-terminal
+```
+
+**macOS:**
+
+```text
+cd course-1-python-basics/block-1-meeting-your-computer/lesson-1-2-using-the-terminal
 ```
 
 **Expected:** Prompt ends with `lesson-1-2-using-the-terminal>`.
@@ -150,8 +160,8 @@ Open [starter/treasure.py](starter/treasure.py) in VS Code to peek at the code (
 ### Command scroll (terminal commands)
 
 ```text
-# Walk into a folder
-cd Documents
+# Walk into a folder that already lives inside PyCourse
+cd course-1-python-basics
 
 # Walk back up one level
 cd ..
@@ -216,7 +226,7 @@ If you see that line — **Level 2 Complete!** You navigated the maze and ran a 
 
 Do these three mini-quests (about 2 minutes each):
 
-1. **`cd` to Desktop and back** — `cd Desktop`, then `cd ..`. Watch how the prompt changes.
+1. **`cd` into the course folder and back** — from `PyCourse`, run `cd course-1-python-basics`, then `cd ..`. Watch how the prompt changes.
 2. **Count Python files** — `dir` in any folder. How many `.py` files do you see? Write the number down.
 3. **Copy your path** — write the full path shown in your terminal prompt in a notebook. That is your "you are here" marker on the maze map.
 
@@ -230,24 +240,27 @@ Do these three mini-quests (about 2 minutes each):
 
 ### Path A — PyCourse folder layout
 
-1. Start from your project root (`PyCourse` or similar).
-2. `cd course-1-python-basics\block-1-meeting-your-computer`
-3. `dir` — list all lesson folders.
+1. Start from your project root (`PyCourse`). The prompt should end with `PyCourse`.
+2. Windows: `cd course-1-python-basics\block-1-meeting-your-computer` — macOS: `cd course-1-python-basics/block-1-meeting-your-computer`
+3. `dir` (macOS: `ls`) — list all lesson folders.
 4. `cd lesson-1-1-installing-python`
-5. `dir` — find `starter` and `README.md`.
+5. `dir` (macOS: `ls`) — find `starter` and `README.md`.
 6. `cd ..` — return one level up.
 7. Confirm you are back in `block-1-meeting-your-computer`.
 
 Use the tick-box checklist: [exercises/quest_paths.md](exercises/quest_paths.md)
 
-### Path B — Any computer (build your own maze)
+### Path B — Build a maze inside the project
 
-1. On Desktop, create folders: `quests\treasure`
-2. Create `clue.txt` inside with: `The treasure is in treasure.py`
-3. Copy `starter/treasure.py` into `quests\treasure`
-4. In terminal: `cd Desktop\quests\treasure` (adjust path to your Desktop)
-5. `dir` — see `clue.txt` and `treasure.py`
-6. `python treasure.py` — see `Treasure found!`
+1. Make sure the prompt ends with `PyCourse` (open a new VS Code terminal, or `cd ..` until it does).
+2. In Explorer, right-click `PyCourse` → **New Folder** → `quests`. Inside it, **New Folder** → `treasure`.
+3. Inside `treasure`, create `clue.txt` with: `The treasure is in treasure.py`
+4. Copy `starter/treasure.py` from this lesson into `quests/treasure`.
+5. In the terminal:
+   **Windows:** `cd quests\treasure`
+   **macOS:** `cd quests/treasure`
+6. `dir` (macOS: `ls`) — see `clue.txt` and `treasure.py`
+7. `python treasure.py` — see `Treasure found!`
 
 **Bonus stars (optional):**
 

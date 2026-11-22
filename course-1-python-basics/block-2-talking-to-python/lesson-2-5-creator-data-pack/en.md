@@ -17,7 +17,7 @@ Block 2 finale! You will pack **variables**, **input**, **f-strings**, **math**,
 
 Create **`my_data/`** at your **project root** (next to `my_mission/`, not inside this lesson folder). Copy the skeleton into that folder and make it yours.
 
-Before you start, tick the [Block 2 readiness checklist](../../README.md#block-2-readiness-checklist).
+Before you start, tick the [Block 2 readiness checklist](../README.md#block-2-readiness-checklist).
 
 ---
 

@@ -156,15 +156,37 @@ You can also open the ready-made file in this lesson folder: [starter/hello.py](
 
 Time to cast your spell! Use the **terminal** (Command Portal).
 
-### 1. Go to the folder where `hello.py` lives
+### 1. Stand in the folder where `hello.py` lives
 
-If your file is in `Documents\PyCourse`, type:
+In Step 6 you opened `PyCourse` in VS Code. **Terminal → New Terminal** already starts inside that folder. Look at the prompt:
+
+**Windows** (PowerShell or Command Prompt) — it ends with `PyCourse>`:
+
+```text
+PS C:\Users\YourName\Documents\PyCourse>
+```
+
+**macOS** — the prompt shows the folder name `PyCourse`:
+
+```text
+YourName@Mac PyCourse %
+```
+
+If you see `PyCourse`, you are already in the right room. **Do not type `cd`.** Skip to step 2 and run `python hello.py`.
+
+Only if you opened a **brand-new** terminal that starts in your home folder (the prompt shows your name, not `PyCourse`), walk into the project first. `cd` means **c**hange **d**irectory — walk to a new folder.
+
+**Windows:**
 
 ```text
 cd Documents\PyCourse
 ```
 
-*(Change the path if your folder is somewhere else. `cd` means **c**hange **d**irectory — walk to a new folder.)*
+**macOS:**
+
+```text
+cd Documents/PyCourse
+```
 
 ### 2. Run your script
 

@@ -156,15 +156,37 @@ print("My code is alive!")
 
 Пора произнести заклинание! Используй **терминал** (Портал команд).
 
-### 1. Перейди в папку, где лежит `hello.py`
+### 1. Встань в папку, где лежит `hello.py`
 
-Если файл в `Documents\PyCourse`, введи:
+На шаге 6 ты открыл `PyCourse` в VS Code. **Terminal → New Terminal** уже стартует внутри этой папки. Посмотри на приглашение:
+
+**Windows** (PowerShell или командная строка) — оно заканчивается на `PyCourse>`:
+
+```text
+PS C:\Users\ТвоёИмя\Documents\PyCourse>
+```
+
+**macOS** — в приглашении видно имя папки `PyCourse`:
+
+```text
+YourName@Mac PyCourse %
+```
+
+Если видишь `PyCourse`, ты уже в нужной комнате. **`cd` вводить не нужно.** Сразу шаг 2: `python hello.py`.
+
+`cd` нужен только в **новом** окне терминала, которое открылось в домашней папке (в приглашении твоё имя, а не `PyCourse`). `cd` — **c**hange **d**irectory, «перейти в папку».
+
+**Windows:**
 
 ```text
 cd Documents\PyCourse
 ```
 
-*(Измени путь, если папка в другом месте. `cd` — **c**hange **d**irectory, «перейти в папку».)*
+**macOS:**
+
+```text
+cd Documents/PyCourse
+```
 
 ### 2. Запусти скрипт
 

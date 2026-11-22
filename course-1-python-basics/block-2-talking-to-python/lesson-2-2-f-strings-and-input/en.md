@@ -45,7 +45,7 @@ Without `f`, Python prints the literal text `{name}` — a common bug!
 
 ### Step 3: Open greeting.py
 
-Open [starter/greeting.py](starter/greeting.py). Two questions and two f-string responses are ready as TODOs.
+Open [starter/greeting.py](starter/greeting.py). Write the two `input()` questions and the two f-string replies where the `# TODO` comments are.
 
 ---
 

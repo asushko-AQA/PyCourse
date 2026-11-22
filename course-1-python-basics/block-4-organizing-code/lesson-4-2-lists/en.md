@@ -46,7 +46,7 @@ Open [starter/inventory.py](starter/inventory.py). Two items are already in the 
 
 ### Step 2: Add an item
 
-Uncomment or complete the `.append("key")` line. The list grows by one slot.
+Write the `.append("key")` line where the TODO is. The list grows by one slot.
 
 ---
 

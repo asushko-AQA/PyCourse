@@ -119,14 +119,16 @@ Combine `if`, `while`, and `input()` in one game:
 
 1. Create **`my_quest/`** at project root (next to `my_data/`).
 2. Copy [starter/gate_quest.py](starter/gate_quest.py) → **`my_quest/gate_quest.py`**.
-3. Run:
+3. In your copy, set `secret = random.randint(1, 20)` and `guesses_left = 5`. `random.randint` picks a random whole number — here, from 1 through 20.
+4. Fill in the `while` loop: a matching guess prints `Correct! The gate opens. Quest complete!` and stops with `break`; a low guess prints `Too low.`; a high guess prints `Too high.`; each miss uses one try; when tries hit 0, print `Out of tries! The secret was ...`.
+5. Run:
 
 ```text
 cd my_quest
 python gate_quest.py
 ```
 
-Guess the secret number (1–10) in three tries. Uses `random.randint` — a new Python tool for random picks.
+**Expected:** the game asks `Your guess:` up to five times. A correct guess ends early. Five misses print the secret number.
 
 **Reference:** [solution/gate_quest.py](solution/gate_quest.py)
 

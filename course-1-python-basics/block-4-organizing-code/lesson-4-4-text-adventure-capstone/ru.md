@@ -103,7 +103,7 @@ The chest opens! You win!
 
 ## Пример кода
 
-См. [solution/game.py](solution/game.py) после своей версии. Каркас [starter/game.py](starter/game.py) можно копировать прямо в `my_adventure/`.
+Скопируй [starter/game.py](starter/game.py) в `my_adventure/` и заполни каждый `# TODO`. Комнаты уже написаны. Ты пишешь `show_room`, `move`, `show_inventory`, `take_item` и игровой цикл. В [solution/game.py](solution/game.py) загляни только после своей попытки.
 
 ---
 

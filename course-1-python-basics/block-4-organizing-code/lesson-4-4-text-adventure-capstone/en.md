@@ -105,7 +105,7 @@ Rename rooms, change descriptions, add a fourth room, or invent a new win item. 
 
 ## Code Example
 
-See [solution/game.py](solution/game.py) after you try your own version. The starter in [starter/game.py](starter/game.py) is a working reference you can copy directly into `my_adventure/`.
+Copy [starter/game.py](starter/game.py) into `my_adventure/` and fill in every `# TODO`. The rooms are already written. You write `show_room`, `move`, `show_inventory`, `take_item`, and the game loop. Peek at [solution/game.py](solution/game.py) only after you try.
 
 ---
 

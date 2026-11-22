@@ -107,7 +107,7 @@ python starter\choose_path.py
 
 1. Угадай вывод для `left` и `pizza` до запуска.
 2. Добавь `elif choice == "straight":` с новым сообщением.
-3. Введи `Left` с большой буквы — сработает ли?
+3. Введи `Left` с большой буквы. Совпадения **не** будет: большая L — другой символ, не `"left"`. Исправь строку ввода: `choice = input("Go left or right? (left/right): ").lower()`. Метод `.lower()` превращает `"Left"` в `"left"` до проверки `if`.
 
 ---
 

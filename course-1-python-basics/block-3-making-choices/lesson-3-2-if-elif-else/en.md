@@ -84,7 +84,7 @@ Thanks for choosing!
 ## Code Example
 
 ```python
-choice = input("Go left or right? (left/right): ").lower().strip()
+choice = input("Go left or right? (left/right): ")
 
 if choice == "left":
     print("You find a glowing crystal! +10 quest points.")
@@ -93,8 +93,6 @@ elif choice == "right":
 else:
     print("You sit down for a snack. Adventure can wait!")
 ```
-
-**Tip:** `.lower()` turns `"Left"` into `"left"` so your branches still match.
 
 ---
 
@@ -113,7 +111,7 @@ Try `left`, `right`, and `snack` as inputs.
 
 1. **Predict** — before running, write what prints for `left` and for `pizza`.
 2. **Third path** — add `elif choice == "straight":` with a new message between `right` and `else`.
-3. **Case test** — type `Left` (capital L). Does it match? Why not?
+3. **Case test** — type `Left` (capital L). It does **not** match `"left"`, because capital L is a different character. Fix it by adding `.lower()` on the input line: `choice = input("Go left or right? (left/right): ").lower()`. That turns `"Left"` into `"left"` before the `if` checks it.
 
 ---
 

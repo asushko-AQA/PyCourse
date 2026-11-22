@@ -45,7 +45,7 @@ print(f"Hello, {name}!")
 
 ### Шаг 3: Открой greeting.py
 
-Открой [starter/greeting.py](starter/greeting.py). Два вопроса и два ответа f-строками ждут тебя в TODO.
+Открой [starter/greeting.py](starter/greeting.py). Напиши два вопроса через `input()` и два ответа f-строками там, где стоят `# TODO`.
 
 ---
 

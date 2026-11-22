@@ -84,7 +84,6 @@ python starter\character_sheet.py
 Name: Alex
 Age: 11
 Favorite game: Minecraft
-Edit the variables above, then run again!
 ```
 
 ---
@@ -135,7 +134,6 @@ python starter\character_sheet.py
 Name: Alex
 Age: 11
 Favorite game: Minecraft
-Edit the variables above, then run again!
 ```
 
 ---

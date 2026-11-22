@@ -13,66 +13,38 @@
 
 ## Объяснение
 
-Добро пожаловать в **Веб-мастерскую**! В Курсе 1 ты запускал скрипты Python на компьютере. В Курсе 2 ты будешь создавать **веб-приложения** — программы, которые общаются с браузером. Сначала нужен отдельный, чистый набор инструментов для веб-проекта.
+Добро пожаловать в **Веб-мастерскую**! Прежде чем собирать страницы в браузере, нужен чистый ящик для инструментов вроде Flask.
 
-**Виртуальное окружение** (venv) — это папка (обычно `.venv`), в которой хранятся пакеты **только для одного проекта**. Представь подписанный ящик с инструментами: для игры — один набор, для веба — другой. Без venv команда `pip install` может смешивать пакеты в глобальный Python и вызывать конфликты версий.
+**Виртуальное окружение** (`.venv`) — подписанный ящик только для этого проекта. Пакеты из `pip` остаются внутри и не смешиваются с другими проектами на компьютере.
 
-**`pip`** — установщик пакетов Python. В активированном venv команда `pip install flask` ставит Flask **только** в ящик этого проекта.
+**Один ящик на весь Курс 2.** Создай `.venv` в папке, которую открываешь в VS Code. В репозитории PyCourse это **корень проекта** (`PyCourse`). Урок 1.1 и капстоуны `my_web_madlibs/` и `my_web_calc/` активируют **тот же** `.venv`. Не создавай второй `.venv` внутри папки урока.
 
-**Комментарии:** строки с `#` — заметки для людей, Python их пропускает. В [starter/check_setup.py](starter/check_setup.py) ты увидишь `# TODO` — места, где **ты** дописываешь код.
+**Путь A — репозиторий PyCourse:** **File → Open Folder** → `PyCourse`. **Terminal → New Terminal** уже стартует там. Если приглашение заканчивается на `PyCourse`, ты на месте. **Не** делай `cd` в папку урока до `python -m venv .venv`.
 
-**Путь A — репозиторий PyCourse:**
+**Путь B — своя папка:** создай папку (например `web_workshop`), открой **её** в VS Code и скопируй туда [starter/check_setup.py](starter/check_setup.py). Все команды ниже выполняются в открытой папке. `.venv` лежит рядом с этой копией.
 
-```text
-cd course-2-web-apps\block-0-environment-setup\lesson-0-1-virtual-environments
-```
-
-**Путь B — своя папка:** создай пустую папку (например `my-web-workshop`), открой её в VS Code и выполняй те же команды.
+Один раз проверь Python: `python --version` должен показать `Python 3.12` или новее. На macOS, если `python` не найден, используй `python3 --version` и дальше в уроке пиши `python3` вместо `python`.
 
 ---
 
-### Шаг 1: Открой папку урока в VS Code
+### Шаг 1: Создай `.venv`
 
-Открой папку урока в VS Code. Открой встроенный терминал: **Terminal → New Terminal**.
-
-Проверь Python:
-
-```text
-python --version
-```
-
-Должно быть `Python 3.12` или новее.
-
----
-
-### Шаг 2: Создай виртуальное окружение
-
-Из папки урока выполни:
+В терминале VS Code (корень `PyCourse` для пути A, своя папка для пути B):
 
 ```text
 python -m venv .venv
 ```
 
-Появится папка `.venv` — твой изолированный ящик с инструментами. Это может занять несколько секунд.
-
-**Ожидаемый результат:** в списке файлов появилась папка `.venv`. Заглядывать внутрь не обязательно.
+Папка `.venv` появится **здесь**. Это может занять несколько секунд.
 
 ---
 
-### Шаг 3: Активируй venv
+### Шаг 2: Активируй venv
 
-Активация говорит терминалу использовать Python из `.venv`, а не глобальный.
-
-**Windows PowerShell:**
+**Windows PowerShell** (обычный терминал VS Code):
 
 ```text
 .venv\Scripts\Activate.ps1
-```
-
-Если красная ошибка про запрет скриптов, выполни **один раз** (потом снова активируй):
-
-```text
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 **Windows Command Prompt (cmd):**
@@ -81,98 +53,93 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 .venv\Scripts\activate.bat
 ```
 
-**Mac / Linux:**
+**macOS / Linux:**
 
 ```text
 source .venv/bin/activate
 ```
 
-**Ожидаемый результат:** в начале строки приглашения появится `(.venv)` — ящик активен.
-
-Чтобы **деактивировать** (для тренировки):
-
-```text
-deactivate
-```
+Когда активация сработала, в начале приглашения часто видно `(.venv)`. После этого можно менять папки — ящик остаётся открытым.
 
 ---
 
-### Шаг 4: Установи Flask через pip
-
-Когда в приглашении видно `(.venv)`:
+### Шаг 3: Установи Flask через pip
 
 ```text
 pip install flask
 ```
 
-**Ожидаемый вывод (последние строки могут отличаться):**
-
-```text
-Successfully installed Flask-3.x.x ...
-```
-
-Проверь список пакетов:
-
-```text
-pip list
-```
-
-Найди строку с `Flask`.
+`pip` — установщик пакетов Python. Он скачивает Flask только в твой `.venv`.
 
 ---
 
-### Шаг 5: Допиши check_setup.py
+### Шаг 4: Два новых инструмента и проверочный скрипт
 
-Открой [starter/check_setup.py](starter/check_setup.py). Выполни три пункта `# TODO`:
+Открой [starter/check_setup.py](starter/check_setup.py). Каркас уже содержит `try` / `except`. Тебе нужно дописать `print` на местах `# TODO`.
 
-1. Импортируй `flask` внутри блока `try`
-2. Если импорт успешен — напечатай `"venv ready"`
-3. При `ImportError` — напечатай понятные шаги по настройке
+**`try` / `except`** — страховочная сетка. Python выполняет блок `try`. Если `import flask` не удался, возникает `ImportError`, и выполнение прыгает в `except`, а не падает с ошибкой. Там ты печатаешь шаги настройки.
 
-**Подсказка — структура:**
+**`importlib.metadata.version("flask")`** узнаёт версию установленного Flask и возвращает текст вроде `3.1.3`. Вставь его в f-строку: `print(f"Flask version: {importlib.metadata.version('flask')}")`.
+
+Допиши строки `# TODO` внутри `main()`. Форма уже есть в файле:
 
 ```python
 import importlib.metadata
 
+
 def main():
     try:
         import flask
-        print("venv ready")
-        print(f"Flask version: {importlib.metadata.version('flask')}")
+        # TODO: print "venv ready"
+        # TODO: print the version with importlib.metadata.version("flask")
     except ImportError:
         print("Flask is not installed yet.")
-        # напечатай шаги по порядку
+        # TODO: print "Steps:" and three numbered lines
+        # (activate .venv, pip install flask, run this script again)
 ```
 
----
-
-### Шаг 6: Запусти проверочный скрипт
-
-При активном venv:
+**Путь A — Windows** (из `PyCourse`, когда уже видно `(.venv)`):
 
 ```text
+cd course-2-web-apps\block-0-environment-setup\lesson-0-1-virtual-environments
 python starter\check_setup.py
 ```
 
-**Mac/Linux:** `python starter/check_setup.py`
+**Путь A — macOS:**
 
-**Ожидаемый вывод:**
+```text
+cd course-2-web-apps/block-0-environment-setup/lesson-0-1-virtual-environments
+python starter/check_setup.py
+```
+
+**Путь B:** ты скопировал `check_setup.py` рядом с `.venv`, поэтому запусти `python check_setup.py`.
+
+**Ожидаемый вывод (venv активен, Flask установлен):**
 
 ```text
 venv ready
 Flask version: 3.x.x
 ```
 
-Если видишь шаги настройки — перечитай Шаг 3 и Шаг 4: Flask, скорее всего, не установлен в **активном** venv.
+---
+
+### Шаг 5: Деактивация (по желанию)
+
+```text
+deactivate
+```
+
+Приглашение снова обычное. Запусти ту же команду `python starter\check_setup.py` ещё раз (macOS: `python3 starter/check_setup.py`) — дружелюбное сообщение подскажет, что делать. Перед следующим уроком активируй venv снова.
 
 ---
 
 ## Пример кода
 
-**Файл: [solution/check_setup.py](solution/check_setup.py)** (после выполнения TODO)
+**Файл: [solution/check_setup.py](solution/check_setup.py)** (после TODO)
 
 ```python
 import importlib.metadata
+
 
 def main():
     try:
@@ -195,55 +162,69 @@ main()
 
 ## Запуск кода
 
+Запускай из папки, которую открыл (`PyCourse` для пути A). Создай и активируй `.venv` **там**, затем зайди в урок и запусти скрипт.
+
+**Windows PowerShell:**
+
 ```text
-cd course-2-web-apps\block-0-environment-setup\lesson-0-1-virtual-environments
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install flask
+cd course-2-web-apps\block-0-environment-setup\lesson-0-1-virtual-environments
 python starter\check_setup.py
 ```
 
-**Mac/Linux:** `source .venv/bin/activate` и прямые слэши в путях.
+**macOS / Linux:**
+
+```text
+python3 -m venv .venv
+source .venv/bin/activate
+pip install flask
+cd course-2-web-apps/block-0-environment-setup/lesson-0-1-virtual-environments
+python3 starter/check_setup.py
+```
+
+**Ожидаемый вывод (venv активен, Flask установлен):**
+
+```text
+venv ready
+Flask version: 3.x.x
+```
 
 ---
 
 ## Быстрые упражнения
 
-1. **Найди venv** — с активным venv выполни `pip list`. Деактивируй и снова `pip list`. Flask не должен быть в глобальном списке.
-2. **Не тот ящик** — деактивируй, запусти `python starter\check_setup.py`. Увидишь подсказку? Снова активируй и запусти.
-3. **Имя папки** — оставь `.venv`; следующие уроки ожидают это имя.
+1. Выполни `pip list` и найди `Flask` в списке.
+2. Введи `deactivate` и снова `pip list`. Во втором списке Flask быть не должно. Активируй ещё раз.
+3. Пока видно `(.venv)`, выполни `where python` (Windows) или `which python` (macOS). В пути должно быть `.venv`. Если переименуешь или перенесёшь папку проекта, удали `.venv` и повтори шаги 1–3. Перенесённый ящик хранит старые пути и перестаёт работать.
 
 ---
 
 ## Задание для практики
 
-**Квест:** Инспектор мастерской
+**Квест:** Наклейка мастерской
 
-1. Выполни все TODO в [starter/check_setup.py](starter/check_setup.py), чтобы поведение совпадало с решением.
-2. Добавь строку `print("Toolbox active!")` при успешном импорте Flask.
-3. Запусти скрипт дважды: с активным venv и после `deactivate`. Сравни вывод.
-
-**Бонус:** в блоке `except` добавь четвёртую подсказку: `print("  4. Make sure (.venv) shows in your terminal prompt")`.
+1. Когда печатается `venv ready`, добавь в скрипт ещё строку: `print("My web workshop is open!")`
+2. Запусти снова и покажи вывод родителям или учителю.
 
 **Эталонное решение:** [solution/check_setup.py](solution/check_setup.py)
 
 ---
 
-## Разбор ошибок
+## Уголок отладки
 
-**Проблема:** `ImportError: No module named 'flask'` даже после `pip install flask`.
+**Проблема:** `Activate.ps1` cannot be loaded because running scripts is disabled.
 
-**Причина:** venv, скорее всего, **не активирован**. Flask установился в другое место, или скрипт запущен глобальным Python.
+**Причина:** настройки Windows блокируют некоторые скрипты PowerShell.
 
-**Решение:** снова активируй (Шаг 3), убедись что видно `(.venv)`, выполни `pip install flask` ещё раз, затем `python starter\check_setup.py`.
+**Решение:** попроси родителя или учителя, затем **один раз** выполни в PowerShell и активируй снова:
 
----
+```text
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
-**Проблема:** PowerShell пишет, что `Activate.ps1` нельзя загрузить — скрипты отключены.
-
-**Причина:** в некоторых настройках Windows локальные скрипты заблокированы.
-
-**Решение:** `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`, затем снова активация.
+Или не используй PowerShell: в **cmd** запусти `.venv\Scripts\activate.bat`.
 
 ---
 
@@ -252,16 +233,16 @@ python starter\check_setup.py
 Выбери лучший ответ на каждый вопрос. Сначала попробуй без подсказок!
 
 1. На что похоже **виртуальное окружение** (`.venv`) в этом уроке?
-   - **a)** Папка, где пакеты только для этого проекта
+   - **a)** Резервная копия всех твоих Python-файлов
    - **b)** Особый браузер для проверки сайтов
-   - **c)** Резервная копия всех твоих Python-файлов
+   - **c)** Папка, где пакеты только для этого проекта
    - **d)** Команда, которая удаляет старые пакеты
 
 2. Когда venv **активен**, что часто видно в начале строки терминала?
    - **a)** `[Flask]`
-   - **b)** `(.venv)`
+   - **b)** `C:\Windows\`
    - **c)** `>>> `
-   - **d)** `C:\Windows\`
+   - **d)** `(.venv)`
 
 3. Что делает `pip install flask` в **активированном** venv?
    - **a)** Ставит Flask только внутрь этого venv
@@ -270,26 +251,26 @@ python starter\check_setup.py
    - **d)** Копирует Flask во все Python-проекты на ПК
 
 4. Зачем активировать venv перед `python starter\check_setup.py`?
-   - **a)** Чтобы Python нашёл Flask, установленный в venv
-   - **b)** Потому что `.py` запускаются только после активации
+   - **a)** Потому что `.py` запускаются только после активации
+   - **b)** Чтобы Python нашёл Flask, установленный в venv
    - **c)** Чтобы скрипт работал в два раза быстрее
    - **d)** Потому что VS Code иначе не откроет терминал
 
 5. Что делает `deactivate`?
-   - **a)** Выключает venv и возвращает обычный Python в терминале
+   - **a)** Удаляет Flask из интернета
    - **b)** Навсегда удаляет папку `.venv`
-   - **c)** Удаляет Flask из интернета
+   - **c)** Выключает venv и возвращает обычный Python в терминале
    - **d)** Закрывает VS Code
 
 ---
 
 <details><summary>Нажми, чтобы увидеть ответы</summary>
 
-1. **a)** venv — ящик инструментов проекта; пакеты отделены от других проектов.
-2. **b)** `(.venv)` в приглашении значит, что окружение активно.
+1. **c)** venv — ящик инструментов проекта; пакеты отделены от других проектов.
+2. **d)** `(.venv)` в приглашении значит, что окружение активно.
 3. **a)** `pip install` в активном venv ставит пакеты только туда.
-4. **a)** Без активации Python может не видеть пакеты из `.venv`.
-5. **a)** `deactivate` выходит из venv — снова системный Python.
+4. **b)** Без активации Python может не видеть пакеты из `.venv`.
+5. **c)** `deactivate` выходит из venv — снова системный Python.
 
 </details>
 
@@ -297,10 +278,10 @@ python starter\check_setup.py
 
 ## Что дальше
 
-→ [Урок 0.2: Как работает веб](../lesson-0-2-how-the-web-works/README.md) — браузер, сервер и URL в одной картине.
+→ [Урок 0.2: Как работает веб](../lesson-0-2-how-the-web-works/README.md) — что происходит, когда ты открываешь URL.
 
 ---
 
-*Изолированный ящик готов. Дальше — экскурсия по тому, как устроен веб!*
+*Ящик готов. Дальше — как на самом деле устроен веб!*
 
 [← Выбрать язык](README.md)

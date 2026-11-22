@@ -56,4 +56,4 @@
 
 **Previous / Предыдущий урок:** [Lesson 5.2 — Loops and Color](../lesson-5-2-loops-and-color/README.md)
 
-**Next course / Следующий курс:** [Course 2: Web Applications with Python](../../../../course-2-web-apps/README.md)
+**Next course / Следующий курс:** [Course 2: Web Applications with Python](../../../course-2-web-apps/README.md)

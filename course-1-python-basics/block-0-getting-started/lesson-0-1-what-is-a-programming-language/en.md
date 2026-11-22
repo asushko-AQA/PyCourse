@@ -137,9 +137,9 @@ Pick the best answer for each question. Try without scrolling down first!
 
 4. In `print("Hello!")`, what appears on the screen?
    - **a)** `print`
-   - **b)** `Hello!`
+   - **b)** The quotation marks only
    - **c)** Nothing
-   - **d)** The quotation marks only
+   - **d)** `Hello!`
 
 ---
 
@@ -148,7 +148,7 @@ Pick the best answer for each question. Try without scrolling down first!
 1. **a)** A programming language lets humans write computer-followable instructions.
 2. **b)** A program is an ordered list of instructions.
 3. **c)** Computers follow instructions literally, so steps must be exact.
-4. **b)** `print` shows the text inside the quotes — `Hello!`.
+4. **d)** `print` shows the text inside the quotes — `Hello!`.
 
 </details>
 

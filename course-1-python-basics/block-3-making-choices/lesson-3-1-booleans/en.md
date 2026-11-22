@@ -146,44 +146,44 @@ python starter\true_false_quiz.py
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What is the result of `5 == 5`?
-   - **a)** `True`
+   - **a)** An error
    - **b)** `False`
    - **c)** `5`
-   - **d)** An error
+   - **d)** `True`
 
 2. What is the result of `3 != 3`?
-   - **a)** `True`
-   - **b)** `False`
+   - **a)** `False`
+   - **b)** `True`
    - **c)** `3`
    - **d)** `0`
 
 3. A single `=` (one equals sign) is used for…
-   - **a)** Putting a value in a variable (assignment)
-   - **b)** Comparing two values
+   - **a)** Comparing two values
+   - **b)** Putting a value in a variable (assignment)
    - **c)** Adding numbers
    - **d)** Printing True or False
 
 4. What is `True and False`?
    - **a)** `True`
-   - **b)** `False`
-   - **c)** `None`
+   - **b)** `None`
+   - **c)** `False`
    - **d)** `"True and False"`
 
 5. What is `True or False`?
-   - **a)** `True`
+   - **a)** An error
    - **b)** `False`
    - **c)** `None`
-   - **d)** An error
+   - **d)** `True`
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** `==` checks equality; `5 == 5` is `True`.
-2. **b)** `!=` means "not equal"; `3` equals `3`, so `False`.
-3. **a)** One `=` assigns (`name = "Alex"`); two `==` compare.
-4. **b)** `and` needs **both** True; one False makes the whole thing False.
-5. **a)** `or` needs **at least one** True; True or False is True.
+1. **d)** `==` checks equality; `5 == 5` is `True`.
+2. **a)** `!=` means "not equal"; `3` equals `3`, so `False`.
+3. **b)** One `=` assigns (`name = "Alex"`); two `==` compare.
+4. **c)** `and` needs **both** True; one False makes the whole thing False.
+5. **d)** `or` needs **at least one** True; True or False is True.
 
 </details>
 

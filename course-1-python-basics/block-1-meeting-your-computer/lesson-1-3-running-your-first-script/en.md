@@ -256,13 +256,13 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. What is the correct launch sequence from this lesson?
    - **a)** Run first, then save, then `cd`
-   - **b)** Create `.py` file → Save → `cd` to folder → `python file.py`
+   - **b)** Save As → never `cd` → run from anywhere
    - **c)** `cd` → delete file → `print`
-   - **d)** Save As → never `cd` → run from anywhere
+   - **d)** Create `.py` file → Save → `cd` to folder → `python file.py`
 
 2. Your VS Code tab says `launch.py.txt` instead of `launch.py`. What is wrong?
-   - **a)** You need to install Flask
-   - **b)** The real extension may be hidden — the file is not a true `.py` script
+   - **a)** The real extension may be hidden — the file is not a true `.py` script
+   - **b)** You need to install Flask
    - **c)** You must use `python3` instead of `python`
    - **d)** VS Code is broken
 
@@ -274,25 +274,25 @@ Pick the best answer for each question. Try without scrolling down first!
 
 4. Why should the Explorer folder and terminal prompt match before running `python hello.py`?
    - **a)** Python only runs on certain days
-   - **b)** Python looks for the file relative to your current terminal folder
-   - **c)** VS Code will crash if they differ
+   - **b)** VS Code will crash if they differ
+   - **c)** Python looks for the file relative to your current terminal folder
    - **d)** It only matters for Mac users
 
 5. What does `dir starter` help you do before running a script?
    - **a)** Delete the `starter` folder
-   - **b)** Confirm `hello.py` (or your script) is listed in that folder
+   - **b)** Clear the screen
    - **c)** Install the Python extension
-   - **d)** Clear the screen
+   - **d)** Confirm `hello.py` (or your script) is listed in that folder
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** The launch sequence is create, save, navigate to the right folder, then run.
-2. **b)** Windows can hide extensions — `launch.py.txt` is not a real Python script name.
+1. **d)** The launch sequence is create, save, navigate to the right folder, then run.
+2. **a)** Windows can hide extensions — `launch.py.txt` is not a real Python script name.
 3. **b)** This error usually means wrong folder, typo, or a hidden `.txt` extension.
-4. **b)** `python hello.py` looks for the file in the folder shown in your terminal prompt.
-5. **b)** Listing `starter` confirms the script exists before you run it.
+4. **c)** `python hello.py` looks for the file in the folder shown in your terminal prompt.
+5. **d)** Listing `starter` confirms the script exists before you run it.
 
 </details>
 

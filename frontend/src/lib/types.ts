@@ -67,6 +67,13 @@ export interface LessonContent {
   present: SectionPresence;
 }
 
+/** A starter, solution, or exercise file shown on the lesson Files tab. */
+export interface LessonFile {
+  /** Path relative to the lesson folder, e.g. "starter/hello.py". */
+  path: string;
+  content: string;
+}
+
 export interface Lesson {
   /** Short id used in URLs, e.g. "lesson-2-1". */
   id: string;
@@ -86,6 +93,8 @@ export interface Lesson {
   /** Progress key of the lesson that must be completed first, or null for the first lesson of a course. */
   prerequisiteKey: string | null;
   content: Record<Lang, LessonContent>;
+  /** Runnable files from starter/, solution/, and exercises/. */
+  files: LessonFile[];
 }
 
 export interface Block {

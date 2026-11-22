@@ -162,13 +162,13 @@ Pick the best answer for each question. Try without scrolling down first!
 
 4. The journey of a program is best described as:
    - **a)** result → interpreter → code
-   - **b)** code → interpreter → result
+   - **b)** code → result → interpreter
    - **c)** interpreter → code → result
-   - **d)** code → result → interpreter
+   - **d)** code → interpreter → result
 
 5. Why might two lines print in a surprising order?
-   - **a)** The computer guesses what you mean
-   - **b)** Whichever line is higher in the file runs first
+   - **a)** Whichever line is higher in the file runs first
+   - **b)** The computer guesses what you mean
    - **c)** `print` always sorts text alphabetically
    - **d)** The interpreter skips the first line
 
@@ -179,8 +179,8 @@ Pick the best answer for each question. Try without scrolling down first!
 1. **a)** The interpreter reads code line by line and drives the computer.
 2. **b)** Source code is the instructions you write in a `.py` file.
 3. **c)** It reads top to bottom, one line at a time.
-4. **b)** code → interpreter → result.
-5. **b)** Lines run in file order, top to bottom — position, not meaning.
+4. **d)** code → interpreter → result.
+5. **a)** Lines run in file order, top to bottom — position, not meaning.
 
 </details>
 

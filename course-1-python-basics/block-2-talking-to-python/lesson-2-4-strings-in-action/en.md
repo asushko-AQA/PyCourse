@@ -160,15 +160,15 @@ Pick the best answer for each question. Try without scrolling down first!
 
 2. What does `"Alex"[0:3]` produce?
    - **a)** `Alex`
-   - **b)** `Ale`
-   - **c)** `lex`
+   - **b)** `lex`
+   - **c)** `Ale`
    - **d)** `A`
 
 3. In this lesson, `madlibs.py` is…
-   - **a)** A brand-new script (not an extension of `greeting.py`)
+   - **a)** A web browser app
    - **b)** A copy of `character_sheet.py`
    - **c)** A file that only uses integers
-   - **d)** A web browser app
+   - **d)** A brand-new script (not an extension of `greeting.py`)
 
 4. Why might `creature[5]` cause `IndexError` on a short creature name?
    - **a)** You asked for a letter position that does not exist
@@ -177,8 +177,8 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** You forgot a colon after `if`
 
 5. In the sample story, `power.upper()` makes the superpower…
-   - **a)** ALL CAPS for a dramatic final move
-   - **b)** all lowercase
+   - **a)** all lowercase
+   - **b)** ALL CAPS for a dramatic final move
    - **c)** Only the first three letters
    - **d)** Disappear from the story
 
@@ -187,10 +187,10 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **b)** `.upper()` makes ALL CAPS.
-2. **b)** `[0:3]` slices the first three letters: `Ale`.
-3. **a)** The lesson uses a new `madlibs.py` script.
+2. **c)** `[0:3]` slices the first three letters: `Ale`.
+3. **d)** The lesson uses a new `madlibs.py` script.
 4. **a)** A 3-letter word only has indices 0, 1, 2; use `[0:3]` for safe slicing.
-5. **a)** `.upper()` on the superpower makes it feel epic (e.g. `LASER`).
+5. **b)** `.upper()` on the superpower makes it feel epic (e.g. `LASER`).
 
 </details>
 

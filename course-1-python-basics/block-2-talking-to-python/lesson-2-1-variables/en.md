@@ -84,7 +84,6 @@ python starter\character_sheet.py
 Name: Alex
 Age: 11
 Favorite game: Minecraft
-Edit the variables above, then run again!
 ```
 
 ---
@@ -135,7 +134,6 @@ python starter\character_sheet.py
 Name: Alex
 Age: 11
 Favorite game: Minecraft
-Edit the variables above, then run again!
 ```
 
 ---
@@ -182,43 +180,43 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. What does the `=` sign do in `name = "Alex"`?
    - **a)** Compares two values
-   - **b)** Puts a value inside a labeled variable
-   - **c)** Prints text to the screen
+   - **b)** Prints text to the screen
+   - **c)** Puts a value inside a labeled variable
    - **d)** Deletes a variable
 
 2. Which line stores a **whole number** correctly?
    - **a)** `age = "11"`
-   - **b)** `age = 11`
+   - **b)** `11 = age`
    - **c)** `age = True`
-   - **d)** `11 = age`
+   - **d)** `age = 11`
 
 3. If you put quotes around a number like `"11"`, Python treats it as…
-   - **a)** An integer for math
-   - **b)** Text (a string), not a number for math
+   - **a)** Text (a string), not a number for math
+   - **b)** An integer for math
    - **c)** A True/False value
    - **d)** An error that always stops the program
 
 4. You get `NameError: name 'nmae' is not defined`. What is the most likely cause?
-   - **a)** A typo in the variable name (spelling must match exactly)
-   - **b)** You forgot to use `input()`
+   - **a)** You forgot to use `input()`
+   - **b)** A typo in the variable name (spelling must match exactly)
    - **c)** You used `==` instead of `=`
    - **d)** The number was too big
 
 5. You change `name = "Alex"` to `name = "Sam"`. What happens to every `print()` that uses `name`?
-   - **a)** They automatically show the new value
+   - **a)** Python deletes the other variables
    - **b)** They still show "Alex" until you restart the computer
-   - **c)** Python deletes the other variables
+   - **c)** They automatically show the new value
    - **d)** You must rename every `print()` line by hand
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** `=` stores a value in a variable (labeled box).
-2. **b)** Integers are whole numbers **without** quotes.
-3. **b)** Quotes make it text; Lesson 2.3 covers fixing that with `int()`.
-4. **a)** Variable names must match exactly; `nmae` ≠ `name`.
-5. **a)** Change the value once; every line using that variable updates.
+1. **c)** `=` stores a value in a variable (labeled box).
+2. **d)** Integers are whole numbers **without** quotes.
+3. **a)** Quotes make it text; Lesson 2.3 covers fixing that with `int()`.
+4. **b)** Variable names must match exactly; `nmae` ≠ `name`.
+5. **c)** Change the value once; every line using that variable updates.
 
 </details>
 

@@ -1,5 +1,5 @@
 # game.py
-# Adventure Workshop capstone — room-based text adventure (skeleton)
+# Adventure Workshop capstone — fill in the helpers, then copy to my_adventure/game.py
 
 rooms = {
     "start": {
@@ -25,42 +25,28 @@ inventory = []
 
 
 def show_room(room_id):
-    # TODO: Print === room name === and description
-    room = rooms[room_id]
-    print(f"\n=== {room['name']} ===")
-    print(room["description"])
+    # TODO: Look up rooms[room_id]
+    # TODO: Print === room name === and the description
+    pass
 
 
 def move(room_id, direction):
-    # TODO: If direction exists, return the new room id; else return room_id unchanged
-    room = rooms[room_id]
-    if direction in room:
-        print(f"You go {direction}.")
-        return room[direction]
-    print("You cannot go that way.")
+    # TODO: If direction is a key in this room, print "You go ..." and return the new room id
+    # TODO: Otherwise print "You cannot go that way." and return room_id
+    # Save the result in the game loop: current_room = move(current_room, command)
     return room_id
 
 
 def show_inventory():
-    # TODO: Print numbered list or "Your pack is empty."
-    if len(inventory) == 0:
-        print("Your pack is empty.")
-        return
-    print("=== INVENTORY ===")
-    for i in range(len(inventory)):
-        print(f"{i + 1}. {inventory[i]}")
+    # TODO: If inventory is empty, print "Your pack is empty."
+    # TODO: Otherwise print a numbered list of items
+    pass
 
 
 def take_item(room_id):
-    # TODO: If room has "item", append to inventory and remove from room
-    room = rooms[room_id]
-    item = room.get("item")
-    if item is None:
-        print("Nothing to take here.")
-        return
-    inventory.append(item)
-    del room["item"]
-    print(f"You picked up the {item}.")
+    # TODO: If the room has an "item", append it to inventory and delete it from the room
+    # TODO: Otherwise print "Nothing to take here."
+    pass
 
 
 def main():
@@ -69,28 +55,16 @@ def main():
 
     current_room = "start"
 
-    # TODO: Game loop — show room, read command, update current_room from move()
-    while True:
-        show_room(current_room)
-        command = input("What do you do? ").lower().strip()
-
-        if command == "quit":
-            print("Thanks for playing!")
-            break
-        elif command in ("north", "south", "east", "west"):
-            current_room = move(current_room, command)
-        elif command == "take":
-            take_item(current_room)
-        elif command == "inventory":
-            show_inventory()
-        elif command == "open":
-            if current_room == "garden" and "golden key" in inventory:
-                print("The chest opens! You win!")
-                break
-            else:
-                print("The chest is locked. You need a key from the library.")
-        else:
-            print("Try: north, south, east, west, take, inventory, open, quit")
+    # TODO: Loop forever:
+    #   show_room(current_room)
+    #   command = input("What do you do? ").lower()
+    #   quit -> print thanks and break
+    #   north/south/east/west -> current_room = move(current_room, command)
+    #   take -> take_item(current_room)
+    #   inventory -> show_inventory()
+    #   open in the garden with "golden key" in inventory -> print the win line and break
+    #   anything else -> print the command list
+    print("Finish the game loop, then run again!")
 
 
 main()

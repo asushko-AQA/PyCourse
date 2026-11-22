@@ -156,15 +156,37 @@ You can also open the ready-made file in this lesson folder: [starter/hello.py](
 
 Time to cast your spell! Use the **terminal** (Command Portal).
 
-### 1. Go to the folder where `hello.py` lives
+### 1. Stand in the folder where `hello.py` lives
 
-If your file is in `Documents\PyCourse`, type:
+In Step 6 you opened `PyCourse` in VS Code. **Terminal → New Terminal** already starts inside that folder. Look at the prompt:
+
+**Windows** (PowerShell or Command Prompt) — it ends with `PyCourse>`:
+
+```text
+PS C:\Users\YourName\Documents\PyCourse>
+```
+
+**macOS** — the prompt shows the folder name `PyCourse`:
+
+```text
+YourName@Mac PyCourse %
+```
+
+If you see `PyCourse`, you are already in the right room. **Do not type `cd`.** Skip to step 2 and run `python hello.py`.
+
+Only if you opened a **brand-new** terminal that starts in your home folder (the prompt shows your name, not `PyCourse`), walk into the project first. `cd` means **c**hange **d**irectory — walk to a new folder.
+
+**Windows:**
 
 ```text
 cd Documents\PyCourse
 ```
 
-*(Change the path if your folder is somewhere else. `cd` means **c**hange **d**irectory — walk to a new folder.)*
+**macOS:**
+
+```text
+cd Documents/PyCourse
+```
 
 ### 2. Run your script
 
@@ -267,19 +289,19 @@ Pick the best answer for each question. Try without scrolling down first!
 
 2. What command checks that Python is installed correctly?
    - **a)** `python --help`
-   - **b)** `python --version`
-   - **c)** `pip install python`
+   - **b)** `pip install python`
+   - **c)** `python --version`
    - **d)** `code --version`
 
 3. In this course, what is the VS Code terminal often called?
    - **a)** The Debug Panel
-   - **b)** The Command Portal
+   - **b)** The Output Window
    - **c)** The Extensions Hub
-   - **d)** The Output Window
+   - **d)** The Command Portal
 
 4. What file extension should a Python script have?
-   - **a)** `.txt`
-   - **b)** `.py`
+   - **a)** `.py`
+   - **b)** `.txt`
    - **c)** `.python`
    - **d)** `.code`
 
@@ -294,9 +316,9 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **b)** PATH tells Windows where Python lives so `python` works from the terminal.
-2. **b)** `python --version` shows your version when install and PATH are correct.
-3. **b)** The lesson calls the terminal your Command Portal for commands and scripts.
-4. **b)** A `.py` file is a Python script — instructions for your computer.
+2. **c)** `python --version` shows your version when install and PATH are correct.
+3. **d)** The lesson calls the terminal your Command Portal for commands and scripts.
+4. **a)** A `.py` file is a Python script — instructions for your computer.
 5. **b)** Comments with `#` are notes for you; Python skips them when running code.
 
 </details>

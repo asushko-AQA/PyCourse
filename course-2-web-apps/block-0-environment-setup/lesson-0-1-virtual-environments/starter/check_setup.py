@@ -1,10 +1,18 @@
-# TODO: Import flask inside a try/except block
-# TODO: If the import works, print "venv ready"
-# TODO: If ImportError happens, print friendly setup steps
+import importlib.metadata
 
 
 def main():
-    print("Workshop check — finish the TODOs above, then run again!")
+    try:
+        import flask
+
+        # TODO: print "venv ready"
+        # TODO: print the Flask version with importlib.metadata.version("flask")
+    except ImportError:
+        print("Flask is not installed yet.")
+        # TODO: print three setup steps:
+        #   1. Activate your .venv
+        #   2. Run: pip install flask
+        #   3. Run this script again
 
 
 main()

@@ -141,8 +141,8 @@ Calculator complete!
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What is `10 / 4` in Python?
-   - **a)** `2`
-   - **b)** `2.5`
+   - **a)** `2.5`
+   - **b)** `2`
    - **c)** `3`
    - **d)** `2` with no decimal
 
@@ -153,20 +153,20 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** `2`
 
 3. Why wrap `input()` with `int()` before adding numbers?
-   - **a)** Because `input()` gives text, and `int()` turns digits into a real number
+   - **a)** Because `input()` only works with letters
    - **b)** Because `int()` makes strings uppercase
-   - **c)** Because `input()` only works with letters
+   - **c)** Because `input()` gives text, and `int()` turns digits into a real number
    - **d)** Because Python cannot add any numbers
 
 4. You type `hello` when the program expects a number. What error appears?
-   - **a)** `ValueError`
+   - **a)** `SyntaxError`
    - **b)** `NameError`
    - **c)** `IndexError`
-   - **d)** `SyntaxError`
+   - **d)** `ValueError`
 
 5. For inputs `10` and `3`, what is the **difference** (`num1 - num2`)?
-   - **a)** `13`
-   - **b)** `7`
+   - **a)** `7`
+   - **b)** `13`
    - **c)** `30`
    - **d)** `3.333…`
 
@@ -174,11 +174,11 @@ Pick the best answer for each question. Try without scrolling down first!
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** `/` can produce a decimal (`2.5`).
+1. **a)** `/` can produce a decimal (`2.5`).
 2. **b)** `*` means multiply: `5 * 3 = 15`.
-3. **a)** `input()` returns a string; `int()` converts valid whole-number text.
-4. **a)** `int()` cannot convert non-digit text like `hello`.
-5. **b)** `10 - 3 = 7` (matches the lesson's calculator example).
+3. **c)** `input()` returns a string; `int()` converts valid whole-number text.
+4. **d)** `int()` cannot convert non-digit text like `hello`.
+5. **a)** `10 - 3 = 7` (matches the lesson's calculator example).
 
 </details>
 

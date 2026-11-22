@@ -29,6 +29,8 @@ Think of your venv as a **private toolbox** for this web project. Flask lives in
 
 ### Step 2: Activate your venv (quick reminder)
 
+Stay in the **PyCourse** folder for this step (Path B: the folder where you created `.venv` in Lesson 0.1). The prompt should end with `PyCourse`, and `(.venv)` is not inside this lesson folder. If you already walked into a lesson, run `cd ..` until you are back at the project root, then activate.
+
 **Windows PowerShell** (most common in VS Code):
 
 ```text
@@ -91,10 +93,18 @@ print(f"Flask version: {importlib.metadata.version('flask')}")
 
 ### Step 5: cd to this lesson folder
 
-**Path A — PyCourse repo:**
+**Path A — PyCourse repo** (after `(.venv)` is showing):
+
+**Windows:**
 
 ```text
 cd course-2-web-apps\block-1-web-basics-flask\lesson-1-1-installing-flask
+```
+
+**macOS:**
+
+```text
+cd course-2-web-apps/block-1-web-basics-flask/lesson-1-1-installing-flask
 ```
 
 **Path B — your own copy:** `cd` to wherever you saved `check_flask.py`.
@@ -134,14 +144,21 @@ print(f"Flask version: {importlib.metadata.version('flask')}")
 
 ## Code Execution
 
-Activate your `.venv`, then:
+From the **PyCourse** root, activate `.venv` (Step 2), then:
+
+**Windows:**
 
 ```text
 cd course-2-web-apps\block-1-web-basics-flask\lesson-1-1-installing-flask
 python starter\check_flask.py
 ```
 
-**Mac/Linux:** `python starter/check_flask.py`
+**macOS:**
+
+```text
+cd course-2-web-apps/block-1-web-basics-flask/lesson-1-1-installing-flask
+python3 starter/check_flask.py
+```
 
 **Expected output:**
 
@@ -178,7 +195,7 @@ Look at `pip show flask` in the terminal. Find the **Location** line — that is
 
 **Cause:** The venv is not active, or Flask was never installed in this venv.
 
-**Fix:** Run `.\.venv\Scripts\Activate.ps1` (or your OS command), then `pip install flask`, then run the script again.
+**Fix:** From the PyCourse root, run `.\.venv\Scripts\Activate.ps1` (macOS: `source .venv/bin/activate`), then `pip install flask`, then run the script again.
 
 ---
 
@@ -201,22 +218,22 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Installing Pygame
 
 2. If `pip list` shows Flask while `(.venv)` is active, where is Flask installed?
-   - **a)** Inside your project's venv
-   - **b)** Only on the Flask company website
+   - **a)** Only on the Flask company website
+   - **b)** Inside your project's venv
    - **c)** Inside your browser cache
    - **d)** In every folder on your Desktop
 
 3. You run `python starter\check_flask.py` and get `ModuleNotFoundError: No module named 'flask'`. What is the most likely fix?
-   - **a)** Activate the venv, then `pip install flask`, then run again
+   - **a)** Change the port to 8080
    - **b)** Delete `.venv` and never use pip again
-   - **c)** Change the port to 8080
+   - **c)** Activate the venv, then `pip install flask`, then run again
    - **d)** Add `@app.route` to the check script
 
 4. What should `check_flask.py` print when everything works?
-   - **a)** `Flask import OK!` and a Flask version line
+   - **a)** Nothing — silence means success
    - **b)** `Hello, Web World!` in the browser only
    - **c)** A list of every website on the internet
-   - **d)** Nothing — silence means success
+   - **d)** `Flask import OK!` and a Flask version line
 
 5. Why do Flask lessons start by activating `.venv`?
    - **a)** So Python uses the toolbox where Flask lives
@@ -229,9 +246,9 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **a)** Block 0 taught venv + pip; this lesson verifies Flask is there.
-2. **a)** Active venv + `pip list` shows packages in that environment.
-3. **a)** Usually the venv is off or Flask was never installed there.
-4. **a)** The check script confirms import and prints the version.
+2. **b)** Active venv + `pip list` shows packages in that environment.
+3. **c)** Usually the venv is off or Flask was never installed there.
+4. **d)** The check script confirms import and prints the version.
 5. **a)** Flask must be importable from the activated project venv.
 
 </details>

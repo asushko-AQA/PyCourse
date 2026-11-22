@@ -16,11 +16,13 @@ import type {
   Course,
   Lesson,
   LessonContent,
+  LessonFile,
   LessonMeta,
   QuizQuestion,
   SectionPresence,
 } from "./types";
 import { LANGS } from "./types";
+import { lessonFileAnchor } from "./lessonFiles";
 
 // ---------------------------------------------------------------------------
 // Content root resolution
@@ -190,10 +192,55 @@ function categorize(heading: string): SectionCategory {
  * their plain text — those targets don't exist as routes in the app.
  * Absolute http(s) links are kept.
  */
-function stripRelativeLinks(md: string): string {
+const LESSON_FILE_DIRS = new Set(["starter", "solution", "exercises"]);
+const LESSON_FILE_EXT = new Set([".py", ".md", ".html", ".css", ".txt"]);
+
+/** Read text files the lesson tells students to open. Skip dotfiles and huge blobs. */
+export function collectLessonFiles(lessonDir: string): LessonFile[] {
+  const files: LessonFile[] = [];
+
+  function walk(dir: string): void {
+    if (!fs.existsSync(dir)) return;
+    for (const name of fs.readdirSync(dir)) {
+      if (name.startsWith(".")) continue;
+      const abs = path.join(dir, name);
+      const stat = fs.statSync(abs);
+      if (stat.isDirectory()) {
+        walk(abs);
+        continue;
+      }
+      const rel = path.relative(lessonDir, abs).split(path.sep).join("/");
+      const top = rel.split("/")[0];
+      if (!LESSON_FILE_DIRS.has(top)) continue;
+      if (!LESSON_FILE_EXT.has(path.extname(name).toLowerCase())) continue;
+      if (stat.size > 80_000) continue;
+      files.push({ path: rel, content: fs.readFileSync(abs, "utf-8") });
+    }
+  }
+
+  for (const folder of LESSON_FILE_DIRS) walk(path.join(lessonDir, folder));
+  files.sort((a, b) => a.path.localeCompare(b.path));
+  return files;
+}
+
+/**
+ * Keep http(s) and in-page links. Links to a file in this lesson become an
+ * anchor on the Files tab. Other relative links stay as bold text.
+ */
+function rewriteLessonLinks(md: string, filePaths: Set<string>): string {
   return md.replace(
-    /\[([^\]]+)\]\((?!https?:\/\/|#)[^)]+\)/g,
-    (_m, text: string) => `**${text}**`,
+    /\[([^\]]+)\]\((?!https?:\/\/|#)([^)]+)\)/g,
+    (_m, text: string, href: string) => {
+      const clean = href
+        .split("#")[0]
+        .trim()
+        .replace(/\\/g, "/")
+        .replace(/^\.\//, "");
+      if (filePaths.has(clean)) {
+        return `[${text}](#${lessonFileAnchor(clean)})`;
+      }
+      return `**${text}**`;
+    },
   );
 }
 
@@ -292,7 +339,7 @@ function extractLevelTitle(body: string): string | null {
   return m ? m[1].trim() : null;
 }
 
-function parseLessonFile(filePath: string): LessonContent {
+function parseLessonFile(filePath: string, filePaths: Set<string>): LessonContent {
   const raw = fs.readFileSync(filePath, "utf-8");
   const { meta, stripped } = parseMeta(raw);
   const { preamble, sections } = splitSections(stripped);
@@ -335,8 +382,8 @@ function parseLessonFile(filePath: string): LessonContent {
   return {
     title: extractTitle(preamble),
     levelTitle,
-    theory: stripRelativeLinks(theoryParts.join("\n").trim()),
-    assignments: stripRelativeLinks(assignmentParts.join("\n").trim()),
+    theory: rewriteLessonLinks(theoryParts.join("\n").trim(), filePaths),
+    assignments: rewriteLessonLinks(assignmentParts.join("\n").trim(), filePaths),
     quiz,
     meta,
     present,
@@ -387,6 +434,8 @@ function buildCourse(root: string, courseSlug: string): Course | null {
       const ruPath = path.join(lessonDir, "ru.md");
       if (!fs.existsSync(enPath) || !fs.existsSync(ruPath)) continue;
 
+      const lessonFiles = collectLessonFiles(lessonDir);
+      const filePaths = new Set(lessonFiles.map((file) => file.path));
       const key = `${courseId}/${lessonId}`;
       lessons.push({
         id: lessonId,
@@ -397,9 +446,10 @@ function buildCourse(root: string, courseSlug: string): Course | null {
         order,
         prerequisiteKey: prevKey,
         content: {
-          en: parseLessonFile(enPath),
-          ru: parseLessonFile(ruPath),
+          en: parseLessonFile(enPath, filePaths),
+          ru: parseLessonFile(ruPath, filePaths),
         },
+        files: lessonFiles,
       });
       prevKey = key;
       order++;

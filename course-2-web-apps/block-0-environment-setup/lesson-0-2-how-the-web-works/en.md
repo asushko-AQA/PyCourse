@@ -214,10 +214,10 @@ Type `browser`, `server`, and `url` when prompted (or try wrong answers to see t
 Pick the best answer for each question. Try without scrolling down first!
 
 1. In the browser–server story, who **sends the request** first?
-   - **a)** Browser
+   - **a)** pip
    - **b)** Server
    - **c)** URL
-   - **d)** pip
+   - **d)** Browser
 
 2. What is a **URL**?
    - **a)** The web address that tells the browser where to ask
@@ -226,32 +226,32 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** A kind of virtual environment
 
 3. What does a **server** do in this lesson?
-   - **a)** Waits for requests and sends back responses
-   - **b)** Only draws pictures on your screen
+   - **a)** Only draws pictures on your screen
+   - **b)** Waits for requests and sends back responses
    - **c)** Stores all your `.venv` folders
    - **d)** Replaces the need for a browser
 
 4. In the round trip, what is a **response**?
-   - **a)** What the server sends back (like an HTML page)
+   - **a)** The name of the Flask install command
    - **b)** What you type into `input()` in the quiz
-   - **c)** The name of the Flask install command
+   - **c)** What the server sends back (like an HTML page)
    - **d)** A broken link in the address bar
 
 5. What does status **200 OK** usually mean?
-   - **a)** Success — here is the page you asked for
+   - **a)** You must install Flask again
    - **b)** The browser is offline
    - **c)** The server deleted the website
-   - **d)** You must install Flask again
+   - **d)** Success — here is the page you asked for
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** The browser asks first; the server answers.
+1. **d)** The browser asks first; the server answers.
 2. **a)** URL = the address bar text that points to a resource.
-3. **a)** The server listens and replies with pages or data.
-4. **a)** A response is what travels back from server to browser.
-5. **a)** 200 OK means the request succeeded.
+3. **b)** The server listens and replies with pages or data.
+4. **c)** A response is what travels back from server to browser.
+5. **d)** 200 OK means the request succeeded.
 
 </details>
 

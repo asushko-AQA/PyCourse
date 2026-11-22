@@ -39,6 +39,7 @@ export const en: Dict = {
     theory: "🚀 Theory",
     assignments: "📝 Assignments",
     quiz: "🎯 Quiz",
+    files: "📁 Files",
   },
   lesson: {
     lockedTitle: "This level is still locked!",
@@ -70,6 +71,7 @@ export const en: Dict = {
     resultsTitle: "Quiz complete!",
     resultsBody: "{score} of {total} on the first try",
     xpEarned: "+{xp} XP earned!",
+    xpNeedsPerfect: "Every question right on the first try earns {xp} XP",
     alreadyEarned: "XP already collected for this quiz",
     replay: "Play again",
     backToMap: "Back to map",

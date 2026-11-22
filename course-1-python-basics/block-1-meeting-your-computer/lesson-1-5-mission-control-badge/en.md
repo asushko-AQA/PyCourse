@@ -25,7 +25,7 @@ This is Block 1's capstone — no new concepts, only **proof** you can:
 4. Run `python badge.py`
 5. Break your code on purpose, read the error, and fix it
 
-Before you start, tick the [Block 1 readiness checklist](../../README.md#block-1-readiness-checklist).
+Before you start, tick the [Block 1 readiness checklist](../README.md#block-1-readiness-checklist).
 
 ---
 
@@ -33,17 +33,18 @@ Before you start, tick the [Block 1 readiness checklist](../../README.md#block-1
 
 **Recommended:** Use VS Code Explorer — right-click your **project root** (e.g. `PyCourse`), choose **New Folder**, name it **`my_mission`**.
 
-**Or in terminal** — first go to your project root, then create the folder:
-
-```text
-cd Documents\PyCourse
-```
-
-*(Adjust if your project lives elsewhere — match the path in VS Code's title bar.)*
+**Or in the terminal.** The VS Code terminal is already in the project root when the window title is `PyCourse`. If the prompt ends with `PyCourse`, skip `cd` and create the folder:
 
 ```text
 mkdir my_mission
 ```
+
+Only from a **fresh** terminal that starts in your home folder (the prompt shows your name, not `PyCourse`):
+
+**Windows:** `cd Documents\PyCourse`  
+**macOS:** `cd Documents/PyCourse`
+
+Then run `mkdir my_mission`.
 
 **Expected:** A new empty folder `my_mission` **next to** `course-1-python-basics`, not inside a lesson folder.
 
@@ -86,13 +87,21 @@ From your **project root**:
 cd my_mission
 ```
 
-If you created `my_mission` on Desktop instead:
+If you really created `my_mission` on the Desktop (and the prompt is your home folder, not `PyCourse`):
+
+**Windows:**
 
 ```text
 cd Desktop\my_mission
 ```
 
-*(Always match where you actually created the folder.)*
+**macOS:**
+
+```text
+cd ~/Desktop/my_mission
+```
+
+*(Always match where you actually created the folder. The usual place in this course is the project root, so `cd my_mission` is enough.)*
 
 ```text
 dir
@@ -189,7 +198,7 @@ Python 3.12.x
 
 ## Quick Drills
 
-Before the main quest, tick every box on the [Block 1 readiness checklist](../../README.md#block-1-readiness-checklist).
+Before the main quest, tick every box on the [Block 1 readiness checklist](../README.md#block-1-readiness-checklist).
 
 If any box is empty, revisit that lesson before continuing.
 
@@ -212,7 +221,7 @@ If any box is empty, revisit that lesson before continuing.
 
 - Take a screenshot of your terminal output.
 - Add one more joke line to `badge.py`.
-- Complete the full [Block 1 checklist](../../README.md#block-1-readiness-checklist) — you are ready for Block 2!
+- Complete the full [Block 1 checklist](../README.md#block-1-readiness-checklist) — you are ready for Block 2!
 
 ---
 
@@ -245,15 +254,15 @@ Pick the best answer for each question. Try without scrolling down first!
 
 2. How many `print()` lines should your finished `badge.py` have?
    - **a)** Exactly 1
-   - **b)** 5 to 8 lines of your own output
-   - **c)** 50 minimum
+   - **b)** 50 minimum
+   - **c)** 5 to 8 lines of your own output
    - **d)** Zero — only `# TODO` comments
 
 3. What terminal command creates a new folder called `my_mission`?
-   - **a)** `mkdir my_mission`
+   - **a)** `cd my_mission`
    - **b)** `python my_mission`
    - **c)** `dir my_mission`
-   - **d)** `cd my_mission`
+   - **d)** `mkdir my_mission`
 
 4. After `cd my_mission`, what command runs your badge script?
    - **a)** `python badge.py`
@@ -272,8 +281,8 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **b)** `my_mission` belongs at project root, beside the course folders.
-2. **b)** The capstone asks for 5–8 personal `print()` lines in your badge.
-3. **a)** `mkdir` makes a new folder; then you `cd` into it.
+2. **c)** The capstone asks for 5–8 personal `print()` lines in your badge.
+3. **d)** `mkdir` makes a new folder; then you `cd` into it.
 4. **a)** From inside `my_mission`, run `python badge.py` to launch your badge.
 5. **b)** Deleting a closing quote causes a SyntaxError — you read it and fix it.
 
@@ -285,7 +294,7 @@ Pick the best answer for each question. Try without scrolling down first!
 
 → [Lesson 2.1: Variables, Strings, Integers](../../block-2-talking-to-python/lesson-2-1-variables/README.md) — Block 2 begins!
 
-→ [Block 1 index](../../README.md) — review all five lessons and your checklist.
+→ [Block 1 index](../README.md) — review all five lessons and your checklist.
 
 ---
 

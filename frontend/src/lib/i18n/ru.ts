@@ -39,6 +39,7 @@ export const ru: Dict = {
     theory: "🚀 Теория",
     assignments: "📝 Задания",
     quiz: "🎯 Квиз",
+    files: "📁 Файлы",
   },
   lesson: {
     lockedTitle: "Этот уровень ещё закрыт!",
@@ -70,6 +71,7 @@ export const ru: Dict = {
     resultsTitle: "Квиз пройден!",
     resultsBody: "{score} из {total} с первой попытки",
     xpEarned: "+{xp} XP получено!",
+    xpNeedsPerfect: "{xp} XP — если каждый ответ верный с первой попытки",
     alreadyEarned: "XP за этот квиз уже собраны",
     replay: "Пройти ещё раз",
     backToMap: "Назад к карте",

@@ -12,12 +12,9 @@ def draw_branch(length):
     t.backward(length)
 
 
-# TODO: Point upward, call draw_branch twice, turn left between calls
-t.left(90)
-
-draw_branch(100)
-
-t.left(60)
-draw_branch(70)
+# TODO: Point upward with t.left(90)
+# TODO: Call draw_branch(100)
+# TODO: Turn with t.left(60)
+# TODO: Call draw_branch(70)
 
 turtle.done()

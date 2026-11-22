@@ -38,6 +38,11 @@ export function getLevelProgress(xp: number): number {
   return (xp % XP_PER_LEVEL) / XP_PER_LEVEL;
 }
 
+/** XP is derived from completions: 5 per lesson read, 10 per perfect quiz. */
+export function xpForProgress(completedLessons: readonly string[], completedQuizzes: readonly string[]): number {
+  return completedLessons.length * XP_PER_LESSON + completedQuizzes.length * XP_PER_QUIZ;
+}
+
 export interface PendingProgressUpdate extends ProgressUpsertInput {
   id: string;
 }
@@ -56,7 +61,8 @@ interface ProgressState {
 
   addXp: (amount: number) => void;
   completeLesson: (key: string) => void;
-  completeQuiz: (key: string) => void;
+  /** Record a finished quiz. XP and `quizPerfect` are stored only when `perfect` is true. */
+  completeQuiz: (key: string, perfect: boolean) => void;
   setLastPosition: (position: string) => void;
   reset: () => void;
 
@@ -71,12 +77,16 @@ function enqueueSync(task: () => Promise<void>): void {
   syncChain = syncChain.then(task).catch(() => undefined);
 }
 
-function snapshotToLocal(snapshot: ProgressSnapshot): Pick<ProgressState, "completedLessons" | "completedQuizzes"> {
+function snapshotToLocal(
+  snapshot: ProgressSnapshot,
+): Pick<ProgressState, "completedLessons" | "completedQuizzes" | "xp"> {
   const completedLessons = new Set<string>();
   const completedQuizzes = new Set<string>();
 
   for (const lesson of snapshot.lessons) {
-    if (lesson.readingDone || lesson.homeworkDone || lesson.quizPerfect) {
+    // A quiz, even a perfect one, does not mark the lesson read. Unlock comes
+    // from reading or homework. XP for a perfect quiz is counted separately.
+    if (lesson.readingDone || lesson.homeworkDone) {
       completedLessons.add(lesson.lessonKey);
     }
     if (lesson.quizPerfect) {
@@ -84,9 +94,12 @@ function snapshotToLocal(snapshot: ProgressSnapshot): Pick<ProgressState, "compl
     }
   }
 
+  const lessons = [...completedLessons];
+  const quizzes = [...completedQuizzes];
   return {
-    completedLessons: [...completedLessons],
-    completedQuizzes: [...completedQuizzes],
+    completedLessons: lessons,
+    completedQuizzes: quizzes,
+    xp: xpForProgress(lessons, quizzes),
   };
 }
 
@@ -162,17 +175,16 @@ export const useProgressStore = create<ProgressState>()(
         queueOrSync(get, set, { lessonKey: key, readingDone: true });
       },
 
-      completeQuiz: (key) => {
+      completeQuiz: (key, perfect) => {
+        if (!perfect) return;
         set((s) => {
           if (s.completedQuizzes.includes(key)) return s;
-          const lessonAlreadyDone = s.completedLessons.includes(key);
           return {
             completedQuizzes: [...s.completedQuizzes, key],
-            completedLessons: lessonAlreadyDone ? s.completedLessons : [...s.completedLessons, key],
-            xp: s.xp + XP_PER_QUIZ + (lessonAlreadyDone ? 0 : XP_PER_LESSON),
+            xp: s.xp + XP_PER_QUIZ,
           };
         });
-        queueOrSync(get, set, { lessonKey: key, quizPerfect: true, readingDone: true });
+        queueOrSync(get, set, { lessonKey: key, quizPerfect: true });
       },
 
       setLastPosition: (position) => {

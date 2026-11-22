@@ -161,32 +161,32 @@ No keyboard input — output appears immediately.
 Pick the best answer for each question. Try without scrolling down first!
 
 1. How is a dictionary different from a list?
-   - **a)** A dictionary uses **name tags (keys)** instead of only number slots
-   - **b)** A dictionary cannot store text
+   - **a)** A dictionary cannot store text
+   - **b)** A dictionary uses **name tags (keys)** instead of only number slots
    - **c)** A dictionary has no values
    - **d)** A dictionary always has exactly three items
 
 2. How do you read the hero's HP from `character = {"hp": 42}`?
    - **a)** `character(42)`
-   - **b)** `character["hp"]`
-   - **c)** `character.hp`
+   - **b)** `character.hp`
+   - **c)** `character["hp"]`
    - **d)** `hp[character]`
 
 3. What does `character.get("magic", 0)` do if `"magic"` is **not** in the dict?
    - **a)** Crashes with KeyError
-   - **b)** Returns `0` without crashing
+   - **b)** Adds `"magic"` automatically
    - **c)** Deletes the dictionary
-   - **d)** Adds `"magic"` automatically
+   - **d)** Returns `0` without crashing
 
 4. You write `character["magc"]` but the key is `"magic"`. What error appears?
-   - **a)** SyntaxError
-   - **b)** KeyError
+   - **a)** KeyError
+   - **b)** SyntaxError
    - **c)** IndexError
    - **d)** No error — Python guesses the key
 
 5. When should you prefer `.get()` over square brackets `[]`?
-   - **a)** When the key might be missing and you want a safe default
-   - **b)** When you never want to read values
+   - **a)** When you never want to read values
+   - **b)** When the key might be missing and you want a safe default
    - **c)** Only for lists, not dicts
    - **d)** When you want Python to ignore typos
 
@@ -194,11 +194,11 @@ Pick the best answer for each question. Try without scrolling down first!
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** Dicts pair **keys** (labels like `"hp"`) with values — lists use numbered indexes.
-2. **b)** Square brackets with the exact key name: `character["hp"]`.
-3. **b)** `.get()` returns the default (`0`) when the key is missing — no crash.
-4. **b)** Keys must match **exactly**; a typo triggers `KeyError`.
-5. **a)** Use `.get(key, default)` when a key might not exist yet on the stat sheet.
+1. **b)** Dicts pair **keys** (labels like `"hp"`) with values — lists use numbered indexes.
+2. **c)** Square brackets with the exact key name: `character["hp"]`.
+3. **d)** `.get()` returns the default (`0`) when the key is missing — no crash.
+4. **a)** Keys must match **exactly**; a typo triggers `KeyError`.
+5. **b)** Use `.get(key, default)` when a key might not exist yet on the stat sheet.
 
 </details>
 

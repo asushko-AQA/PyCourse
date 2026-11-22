@@ -235,8 +235,8 @@ python starter\right_name.py
 Pick the best answer for each question. Try without scrolling down first!
 
 1. When reading an error traceback, which line should you read first?
-   - **a)** The very top line
-   - **b)** The last line — it shows the error type and message
+   - **a)** The last line — it shows the error type and message
+   - **b)** The very top line
    - **c)** Line 1 of every file
    - **d)** Only the middle lines
 
@@ -247,16 +247,16 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** You are in the wrong folder
 
 3. `python: can't open file 'wrong_name.py'` is different from SyntaxError because…
-   - **a)** Python never read your code — the file was not found
+   - **a)** It only happens on Mac
    - **b)** It means your code grammar is perfect
-   - **c)** It only happens on Mac
+   - **c)** Python never read your code — the file was not found
    - **d)** You need to check Add to PATH again
 
 4. In VS Code, how do you jump to line 4 after seeing `line 4` in an error?
-   - **a)** Press **Ctrl+G**, type `4`, press **Enter**
+   - **a)** Restart the computer
    - **b)** Press **Ctrl+Z** four times
    - **c)** Delete line 4
-   - **d)** Restart the computer
+   - **d)** Press **Ctrl+G**, type `4`, press **Enter**
 
 5. `SyntaxError: '(' was never closed` suggests you should look for…
    - **a)** A missing closing parenthesis `)` in a `print()` call
@@ -268,10 +268,10 @@ Pick the best answer for each question. Try without scrolling down first!
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** Scroll to the bottom and read the last line first — the detective rule.
+1. **a)** Scroll to the bottom and read the last line first — the detective rule.
 2. **b)** An unterminated string means a quote was never closed in your code.
-3. **a)** This is a terminal/file error — Python did not even start reading your script.
-4. **a)** **Ctrl+G** jumps your cursor to the line number from the error.
+3. **c)** This is a terminal/file error — Python did not even start reading your script.
+4. **d)** **Ctrl+G** jumps your cursor to the line number from the error.
 5. **a)** A `print(` without `)` triggers this SyntaxError.
 
 </details>

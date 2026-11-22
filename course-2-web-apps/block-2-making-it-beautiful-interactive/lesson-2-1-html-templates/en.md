@@ -167,22 +167,22 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** pip installs templates automatically
 
 2. What does `render_template("home.html", headline="Welcome")` do?
-   - **a)** Fills the template with variables and sends HTML to the browser
-   - **b)** Downloads home.html from the internet
+   - **a)** Downloads home.html from the internet
+   - **b)** Fills the template with variables and sends HTML to the browser
    - **c)** Copies CSS into the terminal
    - **d)** Activates the virtual environment
 
 3. In Jinja2, what does `{{ headline }}` mean?
-   - **a)** Show the value of the `headline` variable from Python
+   - **a)** Comment out HTML
    - **b)** Start a Python function
-   - **c)** Comment out HTML
+   - **c)** Show the value of the `headline` variable from Python
    - **d)** Link to `static/style.css`
 
 4. What is `{% block content %}` in `base.html` for?
-   - **a)** A placeholder where each child page puts its unique content
+   - **a)** The port number (5000)
    - **b)** A list of pip packages
    - **c)** The Flask secret key
-   - **d)** The port number (5000)
+   - **d)** A placeholder where each child page puts its unique content
 
 5. A child template starts with `{% extends "base.html" %}`. What does that mean?
    - **a)** Reuse the shared frame (nav, layout) from `base.html`
@@ -195,9 +195,9 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **a)** Templates separate page layout from Python logic.
-2. **a)** `render_template` merges data into HTML files.
-3. **a)** Double braces print a variable's value.
-4. **a)** Child templates fill in the `content` block.
+2. **b)** `render_template` merges data into HTML files.
+3. **c)** Double braces print a variable's value.
+4. **d)** Child templates fill in the `content` block.
 5. **a)** `extends` inherits the parent layout.
 
 </details>

@@ -12,11 +12,7 @@ print(f"Name: {character['name']}")
 print(f"Level: {character['level']}")
 print(f"HP: {character['hp']}")
 
-# TODO: Use .get() for a key that might be missing
-magic = character.get("magic", 0)
-print(f"Magic: {magic}")
+# TODO: Use .get("magic", 0) and print "Magic: ..."
+# TODO: Use .get("skill", "none") and print "Special skill: ..."
 
-skill = character.get("skill", "none")
-print(f"Special skill: {skill}")
-
-print("Edit the dict keys above, then run again!")
+print("Finish the two .get() lines, then run again!")

@@ -46,7 +46,7 @@ Open [starter/inventory.py](starter/inventory.py). Two items are already in the 
 
 ### Step 2: Add an item
 
-Uncomment or complete the `.append("key")` line. The list grows by one slot.
+Write the `.append("key")` line where the TODO is. The list grows by one slot.
 
 ---
 
@@ -149,8 +149,8 @@ No keyboard input — output appears immediately.
 Pick the best answer for each question. Try without scrolling down first!
 
 1. In `inventory = ["torch", "rope"]`, what is the index of `"torch"`?
-   - **a)** `1`
-   - **b)** `0`
+   - **a)** `0`
+   - **b)** `1`
    - **c)** `-1`
    - **d)** `"torch"`
 
@@ -162,19 +162,19 @@ Pick the best answer for each question. Try without scrolling down first!
 
 3. Why does the lesson use `print(f"{i + 1}. {inventory[i]}")` instead of `i` alone?
    - **a)** Python lists start at 1
-   - **b)** So players see `1. torch` instead of `0. torch`
-   - **c)** `i + 1` makes the list longer
+   - **b)** `i + 1` makes the list longer
+   - **c)** So players see `1. torch` instead of `0. torch`
    - **d)** It fixes IndexError automatically
 
 4. How do you get the **last** item in a list without counting indexes?
    - **a)** `inventory[0]`
-   - **b)** `inventory[-1]`
+   - **b)** `inventory.len()`
    - **c)** `inventory[last]`
-   - **d)** `inventory.len()`
+   - **d)** `inventory[-1]`
 
 5. You have 3 items in `inventory` (indexes 0, 1, 2). What happens if you run `print(inventory[3])`?
-   - **a)** It prints `3`
-   - **b)** `IndexError: list index out of range`
+   - **a)** `IndexError: list index out of range`
+   - **b)** It prints `3`
    - **c)** It prints the first item again
    - **d)** The list grows to four items
 
@@ -182,11 +182,11 @@ Pick the best answer for each question. Try without scrolling down first!
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** List indexes start at **0** — the first slot is index 0.
+1. **a)** List indexes start at **0** — the first slot is index 0.
 2. **b)** `.append()` adds one new item to the end of the backpack.
-3. **b)** Adding 1 to `i` shows human-friendly numbering (1, 2, 3…) while indexes stay 0-based.
-4. **b)** `inventory[-1]` is the last slot — handy when you do not want to count.
-5. **b)** Index 3 does not exist in a 3-item list; valid indexes are 0, 1, and 2 only.
+3. **c)** Adding 1 to `i` shows human-friendly numbering (1, 2, 3…) while indexes stay 0-based.
+4. **d)** `inventory[-1]` is the last slot — handy when you do not want to count.
+5. **a)** Index 3 does not exist in a 3-item list; valid indexes are 0, 1, and 2 only.
 
 </details>
 

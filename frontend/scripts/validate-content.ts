@@ -12,12 +12,22 @@ import { LANGS } from "../src/lib/types";
 let lessonCount = 0;
 let fileCount = 0;
 
+/** Drop blank lines and full-line Python comments so a TODO skeleton can differ from a solution. */
+function pythonWithoutComments(source: string): string {
+  return source
+    .split(/\r?\n/)
+    .filter((line) => line.trim() !== "" && !/^\s*#/.test(line))
+    .join("\n");
+}
+
 // Fatal problems (exit 1) — structural breakage the app cannot render.
 const problems: string[] = [];
 // Non-fatal warnings (exit 0) — schema-v2 gaps tracked for the migration (plan 15).
 const warnings: string[] = [];
 
 const courses = getCourses();
+const answerCounts = [0, 0, 0, 0];
+let answerTotal = 0;
 const SLUG_TITLE_RE = /^course-\d+(?:-[a-z0-9-]+)?$/i;
 
 for (const course of courses) {
@@ -95,8 +105,64 @@ for (const course of courses) {
           warnings.push(
             `${where}: quiz count ${c.quiz.length} ≠ en ${enQuizLen} (parity)`,
           );
+        if (lang === "ru") {
+          const enLetters = lesson.content.en.quiz.map((q) => q.correctIndex).join(",");
+          const ruLetters = c.quiz.map((q) => q.correctIndex).join(",");
+          if (enLetters !== ruLetters)
+            warnings.push(
+              `${where}: quiz answer letters differ from en.md (${ruLetters} vs ${enLetters})`,
+            );
+        }
+      }
+
+      if (course.id === "course-1" || course.id === "course-2") {
+        const indices = lesson.content.en.quiz.map((q) => q.correctIndex);
+        for (const index of indices) {
+          if (index >= 0 && index < 4) {
+            answerCounts[index] += 1;
+            answerTotal += 1;
+          }
+        }
+        if (indices.length >= 4 && new Set(indices).size === 1)
+          warnings.push(
+            `${course.slug}/${block.slug}/${lesson.slug}: every quiz answer is the same letter`,
+          );
+
+        const starter = new Map<string, string>();
+        const solution = new Map<string, string>();
+        for (const file of lesson.files) {
+          if (!file.path.endsWith(".py")) continue;
+          if (file.path.startsWith("starter/"))
+            starter.set(file.path.slice("starter/".length), file.content);
+          if (file.path.startsWith("solution/"))
+            solution.set(file.path.slice("solution/".length), file.content);
+        }
+        for (const [rel, content] of starter) {
+          const other = solution.get(rel);
+          if (other === undefined) continue;
+          const left = pythonWithoutComments(content);
+          const right = pythonWithoutComments(other);
+          if (left.length > 0 && left === right)
+            warnings.push(
+              `${course.slug}/${block.slug}/${lesson.slug}: starter/${rel} matches solution/${rel} once comments are removed`,
+            );
+        }
       }
     }
+  }
+}
+
+if (answerTotal > 0) {
+  const labels = ["a", "b", "c", "d"];
+  const max = Math.max(...answerCounts);
+  const min = Math.min(...answerCounts);
+  if (min === 0 || max / answerTotal > 0.4) {
+    const summary = labels
+      .map((label, i) => `${label}=${answerCounts[i]}`)
+      .join(", ");
+    warnings.push(
+      `Course 1–2 quiz answers are unbalanced (${summary} of ${answerTotal}); keep a/b/c/d roughly even`,
+    );
   }
 }
 

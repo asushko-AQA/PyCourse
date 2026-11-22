@@ -26,7 +26,7 @@ PyCourse/
 
 ## Path B
 
-Copy each lesson's `starter/` folder. Create `.venv` and `pip install flask` in that folder before running.
+Copy each lesson's `starter/` if you use your own folder. Activate the **one** `.venv` from Lesson 0.1 (PyCourse root on Path A) before `python app.py`. Do not create a new `.venv` inside each lesson.
 
 ---
 

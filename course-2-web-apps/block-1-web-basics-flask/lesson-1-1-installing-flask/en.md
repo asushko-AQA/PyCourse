@@ -29,6 +29,8 @@ Think of your venv as a **private toolbox** for this web project. Flask lives in
 
 ### Step 2: Activate your venv (quick reminder)
 
+Stay in the **PyCourse** folder for this step (Path B: the folder where you created `.venv` in Lesson 0.1). The prompt should end with `PyCourse`, and `(.venv)` is not inside this lesson folder. If you already walked into a lesson, run `cd ..` until you are back at the project root, then activate.
+
 **Windows PowerShell** (most common in VS Code):
 
 ```text
@@ -91,10 +93,18 @@ print(f"Flask version: {importlib.metadata.version('flask')}")
 
 ### Step 5: cd to this lesson folder
 
-**Path A — PyCourse repo:**
+**Path A — PyCourse repo** (after `(.venv)` is showing):
+
+**Windows:**
 
 ```text
 cd course-2-web-apps\block-1-web-basics-flask\lesson-1-1-installing-flask
+```
+
+**macOS:**
+
+```text
+cd course-2-web-apps/block-1-web-basics-flask/lesson-1-1-installing-flask
 ```
 
 **Path B — your own copy:** `cd` to wherever you saved `check_flask.py`.
@@ -134,14 +144,21 @@ print(f"Flask version: {importlib.metadata.version('flask')}")
 
 ## Code Execution
 
-Activate your `.venv`, then:
+From the **PyCourse** root, activate `.venv` (Step 2), then:
+
+**Windows:**
 
 ```text
 cd course-2-web-apps\block-1-web-basics-flask\lesson-1-1-installing-flask
 python starter\check_flask.py
 ```
 
-**Mac/Linux:** `python starter/check_flask.py`
+**macOS:**
+
+```text
+cd course-2-web-apps/block-1-web-basics-flask/lesson-1-1-installing-flask
+python3 starter/check_flask.py
+```
 
 **Expected output:**
 
@@ -178,7 +195,7 @@ Look at `pip show flask` in the terminal. Find the **Location** line — that is
 
 **Cause:** The venv is not active, or Flask was never installed in this venv.
 
-**Fix:** Run `.\.venv\Scripts\Activate.ps1` (or your OS command), then `pip install flask`, then run the script again.
+**Fix:** From the PyCourse root, run `.\.venv\Scripts\Activate.ps1` (macOS: `source .venv/bin/activate`), then `pip install flask`, then run the script again.
 
 ---
 

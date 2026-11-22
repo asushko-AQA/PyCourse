@@ -168,5 +168,5 @@ python starter\app.py
 ## Что дальше
 
 → [Чеклист Блока 2](../README.md#block-2-readiness-checklist)  
-→ [Чеклист выпуска Курса 2](../../../STUDENT-MAP.ru.md#чеклист-выпуска-курса-2)  
-→ [Курс 3: Разработка игр](../../../../course-3-game-dev/README.md) — дальше Pygame!
+→ [Чеклист выпуска Курса 2](../../STUDENT-MAP.ru.md#чеклист-выпуска-курса-2)  
+→ [Курс 3: Разработка игр](../../../course-3-game-dev/README.md) — дальше Pygame!

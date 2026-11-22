@@ -21,7 +21,7 @@ A **dynamic route** has a **variable part** in the path. Flask captures that par
 
 ### Step 1: Open the starter app
 
-1. Activate `.venv`.
+1. From the **PyCourse** root, activate `.venv` (same command as [Lesson 1.1](../lesson-1-1-installing-flask/README.md)).
 2. Open [starter/app.py](starter/app.py).
 
 The home route is already done. You add one new route with a `<name>` placeholder.

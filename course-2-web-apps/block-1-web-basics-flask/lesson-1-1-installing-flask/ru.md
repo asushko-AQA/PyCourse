@@ -29,6 +29,8 @@
 
 ### Шаг 2: Активируй venv (краткое напоминание)
 
+На этом шаге оставайся в папке **PyCourse** (путь B: папка, где в Уроке 0.1 создан `.venv`). Приглашение заканчивается на `PyCourse`. `.venv` не лежит внутри папки урока. Если уже зашёл в урок, делай `cd ..`, пока не вернёшься в корень, и только потом активируй.
+
 **Windows PowerShell** (чаще всего в VS Code):
 
 ```text
@@ -91,10 +93,18 @@ print(f"Flask version: {importlib.metadata.version('flask')}")
 
 ### Шаг 5: Перейди в папку урока
 
-**Путь A — репозиторий PyCourse:**
+**Путь A — репозиторий PyCourse** (когда уже видно `(.venv)`):
+
+**Windows:**
 
 ```text
 cd course-2-web-apps\block-1-web-basics-flask\lesson-1-1-installing-flask
+```
+
+**macOS:**
+
+```text
+cd course-2-web-apps/block-1-web-basics-flask/lesson-1-1-installing-flask
 ```
 
 **Путь B — своя копия:** `cd` в папку, где лежит `check_flask.py`.
@@ -134,14 +144,21 @@ print(f"Flask version: {importlib.metadata.version('flask')}")
 
 ## Запуск кода
 
-Активируй `.venv`, затем:
+Из корня **PyCourse** активируй `.venv` (шаг 2), затем:
+
+**Windows:**
 
 ```text
 cd course-2-web-apps\block-1-web-basics-flask\lesson-1-1-installing-flask
 python starter\check_flask.py
 ```
 
-**Mac/Linux:** `python starter/check_flask.py`
+**macOS:**
+
+```text
+cd course-2-web-apps/block-1-web-basics-flask/lesson-1-1-installing-flask
+python3 starter/check_flask.py
+```
 
 **Ожидаемый вывод:**
 
@@ -178,7 +195,7 @@ Flask version: 3.x.x
 
 **Причина:** venv не активирован или Flask не установлен в этом venv.
 
-**Решение:** Выполни `.\.venv\Scripts\Activate.ps1` (или команду для своей ОС), затем `pip install flask`, затем снова запусти скрипт.
+**Решение:** Из корня PyCourse выполни `.\.venv\Scripts\Activate.ps1` (macOS: `source .venv/bin/activate`), затем `pip install flask`, затем снова запусти скрипт.
 
 ---
 

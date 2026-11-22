@@ -22,7 +22,7 @@ In [Lesson 0.2](../../block-0-environment-setup/lesson-0-2-how-the-web-works/REA
 ### Step 1: Activate venv and open the starter
 
 1. Open VS Code terminal.
-2. Activate `.venv` (see [Lesson 1.1](../lesson-1-1-installing-flask/README.md) if you forgot the command).
+2. From the **PyCourse** root, activate `.venv` (see [Lesson 1.1](../lesson-1-1-installing-flask/README.md) if you forgot the command). The toolbox lives in that root folder, not inside this lesson.
 3. Open [starter/app.py](starter/app.py).
 
 The file already creates `app = Flask(__name__)`. You add the route and the `app.run()` line.

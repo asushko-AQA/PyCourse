@@ -17,31 +17,31 @@ Welcome to the **Web Workshop**! Before you build pages in the browser, you need
 
 A **virtual environment** (`.venv`) is like a labeled toolbox just for this project. Packages you install with `pip` stay inside it instead of mixing with every other Python project on your computer.
 
-**Path A — PyCourse repo:**
+**One toolbox for all of Course 2.** Create `.venv` in the folder you open in VS Code. In the PyCourse repo that folder is the **project root** (`PyCourse`). Lesson 1.1 and the capstones `my_web_madlibs/` and `my_web_calc/` activate **that same** `.venv`. Do not create a second `.venv` inside a lesson folder.
 
-```text
-cd course-2-web-apps\block-0-environment-setup\lesson-0-1-virtual-environments
-```
+**Path A — PyCourse repo:** **File → Open Folder** → `PyCourse`. **Terminal → New Terminal** already starts there. If the prompt ends with `PyCourse`, you are in the right place. Do **not** `cd` into this lesson before `python -m venv .venv`.
 
-**Path B — your own folder:** Create a new folder on Desktop (for example `web_workshop`). Open it in VS Code — you are ready.
+**Path B — your own folder:** Create a folder (for example `web_workshop`), open **that** folder in VS Code, and copy [starter/check_setup.py](starter/check_setup.py) into it. Every command below runs in the folder you opened. Your `.venv` lives next to that copy.
+
+Check Python once: `python --version` should show `Python 3.12` or newer. On macOS, use `python3 --version` if `python` is not found, and use `python3` in place of `python` for the rest of this lesson.
 
 ---
 
 ### Step 1: Create `.venv`
 
-In the VS Code terminal:
+In the VS Code terminal (the `PyCourse` root for Path A, your own folder for Path B):
 
 ```text
 python -m venv .venv
 ```
 
-This creates a `.venv` folder. It may take a few seconds.
+This creates a `.venv` folder **here**. It may take a few seconds.
 
 ---
 
 ### Step 2: Activate the venv
 
-**Windows PowerShell:**
+**Windows PowerShell** (the usual VS Code terminal):
 
 ```text
 .venv\Scripts\Activate.ps1
@@ -53,13 +53,13 @@ This creates a `.venv` folder. It may take a few seconds.
 .venv\Scripts\activate.bat
 ```
 
-**Mac/Linux:**
+**macOS / Linux:**
 
 ```text
 source .venv/bin/activate
 ```
 
-When activation works, your prompt often shows `(.venv)` at the start.
+When activation works, your prompt often shows `(.venv)` at the start. You can change folders after this — the toolbox stays open.
 
 ---
 
@@ -73,15 +73,46 @@ pip install flask
 
 ---
 
-### Step 4: Run the check script
+### Step 4: Two new tools, then run the check script
 
-Open [starter/check_setup.py](starter/check_setup.py), finish the `# TODO` lines, then run:
+Open [starter/check_setup.py](starter/check_setup.py). The skeleton already has `try` / `except`. You fill in the `# TODO` prints.
+
+**`try` / `except`** is a safety net. Python runs the `try` block. If `import flask` fails, it raises `ImportError` and jumps to `except` instead of crashing. You print setup steps there.
+
+**`importlib.metadata.version("flask")`** looks up the installed Flask version and gives you a text string like `3.1.3`. Put it inside an f-string: `print(f"Flask version: {importlib.metadata.version('flask')}")`.
+
+Finish the `# TODO` lines inside `main()`. The shape is already in the file:
+
+```python
+import importlib.metadata
+
+
+def main():
+    try:
+        import flask
+        # TODO: print "venv ready"
+        # TODO: print the version with importlib.metadata.version("flask")
+    except ImportError:
+        print("Flask is not installed yet.")
+        # TODO: print "Steps:" and three numbered lines
+        # (activate .venv, pip install flask, run this script again)
+```
+
+**Path A — Windows** (from `PyCourse`, after `(.venv)` shows):
 
 ```text
+cd course-2-web-apps\block-0-environment-setup\lesson-0-1-virtual-environments
 python starter\check_setup.py
 ```
 
-**Mac/Linux:** `python starter/check_setup.py`
+**Path A — macOS:**
+
+```text
+cd course-2-web-apps/block-0-environment-setup/lesson-0-1-virtual-environments
+python starter/check_setup.py
+```
+
+**Path B:** you copied `check_setup.py` next to `.venv`, so run `python check_setup.py`.
 
 **Expected output (when venv is active and Flask is installed):**
 
@@ -98,7 +129,7 @@ Flask version: 3.x.x
 deactivate
 ```
 
-Your prompt returns to normal. Run `check_setup.py` again without the venv — see how the friendly error message guides you back.
+Your prompt returns to normal. Run the same `python starter\check_setup.py` command again (macOS: `python3 starter/check_setup.py`) — the friendly error message guides you back. Activate again before the next lesson.
 
 ---
 
@@ -131,15 +162,27 @@ main()
 
 ## Code Execution
 
+Run this from the folder you opened (`PyCourse` for Path A). Create and activate `.venv` **there**, then walk into the lesson to run the script.
+
+**Windows PowerShell:**
+
 ```text
-cd course-2-web-apps\block-0-environment-setup\lesson-0-1-virtual-environments
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install flask
+cd course-2-web-apps\block-0-environment-setup\lesson-0-1-virtual-environments
 python starter\check_setup.py
 ```
 
-**Mac/Linux:** `source .venv/bin/activate` and forward slashes in paths.
+**macOS / Linux:**
+
+```text
+python3 -m venv .venv
+source .venv/bin/activate
+pip install flask
+cd course-2-web-apps/block-0-environment-setup/lesson-0-1-virtual-environments
+python3 starter/check_setup.py
+```
 
 **Expected output (venv active, Flask installed):**
 
@@ -153,8 +196,8 @@ Flask version: 3.x.x
 ## Quick Drills
 
 1. Run `pip list` and find `Flask` in the list.
-2. Try activation in PowerShell **and** note the cmd command for a different terminal.
-3. Rename your project folder — your `.venv` moves with it.
+2. Type `deactivate`, run `pip list` again. Flask should be missing from this second list. Activate once more.
+3. While `(.venv)` shows, run `where python` (Windows) or `which python` (macOS). The path should contain `.venv`. If you rename or move the project folder, delete `.venv` and repeat Steps 1–3. A moved toolbox keeps old folder paths inside and stops working.
 
 ---
 
@@ -175,7 +218,13 @@ Flask version: 3.x.x
 
 **Cause:** Windows security settings block some PowerShell scripts.
 
-**Fix:** Ask a parent or teacher to allow scripts for your user, or use **cmd** with `activate.bat` instead.
+**Fix:** Ask a parent or teacher, then run this **once** in PowerShell and activate again:
+
+```text
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Or skip PowerShell and use **cmd** with `.venv\Scripts\activate.bat`.
 
 ---
 

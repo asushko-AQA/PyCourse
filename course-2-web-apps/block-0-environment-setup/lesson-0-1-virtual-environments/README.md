@@ -17,7 +17,7 @@
 
 ## What you'll build / Что ты создашь
 
-**EN:** A `.venv` folder in your project, Flask installed with `pip`, and a quick `check_setup.py` run that confirms your workshop is ready.
+**EN:** One `.venv` folder at the PyCourse root (or in your own project folder), Flask installed with `pip`, and a quick `check_setup.py` run that confirms your workshop is ready.
 
 **RU:** Папку `.venv` в проекте, Flask установленный через `pip`, и быстрый запуск `check_setup.py`, подтверждающий готовность мастерской.
 

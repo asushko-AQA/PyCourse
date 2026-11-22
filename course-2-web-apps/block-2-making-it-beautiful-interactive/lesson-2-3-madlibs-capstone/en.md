@@ -17,10 +17,14 @@ Your first **web capstone**! Combine templates and POST forms into a Mad-Libs ap
 
 Create **`my_web_madlibs/`** at your **project root** (next to `course-2-web-apps/`).
 
-**Path A:**
+**Path A:** the VS Code terminal is already in `PyCourse`. If `(.venv)` is not showing, activate the toolbox from Lesson 0.1 first (it lives in this folder):
+
+**Windows:** `.venv\Scripts\Activate.ps1`  
+**macOS:** `source .venv/bin/activate`
+
+Then create the capstone folder (no `cd Documents\PyCourse` — you are already there):
 
 ```text
-cd Documents\PyCourse
 mkdir my_web_madlibs
 ```
 
@@ -73,9 +77,20 @@ def madlibs():
 
 ### Step 3: Run from my_web_madlibs
 
+With `(.venv)` still active (activate at the `PyCourse` root first if the prompt does not show it):
+
+**Windows:**
+
 ```text
-cd Documents\PyCourse\my_web_madlibs
+cd my_web_madlibs
 python app.py
+```
+
+**macOS:**
+
+```text
+cd my_web_madlibs
+python3 app.py
 ```
 
 Or test the lesson starter first:

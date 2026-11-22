@@ -19,10 +19,14 @@ When fields are empty, show a **flash message** — a short note that appears on
 
 Create **`my_web_calc/`** at your **project root** (next to `my_web_madlibs/`).
 
-**Path A:**
+**Path A:** the VS Code terminal is already in `PyCourse`. If `(.venv)` is not showing, activate the toolbox from Lesson 0.1 first (it lives in this folder):
+
+**Windows:** `.venv\Scripts\Activate.ps1`  
+**macOS:** `source .venv/bin/activate`
+
+Then create the capstone folder (you are already in `PyCourse`):
 
 ```text
-cd Documents\PyCourse
 mkdir my_web_calc
 ```
 
@@ -88,9 +92,20 @@ Result appears on the same page when `total` is set:
 
 ### Step 4: Run from my_web_calc
 
+With `(.venv)` still active (activate at the `PyCourse` root first if the prompt does not show it):
+
+**Windows:**
+
 ```text
-cd Documents\PyCourse\my_web_calc
+cd my_web_calc
 python app.py
+```
+
+**macOS:**
+
+```text
+cd my_web_calc
+python3 app.py
 ```
 
 Or test the lesson starter:
@@ -236,8 +251,8 @@ Pick the best answer for each question. Try without scrolling down first!
 ## What's Next
 
 → [Block 2 readiness checklist](../README.md#block-2-readiness-checklist)  
-→ [Course 2 graduation checklist](../../../STUDENT-MAP.md#course-2-graduation-checklist)  
-→ [Course 3: Game Development](../../../../course-3-game-dev/README.md) — Pygame is next!
+→ [Course 2 graduation checklist](../../STUDENT-MAP.md#course-2-graduation-checklist)  
+→ [Course 3: Game Development](../../../course-3-game-dev/README.md) — Pygame is next!
 
 ---
 

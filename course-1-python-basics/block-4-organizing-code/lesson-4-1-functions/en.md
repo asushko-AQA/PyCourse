@@ -166,13 +166,13 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. What keyword do you use to **define** a function in Python?
    - **a)** `function`
-   - **b)** `def`
+   - **b)** `call`
    - **c)** `recipe`
-   - **d)** `call`
+   - **d)** `def`
 
 2. You wrote `def draw_banner(text):` but never called it. What happens when you run the file?
-   - **a)** Python runs the function automatically
-   - **b)** Nothing prints — defining a function only stores the recipe
+   - **a)** Nothing prints — defining a function only stores the recipe
+   - **b)** Python runs the function automatically
    - **c)** A SyntaxError appears
    - **d)** VS Code crashes
 
@@ -184,25 +184,25 @@ Pick the best answer for each question. Try without scrolling down first!
 
 4. Why must `main()` appear as the **last line** of the file with **no indent**?
    - **a)** Python always runs the last function name it sees
-   - **b)** So you can call `main()` to start the program after all functions are defined
-   - **c)** Indented lines are comments
+   - **b)** Indented lines are comments
+   - **c)** So you can call `main()` to start the program after all functions are defined
    - **d)** `main()` only works at the top of the file
 
 5. What does `draw_banner("Adventure Workshop")` pass into the function?
    - **a)** A loop counter
-   - **b)** One piece of text — the `text` parameter
+   - **b)** A dictionary of room names
    - **c)** The whole `main()` function
-   - **d)** A dictionary of room names
+   - **d)** One piece of text — the `text` parameter
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** `def` starts a function definition — your reusable recipe.
-2. **b)** Defining stores the recipe; Python runs it only when you **call** it by name.
+1. **d)** `def` starts a function definition — your reusable recipe.
+2. **a)** Defining stores the recipe; Python runs it only when you **call** it by name.
 3. **b)** `ask_yes_no` returns `"yes"` or `"no"` so the caller can store the answer in a variable.
-4. **b)** Top-level `main()` kicks off the script after helper functions are ready.
-5. **b)** `"Adventure Workshop"` is the value for the `text` parameter inside `draw_banner`.
+4. **c)** Top-level `main()` kicks off the script after helper functions are ready.
+5. **d)** `"Adventure Workshop"` is the value for the `text` parameter inside `draw_banner`.
 
 </details>
 

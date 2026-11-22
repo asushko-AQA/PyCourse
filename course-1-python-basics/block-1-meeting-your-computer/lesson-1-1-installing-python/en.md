@@ -289,19 +289,19 @@ Pick the best answer for each question. Try without scrolling down first!
 
 2. What command checks that Python is installed correctly?
    - **a)** `python --help`
-   - **b)** `python --version`
-   - **c)** `pip install python`
+   - **b)** `pip install python`
+   - **c)** `python --version`
    - **d)** `code --version`
 
 3. In this course, what is the VS Code terminal often called?
    - **a)** The Debug Panel
-   - **b)** The Command Portal
+   - **b)** The Output Window
    - **c)** The Extensions Hub
-   - **d)** The Output Window
+   - **d)** The Command Portal
 
 4. What file extension should a Python script have?
-   - **a)** `.txt`
-   - **b)** `.py`
+   - **a)** `.py`
+   - **b)** `.txt`
    - **c)** `.python`
    - **d)** `.code`
 
@@ -316,9 +316,9 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **b)** PATH tells Windows where Python lives so `python` works from the terminal.
-2. **b)** `python --version` shows your version when install and PATH are correct.
-3. **b)** The lesson calls the terminal your Command Portal for commands and scripts.
-4. **b)** A `.py` file is a Python script — instructions for your computer.
+2. **c)** `python --version` shows your version when install and PATH are correct.
+3. **d)** The lesson calls the terminal your Command Portal for commands and scripts.
+4. **a)** A `.py` file is a Python script — instructions for your computer.
 5. **b)** Comments with `#` are notes for you; Python skips them when running code.
 
 </details>

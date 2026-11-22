@@ -177,22 +177,22 @@ python starter\app.py
 Выбери лучший ответ на каждый вопрос. Сначала попробуй без подсказок!
 
 1. При **GET**-форме на `/greet` где часто появляется имя после отправки?
-   - **a)** В URL, например `?name=Alex`
-   - **b)** Только на диске сервера, нигде не видно
+   - **a)** Только на диске сервера, нигде не видно
+   - **b)** В URL, например `?name=Alex`
    - **c)** В CSS-файле
    - **d)** В имени папки `.venv`
 
 2. Какой код Flask читает GET-данные из URL?
-   - **a)** `request.args.get("name")`
+   - **a)** `flash("name")`
    - **b)** `request.form.get("name")`
-   - **c)** `flash("name")`
+   - **c)** `request.args.get("name")`
    - **d)** `url_for('static', filename='name')`
 
 3. Какой код Flask читает POST-данные из отправленной формы?
-   - **a)** `request.form.get("text")`
+   - **a)** `@app.route("<text>")`
    - **b)** `request.args.get("text")`
    - **c)** `importlib.metadata.version("text")`
-   - **d)** `@app.route("<text>")`
+   - **d)** `request.form.get("text")`
 
 4. Зачем `/message` может иметь `methods=["GET", "POST"]`?
    - **a)** GET показывает форму; POST обрабатывает данные на том же URL
@@ -201,8 +201,8 @@ python starter\app.py
    - **d)** Чтобы в URL всегда было `?text=...`
 
 5. Зачем вызывать `.strip()` у значений формы?
-   - **a)** Убрать лишние пробелы в начале и конце ввода
-   - **b)** Удалить форму из HTML
+   - **a)** Удалить форму из HTML
+   - **b)** Убрать лишние пробелы в начале и конце ввода
    - **c)** Автоматически превратить числа в float
    - **d)** Скрыть flash-сообщения
 
@@ -210,11 +210,11 @@ python starter\app.py
 
 <details><summary>Нажми, чтобы увидеть ответы</summary>
 
-1. **a)** Данные GET-формы видны в query string.
-2. **a)** `request.args` — для параметров в URL.
-3. **a)** `request.form` — для полей POST.
+1. **b)** Данные GET-формы видны в query string.
+2. **c)** `request.args` — для параметров в URL.
+3. **d)** `request.form` — для полей POST.
 4. **a)** Один URL показывает форму (GET) и обрабатывает её (POST).
-5. **a)** `.strip()` убирает случайные пробелы во вводе.
+5. **b)** `.strip()` убирает случайные пробелы во вводе.
 
 </details>
 

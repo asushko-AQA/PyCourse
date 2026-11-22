@@ -233,16 +233,16 @@ Or skip PowerShell and use **cmd** with `.venv\Scripts\activate.bat`.
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What is a virtual environment (`.venv`) like in this lesson?
-   - **a)** A folder that keeps packages for just this project
+   - **a)** A backup copy of all your Python files
    - **b)** A special browser for testing websites
-   - **c)** A backup copy of all your Python files
+   - **c)** A folder that keeps packages for just this project
    - **d)** A command that deletes old packages
 
 2. When your venv is active, what do you often see at the start of the terminal prompt?
    - **a)** `[Flask]`
-   - **b)** `(.venv)`
+   - **b)** `C:\Windows\`
    - **c)** `>>> `
-   - **d)** `C:\Windows\`
+   - **d)** `(.venv)`
 
 3. What does `pip install flask` do in an **activated** venv?
    - **a)** Installs Flask only inside that venv
@@ -251,26 +251,26 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Copies Flask into every Python project on your PC
 
 4. Why should you activate the venv before running `python starter\check_setup.py`?
-   - **a)** So Python can find Flask that you installed in the venv
-   - **b)** Because `.py` files only run after activation
+   - **a)** Because `.py` files only run after activation
+   - **b)** So Python can find Flask that you installed in the venv
    - **c)** To make the script run twice as fast
    - **d)** Because VS Code refuses to open the terminal otherwise
 
 5. What does `deactivate` do?
-   - **a)** Turns off the venv and returns you to normal terminal Python
+   - **a)** Uninstalls Flask from the internet
    - **b)** Deletes the `.venv` folder forever
-   - **c)** Uninstalls Flask from the internet
+   - **c)** Turns off the venv and returns you to normal terminal Python
    - **d)** Closes VS Code
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** A venv is a project toolbox — packages stay separate from other projects.
-2. **b)** `(.venv)` in the prompt means the virtual environment is active.
+1. **c)** A venv is a project toolbox — packages stay separate from other projects.
+2. **d)** `(.venv)` in the prompt means the virtual environment is active.
 3. **a)** `pip install` inside an active venv installs only there.
-4. **a)** Without activation, Python may not see packages you installed in `.venv`.
-5. **a)** `deactivate` exits the venv — you are back to system Python.
+4. **b)** Without activation, Python may not see packages you installed in `.venv`.
+5. **c)** `deactivate` exits the venv — you are back to system Python.
 
 </details>
 

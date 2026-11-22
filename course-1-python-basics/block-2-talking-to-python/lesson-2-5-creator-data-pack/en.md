@@ -134,7 +134,7 @@ Block 2 complete!
 ## Quick Drills
 
 1. **Checklist** — tick all five items on the Block 2 checklist.
-2. **Math without int** — what if you wrote `age = input(...)` and then `age * 365`? Try it briefly — see the error or weird result. Then use `int()`.
+2. **Math without int** — `age = input(...)` then `age * 365` repeats the digits (`1111…`), it does not crash. `age + 1` raises `TypeError: can only concatenate str (not "int") to str`. Then use `int()`.
 3. **Shout** — change `RULES!` to your own phrase.
 
 ---
@@ -156,9 +156,9 @@ Block 2 complete!
 
 ## Debug Corner
 
-**Problem:** `TypeError: can't multiply sequence by non-int of type 'str'` (or unexpected huge number when using `+`)
+**Problem:** `days_on_earth` prints a huge string like `111111…` instead of a number — or `TypeError: can only concatenate str (not "int") to str` if you write `age + 1`.
 
-**Cause:** You used `age = input(...)` without `int()`, then tried `age * 365`. Python treated age as text, not a number.
+**Cause:** `age = input(...)` is text. `'11' * 365` repeats those characters 365 times (no error). `'11' + 1` cannot add text and a number.
 
 **Fix:** `age = int(input("How old are you? "))` — convert before math.
 
@@ -169,16 +169,16 @@ Block 2 complete!
 Pick the best answer for each question. Try without scrolling down first!
 
 1. Where should you create the `my_data/` folder for this capstone?
-   - **a)** At your **project root** (next to `my_mission/`, not inside the lesson folder)
+   - **a)** In the Python installation folder
    - **b)** Inside the lesson-2-5 folder only
-   - **c)** In the Python installation folder
+   - **c)** At your **project root** (next to `my_mission/`, not inside the lesson folder)
    - **d)** Nowhere — run only from `starter/`
 
 2. Your script should calculate `days = age * 365`. What must happen to `age` first?
-   - **a)** Convert it with `int()` after `input()`
+   - **a)** Delete it before multiplying
    - **b)** Leave it as text from `input()`
    - **c)** Wrap it in quotes
-   - **d)** Delete it before multiplying
+   - **d)** Convert it with `int()` after `input()`
 
 3. What does `shout = name.upper()` do?
    - **a)** Stores the name in ALL CAPS
@@ -186,27 +186,27 @@ Pick the best answer for each question. Try without scrolling down first!
    - **c)** Slices the first three letters
    - **d)** Compares the name to "ALEX"
 
-4. `TypeError: can't multiply sequence by non-int of type 'str'` often means…
-   - **a)** You used `age = input(...)` without `int()`, then tried `age * 365`
-   - **b)** You forgot a colon after `if`
+4. `TypeError: can only concatenate str (not "int") to str` often means…
+   - **a)** You forgot a colon after `if`
+   - **b)** You wrote `age + 1` while `age` was still text from `input()`
    - **c)** You misspelled a variable name
    - **d)** You used `.upper()` on a number
 
 5. Which Block 2 skills does the Creator Data Pack combine?
-   - **a)** Variables, `input()`, f-strings, math, and string transforms
+   - **a)** Only comparisons and `if` statements
    - **b)** Only Turtle graphics
-   - **c)** Only comparisons and `if` statements
+   - **c)** Variables, `input()`, f-strings, math, and string transforms
    - **d)** Flask routes and HTML templates
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** Create `my_data/` at project root, like Block 1's `my_mission/`.
-2. **a)** Use `int(input(...))` so `age` is a number before `* 365`.
+1. **c)** Create `my_data/` at project root, like Block 1's `my_mission/`.
+2. **d)** Use `int(input(...))` so `age` is a number before `* 365`.
 3. **a)** `.upper()` makes the name shout in ALL CAPS.
-4. **a)** Multiplying a string by a number repeats text; you need `int()` first.
-5. **a)** The capstone packs all Block 2 data skills into one script.
+4. **b)** Text and a number cannot be added with `+`. Convert with `int()` first. (`age * 365` repeats the text instead of raising this error.)
+5. **c)** The capstone packs all Block 2 data skills into one script.
 
 </details>
 

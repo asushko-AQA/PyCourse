@@ -151,16 +151,16 @@ Tick the [Block 3 readiness checklist](../README.md#block-3-readiness-checklist)
 Pick the best answer for each question. Try without scrolling down first!
 
 1. In a nested star pyramid, the **outer** loop usually picks the…
-   - **a)** Row number
+   - **a)** File name on disk
    - **b)** Random user input
-   - **c)** File name on disk
+   - **c)** Row number
    - **d)** True/False comparison result
 
 2. How many rows does `for row in range(1, 6):` create?
-   - **a)** 5 rows (1, 2, 3, 4, 5)
+   - **a)** 10 rows
    - **b)** 6 rows
    - **c)** 4 rows
-   - **d)** 10 rows
+   - **d)** 5 rows (1, 2, 3, 4, 5)
 
 3. What does `print("*", end="")` do?
    - **a)** Prints a star **on the same line** (no new line yet)
@@ -169,26 +169,26 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Stops the loop immediately
 
 4. Why use `range(1, 6)` for a **5-row** pyramid?
-   - **a)** The stop number (6) is **not** included — you get 1 through 5
-   - **b)** Python always skips the first row
+   - **a)** Python always skips the first row
+   - **b)** The stop number (6) is **not** included — you get 1 through 5
    - **c)** `range(1, 6)` means "repeat 6 times starting at 0"
    - **d)** Slicing requires 6 rows minimum
 
 5. What does `break` do inside a loop?
-   - **a)** Exits the loop early
+   - **a)** Converts text to uppercase
    - **b)** Repeats the loop forever
-   - **c)** Converts text to uppercase
+   - **c)** Exits the loop early
    - **d)** Indents the next line
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** Outer loop = row; inner loop prints stars on that row.
-2. **a)** `range(1, 6)` → 1, 2, 3, 4, 5 (6 is excluded).
+1. **c)** Outer loop = row; inner loop prints stars on that row.
+2. **d)** `range(1, 6)` → 1, 2, 3, 4, 5 (6 is excluded).
 3. **a)** `end=""` keeps stars on one line; bare `print()` starts a new line.
-4. **a)** Off-by-one rule: for 5 rows, stop at 6.
-5. **a)** `break` is an emergency exit from the loop.
+4. **b)** Off-by-one rule: for 5 rows, stop at 6.
+5. **c)** `break` is an emergency exit from the loop.
 
 </details>
 

@@ -211,22 +211,22 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Because addition only works with a secret
 
 2. When should you call `flash("Please enter both numbers.")`?
-   - **a)** When a required field is empty after POST
-   - **b)** Every time the server starts
+   - **a)** Every time the server starts
+   - **b)** When a required field is empty after POST
    - **c)** Before activating `.venv`
    - **d)** Only when the user visits with GET
 
 3. User types `abc` in a number field. What should happen?
-   - **a)** Show a friendly flash error — not a scary crash
+   - **a)** Delete `calc.html`
    - **b)** Silently ignore the form forever
-   - **c)** Delete `calc.html`
+   - **c)** Show a friendly flash error — not a scary crash
    - **d)** Redirect to Course 3 automatically
 
 4. How is this form calculator different from Block 1's `/add/3/5`?
-   - **a)** Users type numbers in a form instead of putting them in the URL
+   - **a)** It only works without templates
    - **b)** It does not use Python
    - **c)** It cannot show errors
-   - **d)** It only works without templates
+   - **d)** Users type numbers in a form instead of putting them in the URL
 
 5. Where do you loop to **display** flash messages in the template?
    - **a)** `{% for message in get_flashed_messages() %}`
@@ -239,9 +239,9 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **a)** Sessions need a secret key to store flash messages safely.
-2. **a)** Flash user-friendly errors when validation fails.
-3. **a)** Catch bad input with `try/except` or checks, then `flash()`.
-4. **a)** Forms hide numbers from the URL and feel more like real apps.
+2. **b)** Flash user-friendly errors when validation fails.
+3. **c)** Catch bad input with `try/except` or checks, then `flash()`.
+4. **d)** Forms hide numbers from the URL and feel more like real apps.
 5. **a)** `get_flashed_messages()` returns messages to show once.
 
 </details>

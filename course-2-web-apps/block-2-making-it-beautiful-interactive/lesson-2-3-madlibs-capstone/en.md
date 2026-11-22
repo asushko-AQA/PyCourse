@@ -188,16 +188,16 @@ python starter\app.py
 Pick the best answer for each question. Try without scrolling down first!
 
 1. Where should you copy the starter for your capstone project?
-   - **a)** `my_web_madlibs/` at the project root
+   - **a)** Only in the browser bookmarks bar
    - **b)** Inside `.venv/Scripts/`
-   - **c)** Only in the browser bookmarks bar
+   - **c)** `my_web_madlibs/` at the project root
    - **d)** Into `course-1-python-basics/`
 
 2. The Mad-Libs form uses `method="post"`. Where do the words go when you submit?
-   - **a)** In the request body — read with `request.form.get(...)`
+   - **a)** Directly into `pip list`
    - **b)** In the URL as `?noun=robot` only
    - **c)** Into `static/style.css`
-   - **d)** Directly into `pip list`
+   - **d)** In the request body — read with `request.form.get(...)`
 
 3. When should you build the `story` variable?
    - **a)** Inside the `if request.method == "POST":` block after reading the fields
@@ -206,26 +206,26 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** After `deactivate`
 
 4. What does `{% if story %}` in the template do?
-   - **a)** Show the story section only when `story` is not empty
-   - **b)** Delete the form after one use
+   - **a)** Delete the form after one use
+   - **b)** Show the story section only when `story` is not empty
    - **c)** Install Jinja2 with pip
    - **d)** Change GET to POST automatically
 
 5. Each `<input name="noun">` must match what in `app.py`?
-   - **a)** The same name in `request.form.get("noun")`
+   - **a)** The `secret_key` string
    - **b)** The Flask port number
-   - **c)** The `secret_key` string
+   - **c)** The same name in `request.form.get("noun")`
    - **d)** The `@app.route` decorator name only
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** Capstone folders live at project root, like other `my_*` projects.
-2. **a)** POST sends field data in the body, not the URL.
+1. **c)** Capstone folders live at project root, like other `my_*` projects.
+2. **d)** POST sends field data in the body, not the URL.
 3. **a)** Build the story only after you have the submitted words.
-4. **a)** The template shows the result block when `story` has text.
-5. **a)** HTML `name` must match the key in `request.form.get(...)`.
+4. **b)** The template shows the result block when `story` has text.
+5. **c)** HTML `name` must match the key in `request.form.get(...)`.
 
 </details>
 

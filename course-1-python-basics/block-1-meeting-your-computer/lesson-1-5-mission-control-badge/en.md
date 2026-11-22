@@ -254,15 +254,15 @@ Pick the best answer for each question. Try without scrolling down first!
 
 2. How many `print()` lines should your finished `badge.py` have?
    - **a)** Exactly 1
-   - **b)** 5 to 8 lines of your own output
-   - **c)** 50 minimum
+   - **b)** 50 minimum
+   - **c)** 5 to 8 lines of your own output
    - **d)** Zero — only `# TODO` comments
 
 3. What terminal command creates a new folder called `my_mission`?
-   - **a)** `mkdir my_mission`
+   - **a)** `cd my_mission`
    - **b)** `python my_mission`
    - **c)** `dir my_mission`
-   - **d)** `cd my_mission`
+   - **d)** `mkdir my_mission`
 
 4. After `cd my_mission`, what command runs your badge script?
    - **a)** `python badge.py`
@@ -281,8 +281,8 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **b)** `my_mission` belongs at project root, beside the course folders.
-2. **b)** The capstone asks for 5–8 personal `print()` lines in your badge.
-3. **a)** `mkdir` makes a new folder; then you `cd` into it.
+2. **c)** The capstone asks for 5–8 personal `print()` lines in your badge.
+3. **d)** `mkdir` makes a new folder; then you `cd` into it.
 4. **a)** From inside `my_mission`, run `python badge.py` to launch your badge.
 5. **b)** Deleting a closing quote causes a SyntaxError — you read it and fix it.
 

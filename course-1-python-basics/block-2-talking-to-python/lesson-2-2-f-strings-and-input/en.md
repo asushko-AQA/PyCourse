@@ -148,10 +148,10 @@ print(f"\n{name}, you are officially a Data Lab apprentice!")
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What does `input()` always give you, even if you type digits?
-   - **a)** Text (a string)
+   - **a)** Nothing — it only prints
    - **b)** An integer
    - **c)** True or False
-   - **d)** Nothing — it only prints
+   - **d)** Text (a string)
 
 2. What does the `f` in `print(f"Hello, {name}!")` do?
    - **a)** Tells Python to replace `{name}` with the real value
@@ -166,26 +166,26 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** A blank line
 
 4. The text inside `input("What is your name? ")` is called the…
-   - **a)** Prompt — the question shown to the user
+   - **a)** Quotient
    - **b)** Slice
-   - **c)** Quotient
+   - **c)** Prompt — the question shown to the user
    - **d)** Boolean
 
 5. Which line asks a question and saves the answer in `color`?
-   - **a)** `color = input("What is your favorite color? ")`
+   - **a)** `color == input("blue")`
    - **b)** `input(color) = "blue"`
    - **c)** `print(color = input)`
-   - **d)** `color == input("blue")`
+   - **d)** `color = input("What is your favorite color? ")`
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** `input()` always returns a string; Lesson 2.3 uses `int()` for math.
+1. **d)** `input()` always returns a string; Lesson 2.3 uses `int()` for math.
 2. **a)** The `f` enables fill-in-the-blank substitution with `{variables}`.
 3. **b)** Without `f`, `{name}` is printed as plain text.
-4. **a)** The quoted text is the prompt shown before the user types.
-5. **a)** `input()` on the right, variable name on the left of `=`.
+4. **c)** The quoted text is the prompt shown before the user types.
+5. **d)** `input()` on the right, variable name on the left of `=`.
 
 </details>
 

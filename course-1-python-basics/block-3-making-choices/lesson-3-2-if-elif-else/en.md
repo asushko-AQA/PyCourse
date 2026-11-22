@@ -148,22 +148,22 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** None — they only print True/False
 
 2. What must appear at the end of `if choice == "left"`?
-   - **a)** A colon `:`
-   - **b)** A semicolon `;`
+   - **a)** A semicolon `;`
+   - **b)** A colon `:`
    - **c)** An equals sign `=`
    - **d)** Nothing extra
 
 3. When does the `else` branch run?
-   - **a)** When no `if` or `elif` condition matched
+   - **a)** Only when the user types `left`
    - **b)** Always, before any `if`
-   - **c)** Only when the user types `left`
+   - **c)** When no `if` or `elif` condition matched
    - **d)** Never — it is optional decoration
 
 4. What does `elif` mean?
-   - **a)** "Else if" — try the next check if the first one was False
+   - **a)** "Every line if" — run all branches
    - **b)** "End loop if" — stop a while loop
    - **c)** "Equal if" — assign a variable
-   - **d)** "Every line if" — run all branches
+   - **d)** "Else if" — try the next check if the first one was False
 
 5. Code inside an `if` branch must be…
    - **a)** Indented (4 spaces) under the `if` line
@@ -176,9 +176,9 @@ Pick the best answer for each question. Try without scrolling down first!
 <details><summary>Click to reveal answers</summary>
 
 1. **a)** Only the first matching branch runs.
-2. **a)** Every `if`, `elif`, and `else` line needs a colon.
-3. **a)** `else` is the catch-all when nothing above matched.
-4. **a)** `elif` checks another condition if the previous ones failed.
+2. **b)** Every `if`, `elif`, and `else` line needs a colon.
+3. **c)** `else` is the catch-all when nothing above matched.
+4. **d)** `elif` checks another condition if the previous ones failed.
 5. **a)** Indented code belongs to the branch (4 spaces in examples).
 
 </details>

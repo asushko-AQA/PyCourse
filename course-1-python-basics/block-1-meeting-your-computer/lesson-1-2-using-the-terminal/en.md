@@ -292,43 +292,43 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. What does `cd ..` do?
    - **a)** Deletes the current folder
-   - **b)** Walks back one folder level to the parent folder
-   - **c)** Lists all files in the folder
+   - **b)** Lists all files in the folder
+   - **c)** Walks back one folder level to the parent folder
    - **d)** Clears the terminal screen
 
 2. On Windows, which command shows files in your current folder?
    - **a)** `ls`
-   - **b)** `dir`
+   - **b)** `list`
    - **c)** `show`
-   - **d)** `list`
+   - **d)** `dir`
 
 3. What does the text before `>` in your terminal prompt show?
-   - **a)** Your Python version
-   - **b)** Your current folder path
+   - **a)** Your current folder path
+   - **b)** Your Python version
    - **c)** The last error message
    - **d)** Your password
 
 4. How do you clear a messy terminal screen on Windows?
-   - **a)** `cls`
-   - **b)** `clear`
+   - **a)** `clear`
+   - **b)** `cls`
    - **c)** `cd ..`
    - **d)** `dir`
 
 5. Pressing **Tab** after typing part of a folder name in `cd` can…
    - **a)** Delete the folder
-   - **b)** Autocomplete the folder name for you
-   - **c)** Run Python automatically
+   - **b)** Run Python automatically
+   - **c)** Autocomplete the folder name for you
    - **d)** Close VS Code
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** Two dots `..` mean "the folder above" — you move up one level.
-2. **b)** `dir` lists everything in the current folder on Windows (`ls` on Mac/Linux).
-3. **b)** The path before `>` is your current location in the folder maze.
-4. **a)** `cls` clears the screen on Windows; Mac/Linux use `clear`.
-5. **b)** Tab helps avoid typos by completing folder names as you type.
+1. **c)** Two dots `..` mean "the folder above" — you move up one level.
+2. **d)** `dir` lists everything in the current folder on Windows (`ls` on Mac/Linux).
+3. **a)** The path before `>` is your current location in the folder maze.
+4. **b)** `cls` clears the screen on Windows; Mac/Linux use `clear`.
+5. **c)** Tab helps avoid typos by completing folder names as you type.
 
 </details>
 

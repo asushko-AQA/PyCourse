@@ -184,10 +184,10 @@ Visit `http://127.0.0.1:5000/` and `/about`.
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What is the main job of **CSS** in this lesson?
-   - **a)** Control colors, fonts, and layout — how the page looks
+   - **a)** Activate the virtual environment
    - **b)** Store Python routes
    - **c)** Replace HTML entirely
-   - **d)** Activate the virtual environment
+   - **d)** Control colors, fonts, and layout — how the page looks
 
 2. Where should `style.css` live in a Flask project?
    - **a)** In the `static/` folder next to `app.py`
@@ -196,32 +196,32 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** On a USB drive only
 
 3. Why use `{{ url_for('static', filename='style.css') }}` in a template?
-   - **a)** Flask builds the correct link to the CSS file
-   - **b)** To read POST form data
+   - **a)** To read POST form data
+   - **b)** Flask builds the correct link to the CSS file
    - **c)** To set `app.secret_key`
    - **d)** To define a dynamic route `<name>`
 
 4. HTML tells the browser what to show. CSS tells it what?
-   - **a)** How it should look
+   - **a)** Which port to open
    - **b)** Which pip packages to install
-   - **c)** Which port to open
+   - **c)** How it should look
    - **d)** How to run `python app.py`
 
 5. What does a `@media (max-width: 480px)` rule help with?
-   - **a)** Adjust styles on narrow screens (responsive layout)
+   - **a)** Delete flash messages
    - **b)** Block all CSS from loading
    - **c)** Convert GET forms to POST
-   - **d)** Delete flash messages
+   - **d)** Adjust styles on narrow screens (responsive layout)
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** CSS styles the page — colors, spacing, fonts.
+1. **d)** CSS styles the page — colors, spacing, fonts.
 2. **a)** Flask serves files from `static/` automatically.
-3. **a)** `url_for` generates the right `/static/style.css` path.
-4. **a)** HTML = structure; CSS = appearance.
-5. **a)** Media queries tweak layout for small screens.
+3. **b)** `url_for` generates the right `/static/style.css` path.
+4. **c)** HTML = structure; CSS = appearance.
+5. **d)** Media queries tweak layout for small screens.
 
 </details>
 

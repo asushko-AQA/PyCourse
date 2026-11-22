@@ -174,16 +174,16 @@ Add `/hello/<name>/<age>` with **two** variables. Return: `Hello, Alex! You are 
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What makes `/hello/<name>` a **dynamic** route?
-   - **a)** Part of the URL changes and Flask passes it into your function
+   - **a)** It only works on mobile phones
    - **b)** The page reloads automatically every second
-   - **c)** It only works on mobile phones
+   - **c)** Part of the URL changes and Flask passes it into your function
    - **d)** It requires a CSS file
 
 2. In `@app.route("/hello/<name>")` and `def hello(name):`, what must match?
-   - **a)** The variable name in the path and the function parameter
+   - **a)** The HTML tag and the pip version
    - **b)** The port number and the file name
    - **c)** The browser brand and the OS version
-   - **d)** The HTML tag and the pip version
+   - **d)** The variable name in the path and the function parameter
 
 3. You visit `/hello/Alex`. What should the `name` argument be?
    - **a)** `Alex`
@@ -192,26 +192,26 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** `5000`
 
 4. You visit `/hello/` with nothing after the slash. What often happens?
-   - **a)** Flask cannot match the route — often a 404 error
-   - **b)** The server installs Flask again
+   - **a)** The server installs Flask again
+   - **b)** Flask cannot match the route — often a 404 error
    - **c)** The browser deletes the URL
    - **d)** Python opens a new `.venv`
 
 5. Why use an f-string like `f"Hello, {name}!"`?
-   - **a)** To plug the URL value into the text you send back
+   - **a)** To activate the virtual environment
    - **b)** To store files in the `static/` folder
-   - **c)** To activate the virtual environment
+   - **c)** To plug the URL value into the text you send back
    - **d)** To hide the URL from the user forever
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** `<name>` captures the changing part of the URL.
-2. **a)** The path variable and parameter must share the same name.
+1. **c)** `<name>` captures the changing part of the URL.
+2. **d)** The path variable and parameter must share the same name.
 3. **a)** Flask passes the URL segment as `name='Alex'`.
-4. **a)** An empty name usually does not match the route pattern.
-5. **a)** f-strings insert the dynamic value into your greeting.
+4. **b)** An empty name usually does not match the route pattern.
+5. **c)** f-strings insert the dynamic value into your greeting.
 
 </details>
 

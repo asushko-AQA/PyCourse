@@ -1,11 +1,11 @@
 # Build from repo root: docker build -f frontend/Dockerfile .
-FROM node:22-bookworm-slim AS deps
+FROM node:26.13.1-bookworm-slim AS deps
 
 WORKDIR /app/frontend
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci
 
-FROM node:22-bookworm-slim AS builder
+FROM node:26.13.1-bookworm-slim AS builder
 
 # Repo layout: /app/course-*, /app/frontend/
 WORKDIR /app
@@ -37,7 +37,7 @@ ENV NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
 
 RUN npm run build
 
-FROM node:22-bookworm-slim AS runner
+FROM node:26.13.1-bookworm-slim AS runner
 
 WORKDIR /app/frontend
 

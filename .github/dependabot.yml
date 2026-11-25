@@ -13,6 +13,13 @@ updates:
         update-types:
           - minor
           - patch
+    ignore:
+      - dependency-name: typescript
+        versions:
+          - ">=6"
+      - dependency-name: "@types/node"
+        update-types:
+          - "version-update:semver-major"
 
   - package-ecosystem: npm
     directory: /tools/mcp
@@ -26,6 +33,13 @@ updates:
         update-types:
           - minor
           - patch
+    ignore:
+      - dependency-name: typescript
+        versions:
+          - ">=6"
+      - dependency-name: "@types/node"
+        update-types:
+          - "version-update:semver-major"
 
   # Root package.json has scripts only (no dependencies and no lockfile).
 

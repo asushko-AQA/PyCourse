@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           # Next.js 16 requires Node >=20.9; the course documents Node 20+.
           node-version: "20"
@@ -89,7 +89,7 @@ jobs:
             tools/mcp/tests/requirements.txt
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "20"
           cache: npm

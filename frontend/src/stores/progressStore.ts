@@ -322,14 +322,21 @@ export const useProgressStore = create<ProgressState>()(
  * the listener is not missed, and so apply does not run twice.
  */
 function whenProgressHydrated(apply: () => void): void {
+  // On the server, localStorage is unavailable and zustand never attaches
+  // `persist`. There is nothing saved to protect, so record sign-in immediately.
+  const persistApi = useProgressStore.persist;
+  if (!persistApi?.hasHydrated) {
+    apply();
+    return;
+  }
   let pending = true;
-  const unsub = useProgressStore.persist.onFinishHydration(() => {
+  const unsub = persistApi.onFinishHydration(() => {
     if (!pending) return;
     pending = false;
     unsub();
     apply();
   });
-  if (useProgressStore.persist.hasHydrated()) {
+  if (persistApi.hasHydrated()) {
     if (!pending) return;
     pending = false;
     unsub();

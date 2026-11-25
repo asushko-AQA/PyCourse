@@ -1,18 +1,17 @@
 #!/bin/sh
 set -e
 
-# Railway startCommand overrides bypass Docker ENTRYPOINT. Prefer clearing the
-# dashboard startCommand (see railway.toml) so this script always runs.
+# A custom start command that bypasses Docker ENTRYPOINT will skip this script.
 echo "PyCourse backend entrypoint starting..."
 
-# Railway mounts a persistent volume at /data for SQLite.
+# Production expects a persistent volume mounted at /data for SQLite.
 if ! mkdir -p /data; then
   echo "ERROR: failed to create /data directory" >&2
   exit 1
 fi
 
 if ! touch /data/.pycourse-write-test 2>/dev/null; then
-  echo "ERROR: /data is not writable — check the Railway volume mount at /data" >&2
+  echo "ERROR: /data is not writable — mount a persistent volume at /data" >&2
   exit 1
 fi
 rm -f /data/.pycourse-write-test

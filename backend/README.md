@@ -101,7 +101,7 @@ pytest
 
 ## Key environment variables
 
-See [DEPLOY.md](../DEPLOY.md) for production/Railway setup and the full variable
+See [DEPLOY.md](../DEPLOY.md) for production Docker setup and the full variable
 list. Summary:
 
 | Variable | Purpose |

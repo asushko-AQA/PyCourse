@@ -3,11 +3,10 @@
 
 inventory = ["torch", "rope"]
 
-# TODO: Add "key" to the end of the list: inventory.append("key")
+# TODO: Add "key" with .append()
 
 print("=== INVENTORY ===")
 
-# TODO: Write a for loop over range(len(inventory)).
-#       Inside it, print each item with its number: f"{i + 1}. {inventory[i]}"
+# TODO: Print a numbered list with a for loop (1. torch, 2. rope, ...)
 
 print(f"You are carrying {len(inventory)} items.")

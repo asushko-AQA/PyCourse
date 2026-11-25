@@ -31,48 +31,49 @@ In [starter/templates/base.html](starter/templates/base.html), add the `<link>` 
 
 ---
 
-### Step 2: How a CSS rule is written
+### Step 2: Learn a CSS rule
 
-CSS is a list of rules. Every rule has the same shape — a **selector**, then curly braces, then `property: value;` lines:
+A **selector** names the part of the page you style, such as `body` or `nav a`. The look goes inside braces, one declaration per line: `{ property: value; }`.
 
 ```css
-selector {
-    property: value;
+nav a {
+    color: #4a90d9;
 }
 ```
 
-The selector names the HTML you want to change. `body` is the whole page. `nav` is the menu. `nav a` is a link inside that menu. `nav a:hover` is that link when the mouse is on it. `h1` is the big heading. `button` and `input[type="text"]` are the button and the text box (you style those in the bonus).
+`nav a` means every link inside the menu. `#4a90d9` is the blue the solution uses for those links.
 
-Here is the page rule, with this lesson's colors. `#f4f7fb` is the soft gray-blue background, and `#222` is dark text. `max-width` plus `margin: 2rem auto` keeps the words in a centered column:
+Treat `body` as the centered container. The starter already sets the font. Add the rest inside that same `body` block:
 
-```css
-body {
-    background: #f4f7fb;
-    color: #222;
-    max-width: 640px;
-    margin: 2rem auto;
-}
-```
+- `background: #f4f7fb;` — light gray-blue page
+- `color: #222;` — dark text
+- `max-width: 640px;` — keep the page a readable column
+- `margin: 0 auto;` — `auto` centers the column. The solution writes `margin: 2rem auto`, which centers the same way and also adds space above and below
+- `padding: 1rem;` and `line-height: 1.5;` — space inside the edges, and lines that are easier to read
 
-Give each other selector its own `{ }` block, and end every property with `;`:
+The solution uses these selectors and colors, so you can finish every TODO from this list:
 
-- `nav` — `border-bottom: 2px solid #4a90d9;` (blue line under the menu)
-- `nav a` — `color: #4a90d9;` (same blue) and `font-weight: bold;`
-- `h1` — `color: #2c5282;` (a deeper blue)
+| Selector | What to write |
+|----------|----------------|
+| `body` | background `#f4f7fb`, text `#222`, `max-width: 640px`, `margin: 2rem auto`, `padding: 1rem`, `line-height: 1.5` |
+| `nav` | `border-bottom: 2px solid #4a90d9` (blue line under the menu) |
+| `nav a` | `color: #4a90d9`, `font-weight: bold`, `text-decoration: none`, `margin-right: 1rem` |
+| `nav a:hover` | `text-decoration: underline` when the pointer is on the link |
+| `h1` | `color: #2c5282` |
+| `button` | background `#4a90d9`, text `white`, `border: none`, `padding: 0.5rem 1rem`, `border-radius: 4px`, `cursor: pointer` |
+| `input[type="text"]` | `border: 1px solid #ccc`, `padding: 0.4rem`, `border-radius: 4px`, `width: 100%`, `max-width: 280px` |
 
-`@media (max-width: 480px)` is a rule that applies only on a narrow screen, like a phone. Inside it, set `body` to `margin: 1rem;` and `padding: 0.5rem;` so the text still fits.
-
-**Bonus colors:** `button` uses `background: #4a90d9;` and `color: white;`. `input[type="text"]` uses `border: 1px solid #ccc;`.
+`@media` can change rules on a narrow screen. The solution uses `@media (max-width: 480px)` to set `body` to `margin: 1rem` and `padding: 0.5rem`.
 
 ---
 
 ### Step 3: Style the page
 
-Finish the `# TODO` in [starter/static/style.css](starter/static/style.css) with the rules from Step 2. The starter stays your file to fill in — peek at [solution/static/style.css](solution/static/style.css) only after you try.
+Finish the TODOs in [starter/static/style.css](starter/static/style.css) with the rules from Step 2:
 
 - Background color and `max-width` on `body`
-- Nav link colors (`nav` and `nav a`)
-- An `@media` rule for small screens
+- Nav link colors
+- `@media` rule for small screens
 
 ---
 
@@ -94,33 +95,18 @@ Home and About both extend `base.html` and share the same CSS.
 
 ### Step 5: Run the app
 
-**1. Activate your venv.** The VS Code terminal starts in your project root (where `.venv` lives). Activate:
-
-```text
-.venv\Scripts\Activate.ps1
-```
-
-**Command Prompt (cmd):** `.venv\Scripts\activate.bat` · **macOS/Linux:** `source .venv/bin/activate`
-
-You should see `(.venv)` at the start of the terminal line.
-
-**2. Go into this lesson folder and run:**
+**Path A:**
 
 ```text
 cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-4-static-files-css
 python starter\app.py
 ```
 
-**macOS/Linux:**
+**Path B:** Copy `starter/` — see [STUDENT-MAP](../STUDENT-MAP.md).
 
-```text
-cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-4-static-files-css
-python starter/app.py
-```
+**Mac/Linux:** `python starter/app.py`
 
-**Path B:** Copy `starter/` into your workshop folder (next to `.venv`) and run `python app.py` from that copy. See [STUDENT-MAP](../STUDENT-MAP.md).
-
-Visit `/` and `/about`. A gray-blue background (`#f4f7fb`) and a blue nav mean CSS loaded.
+Visit `/` and `/about`. Gray-blue background and styled nav mean CSS loaded.
 
 ---
 
@@ -150,19 +136,12 @@ Styles live in [solution/static/style.css](solution/static/style.css).
 
 ## Code Execution
 
-With `(.venv)` active, from your project root:
-
 ```text
 cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-4-static-files-css
 python starter\app.py
 ```
 
-**macOS/Linux:**
-
-```text
-cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-4-static-files-css
-python starter/app.py
-```
+**Mac/Linux:** `python starter/app.py`
 
 Visit `http://127.0.0.1:5000/` and `/about`.
 
@@ -206,43 +185,43 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. What is the main job of **CSS** in this lesson?
    - **a)** Activate the virtual environment
-   - **b)** Control colors, fonts, and layout — how the page looks
-   - **c)** Store Python routes
-   - **d)** Replace HTML entirely
+   - **b)** Store Python routes
+   - **c)** Replace HTML entirely
+   - **d)** Control colors, fonts, and layout — how the page looks
 
 2. Where should `style.css` live in a Flask project?
-   - **a)** In the `.venv` folder
-   - **b)** On a USB drive only
-   - **c)** In the `static/` folder next to `app.py`
-   - **d)** Inside `templates/base.html` only as plain text
+   - **a)** In the `static/` folder next to `app.py`
+   - **b)** Inside `templates/base.html` only as plain text
+   - **c)** In the `.venv` folder
+   - **d)** On a USB drive only
 
 3. Why use `{{ url_for('static', filename='style.css') }}` in a template?
    - **a)** To read POST form data
-   - **b)** To set `app.secret_key`
-   - **c)** To define a dynamic route `<name>`
-   - **d)** Flask builds the correct link to the CSS file
+   - **b)** Flask builds the correct link to the CSS file
+   - **c)** To set `app.secret_key`
+   - **d)** To define a dynamic route `<name>`
 
 4. HTML tells the browser what to show. CSS tells it what?
-   - **a)** How it should look
+   - **a)** Which port to open
    - **b)** Which pip packages to install
-   - **c)** Which port to open
+   - **c)** How it should look
    - **d)** How to run `python app.py`
 
 5. What does a `@media (max-width: 480px)` rule help with?
    - **a)** Delete flash messages
-   - **b)** Adjust styles on narrow screens (responsive layout)
-   - **c)** Block all CSS from loading
-   - **d)** Convert GET forms to POST
+   - **b)** Block all CSS from loading
+   - **c)** Convert GET forms to POST
+   - **d)** Adjust styles on narrow screens (responsive layout)
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** CSS styles the page — colors, spacing, fonts.
-2. **c)** Flask serves files from `static/` automatically.
-3. **d)** `url_for` generates the right `/static/style.css` path.
-4. **a)** HTML = structure; CSS = appearance.
-5. **b)** Media queries tweak layout for small screens.
+1. **d)** CSS styles the page — colors, spacing, fonts.
+2. **a)** Flask serves files from `static/` automatically.
+3. **b)** `url_for` generates the right `/static/style.css` path.
+4. **c)** HTML = structure; CSS = appearance.
+5. **d)** Media queries tweak layout for small screens.
 
 </details>
 

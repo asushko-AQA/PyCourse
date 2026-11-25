@@ -40,19 +40,19 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-2-lists
 
 ### Шаг 1: Открой inventory.py
 
-Открой [starter/inventory.py](starter/inventory.py). Два предмета уже в рюкзаке. Строки `# TODO` показывают, где код со списком пишешь **ты**.
+Открой [starter/inventory.py](starter/inventory.py). Два предмета уже в рюкзаке.
 
 ---
 
 ### Шаг 2: Добавь предмет
 
-Под первым `# TODO` напиши `inventory.append("key")`. Список вырастет на один слот.
+Напиши строку `.append("key")` на месте TODO. Список вырастет на один слот.
 
 ---
 
 ### Шаг 3: Напечатай нумерованный список
 
-Под вторым `# TODO` напиши цикл `for` с `range(len(inventory))`, чтобы пройти по каждому индексу:
+Используй цикл `for` с `range(len(inventory))`, чтобы пройти по каждому индексу:
 
 ```python
 for i in range(len(inventory)):
@@ -71,7 +71,7 @@ python starter\inventory.py
 
 **Mac/Linux:** используй прямые слэши — `python starter/inventory.py`. Список файлов — `ls` вместо `dir`.
 
-**Ожидаемый вывод, когда допишешь TODO:**
+**Ожидаемый вывод:**
 
 ```text
 === INVENTORY ===
@@ -85,12 +85,9 @@ You are carrying 3 items.
 
 ## Пример кода
 
-**Файл: [solution/inventory.py](solution/inventory.py)** — готовая версия. Загляни сюда, если застрял на TODO.
+**Файл: [starter/inventory.py](starter/inventory.py)**
 
 ```python
-# inventory.py
-# Adventure Workshop — pack items in a list
-
 inventory = ["torch", "rope"]
 inventory.append("key")
 
@@ -111,7 +108,7 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-2-lists
 python starter\inventory.py
 ```
 
-Ввод с клавиатуры не нужен — вывод появится сразу. Дописанный starter печатает то же, что в Шаге 4. Чтобы сравнить с эталоном, запусти `python solution\inventory.py`.
+Ввод с клавиатуры не нужен — вывод появится сразу.
 
 ---
 
@@ -123,7 +120,7 @@ python starter\inventory.py
 
 ---
 
-## Задание для практики
+## Практическое задание
 
 **Название квеста:** Полный набор искателя
 
@@ -137,7 +134,7 @@ python starter\inventory.py
 
 ---
 
-## Уголок отладки
+## Отладка
 
 **Проблема:** `IndexError: list index out of range`, когда печатаешь `inventory[3]`, а в списке только три предмета (индексы 0, 1, 2).
 
@@ -153,9 +150,9 @@ python starter\inventory.py
 
 1. В `inventory = ["torch", "rope"]` какой индекс у `"torch"`?
    - **a)** `0`
-   - **b)** `-1`
-   - **c)** `"torch"`
-   - **d)** `1`
+   - **b)** `1`
+   - **c)** `-1`
+   - **d)** `"torch"`
 
 2. Какой метод добавляет предмет в **конец** списка?
    - **a)** `.add()`
@@ -164,22 +161,22 @@ python starter\inventory.py
    - **d)** `.print()`
 
 3. Зачем в уроке `print(f"{i + 1}. {inventory[i]}")`, а не просто `i`?
-   - **a)** Это автоматически чинит IndexError
-   - **b)** Списки в Python начинаются с 1
+   - **a)** Списки в Python начинаются с 1
+   - **b)** `i + 1` удлиняет список
    - **c)** Чтобы игрок видел `1. torch`, а не `0. torch`
-   - **d)** `i + 1` удлиняет список
+   - **d)** Это автоматически чинит IndexError
 
 4. Как взять **последний** предмет без подсчёта индексов?
-   - **a)** `inventory[last]`
+   - **a)** `inventory[0]`
    - **b)** `inventory.len()`
-   - **c)** `inventory[0]`
+   - **c)** `inventory[last]`
    - **d)** `inventory[-1]`
 
 5. В списке 3 предмета (индексы 0, 1, 2). Что будет при `print(inventory[3])`?
    - **a)** `IndexError: list index out of range`
-   - **b)** Снова напечатает первый предмет
-   - **c)** Список вырастет до четырёх предметов
-   - **d)** Напечатает `3`
+   - **b)** Напечатает `3`
+   - **c)** Снова напечатает первый предмет
+   - **d)** Список вырастет до четырёх предметов
 
 ---
 

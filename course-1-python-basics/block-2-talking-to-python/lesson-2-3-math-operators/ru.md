@@ -38,12 +38,7 @@ num1 = int(input("Enter the first number: "))
 
 ### Шаг 2: Открой calculator.py
 
-Открой [starter/calculator.py](starter/calculator.py). Строка `Sum:` уже написана как пример. Твои TODO:
-
-1. **TODO 1–2:** Замени заглушки `0` и `1` на `int(input(...))`, как в Шаге 1. Подсказки: `"Enter the first number: "` и `"Enter the second number: "`.
-2. **TODO 3–5:** По образцу строки `Sum:` напечатай `Difference:` (`-`), `Product:` (`*`) и `Quotient:` (`/`).
-
-Сохрани файл (**Ctrl+S**).
+Открой [starter/calculator.py](starter/calculator.py). Два ввода и четыре строки print ждут тебя.
 
 ---
 
@@ -71,25 +66,18 @@ Quotient: 3.3333333333333335
 Calculator complete!
 ```
 
-Скрипт не спросил числа и напечатал `Sum: 1`? TODO 1–2 ещё не готовы — вернись к Шагу 2.
-
 ---
 
 ## Пример кода
-
-**Файл: [solution/calculator.py](solution/calculator.py)**
 
 ```python
 num1 = int(input("Enter the first number: "))
 num2 = int(input("Enter the second number: "))
 
-print("=== CALCULATOR SPELLS ===")
 print("Sum:", num1 + num2)
 print("Difference:", num1 - num2)
 print("Product:", num1 * num2)
 print("Quotient:", num1 / num2)
-
-print("Calculator complete!")
 ```
 
 ---
@@ -98,10 +86,10 @@ print("Calculator complete!")
 
 ```text
 cd course-1-python-basics\block-2-talking-to-python\lesson-2-3-math-operators
-python solution\calculator.py
+python starter\calculator.py
 ```
 
-**Mac/Linux:** `python solution/calculator.py`
+**Mac/Linux:** `python starter/calculator.py`
 
 **Ввод:** `10`, затем `3`
 
@@ -130,7 +118,7 @@ Calculator complete!
 
 **Название квеста:** Заклинания калькулятора
 
-1. Выполни все пять TODO в [starter/calculator.py](starter/calculator.py) (Шаг 2).
+1. Заполни все четыре print в [starter/calculator.py](starter/calculator.py).
 2. Запусти с месяцем и днём рождения как двумя числами.
 3. **Бонус — Быстрый калькулятор:** Короткая версия только с **суммой** и **произведением**.
 
@@ -154,9 +142,9 @@ Calculator complete!
 
 1. Чему равно `10 / 4` в Python?
    - **a)** `2.5`
-   - **b)** `3`
-   - **c)** `2` без десятичной части
-   - **d)** `2`
+   - **b)** `2`
+   - **c)** `3`
+   - **d)** `2` без десятичной части
 
 2. Чему равно `5 * 3`?
    - **a)** `8`
@@ -166,21 +154,21 @@ Calculator complete!
 
 3. Зачем оборачивать `input()` в `int()` перед сложением чисел?
    - **a)** `input()` работает только с буквами
-   - **b)** Python вообще не умеет складывать числа
+   - **b)** `int()` делает строки заглавными
    - **c)** `input()` даёт текст, а `int()` превращает цифры в число
-   - **d)** `int()` делает строки заглавными
+   - **d)** Python вообще не умеет складывать числа
 
 4. Ты вводишь `hello`, когда программа ждёт число. Какая ошибка?
-   - **a)** `NameError`
-   - **b)** `IndexError`
-   - **c)** `SyntaxError`
+   - **a)** `SyntaxError`
+   - **b)** `NameError`
+   - **c)** `IndexError`
    - **d)** `ValueError`
 
 5. При вводе `10` и `3` чему равна **разность** (`num1 - num2`)?
    - **a)** `7`
-   - **b)** `30`
-   - **c)** `3.333…`
-   - **d)** `13`
+   - **b)** `13`
+   - **c)** `30`
+   - **d)** `3.333…`
 
 ---
 

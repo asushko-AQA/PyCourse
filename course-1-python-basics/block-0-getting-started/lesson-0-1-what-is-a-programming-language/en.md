@@ -136,9 +136,9 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** They prefer Russian to English
 
 4. In `print("Hello!")`, what appears on the screen?
-   - **a)** Nothing
+   - **a)** `print`
    - **b)** The quotation marks only
-   - **c)** `print`
+   - **c)** Nothing
    - **d)** `Hello!`
 
 ---

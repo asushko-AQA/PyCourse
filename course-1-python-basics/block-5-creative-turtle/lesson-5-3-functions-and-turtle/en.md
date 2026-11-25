@@ -177,21 +177,21 @@ Pick the best answer for each question. Try without scrolling down first!
 
 2. Why call `draw_branch(100)` and then `draw_branch(70)` with a turn between?
    - **a)** To fix a SyntaxError
-   - **b)** To close the turtle window faster
+   - **b)** Because functions can only run once per file
    - **c)** To draw two separate recipes — main stem and side branch of the snowflake
-   - **d)** Because functions can only run once per file
+   - **d)** To close the turtle window faster
 
 3. Lines inside `def draw_branch(length):` must be…
-   - **a)** Written in ALL CAPS
+   - **a)** At the left margin with no spaces
    - **b)** Placed before `import turtle`
-   - **c)** At the left margin with no spaces
+   - **c)** Written in ALL CAPS
    - **d)** **Indented** (four spaces) under the `def` line
 
 4. If `forward` and `backward` are **not** indented under `def`, what error appears?
    - **a)** `IndentationError: expected an indented block after function definition`
-   - **b)** IndexError
-   - **c)** No error — Python guesses they belong inside
-   - **d)** KeyError
+   - **b)** KeyError
+   - **c)** IndexError
+   - **d)** No error — Python guesses they belong inside
 
 5. Where should the Block 5 gallery capstone folder `my_gallery/` live?
    - **a)** Inside `starter/` only

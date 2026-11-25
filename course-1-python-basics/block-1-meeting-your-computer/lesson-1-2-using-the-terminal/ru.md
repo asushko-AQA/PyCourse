@@ -36,24 +36,24 @@
 **Пример приглашения:**
 
 ```text
-PS C:\Users\YourName\Documents\PyCourse>
+C:\Users\ТвоёИмя\Documents\PyCourse>
 ```
 
-Путь перед `>` — твоё место в лабиринте. VS Code открыл твою папку `PyCourse`, поэтому ты стартуешь в **корне проекта** — во входном зале лабиринта курса. *(Командная строка показывает тот же путь без `PS`. На macOS приглашение заканчивается на `PyCourse %`, на Linux — на `PyCourse$`.)*
-
-**Заблудился в лабиринте?** Открой новый терминал (**Terminal → New Terminal**) — он всегда стартует в корне проекта.
+Путь перед `>` — твоё место в лабиринте.
 
 ---
 
 ### Шаг 2: Войти в папку с `cd`
 
-`cd` — **c**hange **d**irectory, перейти в другую папку. Из корня проекта зайди в папку курса:
+`cd` — **c**hange **d**irectory, перейти в другую папку.
+
+Шаг 1 оставил тебя внутри `PyCourse`. Там уже лежит `course-1-python-basics`. Зайди в неё (команда одна и на Windows, и на macOS):
 
 ```text
 cd course-1-python-basics
 ```
 
-**Ожидается:** приглашение обновится и теперь заканчивается на `course-1-python-basics>`. Ты в комнате курса.
+**Ожидается:** приглашение обновится и закончится на `course-1-python-basics`. Ты внутри этой папки.
 
 **Совет:** набери первые буквы имени папки и нажми **Tab** — терминал может дописать имя сам!
 
@@ -67,7 +67,7 @@ cd course-1-python-basics
 cd ..
 ```
 
-**Ожидается:** приглашение снова заканчивается на `PyCourse>`. Ты вернулся на одну комнату назад — в корень проекта.
+**Ожидается:** приглашение снова заканчивается на `PyCourse`. Ты вернулся на один уровень.
 
 ---
 
@@ -82,7 +82,7 @@ dir
 **Пример вывода (корень проекта):**
 
 ```text
- Directory of C:\Users\YourName\Documents\PyCourse
+ Directory of C:\Users\ТвоёИмя\Documents\PyCourse
 
 course-1-python-basics
 documents
@@ -90,14 +90,7 @@ README.md
 ...
 ```
 
-**На две комнаты вглубь:** можно пройти через несколько папок за один прыжок — соедини их имена через `\`:
-
-```text
-cd course-1-python-basics\block-1-meeting-your-computer
-dir
-```
-
-**Пример вывода:**
+**Внутри Блока 1** (после `cd course-1-python-basics\block-1-meeting-your-computer`):
 
 ```text
  Directory of ...\block-1-meeting-your-computer
@@ -108,16 +101,7 @@ lesson-1-3-running-your-first-script
 ...
 ```
 
-Теперь вернись в корень проекта — по одному `cd ..` на каждую комнату:
-
-```text
-cd ..
-cd ..
-```
-
-**Ожидается:** приглашение снова заканчивается на `PyCourse>`.
-
-На **Mac/Linux** вместо `dir` используй `ls`, а в путях — `/` вместо `\`.
+На **Mac/Linux** вместо `dir` используй `ls`.
 
 Ищи файлы `.py` — это скрипты Python!
 
@@ -139,13 +123,19 @@ cls
 
 ### Шаг 6: Перейти в папку этого урока
 
-Из корня проекта (приглашение заканчивается на `PyCourse>`) зайди в папку этого урока:
+Из корня проекта (`PyCourse` — если приглашение ещё на `course-1-python-basics`, сначала `cd ..`):
+
+**Windows:**
 
 ```text
 cd course-1-python-basics\block-1-meeting-your-computer\lesson-1-2-using-the-terminal
 ```
 
-На Mac/Linux: `cd course-1-python-basics/block-1-meeting-your-computer/lesson-1-2-using-the-terminal`
+**macOS:**
+
+```text
+cd course-1-python-basics/block-1-meeting-your-computer/lesson-1-2-using-the-terminal
+```
 
 **Ожидается:** приглашение заканчивается на `lesson-1-2-using-the-terminal>`.
 
@@ -170,7 +160,7 @@ dir
 ### Свиток команд (терминал)
 
 ```text
-# Войти в папку (из корня проекта)
+# Войти в папку, которая уже лежит внутри PyCourse
 cd course-1-python-basics
 
 # Выйти на уровень выше
@@ -204,7 +194,7 @@ print("Treasure found!")
 
 ## Запуск кода
 
-Ты уже должен быть в `lesson-1-2-using-the-terminal` после Шага 6. Если нет — открой новый терминал (он стартует в корне проекта) и повтори `cd` из Шага 6.
+Ты уже должен быть в `lesson-1-2-using-the-terminal` после Шага 6.
 
 ### 1. Проверь папку
 
@@ -234,7 +224,7 @@ Treasure found!
 
 ## Быстрые упражнения
 
-1. **В курс и обратно** — из корня проекта `cd course-1-python-basics`, затем `cd ..`. Следи, как меняется приглашение.
+1. **`cd` в папку курса и назад** — из `PyCourse`: `cd course-1-python-basics`, затем `cd ..`. Смотри, как меняется приглашение.
 2. **Считай файлы Python** — `dir` в любой папке. Сколько файлов `.py`?
 3. **Запиши путь** — полный путь из приглашения терминала в тетрадь.
 
@@ -248,24 +238,27 @@ Treasure found!
 
 ### Путь A — структура PyCourse
 
-1. Начни из корня проекта — приглашение заканчивается на `PyCourse>` (не уверен? открой новый терминал).
-2. `cd course-1-python-basics\block-1-meeting-your-computer`
-3. `dir` — список уроков.
+1. Из корня проекта (`PyCourse`). Приглашение заканчивается на `PyCourse`.
+2. Windows: `cd course-1-python-basics\block-1-meeting-your-computer` — macOS: `cd course-1-python-basics/block-1-meeting-your-computer`
+3. `dir` (macOS: `ls`) — список уроков.
 4. `cd lesson-1-1-installing-python`
-5. `dir` — найди `starter` и `README.md`.
+5. `dir` (macOS: `ls`) — найди `starter` и `README.md`.
 6. `cd ..` — вернись на уровень выше.
+7. Убедись, что ты снова в `block-1-meeting-your-computer`.
 
 Чеклист: [exercises/quest_paths.md](exercises/quest_paths.md)
 
-### Путь B — построй свой лабиринт
+### Путь B — лабиринт внутри проекта
 
-1. В проводнике VS Code правый клик по корню проекта (`PyCourse`) → **New Folder** → `quests`. Затем создай папку `treasure` внутри `quests`.
-2. Создай в `treasure` файл `clue.txt` с текстом: `The treasure is in treasure.py`
-3. Скопируй `starter/treasure.py` в `quests\treasure`
-4. В терминале из корня проекта: `cd quests\treasure` (Mac/Linux: `cd quests/treasure`)
-5. `dir` — видишь `clue.txt` и `treasure.py`
-6. `python treasure.py` — видишь `Treasure found!`
-7. `cd ..` дважды — приглашение снова заканчивается на `PyCourse>`.
+1. Приглашение должно заканчиваться на `PyCourse` (новый терминал VS Code или `cd ..`, пока не вернёшься).
+2. В проводнике: правый клик по `PyCourse` → **New Folder** → `quests`. Внутри неё — **New Folder** → `treasure`.
+3. В `treasure` создай `clue.txt` с текстом: `The treasure is in treasure.py`
+4. Скопируй `starter/treasure.py` этого урока в `quests/treasure`.
+5. В терминале:
+   **Windows:** `cd quests\treasure`
+   **macOS:** `cd quests/treasure`
+6. `dir` (macOS: `ls`) — видишь оба файла
+7. `python treasure.py` — `Treasure found!`
 
 **Бонус:**
 
@@ -282,7 +275,7 @@ Treasure found!
 
 **Решение:**
 
-1. `cd ..` — вернись в знакомую папку (или открой новый терминал — он стартует в корне проекта).
+1. `cd ..` — вернись в знакомую папку.
 2. `dir` — смотри **точные** имена.
 3. `cd` с правильным именем из списка.
 4. **Tab** после нескольких букв — меньше ошибок.
@@ -294,34 +287,34 @@ Treasure found!
 Выбери лучший ответ на каждый вопрос. Сначала попробуй без подсказок!
 
 1. Что делает команда `cd ..`?
-   - **a)** Очищает экран терминала
-   - **b)** Удаляет текущую папку
+   - **a)** Удаляет текущую папку
+   - **b)** Показывает список файлов
    - **c)** Возвращает на один уровень вверх — в родительскую папку
-   - **d)** Показывает список файлов
+   - **d)** Очищает экран терминала
 
 2. На Windows какая команда показывает файлы в текущей папке?
-   - **a)** `show`
+   - **a)** `ls`
    - **b)** `list`
-   - **c)** `ls`
+   - **c)** `show`
    - **d)** `dir`
 
 3. Что показывает текст перед `>` в приглашении терминала?
    - **a)** Текущий путь к папке
-   - **b)** Последнее сообщение об ошибке
-   - **c)** Пароль
-   - **d)** Версию Python
+   - **b)** Версию Python
+   - **c)** Последнее сообщение об ошибке
+   - **d)** Пароль
 
 4. Как очистить экран терминала в Windows?
-   - **a)** `dir`
+   - **a)** `clear`
    - **b)** `cls`
-   - **c)** `clear`
-   - **d)** `cd ..`
+   - **c)** `cd ..`
+   - **d)** `dir`
 
 5. Нажатие **Tab** после части имени папки в `cd` может…
-   - **a)** Закрыть VS Code
-   - **b)** Удалить папку
+   - **a)** Удалить папку
+   - **b)** Запустить Python само
    - **c)** Дописать имя папки автоматически
-   - **d)** Запустить Python само
+   - **d)** Закрыть VS Code
 
 ---
 

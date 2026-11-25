@@ -15,7 +15,7 @@
 
 HTML говорит браузеру, *что* показать. **CSS** говорит, *как* это выглядит.
 
-Flask отдаёт CSS из папки **`static/`** рядом с `app.py`. Подключи его через **`url_for`**:
+Flask отдаёт CSS из папки **`static/`** рядом с `app.py`. Подключи файл через **`url_for`**:
 
 ```html
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -31,48 +31,49 @@ Flask отдаёт CSS из папки **`static/`** рядом с `app.py`. П�
 
 ---
 
-### Шаг 2: Как записывается правило CSS
+### Шаг 2: Выучи правило CSS
 
-CSS — это список правил. У каждого одна и та же форма: **селектор**, фигурные скобки и строки `свойство: значение;`:
+**Селектор** называет часть страницы, которую ты оформляешь, например `body` или `nav a`. Вид пишется в фигурных скобках, одно свойство на строку: `{ property: value; }`.
 
 ```css
-selector {
-    property: value;
+nav a {
+    color: #4a90d9;
 }
 ```
 
-Селектор называет HTML, который ты меняешь. `body` — вся страница. `nav` — меню. `nav a` — ссылка внутри меню. `nav a:hover` — та же ссылка, когда на неё наведена мышь. `h1` — большой заголовок. `button` и `input[type="text"]` — кнопка и текстовое поле (их ты стилизуешь в бонусе).
+`nav a` значит «каждая ссылка внутри меню». `#4a90d9` — синий цвет, которым решение красит эти ссылки.
 
-Вот правило страницы и цвета этого урока. `#f4f7fb` — мягкий серо-голубой фон, `#222` — тёмный текст. `max-width` вместе с `margin: 2rem auto` держит текст в колонке по центру:
+Считай `body` центрированным контейнером. В starter шрифт уже задан. Добавь остальное в тот же блок `body`:
 
-```css
-body {
-    background: #f4f7fb;
-    color: #222;
-    max-width: 640px;
-    margin: 2rem auto;
-}
-```
+- `background: #f4f7fb;` — светлый серо-голубой фон страницы
+- `color: #222;` — тёмный текст
+- `max-width: 640px;` — страница остаётся узкой колонкой, которую удобно читать
+- `margin: 0 auto;` — `auto` центрирует колонку. В решении написано `margin: 2rem auto`: центрирование то же, плюс отступ сверху и снизу
+- `padding: 1rem;` и `line-height: 1.5;` — воздух у краёв и строки, которые легче читать
 
-Каждому другому селектору — свой блок `{ }`, и после каждого свойства ставь `;`:
+В решении такие селекторы и цвета — по этому списку можно закрыть каждый TODO:
 
-- `nav` — `border-bottom: 2px solid #4a90d9;` (синяя линия под меню)
-- `nav a` — `color: #4a90d9;` (тот же синий) и `font-weight: bold;`
-- `h1` — `color: #2c5282;` (более глубокий синий)
+| Селектор | Что написать |
+|----------|----------------|
+| `body` | фон `#f4f7fb`, текст `#222`, `max-width: 640px`, `margin: 2rem auto`, `padding: 1rem`, `line-height: 1.5` |
+| `nav` | `border-bottom: 2px solid #4a90d9` (синяя линия под меню) |
+| `nav a` | `color: #4a90d9`, `font-weight: bold`, `text-decoration: none`, `margin-right: 1rem` |
+| `nav a:hover` | `text-decoration: underline`, когда указатель на ссылке |
+| `h1` | `color: #2c5282` |
+| `button` | фон `#4a90d9`, текст `white`, `border: none`, `padding: 0.5rem 1rem`, `border-radius: 4px`, `cursor: pointer` |
+| `input[type="text"]` | `border: 1px solid #ccc`, `padding: 0.4rem`, `border-radius: 4px`, `width: 100%`, `max-width: 280px` |
 
-`@media (max-width: 480px)` — правило только для узкого экрана, как у телефона. Внутри поставь `body` `margin: 1rem;` и `padding: 0.5rem;`, чтобы текст всё ещё помещался.
-
-**Цвета для бонуса:** у `button` — `background: #4a90d9;` и `color: white;`. У `input[type="text"]` — `border: 1px solid #ccc;`.
+`@media` может менять правила на узком экране. Решение использует `@media (max-width: 480px)`, чтобы у `body` стало `margin: 1rem` и `padding: 0.5rem`.
 
 ---
 
 ### Шаг 3: Оформи страницу
 
-Допиши `# TODO` в [starter/static/style.css](starter/static/style.css) правилами из шага 2. Стартер остаётся твоим файлом — в [solution/static/style.css](solution/static/style.css) загляни только после своей попытки.
+Заполни TODO в [starter/static/style.css](starter/static/style.css) правилами из шага 2:
 
 - Цвет фона и `max-width` у `body`
-- Цвета ссылок меню (`nav` и `nav a`)
-- Правило `@media` для маленького экрана
+- Цвета ссылок в меню
+- Правило `@media` для маленьких экранов
 
 ---
 
@@ -88,39 +89,24 @@ def about():
     )
 ```
 
-Home и About оба наследуют `base.html` и делят один CSS.
+Home и About оба расширяют `base.html` и делят один и тот же CSS.
 
 ---
 
 ### Шаг 5: Запусти приложение
 
-**1. Активируй venv.** Терминал VS Code стартует в корне проекта (там лежит `.venv`). Активируй:
-
-```text
-.venv\Scripts\Activate.ps1
-```
-
-**Командная строка (cmd):** `.venv\Scripts\activate.bat` · **macOS/Linux:** `source .venv/bin/activate`
-
-В начале строки терминала должно появиться `(.venv)`.
-
-**2. Зайди в папку урока и запусти:**
+**Путь A:**
 
 ```text
 cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-4-static-files-css
 python starter\app.py
 ```
 
-**macOS/Linux:**
+**Путь B:** Скопируй `starter/` — см. [STUDENT-MAP](../STUDENT-MAP.ru.md).
 
-```text
-cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-4-static-files-css
-python starter/app.py
-```
+**Mac/Linux:** `python starter/app.py`
 
-**Путь B:** скопируй `starter/` в свою папку-мастерскую (рядом с `.venv`) и запусти `python app.py` из копии. См. [STUDENT-MAP](../STUDENT-MAP.ru.md).
-
-Зайди на `/` и `/about`. Серо-голубой фон (`#f4f7fb`) и синее меню значат, что CSS загрузился.
+Зайди на `/` и `/about`. Серо-голубой фон и оформленное меню значат, что CSS загрузился.
 
 ---
 
@@ -144,25 +130,18 @@ def home():
     )
 ```
 
-Стили лежат в [solution/static/style.css](solution/static/style.css).
+Стили — в [solution/static/style.css](solution/static/style.css).
 
 ---
 
 ## Запуск кода
-
-С активным `(.venv)`, из корня проекта:
 
 ```text
 cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-4-static-files-css
 python starter\app.py
 ```
 
-**macOS/Linux:**
-
-```text
-cd course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-4-static-files-css
-python starter/app.py
-```
+**Mac/Linux:** `python starter/app.py`
 
 Открой `http://127.0.0.1:5000/` и `/about`.
 
@@ -172,7 +151,7 @@ python starter/app.py
 
 ## Быстрые упражнения
 
-1. **Смени цвет** — измени `background` у `body`. Обнови страницу.
+1. **Смени цвет** — измени `background` в `body`. Обнови страницу.
 2. **Инспектор** — DevTools → Network → статус `style.css` должен быть 200.
 3. **Узкий экран** — сожми окно. Меняются ли отступы на 480px?
 
@@ -180,10 +159,10 @@ python starter/app.py
 
 ## Задание для практики
 
-**Квест:** Своя цветовая тема
+**Квест:** Оформи свою студию
 
-1. Допиши TODO в `base.html`, `style.css` и `app.py`.
-2. Выбери свою палитру.
+1. Заполни TODO в `base.html`, `style.css` и `app.py`.
+2. Выбери свою цветовую тему.
 3. **Бонус:** оформи `<button>` и `<input>`, как в решении.
 
 **Эталон:** [solution/](solution/)
@@ -192,7 +171,7 @@ python starter/app.py
 
 ## Уголок отладки
 
-**Проблема:** Страница выглядит как голый HTML — нет цветов.
+**Проблема:** Страница выглядит как голый HTML — без цветов
 
 **Причина:** CSS не подключён или нет файла `static/style.css`.
 
@@ -206,43 +185,43 @@ python starter/app.py
 
 1. Главная задача **CSS** в этом уроке?
    - **a)** Активация виртуального окружения
-   - **b)** Цвета, шрифты, вёрстка — как выглядит страница
-   - **c)** Хранение маршрутов Python
-   - **d)** Полная замена HTML
+   - **b)** Хранение маршрутов Python
+   - **c)** Полная замена HTML
+   - **d)** Цвета, шрифты, вёрстка — как выглядит страница
 
 2. Где должен лежать `style.css` во Flask-проекте?
-   - **a)** В папке `.venv`
-   - **b)** Только на USB-накопителе
-   - **c)** В папке `static/` рядом с `app.py`
-   - **d)** Только внутри `templates/base.html` как текст
+   - **a)** В папке `static/` рядом с `app.py`
+   - **b)** Только внутри `templates/base.html` как текст
+   - **c)** В папке `.venv`
+   - **d)** Только на USB-накопителе
 
 3. Зачем в шаблоне `{{ url_for('static', filename='style.css') }}`?
    - **a)** Читать POST-данные формы
-   - **b)** Задать `app.secret_key`
-   - **c)** Описать динамический маршрут `<name>`
-   - **d)** Flask строит правильную ссылку на CSS-файл
+   - **b)** Flask строит правильную ссылку на CSS-файл
+   - **c)** Задать `app.secret_key`
+   - **d)** Описать динамический маршрут `<name>`
 
 4. HTML говорит браузеру *что* показать. CSS говорит *что*?
-   - **a)** *Как* это должно выглядеть
+   - **a)** Какой порт открыть
    - **b)** Какие пакеты pip установить
-   - **c)** Какой порт открыть
+   - **c)** *Как* это должно выглядеть
    - **d)** Как запустить `python app.py`
 
 5. Чем помогает правило `@media (max-width: 480px)`?
    - **a)** Удаляет flash-сообщения
-   - **b)** Подстраивает стили на узком экране (адаптивная вёрстка)
-   - **c)** Блокирует загрузку всего CSS
-   - **d)** Превращает GET-формы в POST
+   - **b)** Блокирует загрузку всего CSS
+   - **c)** Превращает GET-формы в POST
+   - **d)** Подстраивает стили на узком экране (адаптивная вёрстка)
 
 ---
 
 <details><summary>Нажми, чтобы увидеть ответы</summary>
 
-1. **b)** CSS оформляет страницу — цвета, отступы, шрифты.
-2. **c)** Flask автоматически отдаёт файлы из `static/`.
-3. **d)** `url_for` генерирует правильный путь `/static/style.css`.
-4. **a)** HTML = структура; CSS = внешний вид.
-5. **b)** Media queries подстраивают вёрстку под маленькие экраны.
+1. **d)** CSS оформляет страницу — цвета, отступы, шрифты.
+2. **a)** Flask автоматически отдаёт файлы из `static/`.
+3. **b)** `url_for` генерирует правильный путь `/static/style.css`.
+4. **c)** HTML = структура; CSS = внешний вид.
+5. **d)** Media queries подстраивают вёрстку под маленькие экраны.
 
 </details>
 
@@ -250,8 +229,10 @@ python starter/app.py
 
 ## Что дальше
 
-→ [Урок 2.5: Flash и проверка](../lesson-2-5-flash-and-validation/README.md) — понятные ошибки и итоговый калькулятор на форме.
+→ [Урок 2.5: Flash и проверка](../lesson-2-5-flash-and-validation/README.md) — дружелюбные ошибки и итоговый калькулятор на форме.
 
 ---
 
-*У твоих страниц появился стиль. Ещё один урок — и Блок 2 готов!*
+*У страниц появился стиль. Остался один урок, чтобы закрыть Блок 2!*
+
+[← Выбрать язык](README.md)

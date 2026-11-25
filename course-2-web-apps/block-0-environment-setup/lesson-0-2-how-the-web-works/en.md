@@ -38,17 +38,15 @@ sequenceDiagram
 
 **Request** = browser asking. **Response** = server answering. Status `200 OK` means "success — here is your page."
 
-Open the same folder in VS Code as in Lesson 0.1 — `PyCourse` (Path A) or your `web_workshop` folder (Path B). Then:
-
 **Path A — PyCourse repo:**
 
 ```text
 cd course-2-web-apps\block-0-environment-setup\lesson-0-2-how-the-web-works
 ```
 
-**Path B — your own folder:** Copy [starter/web_quiz.py](starter/web_quiz.py) into your `web_workshop` folder (next to `.venv`). No `cd` needed — run `python web_quiz.py` instead of `python starter\web_quiz.py` below.
+**Path B — your own folder:** Copy [starter/web_quiz.py](starter/web_quiz.py) anywhere. Open VS Code on that folder.
 
-This lesson uses **plain Python only** — no Flask required to run the quiz. If `(.venv)` is active from Lesson 0.1, that is fine — leave it on.
+This lesson uses **plain Python only** — no venv or Flask required to run the quiz.
 
 ---
 
@@ -165,30 +163,7 @@ cd course-2-web-apps\block-0-environment-setup\lesson-0-2-how-the-web-works
 python starter\web_quiz.py
 ```
 
-**Mac/Linux:** forward slashes in paths. **Path B:** `python web_quiz.py` in your `web_workshop` folder.
-
 Type `browser`, `server`, and `url` when prompted (or try wrong answers to see the hints).
-
-**Expected output (all three answers correct):**
-
-```text
-=== Web Workshop Quiz ===
-
-What app on your computer opens pages and sends requests? browser
-Correct!
-What waits for requests and sends back pages or data? server
-Correct!
-What is the web address you type, like https://example.com? url
-Correct!
-
-Score: 3/3
-
-=== Request / Response Demo ===
-Browser: GET https://example.com/hello
-Server:  Received request for /hello
-Server:  Sending response (200 OK)
-Browser: Displaying the page to you
-```
 
 ---
 
@@ -240,43 +215,43 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. In the browser–server story, who **sends the request** first?
    - **a)** pip
-   - **b)** Browser
-   - **c)** Server
-   - **d)** URL
+   - **b)** Server
+   - **c)** URL
+   - **d)** Browser
 
 2. What is a **URL**?
-   - **a)** The HTML code inside a page
-   - **b)** A kind of virtual environment
-   - **c)** The web address that tells the browser where to ask
-   - **d)** A Python file that runs Flask
+   - **a)** The web address that tells the browser where to ask
+   - **b)** A Python file that runs Flask
+   - **c)** The HTML code inside a page
+   - **d)** A kind of virtual environment
 
 3. What does a **server** do in this lesson?
    - **a)** Only draws pictures on your screen
-   - **b)** Stores all your `.venv` folders
-   - **c)** Replaces the need for a browser
-   - **d)** Waits for requests and sends back responses
+   - **b)** Waits for requests and sends back responses
+   - **c)** Stores all your `.venv` folders
+   - **d)** Replaces the need for a browser
 
 4. In the round trip, what is a **response**?
-   - **a)** What the server sends back (like an HTML page)
+   - **a)** The name of the Flask install command
    - **b)** What you type into `input()` in the quiz
-   - **c)** The name of the Flask install command
+   - **c)** What the server sends back (like an HTML page)
    - **d)** A broken link in the address bar
 
 5. What does status **200 OK** usually mean?
    - **a)** You must install Flask again
-   - **b)** Success — here is the page you asked for
-   - **c)** The browser is offline
-   - **d)** The server deleted the website
+   - **b)** The browser is offline
+   - **c)** The server deleted the website
+   - **d)** Success — here is the page you asked for
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **b)** The browser asks first; the server answers.
-2. **c)** URL = the address bar text that points to a resource.
-3. **d)** The server listens and replies with pages or data.
-4. **a)** A response is what travels back from server to browser.
-5. **b)** 200 OK means the request succeeded.
+1. **d)** The browser asks first; the server answers.
+2. **a)** URL = the address bar text that points to a resource.
+3. **b)** The server listens and replies with pages or data.
+4. **c)** A response is what travels back from server to browser.
+5. **d)** 200 OK means the request succeeded.
 
 </details>
 

@@ -1,0 +1,112 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+# Cancel superseded PR runs. Pushes to main always run to completion.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    name: frontend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          # Next.js 16 requires Node >=20.9; the course documents Node 20+.
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Root `npm run validate-content` only proxies here via `npm --prefix frontend`.
+      - name: Validate content
+        run: npm run validate-content
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npm run build
+
+  backend:
+    name: backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          # backend/pyproject.toml requires Python >=3.12.
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/pyproject.toml
+
+      - name: Install backend
+        run: pip install -e "backend[dev]"
+
+      # Root pytest.ini sets testpaths=tools/mcp/tests, so pass this path explicitly.
+      - name: Test
+        run: pytest backend/tests
+
+  ui:
+    name: ui
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            backend/pyproject.toml
+            tools/mcp/tests/requirements.txt
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install Python test dependencies
+        run: |
+          python -m pip install -r tools/mcp/tests/requirements.txt
+          python -m pip install -e "backend[dev]"
+
+      - name: Install Playwright Chromium
+        run: playwright install --with-deps chromium
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      # Fixtures build and serve the frontend on port 3100 unless E2E_BASE_URL is set.
+      - name: Playwright UI tests
+        run: pytest tools/mcp/tests/ui

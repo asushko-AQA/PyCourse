@@ -4,13 +4,12 @@ import turtle
 t = turtle.Turtle()
 t.speed(3)
 
-# TODO: Draw a square. Repeat 4 times: t.forward(100) then t.left(90).
+# TODO: Draw a square — forward(100) and left(90), four times
 
-# Move right so the triangle does not sit on top of the square
-t.penup()
-t.forward(150)
-t.pendown()
+# TODO: Lift the pen, move forward(150), then put the pen down
+# so the triangle does not sit on the square
 
-# TODO: Draw a triangle. Repeat 3 times: t.forward(100) then t.left(120).
+# TODO: Draw a triangle — forward(100) and left(120), three times
 
+# turtle.done() keeps the window open until you close it
 turtle.done()

@@ -5,19 +5,20 @@
  * Run from frontend/:  npm run validate-content
  */
 
-import path from "node:path";
-import { getContentRoot, getCourses } from "../src/lib/courseParser";
+import { getCourses } from "../src/lib/courseParser";
 import { getDict } from "../src/lib/i18n";
 import { LANGS } from "../src/lib/types";
-import {
-  checkLessonParity,
-  checkQuizBalance,
-  checkRelativeLinks,
-  checkStarterVsSolution,
-} from "./content-checks";
 
 let lessonCount = 0;
 let fileCount = 0;
+
+/** Drop blank lines and full-line Python comments so a TODO skeleton can differ from a solution. */
+function pythonWithoutComments(source: string): string {
+  return source
+    .split(/\r?\n/)
+    .filter((line) => line.trim() !== "" && !/^\s*#/.test(line))
+    .join("\n");
+}
 
 // Fatal problems (exit 1) — structural breakage the app cannot render.
 const problems: string[] = [];
@@ -25,13 +26,9 @@ const problems: string[] = [];
 const warnings: string[] = [];
 
 const courses = getCourses();
-const contentRoot = getContentRoot();
+const answerCounts = [0, 0, 0, 0];
+let answerTotal = 0;
 const SLUG_TITLE_RE = /^course-\d+(?:-[a-z0-9-]+)?$/i;
-
-const report = {
-  problem: (msg: string) => problems.push(msg),
-  warning: (msg: string) => warnings.push(msg),
-};
 
 for (const course of courses) {
   for (const lang of LANGS) {
@@ -108,29 +105,65 @@ for (const course of courses) {
           warnings.push(
             `${where}: quiz count ${c.quiz.length} ≠ en ${enQuizLen} (parity)`,
           );
+        if (lang === "ru") {
+          const enLetters = lesson.content.en.quiz.map((q) => q.correctIndex).join(",");
+          const ruLetters = c.quiz.map((q) => q.correctIndex).join(",");
+          if (enLetters !== ruLetters)
+            warnings.push(
+              `${where}: quiz answer letters differ from en.md (${ruLetters} vs ${enLetters})`,
+            );
+        }
       }
 
       if (course.id === "course-1" || course.id === "course-2") {
-        const lessonDir = path.join(
-          contentRoot,
-          course.slug,
-          block.slug,
-          lesson.slug,
-        );
-        const whereLesson = `${course.slug}/${block.slug}/${lesson.slug}`;
-        checkStarterVsSolution(lesson, lessonDir, whereLesson, report);
-        checkLessonParity(lesson, lessonDir, whereLesson, report);
+        const indices = lesson.content.en.quiz.map((q) => q.correctIndex);
+        for (const index of indices) {
+          if (index >= 0 && index < 4) {
+            answerCounts[index] += 1;
+            answerTotal += 1;
+          }
+        }
+        if (indices.length >= 4 && new Set(indices).size === 1)
+          warnings.push(
+            `${course.slug}/${block.slug}/${lesson.slug}: every quiz answer is the same letter`,
+          );
+
+        const starter = new Map<string, string>();
+        const solution = new Map<string, string>();
+        for (const file of lesson.files) {
+          if (!file.path.endsWith(".py")) continue;
+          if (file.path.startsWith("starter/"))
+            starter.set(file.path.slice("starter/".length), file.content);
+          if (file.path.startsWith("solution/"))
+            solution.set(file.path.slice("solution/".length), file.content);
+        }
+        for (const [rel, content] of starter) {
+          const other = solution.get(rel);
+          if (other === undefined) continue;
+          const left = pythonWithoutComments(content);
+          const right = pythonWithoutComments(other);
+          if (left.length > 0 && left === right)
+            warnings.push(
+              `${course.slug}/${block.slug}/${lesson.slug}: starter/${rel} matches solution/${rel} once comments are removed`,
+            );
+        }
       }
     }
   }
 }
 
-for (const course of courses) {
-  // These checks are enforced for Courses 1–2 (the audited courses). Course 3
-  // keeps the original parse-only checks while its own gaps are tracked separately.
-  if (course.id !== "course-1" && course.id !== "course-2") continue;
-  checkQuizBalance(course, report);
-  checkRelativeLinks(contentRoot, course, report);
+if (answerTotal > 0) {
+  const labels = ["a", "b", "c", "d"];
+  const max = Math.max(...answerCounts);
+  const min = Math.min(...answerCounts);
+  if (min === 0 || max / answerTotal > 0.4) {
+    const summary = labels
+      .map((label, i) => `${label}=${answerCounts[i]}`)
+      .join(", ");
+    warnings.push(
+      `Course 1–2 quiz answers are unbalanced (${summary} of ${answerTotal}); keep a/b/c/d roughly even`,
+    );
+  }
 }
 
 console.log(

@@ -161,16 +161,16 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Only the lines with `print`
 
 4. The journey of a program is best described as:
-   - **a)** interpreter → code → result
+   - **a)** result → interpreter → code
    - **b)** code → result → interpreter
-   - **c)** result → interpreter → code
+   - **c)** interpreter → code → result
    - **d)** code → interpreter → result
 
 5. Why might two lines print in a surprising order?
    - **a)** Whichever line is higher in the file runs first
-   - **b)** `print` always sorts text alphabetically
-   - **c)** The interpreter skips the first line
-   - **d)** The computer guesses what you mean
+   - **b)** The computer guesses what you mean
+   - **c)** `print` always sorts text alphabetically
+   - **d)** The interpreter skips the first line
 
 ---
 

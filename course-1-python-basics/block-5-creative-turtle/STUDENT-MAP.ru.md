@@ -11,21 +11,17 @@
 
 ```text
 PyCourse/
-├── README.md
 ├── course-1-python-basics/
 │   └── block-5-creative-turtle/
-│       ├── README.md              ← Оглавление Блока 5 + чеклист
-│       ├── lesson-5-1-turtle-basics/
-│       │   └── starter/shapes.py
-│       ├── lesson-5-2-loops-and-color/
-│       │   └── starter/star.py
+│       ├── README.md
+│       ├── lesson-5-1-turtle-basics/starter/shapes.py
+│       ├── lesson-5-2-loops-and-color/starter/star.py
 │       └── lesson-5-3-functions-and-turtle/
 │           ├── starter/snowflake.py
 │           └── starter/gallery.py   (скопируй в my_gallery/)
-├── my_gallery/                      ← создаёшь в уроке 5.3
+├── my_gallery/                      ← ЭТУ папку создаёшь в уроке 5.3
 │   └── gallery.py
-└── course-2-web-apps/
-    └── README.md                  ← Здесь начинается Курс 2
+└── course-2-web-apps/README.md
 ```
 
 ---
@@ -34,9 +30,9 @@ PyCourse/
 
 | Урок | Вместо длинного `cd`… |
 |------|------------------------|
-| 5.1 | Открой VS Code в любой папке; скопируй `starter/shapes.py` |
-| 5.2 | Та же папка, что и скрипты 5.1, или любая твоя папка |
-| 5.3 | Скопируй `snowflake.py` и капстоун `gallery.py` в `my_gallery/` |
+| 5.1 | Открой VS Code в любой папке; скопируй `starter/shapes.py` в свой проект |
+| 5.2 | Та же папка, что и скрипты 5.1, или любая папка, которой ты управляешь |
+| 5.3 | Скопируй `snowflake.py` и итоговый `gallery.py` в `my_gallery/` |
 
 **Совет про Turtle:** После `python shapes.py` ищи окно рисования на панели задач — оно может открыться за VS Code.
 
@@ -46,7 +42,7 @@ PyCourse/
 
 - [ ] 5.1 — `python starter\shapes.py` рисует квадрат и треугольник
 - [ ] 5.2 — `python starter\star.py` рисует цветную пятиконечную звезду
-- [ ] 5.3 — `snowflake.py` и **`my_gallery/gallery.py`** (звезда и снежинка)
+- [ ] 5.3 — `snowflake.py` + **`my_gallery/gallery.py`** (звезда и снежинка)
 
 → [Чеклист Блока 5](README.md#block-5-readiness-checklist)
 

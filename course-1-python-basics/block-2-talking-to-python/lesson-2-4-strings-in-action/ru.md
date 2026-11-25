@@ -45,12 +45,6 @@ print(f"{hero} used {power.upper()} to win!")
 - `.upper()` для суперсилы — финальный удар звучит эпично.
 - `[0:3]` — первые три буквы существа для быстрого превью.
 
-Теперь открой [starter/madlibs.py](starter/madlibs.py). Четыре вопроса `input()` уже готовы. Выполни TODO:
-
-1. Замени `short_creature = creature` на `short_creature = creature[0:3]`.
-2. Напечатай заголовок `=== STORY FACTORY ===`, затем три строки истории выше, затем `The end.`
-3. Удали последнюю строку `print("Complete the TODO lines above, then delete this line!")` и сохрани файл (**Ctrl+S**).
-
 ---
 
 ### Шаг 3: Запусти madlibs.py
@@ -105,10 +99,10 @@ print("The end.")
 
 ```text
 cd course-1-python-basics\block-2-talking-to-python\lesson-2-4-strings-in-action
-python solution\madlibs.py
+python starter\madlibs.py
 ```
 
-**Mac/Linux:** `python solution/madlibs.py`
+**Mac/Linux:** `python starter/madlibs.py`
 
 **Ввод:** Sam, dragon, castle, laser (или свои слова)
 
@@ -165,15 +159,15 @@ The end.
    - **d)** Ошибку
 
 2. Что даст `"Alex"[0:3]`?
-   - **a)** `A`
-   - **b)** `Alex`
+   - **a)** `Alex`
+   - **b)** `lex`
    - **c)** `Ale`
-   - **d)** `lex`
+   - **d)** `A`
 
 3. В этом уроке `madlibs.py` — это…
-   - **a)** Копия `character_sheet.py`
-   - **b)** Файл только с целыми числами
-   - **c)** Веб-приложение
+   - **a)** Веб-приложение
+   - **b)** Копия `character_sheet.py`
+   - **c)** Файл только с целыми числами
    - **d)** Новый скрипт (не продолжение `greeting.py`)
 
 4. Почему `creature[5]` может дать `IndexError` для короткого имени?
@@ -183,10 +177,10 @@ The end.
    - **d)** Забыли двоеточие после `if`
 
 5. В примере истории `power.upper()` делает суперсилу…
-   - **a)** Исчезает из истории
+   - **a)** Все строчные
    - **b)** ВСЕ ЗАГЛАВНЫЕ — для эпичного финала
-   - **c)** Все строчные
-   - **d)** Только первые три буквы
+   - **c)** Только первые три буквы
+   - **d)** Исчезает из истории
 
 ---
 

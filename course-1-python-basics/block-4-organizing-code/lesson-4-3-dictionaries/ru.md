@@ -43,13 +43,13 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-3-dictionaries
 
 ### Шаг 1: Открой character_stats.py
 
-Открой [starter/character_stats.py](starter/character_stats.py). Три стата уже заполнены. Строки `# TODO` показывают, где код со словарём пишешь **ты**.
+Открой [starter/character_stats.py](starter/character_stats.py). Три стата уже заполнены.
 
 ---
 
 ### Шаг 2: Напечатай известные ключи
 
-Скрипт уже печатает имя через `character['name']`. Под первым `# TODO` добавь ещё две строки `print()` для `character['level']` и `character['hp']` так же. Потом измени значения в словаре и запусти снова.
+Скрипт использует `character["name"]`, `character["level"]` и `character["hp"]`. Измени значения и запусти снова.
 
 ---
 
@@ -64,8 +64,6 @@ print(f"Magic: {magic}")
 
 Если `"magic"` нет — получишь `0` без падения.
 
-В starter замени каждый `"?"` вызовом `.get()`: `character.get("magic", 0)` и `character.get("skill", "none")`.
-
 ---
 
 ### Шаг 4: Запусти скрипт
@@ -76,7 +74,7 @@ python starter\character_stats.py
 
 **Mac/Linux:** используй прямые слэши — `python starter/character_stats.py`. Список файлов — `ls` вместо `dir`.
 
-**Ожидаемый вывод, когда допишешь TODO:**
+**Ожидаемый вывод:**
 
 ```text
 === CHARACTER STATS ===
@@ -92,12 +90,9 @@ Edit the dict keys above, then run again!
 
 ## Пример кода
 
-**Файл: [solution/character_stats.py](solution/character_stats.py)** — готовая версия. Загляни сюда, если застрял на TODO.
+**Файл: [starter/character_stats.py](starter/character_stats.py)**
 
 ```python
-# character_stats.py
-# Adventure Workshop — labeled stat boxes (dictionaries)
-
 character = {
     "name": "Alex",
     "level": 5,
@@ -114,8 +109,6 @@ print(f"Magic: {magic}")
 
 skill = character.get("skill", "none")
 print(f"Special skill: {skill}")
-
-print("Edit the dict keys above, then run again!")
 ```
 
 ---
@@ -127,7 +120,7 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-3-dictionaries
 python starter\character_stats.py
 ```
 
-Ввод с клавиатуры не нужен — вывод появится сразу. Дописанный starter печатает то же, что в Шаге 4. Чтобы сравнить с эталоном, запусти `python solution\character_stats.py`.
+Ввод с клавиатуры не нужен — вывод появится сразу.
 
 ---
 
@@ -139,7 +132,7 @@ python starter\character_stats.py
 
 ---
 
-## Задание для практики
+## Практическое задание
 
 **Название квеста:** Лист твоего героя
 
@@ -153,7 +146,7 @@ python starter\character_stats.py
 
 ---
 
-## Уголок отладки
+## Отладка
 
 **Проблема:** `KeyError: 'magc'` при записи `character["magc"]`.
 
@@ -168,34 +161,34 @@ python starter\character_stats.py
 Выбери лучший ответ на каждый вопрос. Сначала попробуй без подсказок!
 
 1. Чем словарь отличается от списка?
-   - **a)** В словаре всегда ровно три элемента
+   - **a)** В словаре нельзя хранить текст
    - **b)** У словаря **именные метки (ключи)**, а не только номера слотов
-   - **c)** В словаре нельзя хранить текст
-   - **d)** У словаря нет значений
+   - **c)** У словаря нет значений
+   - **d)** В словаре всегда ровно три элемента
 
 2. Как прочитать HP героя из `character = {"hp": 42}`?
-   - **a)** `hp[character]`
-   - **b)** `character(42)`
+   - **a)** `character(42)`
+   - **b)** `character.hp`
    - **c)** `character["hp"]`
-   - **d)** `character.hp`
+   - **d)** `hp[character]`
 
 3. Что делает `character.get("magic", 0)`, если ключа `"magic"` **нет**?
-   - **a)** Удаляет словарь
+   - **a)** Падает с KeyError
    - **b)** Сам добавляет `"magic"`
-   - **c)** Падает с KeyError
+   - **c)** Удаляет словарь
    - **d)** Возвращает `0` без падения
 
 4. Ты пишешь `character["magc"]`, а ключ — `"magic"`. Какая ошибка?
    - **a)** KeyError
-   - **b)** IndexError
-   - **c)** Ошибки нет — Python угадает ключ
-   - **d)** SyntaxError
+   - **b)** SyntaxError
+   - **c)** IndexError
+   - **d)** Ошибки нет — Python угадает ключ
 
 5. Когда лучше `.get()`, а не квадратные скобки `[]`?
-   - **a)** Когда нужно, чтобы Python прощал опечатки
+   - **a)** Когда ты никогда не читаешь значения
    - **b)** Когда ключа может не быть и нужно безопасное значение по умолчанию
-   - **c)** Когда ты никогда не читаешь значения
-   - **d)** Только для списков, не для словарей
+   - **c)** Только для списков, не для словарей
+   - **d)** Когда нужно, чтобы Python прощал опечатки
 
 ---
 

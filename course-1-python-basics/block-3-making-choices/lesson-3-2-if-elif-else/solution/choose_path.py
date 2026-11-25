@@ -3,7 +3,7 @@
 print("=== CHOOSE YOUR PATH ===")
 print("You stand at a fork in the quest trail.")
 
-choice = input("Go left or right? (left/right): ")
+choice = input("Go left or right? (left/right): ").lower()
 
 if choice == "left":
     print("You find a glowing crystal! +10 quest points.")

@@ -32,13 +32,11 @@ Two families of errors in this lesson:
 
 ### Step 1: Open the case files folder
 
-**Path A — PyCourse repo.** From the project root (the prompt ends in `PyCourse>`):
+**Path A — PyCourse repo:**
 
 ```text
 cd course-1-python-basics\block-1-meeting-your-computer\lesson-1-4-reading-error-messages
 ```
-
-On Mac/Linux, use `/` instead of `\`. **Still in the Lesson 1.3 folder?** Type `cd ..` three times, or open a new terminal — it starts at the project root.
 
 **Path B — your own copy:** If you downloaded only this lesson folder, `cd` to wherever you saved `lesson-1-4-reading-error-messages` on your computer. The folder must contain `starter/` with the three case files.
 
@@ -238,9 +236,9 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. When reading an error traceback, which line should you read first?
    - **a)** The last line — it shows the error type and message
-   - **b)** Line 1 of every file
-   - **c)** Only the middle lines
-   - **d)** The very top line
+   - **b)** The very top line
+   - **c)** Line 1 of every file
+   - **d)** Only the middle lines
 
 2. `SyntaxError: unterminated string literal` usually means…
    - **a)** You spelled the filename wrong in the terminal
@@ -250,14 +248,14 @@ Pick the best answer for each question. Try without scrolling down first!
 
 3. `python: can't open file 'wrong_name.py'` is different from SyntaxError because…
    - **a)** It only happens on Mac
-   - **b)** You need to check Add to PATH again
+   - **b)** It means your code grammar is perfect
    - **c)** Python never read your code — the file was not found
-   - **d)** It means your code grammar is perfect
+   - **d)** You need to check Add to PATH again
 
 4. In VS Code, how do you jump to line 4 after seeing `line 4` in an error?
-   - **a)** Press **Ctrl+Z** four times
-   - **b)** Delete line 4
-   - **c)** Restart the computer
+   - **a)** Restart the computer
+   - **b)** Press **Ctrl+Z** four times
+   - **c)** Delete line 4
    - **d)** Press **Ctrl+G**, type `4`, press **Enter**
 
 5. `SyntaxError: '(' was never closed` suggests you should look for…

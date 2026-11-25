@@ -1,18 +1,16 @@
 # calculator.py
 # Data Lab — calculator spells with +, -, *, /
 
-# TODO 1: Replace 0 with input() wrapped in int() (see Step 1).
-#         Prompt text: "Enter the first number: "
+# TODO: Ask for two numbers with input() and convert them with int()
 num1 = 0
-
-# TODO 2: Replace 1 the same way. Prompt text: "Enter the second number: "
-num2 = 1
+num2 = 0
 
 print("=== CALCULATOR SPELLS ===")
-print("Sum:", num1 + num2)
 
-# TODO 3: Print the difference with the label "Difference:" (use -)
-# TODO 4: Print the product with the label "Product:" (use *)
-# TODO 5: Print the quotient with the label "Quotient:" (use /)
+# TODO: Print Sum, Difference, Product, and Quotient with labels
+# Sum: num1 + num2
+# Difference: num1 - num2
+# Product: num1 * num2
+# Quotient: num1 / num2
 
-print("Calculator complete!")
+print("Finish the four spell lines, then run again!")

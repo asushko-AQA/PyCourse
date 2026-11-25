@@ -46,29 +46,19 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-1-functions
 
 ### Step 1: Open helpers.py
 
-Open [starter/helpers.py](starter/helpers.py). You will find two helper recipes and a `main()` function that ties them together. Their bodies are not finished yet — every `# TODO` line tells you what to write. `pass` means "do nothing for now"; replace it with your code.
+Open [starter/helpers.py](starter/helpers.py). You will find two helper recipes and a `main()` function that ties them together.
 
 ---
 
-### Step 2: Write draw_banner
+### Step 2: Understand draw_banner
 
-`draw_banner(text)` takes one piece of text and prints it between `===` lines — like a title card for your adventure. Replace `pass` with the three `print()` lines from the example above. Indent them with four spaces so they stay inside the function.
+`draw_banner(text)` takes one piece of text and prints it between `===` lines — like a title card for your adventure.
 
 ---
 
-### Step 3: Write ask_yes_no
+### Step 3: Understand ask_yes_no
 
 `ask_yes_no(question)` prints a question, waits for `input()`, and **returns** the string `"yes"` or `"no"`. The caller stores that answer in a variable.
-
-The `input()` line is already there. Replace `return "no"` with this check — `answer in ("y", "yes")` is `True` when the answer is either `"y"` or `"yes"`:
-
-```python
-    if answer in ("y", "yes"):
-        return "yes"
-    return "no"
-```
-
-Then finish `main()`: call `draw_banner("Adventure Workshop")`, and replace `"?"` with `ask_yes_no("Ready to build helper functions?")`.
 
 ---
 
@@ -80,7 +70,7 @@ python starter\helpers.py
 
 **Mac/Linux:** Use forward slashes — `python starter/helpers.py`. List files with `ls` instead of `dir`.
 
-**Expected output after you finish the TODOs (you type at the prompt):**
+**Expected output (you type at the prompt):**
 
 ```text
 ===
@@ -100,12 +90,9 @@ You answered: yes
 
 ## Code Example
 
-**File: [solution/helpers.py](solution/helpers.py)** — the finished version. Peek here if you get stuck on a TODO.
+**File: [starter/helpers.py](starter/helpers.py)**
 
 ```python
-# helpers.py
-# Adventure Workshop — reusable recipe functions
-
 def draw_banner(text):
     print("===")
     print(text)
@@ -137,7 +124,7 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-1-functions
 python starter\helpers.py
 ```
 
-Type `yes` or `no` when the terminal waits. Press Enter after each answer. Your finished starter prints the same output as Step 4. To compare with the reference, run `python solution\helpers.py`.
+Type `yes` or `no` when the terminal waits. Press Enter after each answer.
 
 ---
 
@@ -157,7 +144,7 @@ Type `yes` or `no` when the terminal waits. Press Enter after each answer. Your 
 2. In `main()`, ask for a name with `input()` and pass it to `greet()`.
 3. Keep `draw_banner` at the top so your workshop still has a title card.
 
-**Bonus stars:** Make `ask_yes_no` accept `"y"` and `"n"` as shortcuts (your function already accepts `"y"` — try adding `"n"` for `"no"`).
+**Bonus stars:** Make `ask_yes_no` accept `"y"` and `"n"` as shortcuts (the starter already does `"y"` — try adding `"n"` for `"no"`).
 
 **Reference solution:** [solution/helpers.py](solution/helpers.py)
 
@@ -178,16 +165,16 @@ Type `yes` or `no` when the terminal waits. Press Enter after each answer. Your 
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What keyword do you use to **define** a function in Python?
-   - **a)** `recipe`
+   - **a)** `function`
    - **b)** `call`
-   - **c)** `function`
+   - **c)** `recipe`
    - **d)** `def`
 
 2. You wrote `def draw_banner(text):` but never called it. What happens when you run the file?
    - **a)** Nothing prints — defining a function only stores the recipe
-   - **b)** A SyntaxError appears
-   - **c)** VS Code crashes
-   - **d)** Python runs the function automatically
+   - **b)** Python runs the function automatically
+   - **c)** A SyntaxError appears
+   - **d)** VS Code crashes
 
 3. In `helpers.py`, what does `ask_yes_no(question)` **return**?
    - **a)** Nothing — it only prints
@@ -196,15 +183,15 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** The number 1 or 0
 
 4. Why must `main()` appear as the **last line** of the file with **no indent**?
-   - **a)** `main()` only works at the top of the file
-   - **b)** Python always runs the last function name it sees
+   - **a)** Python always runs the last function name it sees
+   - **b)** Indented lines are comments
    - **c)** So you can call `main()` to start the program after all functions are defined
-   - **d)** Indented lines are comments
+   - **d)** `main()` only works at the top of the file
 
 5. What does `draw_banner("Adventure Workshop")` pass into the function?
-   - **a)** The whole `main()` function
+   - **a)** A loop counter
    - **b)** A dictionary of room names
-   - **c)** A loop counter
+   - **c)** The whole `main()` function
    - **d)** One piece of text — the `text` parameter
 
 ---

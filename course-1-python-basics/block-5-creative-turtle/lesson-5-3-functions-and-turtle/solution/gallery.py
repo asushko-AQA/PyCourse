@@ -27,7 +27,7 @@ def draw_snowflake():
     t.pendown()
     t.pencolor("sky blue")
     for _ in range(6):
-        draw_branch(40)
+        draw_branch(60)
         t.left(60)
 
 

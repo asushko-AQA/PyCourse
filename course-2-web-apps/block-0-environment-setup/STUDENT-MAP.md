@@ -20,7 +20,7 @@ PyCourse/
 
 ## Path B
 
-Copy lesson `starter/` folders to your own project directory. Lesson 0.1 creates `.venv` in that folder.
+Open your own project folder in VS Code, copy `starter/check_setup.py` into it, and create `.venv` there. Path A uses one `.venv` at the PyCourse root instead — every later lesson activates that same folder.
 
 ---
 

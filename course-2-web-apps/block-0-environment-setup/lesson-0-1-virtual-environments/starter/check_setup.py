@@ -2,11 +2,17 @@ import importlib.metadata
 
 
 def main():
-    # TODO 1: Start a try: block and put `import flask` inside it
-    # TODO 2: Still inside try:, print "venv ready" and the Flask version
-    #         (use importlib.metadata.version('flask') — see Step 5)
-    # TODO 3: Add except ImportError: and print friendly setup steps
-    print("Workshop check — finish the TODOs above, then run again!")
+    try:
+        import flask
+
+        # TODO: print "venv ready"
+        # TODO: print the Flask version with importlib.metadata.version("flask")
+    except ImportError:
+        print("Flask is not installed yet.")
+        # TODO: print three setup steps:
+        #   1. Activate your .venv
+        #   2. Run: pip install flask
+        #   3. Run this script again
 
 
 main()

@@ -15,15 +15,16 @@
 
 Block 4 finale! You will combine **functions**, **lists**, and **dictionaries** into one playable text adventure — just like Block 2's Creator Data Pack combined variables and strings.
 
-Create **`my_adventure/`** at your **project root** (next to `my_data/`, not inside this lesson folder). Copy the skeleton into that folder, finish its TODO functions, then make the game yours.
+Create **`my_adventure/`** at your **project root** (next to `my_data/`, not inside this lesson folder). Copy the skeleton into that folder and make it yours.
 
 The sample game has three rooms connected by directions (`north`, `south`, etc.). Pick up the **golden key** in the library, return to the **garden**, and type `open` to win.
 
 Before you start, review [starter/game.py](starter/game.py) to see how nested dicts describe each room.
 
-**Path A — PyCourse repo:** In the VS Code terminal (the prompt ends in `PyCourse>`), create the folder at the project root:
+**Path A — PyCourse repo:**
 
 ```text
+cd Documents\PyCourse
 mkdir my_adventure
 ```
 
@@ -52,35 +53,16 @@ Each room is a dict inside the big `rooms` dict:
 
 ---
 
-### Step 2: Write the helper functions
+### Step 2: Helper functions
 
 | Function | Job |
 |----------|-----|
-| `show_room(room_id)` | Print title, description, and the item if one is still there (already written) |
+| `show_room(room_id)` | Print title and description |
 | `move(room_id, direction)` | Return the **new room id** if exit exists (no `global` needed) |
 | `show_inventory()` | Numbered list from the `inventory` list |
 | `take_item(room_id)` | Move room `"item"` into `inventory` |
 
 In `main()`, save the return value: `current_room = move(current_room, command)`.
-
-**Your job:** In `my_adventure/game.py`, replace the `# TODO` lines in `move()`, `show_inventory()`, and `take_item()` with real code. Two new tools help:
-
-- `direction in room` is `True` when the room dict has that key — for example `"north" in rooms["start"]` is `True`.
-- `del room["item"]` removes the `"item"` key from the room dict, so the key cannot be taken twice.
-
-Here is `move()` finished — use it as a pattern for the other two:
-
-```python
-def move(room_id, direction):
-    room = rooms[room_id]
-    if direction in room:
-        print(f"You go {direction}.")
-        return room[direction]
-    print("You cannot go that way.")
-    return room_id
-```
-
-`show_inventory()` is the numbered loop from Lesson 4.2, plus a check for an empty pack with `len(inventory) == 0`.
 
 ---
 
@@ -102,7 +84,7 @@ cd my_adventure
 python game.py
 ```
 
-**Sample winning path (your commands only — full output is in Code Execution below):**
+**Sample winning path:**
 
 ```text
 What do you do? north
@@ -123,55 +105,27 @@ Rename rooms, change descriptions, add a fourth room, or invent a new win item. 
 
 ## Code Example
 
-**File: [solution/game.py](solution/game.py)** — the finished game. Open it only after you try your own `move()`, `show_inventory()`, and `take_item()`. The [starter/game.py](starter/game.py) skeleton you copy into `my_adventure/` runs, but you cannot move or pick up anything until you finish its TODOs.
+Copy [starter/game.py](starter/game.py) into `my_adventure/` and fill in every `# TODO`. The rooms are already written. You write `show_room`, `move`, `show_inventory`, `take_item`, and the game loop. Peek at [solution/game.py](solution/game.py) only after you try.
 
 ---
 
 ## Code Execution
 
-From the project root:
+From project root:
 
 ```text
-cd my_adventure
+cd Documents\PyCourse\my_adventure
 python game.py
 ```
 
-Or run the reference solution to compare:
+Or test the lesson starter first:
 
 ```text
 cd course-1-python-basics\block-4-organizing-code\lesson-4-4-text-adventure-capstone
-python solution\game.py
+python starter\game.py
 ```
 
-**Mac/Linux:** Use forward slashes — `python solution/game.py`. List files with `ls` instead of `dir`.
-
-**Expected output** when you type `north`, `take`, `south`, `east`, `open` (your typing is not shown here):
-
-```text
-=== ADVENTURE WORKSHOP ===
-Commands: north, south, east, west, take, inventory, open, quit
-
-=== Workshop Door ===
-You stand at the workshop entrance. Paths lead north and east.
-What do you do? You go north.
-
-=== Scroll Library ===
-Dusty scrolls line the shelves. An old desk stands in the corner.
-You see a golden key here.
-What do you do? You picked up the golden key.
-
-=== Scroll Library ===
-Dusty scrolls line the shelves. An old desk stands in the corner.
-What do you do? You go south.
-
-=== Workshop Door ===
-You stand at the workshop entrance. Paths lead north and east.
-What do you do? You go east.
-
-=== Hidden Garden ===
-Moonlight filters through leaves. A treasure chest waits here.
-What do you do? The chest opens! You win!
-```
+**Mac/Linux:** Use forward slashes — `python starter/game.py`. List files with `ls` instead of `dir`.
 
 ---
 
@@ -187,7 +141,7 @@ What do you do? The chest opens! You win!
 
 **Quest name:** Your Adventure World
 
-1. Copy [starter/game.py](starter/game.py) to **`my_adventure/game.py`** at project root and finish the TODOs in `move()`, `show_inventory()`, and `take_item()` (Step 2). Play the winning path until your output matches Code Execution.
+1. Copy [starter/game.py](starter/game.py) to **`my_adventure/game.py`** at project root.
 2. Change at least one room name and description to match your story.
 3. Add one new item in a room (change `"item"` text and update the win check if needed).
 4. Play-test until you can win reliably.
@@ -213,15 +167,15 @@ What do you do? The chest opens! You win!
 Pick the best answer for each question. Try without scrolling down first!
 
 1. Where should you create `my_adventure/` for this capstone?
-   - **a)** On the Python install drive only
-   - **b)** Inside this lesson's `starter` folder
+   - **a)** Inside this lesson's `starter` folder
+   - **b)** Only inside `game.py` as a comment
    - **c)** At your **project root**, next to `my_data/` — not inside a lesson folder
-   - **d)** Only inside `game.py` as a comment
+   - **d)** On the Python install drive only
 
 2. In the `rooms` dict, where does `"south": "start"` live?
-   - **a)** Inside the `inventory` list
+   - **a)** At the top level of `rooms` as `rooms["south"]`
    - **b)** In a `print()` statement only
-   - **c)** At the top level of `rooms` as `rooms["south"]`
+   - **c)** Inside the `inventory` list
    - **d)** **Inside** one room's dict — a direction key pointing to another room id
 
 3. Which data structure holds picked-up items like the golden key?
@@ -237,10 +191,10 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Install Flask
 
 5. Why is `rooms[current_room]["north"]` correct but `rooms["north"]` is wrong?
-   - **a)** Python does not allow nested dicts
-   - **b)** `rooms` is a list indexed by numbers only
+   - **a)** `rooms` is a list indexed by numbers only
+   - **b)** `"north"` is always index 0
    - **c)** Directions like `"north"` are **inside** each room dict, keyed by room id first
-   - **d)** `"north"` is always index 0
+   - **d)** Python does not allow nested dicts
 
 ---
 
@@ -258,7 +212,7 @@ Pick the best answer for each question. Try without scrolling down first!
 
 ## What's Next
 
-→ [Lesson 5.1: Turtle Basics](../../block-5-creative-turtle/lesson-5-1-turtle-basics/README.md) — Block 5 starts: draw shapes and patterns on screen.
+→ [Block 5: Creative Python with Turtle](../../block-5-creative-turtle/README.md) — draw shapes and patterns on screen.
 
 Tick the [Block 4 readiness checklist](../README.md#block-4-readiness-checklist) before you start Turtle!
 

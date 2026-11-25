@@ -55,11 +55,7 @@ If you put quotes around a number (`"11"`), Python treats it as text, not math. 
 
 ### Step 3: Open the character sheet
 
-Open [starter/character_sheet.py](starter/character_sheet.py). Three variables are ready — `name`, `age`, `favorite_game`. Your job: fill in the four **TODO `print()` lines** to show your character sheet.
-
-- Each line is a label in quotes, a comma, then the variable name — for example `print("Name:", name)`.
-- When all four lines are written, delete the last line `print("Fill in the TODO print lines above, then delete this line!")`.
-- Save the file (**Ctrl+S**).
+Open [starter/character_sheet.py](starter/character_sheet.py). Three variables are ready — fill in the **TODO `print()` lines** to show your character sheet.
 
 ---
 
@@ -90,8 +86,6 @@ Age: 11
 Favorite game: Minecraft
 ```
 
-Still see only `Fill in the TODO print lines above, then delete this line!`? Go back to Step 3 — the TODO lines are still empty.
-
 ---
 
 ### Step 6: Reuse a variable
@@ -109,20 +103,17 @@ Change the value in the box once — every `print()` that uses `name` updates au
 
 ## Code Example
 
-**File: [solution/character_sheet.py](solution/character_sheet.py)** — the finished sheet, with a fourth box (`school`) and a line that combines two boxes:
+**File: [starter/character_sheet.py](starter/character_sheet.py)**
 
 ```python
 name = "Alex"
 age = 11
 favorite_game = "Minecraft"
-school = "Creator Academy"
 
 print("=== CHARACTER SHEET ===")
 print("Name:", name)
 print("Age:", age)
 print("Favorite game:", favorite_game)
-print("School:", school)
-print(name, "loves", favorite_game)
 ```
 
 **No `input()` yet** — you type values directly in the code. Interactive questions come in Lesson 2.2.
@@ -133,10 +124,8 @@ print(name, "loves", favorite_game)
 
 ```text
 cd course-1-python-basics\block-2-talking-to-python\lesson-2-1-variables
-python solution\character_sheet.py
+python starter\character_sheet.py
 ```
-
-**Mac/Linux:** `python solution/character_sheet.py` (forward slashes).
 
 **Expected output:**
 
@@ -145,8 +134,6 @@ python solution\character_sheet.py
 Name: Alex
 Age: 11
 Favorite game: Minecraft
-School: Creator Academy
-Alex loves Minecraft
 ```
 
 ---
@@ -163,25 +150,12 @@ Alex loves Minecraft
 
 **Quest name:** Your Character Sheet
 
-Keep working in [starter/character_sheet.py](starter/character_sheet.py) — the file you completed in Step 3.
-
 1. Edit all three variables to **your** real data (or fun fictional data).
-2. Add a fourth variable — `school`, `pet`, or `favorite_food` — and print it with a label, like `print("School:", school)`.
+2. Add a fourth variable — `school`, `pet`, or `favorite_food`.
 3. Add one `print()` that combines two variables with a comma:
 
 ```python
 print(name, "loves", favorite_game)
-```
-
-**Expected output** (with the sample data and `school = "Creator Academy"`):
-
-```text
-=== CHARACTER SHEET ===
-Name: Alex
-Age: 11
-Favorite game: Minecraft
-School: Creator Academy
-Alex loves Minecraft
 ```
 
 **Bonus stars:** Add a title line with `===` banners like the example. Try `print("Age next year:", age + 1)` — Python can add 1 to a number!
@@ -205,34 +179,34 @@ Alex loves Minecraft
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What does the `=` sign do in `name = "Alex"`?
-   - **a)** Deletes a variable
-   - **b)** Compares two values
+   - **a)** Compares two values
+   - **b)** Prints text to the screen
    - **c)** Puts a value inside a labeled variable
-   - **d)** Prints text to the screen
+   - **d)** Deletes a variable
 
 2. Which line stores a **whole number** correctly?
-   - **a)** `age = True`
+   - **a)** `age = "11"`
    - **b)** `11 = age`
-   - **c)** `age = "11"`
+   - **c)** `age = True`
    - **d)** `age = 11`
 
 3. If you put quotes around a number like `"11"`, Python treats it as…
    - **a)** Text (a string), not a number for math
-   - **b)** A True/False value
-   - **c)** An error that always stops the program
-   - **d)** An integer for math
+   - **b)** An integer for math
+   - **c)** A True/False value
+   - **d)** An error that always stops the program
 
 4. You get `NameError: name 'nmae' is not defined`. What is the most likely cause?
-   - **a)** The number was too big
+   - **a)** You forgot to use `input()`
    - **b)** A typo in the variable name (spelling must match exactly)
-   - **c)** You forgot to use `input()`
-   - **d)** You used `==` instead of `=`
+   - **c)** You used `==` instead of `=`
+   - **d)** The number was too big
 
 5. You change `name = "Alex"` to `name = "Sam"`. What happens to every `print()` that uses `name`?
    - **a)** Python deletes the other variables
-   - **b)** You must rename every `print()` line by hand
+   - **b)** They still show "Alex" until you restart the computer
    - **c)** They automatically show the new value
-   - **d)** They still show "Alex" until you restart the computer
+   - **d)** You must rename every `print()` line by hand
 
 ---
 

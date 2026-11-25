@@ -119,14 +119,16 @@ Combine `if`, `while`, and `input()` in one game:
 
 1. Create **`my_quest/`** at project root (next to `my_data/`).
 2. Copy [starter/gate_quest.py](starter/gate_quest.py) → **`my_quest/gate_quest.py`**.
-3. Run:
+3. In your copy, set `secret = random.randint(1, 20)` and `guesses_left = 5`. `random.randint` picks a random whole number — here, from 1 through 20.
+4. Fill in the `while` loop: a matching guess prints `Correct! The gate opens. Quest complete!` and stops with `break`; a low guess prints `Too low.`; a high guess prints `Too high.`; each miss uses one try; when tries hit 0, print `Out of tries! The secret was ...`.
+5. Run:
 
 ```text
 cd my_quest
 python gate_quest.py
 ```
 
-Guess the secret number (1–10) in three tries. Uses `random.randint` — a new Python tool for random picks.
+**Expected:** the game asks `Your guess:` up to five times. A correct guess ends early. Five misses print the secret number.
 
 **Reference:** [solution/gate_quest.py](solution/gate_quest.py)
 
@@ -150,14 +152,14 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. In a nested star pyramid, the **outer** loop usually picks the…
    - **a)** File name on disk
-   - **b)** True/False comparison result
+   - **b)** Random user input
    - **c)** Row number
-   - **d)** Random user input
+   - **d)** True/False comparison result
 
 2. How many rows does `for row in range(1, 6):` create?
-   - **a)** 6 rows
-   - **b)** 4 rows
-   - **c)** 10 rows
+   - **a)** 10 rows
+   - **b)** 6 rows
+   - **c)** 4 rows
    - **d)** 5 rows (1, 2, 3, 4, 5)
 
 3. What does `print("*", end="")` do?
@@ -167,16 +169,16 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Stops the loop immediately
 
 4. Why use `range(1, 6)` for a **5-row** pyramid?
-   - **a)** Slicing requires 6 rows minimum
+   - **a)** Python always skips the first row
    - **b)** The stop number (6) is **not** included — you get 1 through 5
-   - **c)** Python always skips the first row
-   - **d)** `range(1, 6)` means "repeat 6 times starting at 0"
+   - **c)** `range(1, 6)` means "repeat 6 times starting at 0"
+   - **d)** Slicing requires 6 rows minimum
 
 5. What does `break` do inside a loop?
    - **a)** Converts text to uppercase
-   - **b)** Indents the next line
+   - **b)** Repeats the loop forever
    - **c)** Exits the loop early
-   - **d)** Repeats the loop forever
+   - **d)** Indents the next line
 
 ---
 

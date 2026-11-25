@@ -15,22 +15,22 @@
 
 Your first **web capstone**! Combine templates and POST forms into a Mad-Libs app — like Course 1 `madlibs.py`, but in the browser.
 
-Create **`my_web_madlibs/`** at your **project root** — the folder you open in VS Code, next to `.venv` (and next to `course-2-web-apps/` in Path A).
+Create **`my_web_madlibs/`** at your **project root** (next to `course-2-web-apps/`).
 
-**Path A:** Open `PyCourse` in VS Code and open the terminal — it already starts in `PyCourse`. Copy the lesson [starter/](starter/) into a new folder called `my_web_madlibs`:
+**Path A:** the VS Code terminal is already in `PyCourse`. If `(.venv)` is not showing, activate the toolbox from Lesson 0.1 first (it lives in this folder):
+
+**Windows:** `.venv\Scripts\Activate.ps1`  
+**macOS:** `source .venv/bin/activate`
+
+Then create the capstone folder (no `cd Documents\PyCourse` — you are already there):
 
 ```text
-Copy-Item -Recurse course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-3-madlibs-capstone\starter my_web_madlibs
+mkdir my_web_madlibs
 ```
 
-**Command Prompt (cmd):** `xcopy /E /I course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-3-madlibs-capstone\starter my_web_madlibs`  
-**macOS/Linux:** `cp -r course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-3-madlibs-capstone/starter my_web_madlibs`
+Copy [starter/](starter/) into `my_web_madlibs/` (`app.py` + `templates/`).
 
-Prefer the mouse? In the VS Code Explorer, right-click the lesson's `starter` folder → **Copy**, right-click an empty spot under `PyCourse` → **Paste**, then rename the copy to `my_web_madlibs`.
-
-Check: you now have `my_web_madlibs/app.py` and `my_web_madlibs/templates/madlibs.html`.
-
-**Path B:** Inside your workshop folder (next to `.venv`), create `my_web_madlibs/` and put this lesson's `starter/app.py` and `starter/templates/` in it — same idea as `my_adventure/`. See [STUDENT-MAP](../STUDENT-MAP.md).
+**Path B:** Create `my_web_madlibs` on Desktop — same idea as `my_adventure/`. See [STUDENT-MAP](../STUDENT-MAP.md).
 
 ---
 
@@ -77,24 +77,30 @@ def madlibs():
 
 ### Step 3: Run from my_web_madlibs
 
-**1. Activate your venv.** The VS Code terminal starts in your project root (where `.venv` lives). Activate:
+With `(.venv)` still active (activate at the `PyCourse` root first if the prompt does not show it):
 
-```text
-.venv\Scripts\Activate.ps1
-```
-
-**Command Prompt (cmd):** `.venv\Scripts\activate.bat` · **macOS/Linux:** `source .venv/bin/activate`
-
-You should see `(.venv)` at the start of the terminal line.
-
-**2. Go into your capstone folder and run** (same commands on Windows, macOS/Linux, and in Path B):
+**Windows:**
 
 ```text
 cd my_web_madlibs
 python app.py
 ```
 
-Open `http://127.0.0.1:5000/`.
+**macOS:**
+
+```text
+cd my_web_madlibs
+python3 app.py
+```
+
+Or test the lesson starter first:
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-3-madlibs-capstone
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
 
 **Sample words:** robot, dance, sparkly, moon base
 
@@ -132,33 +138,17 @@ Full imports and `app = Flask(__name__)` are at the top of [solution/app.py](sol
 
 ## Code Execution
 
-With `(.venv)` active, from your project root:
-
 ```text
-cd my_web_madlibs
-python app.py
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-3-madlibs-capstone
+python starter\app.py
 ```
 
-**Expected output (terminal):**
-
-```text
- * Serving Flask app 'app'
- * Debug mode: on
- * Running on http://127.0.0.1:5000
-Press CTRL+C to quit
-```
+**Mac/Linux:** `python starter/app.py`
 
 1. Open `http://127.0.0.1:5000/`
-2. Type **Adjective** `sparkly`, **Noun** `robot`, **Verb** `dance`, **Place** `moon base` and click **Create Story**
+2. Fill in sample words (robot, dance, sparkly, moon base) and click **Create Story**
 
-**Expected output (browser, under the form):**
-
-```text
-Your Story
-One sunny day, a sparkly robot decided to dance all the way to moon base. The crowd cheered. The end!
-```
-
-**Expected result:** Your custom Mad-Libs paragraph appears under **Your Story**. Stop the server with **Ctrl+C** when you are done.
+**Expected result:** Your custom Mad-Libs paragraph appears under **Your Story**.
 
 ---
 
@@ -198,44 +188,44 @@ One sunny day, a sparkly robot decided to dance all the way to moon base. The cr
 Pick the best answer for each question. Try without scrolling down first!
 
 1. Where should you copy the starter for your capstone project?
-   - **a)** `my_web_madlibs/` at the project root
+   - **a)** Only in the browser bookmarks bar
    - **b)** Inside `.venv/Scripts/`
-   - **c)** Only in the browser bookmarks bar
+   - **c)** `my_web_madlibs/` at the project root
    - **d)** Into `course-1-python-basics/`
 
 2. The Mad-Libs form uses `method="post"`. Where do the words go when you submit?
    - **a)** Directly into `pip list`
-   - **b)** In the request body — read with `request.form.get(...)`
-   - **c)** In the URL as `?noun=robot` only
-   - **d)** Into `static/style.css`
+   - **b)** In the URL as `?noun=robot` only
+   - **c)** Into `static/style.css`
+   - **d)** In the request body — read with `request.form.get(...)`
 
 3. When should you build the `story` variable?
-   - **a)** Only in the browser console
-   - **b)** After `deactivate`
-   - **c)** Inside the `if request.method == "POST":` block after reading the fields
-   - **d)** Before creating `app = Flask(__name__)`
+   - **a)** Inside the `if request.method == "POST":` block after reading the fields
+   - **b)** Before creating `app = Flask(__name__)`
+   - **c)** Only in the browser console
+   - **d)** After `deactivate`
 
 4. What does `{% if story %}` in the template do?
    - **a)** Delete the form after one use
-   - **b)** Install Jinja2 with pip
-   - **c)** Change GET to POST automatically
-   - **d)** Show the story section only when `story` is not empty
+   - **b)** Show the story section only when `story` is not empty
+   - **c)** Install Jinja2 with pip
+   - **d)** Change GET to POST automatically
 
 5. Each `<input name="noun">` must match what in `app.py`?
-   - **a)** The same name in `request.form.get("noun")`
+   - **a)** The `secret_key` string
    - **b)** The Flask port number
-   - **c)** The `secret_key` string
+   - **c)** The same name in `request.form.get("noun")`
    - **d)** The `@app.route` decorator name only
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **a)** Capstone folders live at project root, like other `my_*` projects.
-2. **b)** POST sends field data in the body, not the URL.
-3. **c)** Build the story only after you have the submitted words.
-4. **d)** The template shows the result block when `story` has text.
-5. **a)** HTML `name` must match the key in `request.form.get(...)`.
+1. **c)** Capstone folders live at project root, like other `my_*` projects.
+2. **d)** POST sends field data in the body, not the URL.
+3. **a)** Build the story only after you have the submitted words.
+4. **b)** The template shows the result block when `story` has text.
+5. **c)** HTML `name` must match the key in `request.form.get(...)`.
 
 </details>
 

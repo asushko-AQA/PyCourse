@@ -93,7 +93,7 @@ export default async function LessonPage({
           theory={content.theory}
           assignments={content.assignments}
           quiz={content.quiz}
-          files={content.files}
+          files={lesson.files}
           dict={dict}
           courseHref={courseHref}
           nextHref={next ? lessonHref(lang, next) : null}

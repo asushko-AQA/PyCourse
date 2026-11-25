@@ -2,12 +2,10 @@
 # Quest Gate — while loop counts down to blastoff
 
 print("=== COUNTDOWN ===")
-counter = 5
 
-# TODO: Write a while loop that repeats while counter is greater than 0.
-#   Inside the loop (indent 4 spaces):
-#   1) print the counter
-#   2) subtract 1 from counter: counter = counter - 1
-#   Without step 2 the loop never stops!
+# TODO: Set counter to 5
+counter = 0
+
+# TODO: While counter is greater than 0, print counter and subtract 1
 
 print("Blastoff!")

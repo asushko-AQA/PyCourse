@@ -52,10 +52,13 @@ export default function XPBadge({ levelLabel, xpLabel }: XPBadgeProps) {
   const progress = getLevelProgress(hydrated ? xp : 0);
 
   return (
-    <div className="flex items-center gap-3 rounded-full bg-white/80 px-4 py-1.5 shadow-sm ring-1 ring-amber-200">
+    <div
+      data-automation-id="xp-badge"
+      className="flex items-center gap-3 rounded-full bg-white/80 px-4 py-1.5 shadow-sm ring-1 ring-amber-200"
+    >
       <span className="flex items-center gap-1 text-sm font-bold text-amber-600">
         <span aria-hidden>⭐</span>
-        <span data-automation-id="nav-xp">{shownXp} {xpLabel}</span>
+        {shownXp} {xpLabel}
       </span>
       <div className="flex items-center gap-2">
         <span className="rounded-full bg-violet-100 px-2 py-0.5 text-xs font-extrabold text-violet-700">

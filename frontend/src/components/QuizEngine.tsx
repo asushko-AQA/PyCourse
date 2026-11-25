@@ -2,12 +2,8 @@
 
 /**
  * One-question-at-a-time quiz with progress dots, confetti + chime on
- * correct answers and gentle hints on wrong answers.
- *
- * Reward rules (see `isPerfectQuiz` in the progress store): only a run where
- * every question was answered correctly on the first try earns the XP,
- * reports `quizPerfect` and completes the lesson — once per lesson. Any other
- * run shows the score and invites a replay; it changes no progress.
+ * correct answers, gentle hints on wrong answers (no penalty), and an XP
+ * reward on completion (awarded once per lesson via the progress store).
  */
 
 import { useMemo, useState } from "react";
@@ -16,11 +12,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { QuizQuestion } from "@/lib/types";
 import type { Dict } from "@/lib/i18n";
 import { fill } from "@/lib/i18n";
-import {
-  isPerfectQuiz,
-  useProgressStore,
-  XP_PER_QUIZ,
-} from "@/stores/progressStore";
+import { useProgressStore, XP_PER_QUIZ } from "@/stores/progressStore";
 import { fireConfettiBurst, fireConfettiCelebration } from "./ConfettiTrigger";
 import { playChime } from "./ChimePlayer";
 
@@ -46,7 +38,6 @@ export default function QuizEngine({
 }: QuizEngineProps) {
   const completeQuiz = useProgressStore((s) => s.completeQuiz);
   const completedQuizzes = useProgressStore((s) => s.completedQuizzes);
-  const completedLessons = useProgressStore((s) => s.completedLessons);
 
   const [index, setIndex] = useState(0);
   const [solvedSet, setSolvedSet] = useState<Set<number>>(new Set());
@@ -85,10 +76,15 @@ export default function QuizEngine({
       setWrongPicks([]);
       setFeedback(null);
     } else {
-      setEarnedNow(completeQuiz(lessonKey, firstTryCount, questions.length));
+      const perfect = firstTryCount === questions.length;
+      const isFirstPerfect = perfect && !completedQuizzes.includes(lessonKey);
+      setEarnedNow(isFirstPerfect);
+      completeQuiz(lessonKey, perfect);
       setFinished(true);
-      playChime("finish");
-      fireConfettiCelebration();
+      if (perfect) {
+        playChime("finish");
+        fireConfettiCelebration();
+      }
     }
   }
 
@@ -98,14 +94,10 @@ export default function QuizEngine({
     setWrongPicks([]);
     setFirstTryCount(0);
     setFinished(false);
-    setEarnedNow(false);
     setFeedback(null);
   }
 
   if (finished) {
-    const perfect = isPerfectQuiz(firstTryCount, questions.length);
-    const alreadyCollected = !earnedNow && completedQuizzes.includes(lessonKey);
-    const lessonDone = completedLessons.includes(lessonKey);
     const stars =
       firstTryCount >= questions.length
         ? 3
@@ -133,8 +125,7 @@ export default function QuizEngine({
           })}
         </p>
         <div
-          data-automation-id="quiz-reward"
-          data-reward={earnedNow ? "earned" : alreadyCollected ? "collected" : "none"}
+          data-automation-id="quiz-xp"
           className={`rounded-full px-4 py-1.5 text-sm font-extrabold ${
             earnedNow
               ? "bg-violet-500 text-white shadow-lg"
@@ -143,17 +134,12 @@ export default function QuizEngine({
         >
           {earnedNow
             ? fill(dict.quiz.xpEarned, { xp: XP_PER_QUIZ })
-            : alreadyCollected
+            : firstTryCount === questions.length
               ? dict.quiz.alreadyEarned
-              : fill(dict.quiz.notPerfect, { xp: XP_PER_QUIZ })}
+              : fill(dict.quiz.xpNeedsPerfect, { xp: XP_PER_QUIZ })}
         </div>
-        {!perfect && !lessonDone && (
-          <p className="max-w-md text-sm font-semibold text-amber-700">
-            {dict.quiz.notPerfectLesson}
-          </p>
-        )}
         <div className="mt-2 flex flex-wrap justify-center gap-3">
-          {nextHref && lessonDone && (
+          {nextHref && (
             <Link
               href={nextHref}
               data-automation-id="quiz-next-lesson"

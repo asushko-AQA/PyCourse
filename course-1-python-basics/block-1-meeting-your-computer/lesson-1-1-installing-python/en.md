@@ -100,7 +100,7 @@ If you see a version number — **Level Complete!** Python is ready.
 2. Choose your course folder (for example: `Documents\PyCourse`).
 3. Click **Select Folder**.
 
-You are now inside your coding base! This `PyCourse` folder is your **project root** — home base for the whole course.
+You are now inside your coding base!
 
 ---
 
@@ -111,13 +111,6 @@ The terminal is your **Command Portal**. Heroes use it to run programs.
 1. In VS Code, click **Terminal → New Terminal** (or press **Ctrl + `** — the key above Tab).
 2. A panel opens at the bottom. That is the terminal.
 3. You will see a blinking cursor. That means the portal is open and waiting for your command.
-4. Read the text before the cursor — the **prompt**. It shows the folder you are standing in. Because you opened `PyCourse` in Step 6, the terminal **already starts inside it**, so the prompt ends in `PyCourse>`:
-
-```text
-PS C:\Users\you\Documents\PyCourse>
-```
-
-*(On macOS it looks like `you@MacBook PyCourse %`, on Linux like `you@computer:~/PyCourse$`.)*
 
 **Tip:** You can also click the **+** in the terminal panel to open another terminal tab.
 
@@ -128,7 +121,7 @@ PS C:\Users\you\Documents\PyCourse>
 Create your first spell file. In VS Code:
 
 1. Go to **File → New Text File**.
-2. Save it as **`hello.py`** directly inside your `PyCourse` folder (next to `course-1-python-basics`).
+2. Save it as **`hello.py`** inside your project folder.
 3. Type the code below.
 
 A **`.py` file** is a Python script — a scroll of instructions for your computer.
@@ -163,19 +156,37 @@ You can also open the ready-made file in this lesson folder: [starter/hello.py](
 
 Time to cast your spell! Use the **terminal** (Command Portal).
 
-### 1. Check that you are in the folder where `hello.py` lives
+### 1. Stand in the folder where `hello.py` lives
 
-Look at your terminal prompt. If it ends in `PyCourse>` (for example `PS C:\Users\you\Documents\PyCourse>`), you are already in the right folder — **no `cd` needed**. Go straight to step 2.
+In Step 6 you opened `PyCourse` in VS Code. **Terminal → New Terminal** already starts inside that folder. Look at the prompt:
 
-**Using a separate terminal instead?** A Command Prompt from the Start menu (or Terminal on a Mac) starts in your home folder (`C:\Users\you>`), not in `PyCourse`. Walk to your project first:
+**Windows** (PowerShell or Command Prompt) — it ends with `PyCourse>`:
+
+```text
+PS C:\Users\YourName\Documents\PyCourse>
+```
+
+**macOS** — the prompt shows the folder name `PyCourse`:
+
+```text
+YourName@Mac PyCourse %
+```
+
+If you see `PyCourse`, you are already in the right room. **Do not type `cd`.** Skip to step 2 and run `python hello.py`.
+
+Only if you opened a **brand-new** terminal that starts in your home folder (the prompt shows your name, not `PyCourse`), walk into the project first. `cd` means **c**hange **d**irectory — walk to a new folder.
+
+**Windows:**
 
 ```text
 cd Documents\PyCourse
 ```
 
-On macOS/Linux: `cd Documents/PyCourse`
+**macOS:**
 
-*(Change the path if your folder is somewhere else. `cd` means **c**hange **d**irectory — walk to a new folder. You will practise it in Lesson 1.2.)*
+```text
+cd Documents/PyCourse
+```
 
 ### 2. Run your script
 
@@ -207,7 +218,7 @@ python --version
 
 1. Open `hello.py` in the editor.
 2. Open the terminal (**Terminal → New Terminal**).
-3. Check that the prompt ends in `PyCourse>` — the folder where `hello.py` lives.
+3. Make sure you are in the right folder (use `cd` if needed).
 4. Type `python hello.py` and press **Enter**.
 
 **Or:** click the **Run** button (play icon) at the top-right when the Python extension is installed.
@@ -218,13 +229,7 @@ python --version
 
 1. **Version check** — open terminal, run `python --version`, write the number down.
 2. **Portal open** — in VS Code, **Terminal → New Terminal** — see the blinking cursor?
-3. **Ready-made spell** — from the project root (prompt ends in `PyCourse>`), run this lesson's starter file. Type the start of each folder name and press **Tab** to finish it:
-
-```text
-python course-1-python-basics\block-1-meeting-your-computer\lesson-1-1-installing-python\starter\hello.py
-```
-
-On macOS/Linux, use `/` instead of `\`.
+3. **First run** — from this lesson folder, run `python starter\hello.py` after install.
 
 ---
 
@@ -257,7 +262,7 @@ python my_intro.py
 **Stuck?** Read the error message like a detective clue. Common fixes:
 
 - **`python is not recognized`** → Install again and check **Add to PATH**.
-- **`No such file`** → Make sure your `.py` file is saved in the folder shown in your prompt (your `PyCourse` folder).
+- **`No such file`** → Use `cd` to go to the folder where your `.py` file is saved.
 - **Forgot quotes** → Text inside `print()` must be inside `"..."`.
 
 ---
@@ -283,22 +288,22 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Skip the terminal option
 
 2. What command checks that Python is installed correctly?
-   - **a)** `code --version`
-   - **b)** `python --help`
+   - **a)** `python --help`
+   - **b)** `pip install python`
    - **c)** `python --version`
-   - **d)** `pip install python`
+   - **d)** `code --version`
 
 3. In this course, what is the VS Code terminal often called?
-   - **a)** The Extensions Hub
+   - **a)** The Debug Panel
    - **b)** The Output Window
-   - **c)** The Debug Panel
+   - **c)** The Extensions Hub
    - **d)** The Command Portal
 
 4. What file extension should a Python script have?
    - **a)** `.py`
-   - **b)** `.python`
-   - **c)** `.code`
-   - **d)** `.txt`
+   - **b)** `.txt`
+   - **c)** `.python`
+   - **d)** `.code`
 
 5. What does a line starting with `#` do in a Python file?
    - **a)** Deletes the next line

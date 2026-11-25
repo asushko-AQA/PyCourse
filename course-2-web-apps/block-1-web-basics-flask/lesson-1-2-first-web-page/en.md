@@ -22,7 +22,7 @@ In [Lesson 0.2](../../block-0-environment-setup/lesson-0-2-how-the-web-works/REA
 ### Step 1: Activate venv and open the starter
 
 1. Open VS Code terminal.
-2. Activate `.venv` (see [Lesson 1.1](../lesson-1-1-installing-flask/README.md) if you forgot the command).
+2. From the **PyCourse** root, activate `.venv` (see [Lesson 1.1](../lesson-1-1-installing-flask/README.md) if you forgot the command). The toolbox lives in that root folder, not inside this lesson.
 3. Open [starter/app.py](starter/app.py).
 
 The file already creates `app = Flask(__name__)`. You add the route and the `app.run()` line.
@@ -222,43 +222,43 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. In Flask, what does a **route** connect?
    - **a)** A CSS file to a database
-   - **b)** Two different virtual environments
-   - **c)** The browser to the internet provider only
-   - **d)** A URL path to a Python function
+   - **b)** A URL path to a Python function
+   - **c)** Two different virtual environments
+   - **d)** The browser to the internet provider only
 
 2. What does `@app.route("/")` mean?
-   - **a)** When someone visits the home path, run this function
+   - **a)** Install Flask automatically
    - **b)** Delete all other routes
-   - **c)** Install Flask automatically
+   - **c)** When someone visits the home path, run this function
    - **d)** Open VS Code settings
 
 3. In `http://127.0.0.1:5000`, what does `127.0.0.1` mean?
    - **a)** Your Wi-Fi password
-   - **b)** This computer (localhost)
-   - **c)** A website in another country
-   - **d)** The Flask version number
+   - **b)** A website in another country
+   - **c)** The Flask version number
+   - **d)** This computer (localhost)
 
 4. Why must you keep the terminal open while testing in the browser?
-   - **a)** Python deletes `app.py` if you close the terminal
-   - **b)** `debug=True` only works with two terminals
-   - **c)** The Flask server is running there and waiting for requests
-   - **d)** The browser cannot load pages without VS Code open
+   - **a)** The Flask server is running there and waiting for requests
+   - **b)** The browser cannot load pages without VS Code open
+   - **c)** Python deletes `app.py` if you close the terminal
+   - **d)** `debug=True` only works with two terminals
 
 5. How do you **stop** the Flask server when you are done?
    - **a)** Close the browser tab only
-   - **b)** Run `pip uninstall flask`
-   - **c)** Delete the `templates` folder
-   - **d)** Press **Ctrl+C** in the terminal
+   - **b)** Press **Ctrl+C** in the terminal
+   - **c)** Run `pip uninstall flask`
+   - **d)** Delete the `templates` folder
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **d)** A route maps a URL to the function that builds the response.
-2. **a)** `/` is the home page path.
-3. **b)** `127.0.0.1` is localhost — your own machine.
-4. **c)** Closing the terminal stops the server process.
-5. **d)** **Ctrl+C** stops the running Flask app in the terminal.
+1. **b)** A route maps a URL to the function that builds the response.
+2. **c)** `/` is the home page path.
+3. **d)** `127.0.0.1` is localhost — your own machine.
+4. **a)** Closing the terminal stops the server process.
+5. **b)** **Ctrl+C** stops the running Flask app in the terminal.
 
 </details>
 

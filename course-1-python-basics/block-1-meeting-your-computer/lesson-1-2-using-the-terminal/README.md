@@ -48,7 +48,7 @@
 
 ## Quick drills / Быстрые упражнения
 
-1. From the project root, `cd course-1-python-basics`, then `cd ..` to go back
+1. From `PyCourse`: `cd course-1-python-basics`, then `cd ..` to go back
 2. `dir` — count how many `.py` files you see
 3. Write down the folder path shown in your terminal prompt
 

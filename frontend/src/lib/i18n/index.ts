@@ -45,15 +45,6 @@ export interface Dict {
     quiz: string;
     files: string;
   };
-  files: {
-    intro: string;
-    starter: string;
-    exercises: string;
-    solution: string;
-    showSolution: string;
-    copy: string;
-    copied: string;
-  };
   lesson: {
     lockedTitle: string;
     lockedBody: string; // "{lesson}" placeholder = prerequisite title
@@ -74,9 +65,8 @@ export interface Dict {
     resultsTitle: string;
     resultsBody: string; // "{score}" and "{total}" placeholders
     xpEarned: string; // "{xp}" placeholder
+    xpNeedsPerfect: string; // "{xp}" placeholder
     alreadyEarned: string;
-    notPerfect: string;
-    notPerfectLesson: string;
     replay: string;
     backToMap: string;
     nextLesson: string;

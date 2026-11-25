@@ -129,9 +129,9 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. How do you set the pen color to red in turtle?
    - **a)** `t.pencolor("red")`
-   - **b)** `t.pencolor(red)` without quotes
-   - **c)** `import red`
-   - **d)** `t.color = red`
+   - **b)** `t.color = red`
+   - **c)** `t.pencolor(red)` without quotes
+   - **d)** `import red`
 
 2. What turn angle does `star.py` use for a five-point star?
    - **a)** `right(72)`
@@ -140,22 +140,22 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** `right(360)`
 
 3. Why store colors in a list like `["red", "orange", ...]`?
-   - **a)** To fix `turtle.done()`
-   - **b)** Lists cannot hold strings
+   - **a)** Lists cannot hold strings
+   - **b)** Because `pencolor()` only accepts lists
    - **c)** To pick a different color each loop step with `colors[point]`
-   - **d)** Because `pencolor()` only accepts lists
+   - **d)** To fix `turtle.done()`
 
 4. You append `"purple"` to the colors list but keep `for point in range(5):`. How many star **points** draw?
-   - **a)** 0 — the star disappears
+   - **a)** 6 — one per list item
    - **b)** 10 — double the colors
-   - **c)** 6 — one per list item
+   - **c)** 0 — the star disappears
    - **d)** Still 5 — the loop still runs 5 times
 
 5. `turtle.TurtleGraphicsError: bad color string: purpel` means…
    - **a)** The color name is misspelled — Python does not recognize `"purpel"`
-   - **b)** You forgot `turtle.done()`
-   - **c)** The window is behind VS Code
-   - **d)** Turtle is not installed
+   - **b)** Turtle is not installed
+   - **c)** You forgot `turtle.done()`
+   - **d)** The window is behind VS Code
 
 ---
 

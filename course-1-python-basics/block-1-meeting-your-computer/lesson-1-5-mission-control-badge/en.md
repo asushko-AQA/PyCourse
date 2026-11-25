@@ -33,13 +33,18 @@ Before you start, tick the [Block 1 readiness checklist](../README.md#block-1-re
 
 **Recommended:** Use VS Code Explorer — right-click your **project root** (e.g. `PyCourse`), choose **New Folder**, name it **`my_mission`**.
 
-**Or in the terminal.** The VS Code terminal already opens in the project root — the prompt ends in `PyCourse>` (PowerShell: `PS C:\Users\you\Documents\PyCourse>`). From there:
+**Or in the terminal.** The VS Code terminal is already in the project root when the window title is `PyCourse`. If the prompt ends with `PyCourse`, skip `cd` and create the folder:
 
 ```text
 mkdir my_mission
 ```
 
-Only a brand-new Command Prompt or Mac Terminal (the one that starts in your home folder, `C:\Users\you>`) needs a `cd` first, for example `cd Documents\PyCourse` on Windows or `cd Documents/PyCourse` on macOS. Change that path if your folder lives somewhere else.
+Only from a **fresh** terminal that starts in your home folder (the prompt shows your name, not `PyCourse`):
+
+**Windows:** `cd Documents\PyCourse`  
+**macOS:** `cd Documents/PyCourse`
+
+Then run `mkdir my_mission`.
 
 **Expected:** A new empty folder `my_mission` **next to** `course-1-python-basics`, not inside a lesson folder.
 
@@ -82,13 +87,21 @@ From your **project root**:
 cd my_mission
 ```
 
-If you created `my_mission` on Desktop instead:
+If you really created `my_mission` on the Desktop (and the prompt is your home folder, not `PyCourse`):
+
+**Windows:**
 
 ```text
 cd Desktop\my_mission
 ```
 
-*(Always match where you actually created the folder.)*
+**macOS:**
+
+```text
+cd ~/Desktop/my_mission
+```
+
+*(Always match where you actually created the folder. The usual place in this course is the project root, so `cd my_mission` is enough.)*
 
 ```text
 dir
@@ -240,15 +253,15 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** Nowhere — use the terminal only
 
 2. How many `print()` lines should your finished `badge.py` have?
-   - **a)** Zero — only `# TODO` comments
-   - **b)** Exactly 1
+   - **a)** Exactly 1
+   - **b)** 50 minimum
    - **c)** 5 to 8 lines of your own output
-   - **d)** 50 minimum
+   - **d)** Zero — only `# TODO` comments
 
 3. What terminal command creates a new folder called `my_mission`?
-   - **a)** `python my_mission`
-   - **b)** `dir my_mission`
-   - **c)** `cd my_mission`
+   - **a)** `cd my_mission`
+   - **b)** `python my_mission`
+   - **c)** `dir my_mission`
    - **d)** `mkdir my_mission`
 
 4. After `cd my_mission`, what command runs your badge script?
@@ -281,7 +294,7 @@ Pick the best answer for each question. Try without scrolling down first!
 
 → [Lesson 2.1: Variables, Strings, Integers](../../block-2-talking-to-python/lesson-2-1-variables/README.md) — Block 2 begins!
 
-→ [Block 1 index](../../README.md) — review all five lessons and your checklist.
+→ [Block 1 index](../README.md) — review all five lessons and your checklist.
 
 ---
 

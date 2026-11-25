@@ -46,7 +46,7 @@ print("not (5 == 3):", not (5 == 3))   # True — 5 == 3 is False, not False is 
 
 ### Step 1: Open the quiz script
 
-Open [starter/true_false_quiz.py](starter/true_false_quiz.py). A few lines are ready; six lines are missing — each one is marked `# TODO`.
+Open [starter/true_false_quiz.py](starter/true_false_quiz.py). Some lines are ready; others have `# TODO`.
 
 ---
 
@@ -62,41 +62,13 @@ cd course-1-python-basics\block-3-making-choices\lesson-3-1-booleans
 
 ---
 
-### Step 3: Run the starter as it is
+### Step 3: Run and compare
 
 ```text
 python starter\true_false_quiz.py
 ```
 
 **Mac/Linux:** Use forward slashes — `python starter/true_false_quiz.py`. List files with `ls` instead of `dir`.
-
-Only the ready lines print for now:
-
-```text
-=== TRUE OR FALSE QUEST ===
-5 == 5: True
-'cat' == 'cat': True
-5 >= 5: True
-Predict each line before you run!
-```
-
----
-
-### Step 4: Write the missing lines
-
-Under each `# TODO`, write one `print()` line. Copy the pattern of the example line — a **label** in quotes, a comma, then the **comparison** without quotes:
-
-```python
-print("5 == 3:", 5 == 3)
-```
-
-That is TODO 1. Do TODOs 2–6 the same way. For TODO 5 and TODO 6, the comparison part is `True and False` and `True or False`.
-
----
-
-### Step 5: Run again and compare
-
-Predict each True/False first, then run the same command as in Step 3.
 
 **Expected output:**
 
@@ -118,22 +90,10 @@ Predict each line before you run!
 
 ## Code Example
 
-The finished quiz — the reference [solution/true_false_quiz.py](solution/true_false_quiz.py):
-
 ```python
-# true_false_quiz.py — reference solution
-
-print("=== TRUE OR FALSE QUEST ===")
 print("5 == 5:", 5 == 5)
-print("5 == 3:", 5 == 3)
 print("10 > 7:", 10 > 7)
-print("4 < 2:", 4 < 2)
-print("'cat' == 'cat':", "cat" == "cat")
-print("5 >= 5:", 5 >= 5)
-print("3 != 3:", 3 != 3)
 print("True and False:", True and False)
-print("True or False:", True or False)
-print("Predict each line before you run!")
 ```
 
 Each `print()` shows a **label** and the **True/False result**.
@@ -147,7 +107,7 @@ cd course-1-python-basics\block-3-making-choices\lesson-3-1-booleans
 python starter\true_false_quiz.py
 ```
 
-**Expected output** (after you finish all six TODOs): the same 11 lines as in Step 5 above. Stuck? Run `python solution\true_false_quiz.py` to see the reference output.
+**Expected output:** See Step 3 above.
 
 ---
 
@@ -163,10 +123,9 @@ python starter\true_false_quiz.py
 
 **Quest name:** Build Your Own Quiz Line
 
-1. Finish all six `# TODO` lines in `starter/true_false_quiz.py` — your output must match Step 5.
-2. Add three new comparison lines using `==`, `<`, and `!=`.
-3. Add one line with `and` comparing two numbers.
-4. Add one line with `or`.
+1. Add three new comparison lines using `==`, `<`, and `!=`.
+2. Add one line with `and` comparing two numbers.
+3. Add one line with `or`.
 
 **Reference solution:** [solution/true_false_quiz.py](solution/true_false_quiz.py)
 
@@ -187,33 +146,33 @@ python starter\true_false_quiz.py
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What is the result of `5 == 5`?
-   - **a)** `False`
-   - **b)** `5`
-   - **c)** An error
+   - **a)** An error
+   - **b)** `False`
+   - **c)** `5`
    - **d)** `True`
 
 2. What is the result of `3 != 3`?
    - **a)** `False`
-   - **b)** `3`
-   - **c)** `0`
-   - **d)** `True`
+   - **b)** `True`
+   - **c)** `3`
+   - **d)** `0`
 
 3. A single `=` (one equals sign) is used for…
-   - **a)** Printing True or False
+   - **a)** Comparing two values
    - **b)** Putting a value in a variable (assignment)
-   - **c)** Comparing two values
-   - **d)** Adding numbers
+   - **c)** Adding numbers
+   - **d)** Printing True or False
 
 4. What is `True and False`?
-   - **a)** `"True and False"`
-   - **b)** `True`
+   - **a)** `True`
+   - **b)** `None`
    - **c)** `False`
-   - **d)** `None`
+   - **d)** `"True and False"`
 
 5. What is `True or False`?
-   - **a)** `False`
-   - **b)** `None`
-   - **c)** An error
+   - **a)** An error
+   - **b)** `False`
+   - **c)** `None`
    - **d)** `True`
 
 ---

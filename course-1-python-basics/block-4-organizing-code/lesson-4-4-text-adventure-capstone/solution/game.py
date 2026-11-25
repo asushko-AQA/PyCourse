@@ -10,7 +10,7 @@ rooms = {
     },
     "library": {
         "name": "Scroll Library",
-        "description": "Dusty scrolls line the shelves. An old desk stands in the corner.",
+        "description": "Dusty scrolls line the shelves. A golden key glints on a desk.",
         "south": "start",
         "item": "golden key",
     },
@@ -28,8 +28,6 @@ def show_room(room_id):
     room = rooms[room_id]
     print(f"\n=== {room['name']} ===")
     print(room["description"])
-    if "item" in room:
-        print(f"You see a {room['item']} here.")
 
 
 def move(room_id, direction):
@@ -52,13 +50,13 @@ def show_inventory():
 
 def take_item(room_id):
     room = rooms[room_id]
-    if "item" in room:
-        item = room["item"]
-        inventory.append(item)
-        del room["item"]
-        print(f"You picked up the {item}.")
-    else:
+    item = room.get("item")
+    if item is None:
         print("Nothing to take here.")
+        return
+    inventory.append(item)
+    del room["item"]
+    print(f"You picked up the {item}.")
 
 
 def main():

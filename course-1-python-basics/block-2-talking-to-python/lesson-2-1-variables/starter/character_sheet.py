@@ -1,14 +1,15 @@
 # character_sheet.py
 # Data Lab — store your creator stats in magic boxes (variables)
 
-# Three boxes are ready. Change the values to your own data if you like!
+# These boxes are already created. Change the values if you want.
 name = "Alex"
 age = 11
 favorite_game = "Minecraft"
 
-# TODO 1: Print the title line:  === CHARACTER SHEET ===
-# TODO 2: Print the name with a label, like this:  print("Name:", name)
-# TODO 3: Print the age with the label "Age:"
-# TODO 4: Print favorite_game with the label "Favorite game:"
+# TODO: Print "=== CHARACTER SHEET ==="
+# TODO: Print name, age, and favorite_game each with a label:
+#   Name: ...
+#   Age: ...
+#   Favorite game: ...
 
-print("Fill in the TODO print lines above, then delete this line!")
+print("Finish the TODO print lines above, then run again!")

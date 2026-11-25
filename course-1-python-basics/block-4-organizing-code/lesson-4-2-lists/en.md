@@ -40,19 +40,19 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-2-lists
 
 ### Step 1: Open inventory.py
 
-Open [starter/inventory.py](starter/inventory.py). Two items are already in the backpack. The `# TODO` lines show where **you** write the list code.
+Open [starter/inventory.py](starter/inventory.py). Two items are already in the backpack.
 
 ---
 
 ### Step 2: Add an item
 
-Under the first `# TODO`, write `inventory.append("key")`. The list grows by one slot.
+Write the `.append("key")` line where the TODO is. The list grows by one slot.
 
 ---
 
 ### Step 3: Print a numbered list
 
-Under the second `# TODO`, write a `for` loop with `range(len(inventory))` to visit each index:
+Use a `for` loop with `range(len(inventory))` to visit each index:
 
 ```python
 for i in range(len(inventory)):
@@ -71,7 +71,7 @@ python starter\inventory.py
 
 **Mac/Linux:** Use forward slashes — `python starter/inventory.py`. List files with `ls` instead of `dir`.
 
-**Expected output after you finish the TODOs:**
+**Expected output:**
 
 ```text
 === INVENTORY ===
@@ -85,12 +85,9 @@ You are carrying 3 items.
 
 ## Code Example
 
-**File: [solution/inventory.py](solution/inventory.py)** — the finished version. Peek here if you get stuck on a TODO.
+**File: [starter/inventory.py](starter/inventory.py)**
 
 ```python
-# inventory.py
-# Adventure Workshop — pack items in a list
-
 inventory = ["torch", "rope"]
 inventory.append("key")
 
@@ -111,7 +108,7 @@ cd course-1-python-basics\block-4-organizing-code\lesson-4-2-lists
 python starter\inventory.py
 ```
 
-No keyboard input — output appears immediately. Your finished starter prints the same output as Step 4. To compare with the reference, run `python solution\inventory.py`.
+No keyboard input — output appears immediately.
 
 ---
 
@@ -153,9 +150,9 @@ Pick the best answer for each question. Try without scrolling down first!
 
 1. In `inventory = ["torch", "rope"]`, what is the index of `"torch"`?
    - **a)** `0`
-   - **b)** `-1`
-   - **c)** `"torch"`
-   - **d)** `1`
+   - **b)** `1`
+   - **c)** `-1`
+   - **d)** `"torch"`
 
 2. Which method adds a new item to the **end** of a list?
    - **a)** `.add()`
@@ -164,22 +161,22 @@ Pick the best answer for each question. Try without scrolling down first!
    - **d)** `.print()`
 
 3. Why does the lesson use `print(f"{i + 1}. {inventory[i]}")` instead of `i` alone?
-   - **a)** It fixes IndexError automatically
-   - **b)** Python lists start at 1
+   - **a)** Python lists start at 1
+   - **b)** `i + 1` makes the list longer
    - **c)** So players see `1. torch` instead of `0. torch`
-   - **d)** `i + 1` makes the list longer
+   - **d)** It fixes IndexError automatically
 
 4. How do you get the **last** item in a list without counting indexes?
-   - **a)** `inventory[last]`
+   - **a)** `inventory[0]`
    - **b)** `inventory.len()`
-   - **c)** `inventory[0]`
+   - **c)** `inventory[last]`
    - **d)** `inventory[-1]`
 
 5. You have 3 items in `inventory` (indexes 0, 1, 2). What happens if you run `print(inventory[3])`?
    - **a)** `IndexError: list index out of range`
-   - **b)** It prints the first item again
-   - **c)** The list grows to four items
-   - **d)** It prints `3`
+   - **b)** It prints `3`
+   - **c)** It prints the first item again
+   - **d)** The list grows to four items
 
 ---
 

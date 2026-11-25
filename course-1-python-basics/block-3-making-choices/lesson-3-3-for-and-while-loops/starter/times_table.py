@@ -4,9 +4,6 @@
 print("=== TIMES TABLE ===")
 number = 3
 
-# TODO: Write a for loop with i and range(1, 11) — i goes 1, 2, ... 10.
-#   Inside the loop (indent 4 spaces):
-#   1) multiply number by i and save it in a variable called result
-#   2) print an f-string with number, i and result, like "3 x 1 = 3"
+# TODO: Use for and range(1, 11) to print "3 x 1 = 3" through "3 x 10 = 30"
 
 print("Table complete!")

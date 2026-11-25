@@ -17,22 +17,22 @@ Block 2 finale! Build a **form calculator** — partner to Block 1's URL calcula
 
 When fields are empty, show a **flash message** — a short note that appears once on the next page load.
 
-Create **`my_web_calc/`** at your **project root** — the folder you open in VS Code, next to `.venv` and next to `my_web_madlibs/`.
+Create **`my_web_calc/`** at your **project root** (next to `my_web_madlibs/`).
 
-**Path A:** Open `PyCourse` in VS Code and open the terminal — it already starts in `PyCourse`. Copy the lesson [starter/](starter/) into a new folder called `my_web_calc`:
+**Path A:** the VS Code terminal is already in `PyCourse`. If `(.venv)` is not showing, activate the toolbox from Lesson 0.1 first (it lives in this folder):
+
+**Windows:** `.venv\Scripts\Activate.ps1`  
+**macOS:** `source .venv/bin/activate`
+
+Then create the capstone folder (you are already in `PyCourse`):
 
 ```text
-Copy-Item -Recurse course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-5-flash-and-validation\starter my_web_calc
+mkdir my_web_calc
 ```
 
-**Command Prompt (cmd):** `xcopy /E /I course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-5-flash-and-validation\starter my_web_calc`  
-**macOS/Linux:** `cp -r course-2-web-apps/block-2-making-it-beautiful-interactive/lesson-2-5-flash-and-validation/starter my_web_calc`
+Copy [starter/](starter/) into `my_web_calc/`.
 
-Prefer the mouse? In the VS Code Explorer, right-click the lesson's `starter` folder → **Copy**, right-click an empty spot under `PyCourse` → **Paste**, then rename the copy to `my_web_calc`.
-
-Check: you now have `my_web_calc/app.py` and `my_web_calc/templates/calc.html`.
-
-**Path B:** Inside your workshop folder (next to `.venv`), create `my_web_calc/` and put this lesson's `starter/app.py` and `starter/templates/` in it. See [STUDENT-MAP](../STUDENT-MAP.md).
+**Path B:** Same folder idea on Desktop — see [STUDENT-MAP](../STUDENT-MAP.md).
 
 ---
 
@@ -47,8 +47,6 @@ Flash needs a secret for local sessions. Any random string works for practice.
 ---
 
 ### Step 2: Validate and calculate
-
-`int()` turns text from the form into a whole number. If someone types `abc`, `int("abc")` cannot do that, and Python raises a `ValueError` — an error that would crash the page. Put the risky lines in a `try` block: when a `ValueError` happens, Python jumps to `except ValueError`, and you `flash` a friendly note instead of crashing.
 
 ```python
 @app.route("/", methods=["GET", "POST"])
@@ -94,24 +92,30 @@ Result appears on the same page when `total` is set:
 
 ### Step 4: Run from my_web_calc
 
-**1. Activate your venv.** The VS Code terminal starts in your project root (where `.venv` lives). Activate:
+With `(.venv)` still active (activate at the `PyCourse` root first if the prompt does not show it):
 
-```text
-.venv\Scripts\Activate.ps1
-```
-
-**Command Prompt (cmd):** `.venv\Scripts\activate.bat` · **macOS/Linux:** `source .venv/bin/activate`
-
-You should see `(.venv)` at the start of the terminal line.
-
-**2. Go into your capstone folder and run** (same commands on Windows, macOS/Linux, and in Path B):
+**Windows:**
 
 ```text
 cd my_web_calc
 python app.py
 ```
 
-Open `http://127.0.0.1:5000/`.
+**macOS:**
+
+```text
+cd my_web_calc
+python3 app.py
+```
+
+Or test the lesson starter:
+
+```text
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-5-flash-and-validation
+python starter\app.py
+```
+
+**Mac/Linux:** `python starter/app.py`
 
 1. Enter `7` and `5` → result `12`
 2. Leave a field empty → flash error, no crash
@@ -153,12 +157,12 @@ Flash messages render in [solution/templates/calc.html](solution/templates/calc.
 
 ## Code Execution
 
-With `(.venv)` active, from your project root:
-
 ```text
-cd my_web_calc
-python app.py
+cd course-2-web-apps\block-2-making-it-beautiful-interactive\lesson-2-5-flash-and-validation
+python starter\app.py
 ```
+
+**Mac/Linux:** `python starter/app.py`
 
 1. Open `http://127.0.0.1:5000/`, enter `7` and `5` — **Result** shows `12`
 2. Submit with an empty field — a friendly error message appears (flash), no crash
@@ -201,44 +205,44 @@ python app.py
 Pick the best answer for each question. Try without scrolling down first!
 
 1. Why does `flash()` need `app.secret_key`?
-   - **a)** To replace `request.form`
-   - **b)** Because addition only works with a secret
-   - **c)** Flash uses sessions locally; the secret key makes that work
-   - **d)** To change the CSS background color
+   - **a)** Flash uses sessions locally; the secret key makes that work
+   - **b)** To change the CSS background color
+   - **c)** To replace `request.form`
+   - **d)** Because addition only works with a secret
 
 2. When should you call `flash("Please enter both numbers.")`?
    - **a)** Every time the server starts
-   - **b)** Before activating `.venv`
-   - **c)** Only when the user visits with GET
-   - **d)** When a required field is empty after POST
+   - **b)** When a required field is empty after POST
+   - **c)** Before activating `.venv`
+   - **d)** Only when the user visits with GET
 
 3. User types `abc` in a number field. What should happen?
-   - **a)** Show a friendly flash error — not a scary crash
+   - **a)** Delete `calc.html`
    - **b)** Silently ignore the form forever
-   - **c)** Delete `calc.html`
+   - **c)** Show a friendly flash error — not a scary crash
    - **d)** Redirect to Course 3 automatically
 
 4. How is this form calculator different from Block 1's `/add/3/5`?
    - **a)** It only works without templates
-   - **b)** Users type numbers in a form instead of putting them in the URL
-   - **c)** It does not use Python
-   - **d)** It cannot show errors
+   - **b)** It does not use Python
+   - **c)** It cannot show errors
+   - **d)** Users type numbers in a form instead of putting them in the URL
 
 5. Where do you loop to **display** flash messages in the template?
-   - **a)** `request.args.get("message")`
-   - **b)** Inside `static/style.css`
-   - **c)** `{% for message in get_flashed_messages() %}`
-   - **d)** `{% extends "flash.html" %}` only
+   - **a)** `{% for message in get_flashed_messages() %}`
+   - **b)** `{% extends "flash.html" %}` only
+   - **c)** `request.args.get("message")`
+   - **d)** Inside `static/style.css`
 
 ---
 
 <details><summary>Click to reveal answers</summary>
 
-1. **c)** Sessions need a secret key to store flash messages safely.
-2. **d)** Flash user-friendly errors when validation fails.
-3. **a)** Catch bad input with `try/except` or checks, then `flash()`.
-4. **b)** Forms hide numbers from the URL and feel more like real apps.
-5. **c)** `get_flashed_messages()` returns messages to show once.
+1. **a)** Sessions need a secret key to store flash messages safely.
+2. **b)** Flash user-friendly errors when validation fails.
+3. **c)** Catch bad input with `try/except` or checks, then `flash()`.
+4. **d)** Forms hide numbers from the URL and feel more like real apps.
+5. **a)** `get_flashed_messages()` returns messages to show once.
 
 </details>
 

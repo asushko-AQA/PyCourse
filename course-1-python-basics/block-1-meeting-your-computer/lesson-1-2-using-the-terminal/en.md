@@ -36,24 +36,24 @@ Think of folders as **rooms**:
 **Example prompt:**
 
 ```text
-PS C:\Users\YourName\Documents\PyCourse>
+C:\Users\YourName\Documents\PyCourse>
 ```
 
-The path before `>` is your location in the maze. Because VS Code opened your `PyCourse` folder, you start in the **project root** — the entrance hall of the course maze. *(Command Prompt shows the same path without `PS`. On macOS the prompt ends in `PyCourse %`, on Linux in `PyCourse$`.)*
-
-**Lost somewhere in the maze?** Open a new terminal (**Terminal → New Terminal**) — it always starts back at the project root.
+The path before `>` is your location in the maze.
 
 ---
 
 ### Step 2: Walk into a folder with `cd`
 
-`cd` means **c**hange **d**irectory — go to another folder. From the project root, walk into the course folder:
+`cd` means **c**hange **d**irectory — go to another folder.
+
+Step 1 left you inside `PyCourse`. That folder already contains `course-1-python-basics`. Walk into it (same command on Windows and macOS):
 
 ```text
 cd course-1-python-basics
 ```
 
-**Expected:** The prompt updates and now ends in `course-1-python-basics>`. You are inside the course room.
+**Expected:** The prompt updates and now ends with `course-1-python-basics`. You are inside that folder.
 
 **Tip:** Type the first few letters of a folder name and press **Tab** — the terminal can autocomplete the name for you!
 
@@ -67,7 +67,7 @@ Two dots `..` mean "the folder above" — one level up.
 cd ..
 ```
 
-**Expected:** The prompt ends in `PyCourse>` again. You moved back one room — to the project root.
+**Expected:** The prompt ends with `PyCourse` again. You moved back one room.
 
 ---
 
@@ -90,14 +90,7 @@ README.md
 ...
 ```
 
-**Two rooms deep:** you can walk through several folders in one jump by joining their names with `\`:
-
-```text
-cd course-1-python-basics\block-1-meeting-your-computer
-dir
-```
-
-**Expected output (example):**
+**Inside Block 1** (after `cd course-1-python-basics\block-1-meeting-your-computer`):
 
 ```text
  Directory of ...\block-1-meeting-your-computer
@@ -108,16 +101,7 @@ lesson-1-3-running-your-first-script
 ...
 ```
 
-Now walk back to the project root — one `cd ..` for each room:
-
-```text
-cd ..
-cd ..
-```
-
-**Expected:** The prompt ends in `PyCourse>` again.
-
-On **Mac/Linux**, use `ls` instead of `dir`, and `/` instead of `\` in paths.
+On **Mac/Linux**, use `ls` instead of `dir`.
 
 Look for `.py` files — those are Python scripts!
 
@@ -139,13 +123,19 @@ On **Mac/Linux**, use `clear`.
 
 ### Step 6: Navigate to this lesson's folder
 
-From the project root (the prompt ends in `PyCourse>`), walk into this lesson:
+From your project root (`PyCourse` — run `cd ..` first if the prompt still ends with `course-1-python-basics`), walk into this lesson:
+
+**Windows:**
 
 ```text
 cd course-1-python-basics\block-1-meeting-your-computer\lesson-1-2-using-the-terminal
 ```
 
-On Mac/Linux: `cd course-1-python-basics/block-1-meeting-your-computer/lesson-1-2-using-the-terminal`
+**macOS:**
+
+```text
+cd course-1-python-basics/block-1-meeting-your-computer/lesson-1-2-using-the-terminal
+```
 
 **Expected:** Prompt ends with `lesson-1-2-using-the-terminal>`.
 
@@ -170,7 +160,7 @@ Open [starter/treasure.py](starter/treasure.py) in VS Code to peek at the code (
 ### Command scroll (terminal commands)
 
 ```text
-# Walk into a folder (from the project root)
+# Walk into a folder that already lives inside PyCourse
 cd course-1-python-basics
 
 # Walk back up one level
@@ -204,7 +194,7 @@ print("Treasure found!")
 
 ## Code Execution
 
-You should already be in `lesson-1-2-using-the-terminal` from Step 6. If not, open a new terminal (it starts at the project root) and repeat the `cd` from Step 6.
+You should already be in `lesson-1-2-using-the-terminal` from Step 6. If not, `cd` there now.
 
 ### 1. Confirm you are in the right room
 
@@ -236,7 +226,7 @@ If you see that line — **Level 2 Complete!** You navigated the maze and ran a 
 
 Do these three mini-quests (about 2 minutes each):
 
-1. **Into the course and back** — from the project root, `cd course-1-python-basics`, then `cd ..`. Watch how the prompt changes.
+1. **`cd` into the course folder and back** — from `PyCourse`, run `cd course-1-python-basics`, then `cd ..`. Watch how the prompt changes.
 2. **Count Python files** — `dir` in any folder. How many `.py` files do you see? Write the number down.
 3. **Copy your path** — write the full path shown in your terminal prompt in a notebook. That is your "you are here" marker on the maze map.
 
@@ -250,25 +240,27 @@ Do these three mini-quests (about 2 minutes each):
 
 ### Path A — PyCourse folder layout
 
-1. Start from your project root — the prompt ends in `PyCourse>` (not sure? open a new terminal).
-2. `cd course-1-python-basics\block-1-meeting-your-computer`
-3. `dir` — list all lesson folders.
+1. Start from your project root (`PyCourse`). The prompt should end with `PyCourse`.
+2. Windows: `cd course-1-python-basics\block-1-meeting-your-computer` — macOS: `cd course-1-python-basics/block-1-meeting-your-computer`
+3. `dir` (macOS: `ls`) — list all lesson folders.
 4. `cd lesson-1-1-installing-python`
-5. `dir` — find `starter` and `README.md`.
+5. `dir` (macOS: `ls`) — find `starter` and `README.md`.
 6. `cd ..` — return one level up.
 7. Confirm you are back in `block-1-meeting-your-computer`.
 
 Use the tick-box checklist: [exercises/quest_paths.md](exercises/quest_paths.md)
 
-### Path B — Build your own maze
+### Path B — Build a maze inside the project
 
-1. In VS Code Explorer, right-click your project root (`PyCourse`) → **New Folder** → `quests`. Then make a folder `treasure` inside `quests`.
-2. Create `clue.txt` inside `treasure` with: `The treasure is in treasure.py`
-3. Copy `starter/treasure.py` into `quests\treasure`
-4. In the terminal, from the project root: `cd quests\treasure` (Mac/Linux: `cd quests/treasure`)
-5. `dir` — see `clue.txt` and `treasure.py`
-6. `python treasure.py` — see `Treasure found!`
-7. `cd ..` twice — the prompt ends in `PyCourse>` again.
+1. Make sure the prompt ends with `PyCourse` (open a new VS Code terminal, or `cd ..` until it does).
+2. In Explorer, right-click `PyCourse` → **New Folder** → `quests`. Inside it, **New Folder** → `treasure`.
+3. Inside `treasure`, create `clue.txt` with: `The treasure is in treasure.py`
+4. Copy `starter/treasure.py` from this lesson into `quests/treasure`.
+5. In the terminal:
+   **Windows:** `cd quests\treasure`
+   **macOS:** `cd quests/treasure`
+6. `dir` (macOS: `ls`) — see `clue.txt` and `treasure.py`
+7. `python treasure.py` — see `Treasure found!`
 
 **Bonus stars (optional):**
 
@@ -287,7 +279,7 @@ Use the tick-box checklist: [exercises/quest_paths.md](exercises/quest_paths.md)
 
 **Fix:**
 
-1. `cd ..` to go back to a folder you know (or open a new terminal — it starts at the project root).
+1. `cd ..` to go back to a folder you know.
 2. `dir` to see the **exact** folder names (spelling matters!).
 3. Type `cd` again using the exact name from the list.
 4. Use **Tab** after a few letters to avoid typos.
@@ -299,34 +291,34 @@ Use the tick-box checklist: [exercises/quest_paths.md](exercises/quest_paths.md)
 Pick the best answer for each question. Try without scrolling down first!
 
 1. What does `cd ..` do?
-   - **a)** Clears the terminal screen
-   - **b)** Deletes the current folder
+   - **a)** Deletes the current folder
+   - **b)** Lists all files in the folder
    - **c)** Walks back one folder level to the parent folder
-   - **d)** Lists all files in the folder
+   - **d)** Clears the terminal screen
 
 2. On Windows, which command shows files in your current folder?
-   - **a)** `show`
+   - **a)** `ls`
    - **b)** `list`
-   - **c)** `ls`
+   - **c)** `show`
    - **d)** `dir`
 
 3. What does the text before `>` in your terminal prompt show?
    - **a)** Your current folder path
-   - **b)** The last error message
-   - **c)** Your password
-   - **d)** Your Python version
+   - **b)** Your Python version
+   - **c)** The last error message
+   - **d)** Your password
 
 4. How do you clear a messy terminal screen on Windows?
-   - **a)** `dir`
+   - **a)** `clear`
    - **b)** `cls`
-   - **c)** `clear`
-   - **d)** `cd ..`
+   - **c)** `cd ..`
+   - **d)** `dir`
 
 5. Pressing **Tab** after typing part of a folder name in `cd` can…
-   - **a)** Close VS Code
-   - **b)** Delete the folder
+   - **a)** Delete the folder
+   - **b)** Run Python automatically
    - **c)** Autocomplete the folder name for you
-   - **d)** Run Python automatically
+   - **d)** Close VS Code
 
 ---
 

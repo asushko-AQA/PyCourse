@@ -4,11 +4,11 @@
 
 import random
 
-secret = random.randint(1, 10)
-guesses_left = 3
+secret = random.randint(1, 20)
+guesses_left = 5
 
 print("=== QUEST GATE ===")
-print("Guess the secret number from 1 to 10.")
+print("Guess the secret number from 1 to 20.")
 print(f"You have {guesses_left} tries.")
 
 while guesses_left > 0:

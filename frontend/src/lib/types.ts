@@ -49,19 +49,6 @@ export interface SectionPresence {
   debugCorner: boolean;
 }
 
-/** Href prefix the lesson UI turns into "open this file in the Files tab". */
-export const LESSON_FILE_HREF = "#lesson-file:";
-
-/** A text file from a lesson's `starter/`, `exercises/` or `solution/` folder. */
-export interface LessonFile {
-  /** Path relative to the lesson folder, e.g. "starter/badge.py". */
-  path: string;
-  kind: "starter" | "exercises" | "solution";
-  /** Fence language for rendering ("python", "html", "css", "markdown", "text"). */
-  language: string;
-  content: string;
-}
-
 /** Language-specific content of a single lesson. */
 export interface LessonContent {
   /** Human title, e.g. "Variables, Strings, Integers" (number prefix stripped). */
@@ -78,8 +65,13 @@ export interface LessonContent {
   meta: LessonMeta | null;
   /** Which canonical schema-v2 sections were present in the source markdown. */
   present: SectionPresence;
-  /** Lesson folder files shown in the Files tab (exercise prompts in this language). */
-  files: LessonFile[];
+}
+
+/** A starter, solution, or exercise file shown on the lesson Files tab. */
+export interface LessonFile {
+  /** Path relative to the lesson folder, e.g. "starter/hello.py". */
+  path: string;
+  content: string;
 }
 
 export interface Lesson {
@@ -101,6 +93,8 @@ export interface Lesson {
   /** Progress key of the lesson that must be completed first, or null for the first lesson of a course. */
   prerequisiteKey: string | null;
   content: Record<Lang, LessonContent>;
+  /** Runnable files from starter/, solution/, and exercises/. */
+  files: LessonFile[];
 }
 
 export interface Block {

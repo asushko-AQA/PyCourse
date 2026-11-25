@@ -71,18 +71,22 @@ def base_url():
         yield env_url.rstrip("/")
         return
 
+    # Same working directory as the frontend CI job. `npm --prefix frontend`
+    # from the repo root is a different invocation and has flaked
+    # next/font/google resolution for Nunito.
     repo_root = _repo_root()
+    frontend_dir = str(Path(repo_root) / "frontend")
     subprocess.run(
-        "npm --prefix frontend run build",
-        cwd=repo_root,
+        "npm run build",
+        cwd=frontend_dir,
         shell=True,
         check=True,
     )
 
     creationflags = subprocess.CREATE_NEW_PROCESS_GROUP if IS_WINDOWS else 0
     proc = subprocess.Popen(
-        f"npm --prefix frontend run start -- -p {TEST_PORT}",
-        cwd=repo_root,
+        f"npm run start -- -p {TEST_PORT}",
+        cwd=frontend_dir,
         shell=True,
         creationflags=creationflags,
     )

@@ -206,13 +206,18 @@ export const useProgressStore = create<ProgressState>()(
         }),
 
       setSignedIn: (signedIn, userId) => {
-        set({ isSignedIn: signedIn });
-        if (signedIn) {
+        // Bootstrap calls this as soon as /auth/session returns, which can be
+        // before zustand has read localStorage. A set() that early persists the
+        // empty initial state and wipes saved lessons and XP (PL-05).
+        const apply = () => {
+          set({ isSignedIn: signedIn });
+          if (!signedIn) return;
           if (userId && get().mergedForUserId !== userId) {
             set({ hasMergedLocal: false });
           }
           enqueueSync(() => get().syncWithServer(userId));
-        }
+        };
+        whenProgressHydrated(apply);
       },
 
       flushPending: async () => {
@@ -285,6 +290,20 @@ export const useProgressStore = create<ProgressState>()(
     }),
     {
       name: "pyquest-progress",
+      // XP is derived from completions. Recompute it when reading storage so a
+      // stale counter cannot disagree with the saved lesson and quiz lists.
+      merge: (persisted, current) => {
+        const saved = (persisted ?? {}) as Partial<ProgressState>;
+        const completedLessons = saved.completedLessons ?? current.completedLessons;
+        const completedQuizzes = saved.completedQuizzes ?? current.completedQuizzes;
+        return {
+          ...current,
+          ...saved,
+          completedLessons,
+          completedQuizzes,
+          xp: xpForProgress(completedLessons, completedQuizzes),
+        };
+      },
       partialize: (state) => ({
         xp: state.xp,
         completedLessons: state.completedLessons,
@@ -296,6 +315,27 @@ export const useProgressStore = create<ProgressState>()(
     },
   ),
 );
+
+/**
+ * Run `apply` only after persisted progress has been read. If hydration already
+ * finished, run immediately. Register first so a finish between the check and
+ * the listener is not missed, and so apply does not run twice.
+ */
+function whenProgressHydrated(apply: () => void): void {
+  let pending = true;
+  const unsub = useProgressStore.persist.onFinishHydration(() => {
+    if (!pending) return;
+    pending = false;
+    unsub();
+    apply();
+  });
+  if (useProgressStore.persist.hasHydrated()) {
+    if (!pending) return;
+    pending = false;
+    unsub();
+    apply();
+  }
+}
 
 const subscribeNoop = () => () => {};
 
